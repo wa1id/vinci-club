@@ -1,37 +1,24 @@
 import React from 'react';
-import data from 'src/data/terms-and-conditions';
+import RecursiveList from 'src/components/lists/RecursiveList';
+import termsAndConditionsData from 'src/data/terms-and-conditions';
 
 const TermsAndConditions = () => {
   return (
-    <div className='p-8'>
-      <h1 className='text-4xl font-bold text-red-600 uppercase text-center'>
+    <div className='p-4 md:p-8 '>
+      <h1 className='text-xl md:text-4xl font-bold text-black uppercase text-center underline'>
         Terms and Conditions
       </h1>
 
-      {data.map((item) => {
-        return (
-          <div
-            key={item.id}
-            className='flex flex-col gap-2 mt-4'
-          >
-            <h1 className='font-semibold'>
-              {item.id}. {item.title}
-            </h1>
-            <div className='px-4'>
-              {item.info.map((info, index) => {
-                return (
-                  <p key={index}>
-                    <span className='font-semibold'>
-                      {item.id}.{index + 1}.
-                    </span>
-                    {info}
-                  </p>
-                );
-              })}
-            </div>
-          </div>
-        );
-      })}
+      <div className='flex flex-col gap-4 mt-4'>
+        {termsAndConditionsData.map((data, index) => {
+          return (
+            <RecursiveList
+              key={index}
+              {...data}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };

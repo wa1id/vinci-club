@@ -1,7 +1,7 @@
 import { IRecursiveList } from "src/components/lists/RecursiveList";
 
 
-const termsAndConditionsData: IRecursiveList[] = [
+export const termsAndConditionsData1: IRecursiveList[] = [
   {
     id: 1,
     title: 'Algemene',
@@ -67,17 +67,9 @@ const termsAndConditionsData: IRecursiveList[] = [
       'Verlies of diefstal van de lidmaatschapspas dient direct aan Vinci Club te worden gemeld. Vinci Club zal de kosten van 15,00 euro voor een nieuwe tag in rekening brengen bij het Lid.',
     ],
   },
-  {
-    id: 7,
-    title: 'Beëindiging of ontbinding lidmaatschap',
-    info: [
-      'Indien het Lid zijn lidmaatschap niet 4 weken voor de einddatum van de initiële contractduur schriftelijk bij de desbetreffende club opzegt, wordt het lidmaatschap na de contractduur automatisch verlengd voor onbepaalde duur en geldt een opzegtermijn van 4 weken.',
-      'De opzegging kan worden gedaan op dezelfde wijze als de Overeenkomst is afgesloten, dan wel naar keus van het Lid schriftelijk middels een het bij Vinci Club verkrijgbaar opzegformulier of middels een eigen opzegbrief. Een schriftelijke opzegging dient het Lid te richten aan Vinci Club B.V. , Cruyslei 54A, 2100 Deurne. In geval het Lid zich online heeft ingeschreven, kan het Lid ook online (via de website www.vinci-club.be) of per e-mail (info@vinci-club.be) opzeggen.',
-      'Om de goede ontvangst van de opzegbrief te waarborgen, adviseert Vinci Club deze per aangetekende post te verzenden.',
-      'Het, door het Lid, tussentijds beëindigen van de Overeenkomst is uitsluitend kosteloos mogelijk op medische gronden waarbij een medische verklaring of ander – ten genoegen van Vinci Club – deugdelijk bewijs vereist is, bij het verhuizen buiten een straal van vijftien kilometer van de club van Vinci Club, waarbij een bewijs van inschrijving in de nieuwe gemeente vereist is, krijgt het lid de mogelijkheid om tussentijds de overeenkomst te beëindigen, met inachtneming van een opzegtermijn van 28 dagen.',
-      'Vinci Club geeft een Looptijd Verkorting optie. Indien het lid besluit gebruik te maken van de Looptijd Verkorting optie zal Vinci Club de door het Lid verschuldigde lidmaatschapsprijs herberekenen op basis van de resterende periode (inclusief de betaalperiode opzegtermijn) vermenigvuldigd met het van toepassing zijnde vaste tarief van 17,50 euro per 4 weken. Een indicatieve berekening van de vergoeding voor Looptijd Verkorting kan worden opgevraagd aan de balie van in de club van Vinci Club. De uiteindelijke verschuldigde totale vergoeding voor Looptijd Verkorting zal worden vermeld in de opzeg bevestiging van Vinci Club. Voor de in dit artikel 7.4 en artikel 7.5 genoemde gevallen geldt een opzegtermijn van 4 weken.',
-    ]
-  },
+];
+
+export const termsAndConditionsData2: IRecursiveList[] = [
   {
     id: 8,
     title: 'Opschorting (tijdelijk stopzetten)',
@@ -137,8 +129,7 @@ const termsAndConditionsData: IRecursiveList[] = [
       'Wanneer één van de hierboven staande bepalingen ongeldig of onwettig is, blijven de overige bepalingen gelden.',
     ],
   },
-];
+]
 
 
 
-export default termsAndConditionsData;

@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "src/assests/images/logo.png";
+import Logo from "public/logo.png";
 import Image from "next/image";
 import { IoIosCall } from "react-icons/io";
 import { GrMail } from "react-icons/gr";

@@ -51,7 +51,7 @@ const Home = () => {
           </div>
         </div>
 
-        <h1 className="hidden md:block md:text-8xl md:mb-36 lg:m-0 lg:text-9xl font-bold text-red-600 uppercase text-center">
+        <h1 className="animate-bounce	hidden md:block md:text-8xl md:mb-36 lg:m-0 lg:text-9xl font-bold text-red-600 uppercase text-center">
           Coming Soon
         </h1>
 

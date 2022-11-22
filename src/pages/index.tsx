@@ -1,64 +1,71 @@
-import React from "react";
-import Logo from "public/logo.png";
-import Image from "next/image";
-import { IoIosCall } from "react-icons/io";
-import { GrMail } from "react-icons/gr";
-import { AiFillHome } from "react-icons/ai";
+import React, { Fragment, useState } from "react";
 import Link from "next/link";
 import Head from "next/head";
+import { Dialog, Transition } from "@headlessui/react";
 
 const Home = () => {
+  let [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
       <Head>
         <title>Vinci Club Deurne</title>
       </Head>
-      <div className="bg-black   min-h-screen  p-4">
-        <div className="flex justify-center items-center flex-col md:flex-row ">
-          <div className="w-full p-4 flex items-center justify-center flex-col md:flex-row md:justify-end gap-4">
-            <Image src={Logo} alt="logo" width={500} />
-
-            <h1 className="text-5xl font-bold text-red-600 uppercase text-center md:hidden -mt-6">
-              Coming Soon
-            </h1>
-          </div>
-
-          <div className="w-full h-full flex flex-col md:flex-row md:items-center md:gap-5 p-4">
-            <div className="border-2 border-red-600 w-full md:w-auto  md:h-96 mb-6 md:m-0" />
-
-            <div className="flex flex-col p-2 px-8 w-full gap-4 mx-auto ">
-              <div className="flex  gap-2">
-                <IoIosCall color="red" className="mt-1" size={20} />
-                <a className="text-white" href="tel:+32470702750">
-                  +32 470 70 27 50
-                </a>
-              </div>
-
-              <div className="flex  gap-2">
-                <GrMail color="red" className="mt-1" size={20} />
-                <a className="text-white" href="mailto:info@vinci-club.be">
-                  info@vinci-club.be
-                </a>
-              </div>
-
-              <div className="flex  gap-2">
-                <AiFillHome color="red" className="mt-1" size={20} />
-                <div className="text-white">
-                  2100 Antwerpen (Deurne), Cruyslei 54 A
-                </div>
+      <div className="bg-[#141414]">
+        <div className="bg-noise min-h-screen p-4">
+          <div className="grid grid-cols-3 gap-4 text-white p-16">
+            <div>Logo</div>
+            <div className="flex justify-center">
+              <div className="flex">
+                <div className="h-5 w-h borde-2 border-white">05</div>
               </div>
             </div>
           </div>
+
+          <button className="text-white" onClick={() => setIsOpen(true)}>
+            Lid worden
+          </button>
+
+          <p className="text-white text-center mt-8 sm:mt-16 underline">
+            <Link href="/terms-and-conditions">algemene voorwaarden</Link>
+          </p>
         </div>
-
-        <h1 className="animate-bounce	hidden md:block md:text-8xl md:mb-36 lg:m-0 lg:text-9xl font-bold text-red-600 uppercase text-center">
-          Coming Soon
-        </h1>
-
-        <p className="text-white text-center mt-8 sm:mt-16 underline">
-          <Link href="/terms-and-conditions">algemene voorwaarden</Link>
-        </p>
       </div>
+      <Transition appear show={isOpen} as={Fragment}>
+        <Dialog
+          open={isOpen}
+          onClose={() => setIsOpen(false)}
+          className="relative z-50"
+        >
+          <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
+          <div className="fixed inset-0 overflow-y-auto">
+            <div className="flex min-h-full items-center justify-center p-4">
+              <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 scale-95"
+                enterTo="opacity-100 scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 scale-100"
+                leaveTo="opacity-0 scale-95"
+              >
+                <Dialog.Panel className="mx-auto w-full max-w-md bg-white p-5 transform">
+                  <Dialog.Title>Lid worden</Dialog.Title>
+                  <Dialog.Description>
+                    Als je het Inschrijvingsformulier invult doorheen de maand
+                    december en tijdens onze opendeurweek jouw inschrijving komt
+                    vervolledigen dan kan jij genieten van de eerste maand
+                    gratis sporten. Geldig op alle abonnementen mits er wordt
+                    gekozen voor een jaarabonnement.
+                  </Dialog.Description>
+
+                  {/* TODO: add form here */}
+                </Dialog.Panel>
+              </Transition.Child>
+            </div>
+          </div>
+        </Dialog>
+      </Transition>
     </>
   );
 };

@@ -8,7 +8,12 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        noise: "url('/noise.png')",
+        "footer-texture": "url('/img/footer-texture.png')",
+      },
+    },
     colors: {
       transparent: "transparent",
       current: "currentColor",

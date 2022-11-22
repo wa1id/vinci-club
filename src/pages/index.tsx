@@ -11,13 +11,13 @@ const Home = () => {
       <Head>
         <title>Vinci Club Deurne</title>
       </Head>
-      <div className="bg-[#141414]">
+      <div className="bg-primary">
         <div className="bg-noise min-h-screen p-4">
           <div className="grid grid-cols-3 gap-4 text-white p-16">
             <div>Logo</div>
             <div className="flex justify-center">
               <div className="flex">
-                <div className="h-5 w-h borde-2 border-white font-drukwide">
+                <div className="grid place-items-center h-20 w-20 border-2 border-white font-drukwide">
                   05
                 </div>
               </div>

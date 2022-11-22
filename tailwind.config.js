@@ -28,11 +28,14 @@ module.exports = {
       yellow: colors.yellow,
       red: colors.red,
       primary: {
-        light: "#67e8f9",
-        DEFAULT: "#06b6d4",
-        dark: "#0e7490",
+        DEFAULT: "#1D1D1D",
+        light: "#CCCCCC",
+        lighter: "#F0EBE8",
+      },
+      secondary: {
+        DEFAULT: "#BDD3E3",
       },
     },
+    plugins: [],
   },
-  plugins: [],
 };

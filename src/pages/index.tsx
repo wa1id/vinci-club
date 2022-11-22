@@ -2,6 +2,7 @@ import React, { Fragment, useState } from "react";
 import Link from "next/link";
 import Head from "next/head";
 import { Dialog, Transition } from "@headlessui/react";
+import BecomeAMember from "src/components/form/BecomeAMember";
 
 const Home = () => {
   let [isOpen, setIsOpen] = useState(false);
@@ -24,7 +25,10 @@ const Home = () => {
             </div>
           </div>
 
-          <button className="text-white" onClick={() => setIsOpen(true)}>
+          <button
+            className="text-white"
+            onClick={() => setIsOpen(true)}
+          >
             Lid worden
           </button>
 
@@ -33,13 +37,20 @@ const Home = () => {
           </p>
         </div>
       </div>
-      <Transition appear show={isOpen} as={Fragment}>
+      <Transition
+        appear
+        show={isOpen}
+        as={Fragment}
+      >
         <Dialog
           open={isOpen}
           onClose={() => setIsOpen(false)}
           className="relative z-50"
         >
-          <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
+          <div
+            className="fixed inset-0 bg-black/30"
+            aria-hidden="true"
+          />
           <div className="fixed inset-0 overflow-y-auto">
             <div className="flex min-h-full items-center justify-center p-4">
               <Transition.Child
@@ -62,6 +73,7 @@ const Home = () => {
                   </Dialog.Description>
 
                   {/* TODO: add form here */}
+                  <BecomeAMember />
                 </Dialog.Panel>
               </Transition.Child>
             </div>

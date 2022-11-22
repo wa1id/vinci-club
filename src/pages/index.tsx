@@ -1,7 +1,9 @@
 import React, { Fragment, useState } from "react";
 import Link from "next/link";
 import Head from "next/head";
+import Image from "next/image";
 import { Dialog, Transition } from "@headlessui/react";
+import { Countdown } from "src/components/Countdown/Countdown";
 
 const Home = () => {
   let [isOpen, setIsOpen] = useState(false);
@@ -15,15 +17,8 @@ const Home = () => {
         <div className="bg-noise min-h-screen p-4">
           <div className="grid grid-cols-3 gap-4 text-white p-16">
             <div>Logo</div>
-            <div className="flex justify-center">
-              <div className="flex">
-                <div className="grid place-items-center h-20 w-20 border-2 border-white font-drukwide">
-                  05
-                </div>
-              </div>
-            </div>
+            <Countdown />
           </div>
-
           <button className="text-white" onClick={() => setIsOpen(true)}>
             Lid worden
           </button>

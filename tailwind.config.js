@@ -14,7 +14,7 @@ module.exports = {
       },
       fontFamily: {
         drukwide: ["DrukWide"],
-        sans: ["DrukWide", "sans-serif"],
+        sans: ["Outfit"],
       },
     },
     colors: {

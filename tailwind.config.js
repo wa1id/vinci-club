@@ -11,7 +11,6 @@ module.exports = {
     extend: {
       backgroundImage: {
         noise: "url('/noise.png')",
-        "footer-texture": "url('/img/footer-texture.png')",
       },
       fontFamily: {
         drukwide: ["DrukWide"],

@@ -75,6 +75,11 @@
   dependencies:
     "glob" "7.1.7"
 
+"@next/font@^13.0.4":
+  "integrity" "sha512-csZhVqe870p7XE03WfbDLzjVwdBAWxe6/lWGQosfqY/XN5tsmfDLpj442veicfCiiuF7/ydSnAAJxH8PQVBVWQ=="
+  "resolved" "https://registry.npmjs.org/@next/font/-/font-13.0.4.tgz"
+  "version" "13.0.4"
+
 "@next/swc-darwin-arm64@13.0.3":
   "integrity" "sha512-wV6j6SZ1bc/YHOLCLk9JVqaZTCCey6HBV7inl2DriHsHqIcO6F3+QiYf0KXwRP9BE0GSZZrYd5mZQm2JPTHdJA=="
   "resolved" "https://registry.npmjs.org/@next/swc-darwin-arm64/-/swc-darwin-arm64-13.0.3.tgz"

@@ -17,7 +17,9 @@ const Home = () => {
             <div>Logo</div>
             <div className="flex justify-center">
               <div className="flex">
-                <div className="h-5 w-h borde-2 border-white">05</div>
+                <div className="h-5 w-h borde-2 border-white font-drukwide">
+                  05
+                </div>
               </div>
             </div>
           </div>

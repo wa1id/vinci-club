@@ -30,6 +30,7 @@ interface IState {
 }
 
 const BecomeAMember: React.FC<IProps> = () => {
+  const [checkedError, setCheckedError] = React.useState(false);
   const [state, dispatch] = useReducer<React.Reducer<IState, any>>(
     (state, action) => ({
       ...state,
@@ -138,9 +139,10 @@ const BecomeAMember: React.FC<IProps> = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setCheckedError(false);
 
     if (!state.agree) {
-      toast.error("Please check the checkbox to agree to the terms");
+      setCheckedError(true);
       return;
     }
 
@@ -340,11 +342,17 @@ const BecomeAMember: React.FC<IProps> = () => {
               </Link>{" "}
               en{" "}
               <Link href="#" target="_blank" className="underline">
-                privacy policy
+                privacybeleid
               </Link>
               <sup>*</sup>
             </label>
           </div>
+          {checkedError && (
+            <div className="text-red-500">
+              Geef aan dat u de voorwaarden en het privacybeleid hebt gelezen en
+              ermee akkoord gaat.
+            </div>
+          )}
         </div>
 
         <div className="w-full ">

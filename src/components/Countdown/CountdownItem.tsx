@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 interface Props {
-  number: string;
+  number: number;
   label: string;
 }
 

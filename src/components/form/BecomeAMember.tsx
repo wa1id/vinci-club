@@ -1,4 +1,4 @@
-import React, {  useReducer } from "react";
+import React, { useReducer } from "react";
 import Link from "next/link";
 import emailjs from "@emailjs/browser";
 import {
@@ -7,6 +7,7 @@ import {
   USER_EMAILJS_TEMPLATE_ID,
 } from "src/constants";
 import { toast } from "react-toastify";
+import { Button } from "../Button/Button";
 
 interface IProps {}
 
@@ -24,8 +25,6 @@ interface IState {
     city: string;
     zip: string;
   };
-  startDate: string;
-  alreadyMember: "yes" | "no";
   referenceClub?: string;
   agree: boolean;
 }
@@ -47,7 +46,11 @@ const BecomeAMember: React.FC<IProps> = () => {
           checked: false,
         },
         {
-          name: "Group Sessions",
+          name: "Kickboksen",
+          checked: false,
+        },
+        {
+          name: "Groepsessies",
           checked: false,
         },
         {
@@ -60,8 +63,6 @@ const BecomeAMember: React.FC<IProps> = () => {
         city: "",
         zip: "",
       },
-      startDate: "",
-      alreadyMember: "no",
       referenceClub: "",
       agree: false,
     }
@@ -103,7 +104,7 @@ const BecomeAMember: React.FC<IProps> = () => {
   const handleAgree = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { checked } = e.target;
     dispatch({ agree: checked });
-  }
+  };
 
   const handleReset = () => {
     dispatch({
@@ -130,8 +131,6 @@ const BecomeAMember: React.FC<IProps> = () => {
         city: "",
         zip: "",
       },
-      startDate: "",
-      alreadyMember: "no",
       referenceClub: "",
       agree: false,
     });
@@ -150,8 +149,6 @@ const BecomeAMember: React.FC<IProps> = () => {
         .map((item) => item.name)
         .join(", "),
       address: `${state.address.street}, ${state.address.city}, ${state.address.zip}`,
-      startDate: state.startDate,
-      alreadyMember: state.alreadyMember,
       referenceClub: state.referenceClub,
     };
 
@@ -165,32 +162,22 @@ const BecomeAMember: React.FC<IProps> = () => {
       )
       .then(
         (result) => {
-          toast.success("Message sent successfully");
+          toast.success("Wij hebben uw aanvraag ontvangen!");
         },
         (error) => {
-          toast.error("Something went wrong");
+          toast.error("Oops, er is iets misgeslopen!");
         }
       );
     handleReset();
   };
 
   return (
-    <div className="shadow overflow-hidden sm:rounded-lg p-4">
-      <h1 className="text-3xl font-bold text-gray-900 uppercase my-4">
-        Become a Member
-      </h1>
-      <form
-        onSubmit={handleSubmit}
-        className="grid gap-5"
-      >
+    <div className="overflow-hidden py-4">
+      <form onSubmit={handleSubmit} className="grid gap-5">
         <div className="grid grid-cols-2 gap-2">
           <div>
-            <label
-              htmlFor="firstName"
-              className="font-semibold"
-            >
-              First Name
-              <sup className="text-red-500">*</sup>
+            <label htmlFor="firstName" className="font-semibold">
+              Voornaam<sup>*</sup>
             </label>
             <input
               type="text"
@@ -199,16 +186,12 @@ const BecomeAMember: React.FC<IProps> = () => {
               value={state.firstName}
               onChange={handleChange}
               className="block w-full flex-1 rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-1 px-4"
-              placeholder="First Name"
               required
             />
           </div>
           <div>
-            <label
-              htmlFor="lastName"
-              className="font-semibold"
-            >
-              Last Name <sup className="text-red-500">*</sup>
+            <label htmlFor="lastName" className="font-semibold">
+              Achternaam<sup>*</sup>
             </label>
             <input
               type="text"
@@ -217,18 +200,14 @@ const BecomeAMember: React.FC<IProps> = () => {
               value={state.lastName}
               onChange={handleChange}
               className="block w-full flex-1 rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-1 px-4"
-              placeholder="Last Name"
               required
             />
           </div>
         </div>
 
-        <div className="">
-          <label
-            htmlFor="email"
-            className="font-semibold"
-          >
-            Email address <sup className="text-red-500">*</sup>
+        <div>
+          <label htmlFor="email" className="font-semibold">
+            E-mailadres<sup>*</sup>
           </label>
           <input
             type="email"
@@ -237,17 +216,13 @@ const BecomeAMember: React.FC<IProps> = () => {
             value={state.email}
             onChange={handleChange}
             className="block w-full flex-1 rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-1 px-4"
-            placeholder="Email"
             required
           />
         </div>
 
-        <div className="">
-          <label
-            htmlFor="telephone"
-            className="font-semibold"
-          >
-            Telephone <sup className="text-red-500">*</sup>
+        <div>
+          <label htmlFor="telephone" className="font-semibold">
+            Telefoonnummer<sup>*</sup>
           </label>
           <input
             type="tel"
@@ -256,23 +231,16 @@ const BecomeAMember: React.FC<IProps> = () => {
             value={state.telephone}
             onChange={handleChange}
             className="block w-full flex-1 rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-1 px-4"
-            placeholder="Telephone"
             required
           />
         </div>
 
         <div className="w-full ">
-          <label
-            htmlFor="interestedIn"
-            className="font-semibold"
-          >
-            Interested In <sup className="text-red-500">*</sup>
+          <label htmlFor="interestedIn" className="font-semibold">
+            Ik ben geïnteresseerd in
           </label>
           {state.interestedIn.map((item, index) => (
-            <div
-              key={index}
-              className="flex items-center justify-start gap-2"
-            >
+            <div key={index} className="flex items-center justify-start gap-2">
               <input
                 type="checkbox"
                 name="interestedIn"
@@ -282,25 +250,16 @@ const BecomeAMember: React.FC<IProps> = () => {
                 onChange={(e) => handleInterestedIn(e, index)}
                 className="block rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-1 px-4 "
               />
-              <label
-                htmlFor={item.name}
-                className=""
-              >
-                {item.name}
-              </label>
+              <label htmlFor={item.name}>{item.name}</label>
             </div>
           ))}
         </div>
 
         <div>
-          <label
-            htmlFor="address"
-            className="font-semibold"
-          >
-            Your address <sup className="text-red-500">*</sup>
+          <label htmlFor="address" className="font-semibold">
+            Uw adres<sup>*</sup>
           </label>
           <div className="mt-2">
-            <label htmlFor="street">Street</label>
             <input
               type="text"
               name="street"
@@ -308,7 +267,7 @@ const BecomeAMember: React.FC<IProps> = () => {
               value={state.address.street}
               onChange={handleAddress}
               className="block w-full flex-1 rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-1 px-4"
-              placeholder="Street"
+              placeholder="Straat + huisnummer"
               required
             />
           </div>
@@ -322,15 +281,9 @@ const BecomeAMember: React.FC<IProps> = () => {
                 value={state.address.city}
                 onChange={handleAddress}
                 className="block w-full flex-1 rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-1 px-4"
-                placeholder="City"
+                placeholder="Gemeente"
                 required
               />
-              <label
-                htmlFor="city"
-                className="text-xs font-semibold"
-              >
-                City
-              </label>
             </div>
             <div>
               <input
@@ -340,77 +293,16 @@ const BecomeAMember: React.FC<IProps> = () => {
                 value={state.address.zip}
                 onChange={handleAddress}
                 className="block w-full flex-1 rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-1 px-4"
-                placeholder="State"
+                placeholder="Postcode"
                 required
               />
-              <label
-                htmlFor="state"
-                className="text-xs font-semibold"
-              >
-                Zip/ Postal
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <div className="">
-          <label
-            htmlFor="startDate"
-            className="font-semibold"
-          >
-            Start from <sup className="text-red-500">*</sup>
-          </label>
-          <p className="text-xs mt-2">
-            When would you like to start at Sportclub hel Eiland?
-          </p>
-          <input
-            type="date"
-            name="startDate"
-            id="startDate"
-            value={state.startDate}
-            onChange={handleChange}
-            className="block w-full flex-1 rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-1 px-4"
-          />
-        </div>
-
-        <div className="w-full ">
-          <label className="font-semibold">
-            Have you already been a member of Sportclub hel Eilland?{" "}
-            <sup className="text-red-500">*</sup>
-          </label>
-          <div className="flex items-center justify-start gap-2 mt-2">
-            <input
-              type="radio"
-              name="alreadyMember"
-              id="alreadyMember"
-              value="yes"
-              checked={state.alreadyMember === "yes"}
-              onChange={handleChange}
-              className="block rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-1 px-4 "
-            />
-            <label htmlFor={"alreadyMember"}>Yes</label>
-          </div>
-
-          <div>
-            <div className="flex items-center justify-start gap-2">
-              <input
-                type="radio"
-                name="alreadyMember"
-                id="alreadyMember"
-                value="no"
-                checked={state.alreadyMember === "no"}
-                onChange={handleChange}
-                className="block rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-1 px-4 "
-              />
-              <label htmlFor={"alreadyMember"}>No</label>
             </div>
           </div>
         </div>
 
         <div className="w-full ">
           <label className="font-semibold ">
-            {" "}
-            Name or reference of a club member you know?
+            Naam of referentie van iemand die je kent bij Vinci Club
           </label>
           <input
             type="text"
@@ -432,33 +324,28 @@ const BecomeAMember: React.FC<IProps> = () => {
               onChange={handleAgree}
               className="block rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-1 px-4 "
             />
-            <label
-              htmlFor={"agree"}
-              className="agree"
-            >
-              I agree to the privacy policy{" "}
-              <sup className="text-red-500">*</sup>
+            <label htmlFor={"agree"} className="agree">
+              Ik ga akkoord met de{" "}
+              <Link
+                href="/terms-and-conditions"
+                target="_blank"
+                className="underline"
+              >
+                algemene voorwaarden
+              </Link>{" "}
+              en{" "}
+              <Link href="#" target="_blank" className="underline">
+                privacy policy
+              </Link>
+              <sup>*</sup>
             </label>
           </div>
         </div>
 
-        <p className="border border-gray-200 text-xs px-4 py-2 border-r-8 ">
-          You can read our privacy policy{" "}
-          <Link
-            href="/terms-and-conditions"
-            className="underline"
-          >
-            here
-          </Link>
-        </p>
-
         <div className="w-full ">
-          <button
-            type="submit"
-            className="bg-red-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
-          >
-            Submit
-          </button>
+          <Button variant="primary" type="submit">
+            Registeren
+          </Button>
         </div>
       </form>
     </div>

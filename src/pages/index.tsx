@@ -52,7 +52,7 @@ const Home = () => {
                 een jaarabonnement.
               </p>
 
-              <Button onClick={() => setIsOpen(true)}>
+              <Button variant="secondary" onClick={() => setIsOpen(true)}>
                 Lid worden <ArrowUpRightIcon className="ml-3" width={20} />
               </Button>
 
@@ -62,7 +62,7 @@ const Home = () => {
             <div className="relative w-4/5">
               <div className="flex lg:-translate-x-16 2xl:-translate-x-24">
                 <div className="columns-1 m-2">
-                  <Image src={hero3} alt="bodybuilder" />
+                  <Image priority src={hero3} alt="bodybuilder" />
                 </div>
                 <div className="rows-2 -translate-y-8 md:-translate-y-16 lg:-translate-y-24 2xl:-translate-y-32">
                   <Image className="m-4" src={hero2} alt="woman working out" />
@@ -102,8 +102,10 @@ const Home = () => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="mx-auto w-full max-w-md bg-white p-5 transform">
-                  <Dialog.Title>Lid worden</Dialog.Title>
+                <Dialog.Panel className="mx-auto w-full max-w-xl bg-white p-5 transform">
+                  <Dialog.Title className="text-3xl font-bold text-gray-900 uppercase my-4">
+                    Lid worden
+                  </Dialog.Title>
                   <Dialog.Description>
                     Als je het Inschrijvingsformulier invult doorheen de maand
                     december en tijdens onze opendeurweek jouw inschrijving komt
@@ -112,7 +114,6 @@ const Home = () => {
                     gekozen voor een jaarabonnement.
                   </Dialog.Description>
 
-                  {/* TODO: add form here */}
                   <BecomeAMember />
                 </Dialog.Panel>
               </Transition.Child>

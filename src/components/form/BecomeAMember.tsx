@@ -1,13 +1,10 @@
-import React, { useEffect, useReducer } from "react";
+import React, {  useReducer } from "react";
 import Link from "next/link";
 import emailjs from "@emailjs/browser";
 import {
-  MANAGER_EMAILJS_SERVICE_ID,
   USER_EMAILJS_PUBLIC_KEY,
   USER_EMAILJS_SERVICE_ID,
   USER_EMAILJS_TEMPLATE_ID,
-  MANAGER_EMAILJS_PUBLIC_KEY,
-  MANAGER_EMAILJS_TEMPLATE_ID,
 } from "src/constants";
 import { toast } from "react-toastify";
 
@@ -103,6 +100,11 @@ const BecomeAMember: React.FC<IProps> = () => {
     });
   };
 
+  const handleAgree = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { checked } = e.target;
+    dispatch({ agree: checked });
+  }
+
   const handleReset = () => {
     dispatch({
       firstName: "",
@@ -169,30 +171,11 @@ const BecomeAMember: React.FC<IProps> = () => {
           toast.error("Something went wrong");
         }
       );
-
-    // send mail to manager
-    emailjs
-      .send(
-        MANAGER_EMAILJS_SERVICE_ID as string,
-        MANAGER_EMAILJS_TEMPLATE_ID as string,
-        templateParams,
-        MANAGER_EMAILJS_PUBLIC_KEY as string
-      )
-      .then(
-        (result) => {
-          // toast.success('Message sent successfully');
-          console.log(result.text);
-        },
-        (error) => {
-          toast.error("Something went wrong");
-        }
-      );
-
     handleReset();
   };
 
   return (
-    <div className="bg-yellow-100 shadow overflow-hidden sm:rounded-lg p-4">
+    <div className="shadow overflow-hidden sm:rounded-lg p-4">
       <h1 className="text-3xl font-bold text-gray-900 uppercase my-4">
         Become a Member
       </h1>
@@ -446,7 +429,7 @@ const BecomeAMember: React.FC<IProps> = () => {
               name="agree"
               id="agree"
               checked={state.agree}
-              onChange={handleChange}
+              onChange={handleAgree}
               className="block rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-1 px-4 "
             />
             <label

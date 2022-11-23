@@ -1,64 +1,125 @@
-import React from "react";
-import Logo from "public/logo.png";
-import Image from "next/image";
-import { IoIosCall } from "react-icons/io";
-import { GrMail } from "react-icons/gr";
-import { AiFillHome } from "react-icons/ai";
+import React, { Fragment, useState } from "react";
 import Link from "next/link";
 import Head from "next/head";
+import Image from "next/image";
+import { Dialog, Transition } from "@headlessui/react";
+import BecomeAMember from "src/components/form/BecomeAMember";
+import { Countdown } from "src/components/Countdown/Countdown";
+
+import hero3 from "public/hero-3.png";
+import hero2 from "public/hero-2.png";
+import hero1 from "public/hero-1.png";
+import logowhite from "public/logo-white.png";
+import { Button } from "src/components/Button/Button";
+import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
+import { SocialFollows } from "src/components/SocialFollows/SocialFollows";
+import { SideTextStroke } from "src/components/SideTextStroke";
 
 const Home = () => {
+  let [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
       <Head>
         <title>Vinci Club Deurne</title>
       </Head>
-      <div className="bg-black   min-h-screen  p-4">
-        <div className="flex justify-center items-center flex-col md:flex-row ">
-          <div className="w-full p-4 flex items-center justify-center flex-col md:flex-row md:justify-end gap-4">
-            <Image src={Logo} alt="logo" width={500} />
-
-            <h1 className="text-5xl font-bold text-red-600 uppercase text-center md:hidden -mt-6">
-              Coming Soon
-            </h1>
+      <div className="bg-primary bg-noise h-full text-white">
+        <div className="bg-lines p-4">
+          <div className="flex flex-col p-8 2xl:p-16">
+            <div className="flex items-center justify-center mb-16">
+              <Image
+                className="max-w-xs lg:max-w-lg 2xl:max-w-3xl"
+                src={logowhite}
+                alt="logo vinci club"
+              />
+            </div>
+            <Countdown />
           </div>
 
-          <div className="w-full h-full flex flex-col md:flex-row md:items-center md:gap-5 p-4">
-            <div className="border-2 border-red-600 w-full md:w-auto  md:h-96 mb-6 md:m-0" />
+          <div className="flex flex-col items-center lg:flex-row lg:items-start">
+            <div className="z-10 lg:ml-20 xl:ml-28 space-y-8 text-center sm:text-left">
+              <h1 className="flex flex-col uppercase text-6xl sm:text-8xl 2xl:text-9xl font-drukwide [text-shadow:_15px_10px_10px_rgb(0_0_0_/_75%)]">
+                <span>new</span>
+                <span className="text-secondary">year&apos;s</span>
+                <span>deal</span>
+              </h1>
 
-            <div className="flex flex-col p-2 px-8 w-full gap-4 mx-auto ">
-              <div className="flex  gap-2">
-                <IoIosCall color="red" className="mt-1" size={20} />
-                <a className="text-white" href="tel:+32470702750">
-                  +32 470 70 27 50
-                </a>
-              </div>
+              <p className="max-w-md">
+                Als je het inschrijvingsformulier invult doorheen de maand
+                december en tijdens onze opendeurweek jouw inschrijving komt
+                vervolledigen dan kan jij genieten van de eerste maand gratis
+                sporten. Geldig op alle abonnementen mits er wordt gekozen voor
+                een jaarabonnement.
+              </p>
 
-              <div className="flex  gap-2">
-                <GrMail color="red" className="mt-1" size={20} />
-                <a className="text-white" href="mailto:info@vinci-club.be">
-                  info@vinci-club.be
-                </a>
-              </div>
+              <Button variant="secondary" onClick={() => setIsOpen(true)}>
+                Lid worden <ArrowUpRightIcon className="ml-3" width={20} />
+              </Button>
 
-              <div className="flex  gap-2">
-                <AiFillHome color="red" className="mt-1" size={20} />
-                <div className="text-white">
-                  2100 Antwerpen (Deurne), Cruyslei 54 A
+              <SocialFollows label="Follow us" />
+            </div>
+
+            <div className="relative w-4/5">
+              <div className="flex justify-end lg:-translate-x-16 2xl:-translate-x-24">
+                <div className="columns-1 m-2">
+                  <Image priority src={hero3} alt="bodybuilder" />
+                </div>
+                <div className="rows-2 -translate-y-8 md:-translate-y-16 lg:-translate-y-24 2xl:-translate-y-32">
+                  <Image className="m-4" src={hero2} alt="woman working out" />
+                  <Image
+                    className="m-4"
+                    src={hero1}
+                    alt="boxing glove against bag"
+                  />
                 </div>
               </div>
             </div>
           </div>
+
+          <p className="text-white text-center mt-8 sm:mt-16 underline">
+            <Link href="/terms-and-conditions">algemene voorwaarden</Link>
+          </p>
         </div>
-
-        <h1 className="hidden md:block md:text-8xl md:mb-36 lg:m-0 lg:text-9xl font-bold text-red-600 uppercase text-center">
-          Coming Soon
-        </h1>
-
-        <p className="text-white text-center mt-8 sm:mt-16 underline">
-          <Link href="/terms-and-conditions">algemene voorwaarden</Link>
-        </p>
+        <SideTextStroke />
       </div>
+
+      <Transition appear show={isOpen} as={Fragment}>
+        <Dialog
+          open={isOpen}
+          onClose={() => setIsOpen(false)}
+          className="relative z-50"
+        >
+          <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
+          <div className="fixed inset-0 overflow-y-auto">
+            <div className="flex min-h-full items-center justify-center p-4">
+              <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 scale-95"
+                enterTo="opacity-100 scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 scale-100"
+                leaveTo="opacity-0 scale-95"
+              >
+                <Dialog.Panel className="mx-auto w-full max-w-xl bg-white p-5 transform">
+                  <Dialog.Title className="text-3xl font-bold text-gray-900 uppercase my-4">
+                    Lid worden
+                  </Dialog.Title>
+                  <Dialog.Description>
+                    Als je het Inschrijvingsformulier invult doorheen de maand
+                    december en tijdens onze opendeurweek jouw inschrijving komt
+                    vervolledigen dan kan jij genieten van de eerste maand
+                    gratis sporten. Geldig op alle abonnementen mits er wordt
+                    gekozen voor een jaarabonnement.
+                  </Dialog.Description>
+
+                  <BecomeAMember />
+                </Dialog.Panel>
+              </Transition.Child>
+            </div>
+          </div>
+        </Dialog>
+      </Transition>
     </>
   );
 };

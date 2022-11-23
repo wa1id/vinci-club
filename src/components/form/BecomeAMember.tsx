@@ -344,7 +344,7 @@ const BecomeAMember: React.FC<IProps> = () => {
                 algemene voorwaarden
               </Link>{" "}
               en{" "}
-              <Link href="#" target="_blank" className="underline">
+              <Link href="/privacy" target="_blank" className="underline">
                 privacybeleid
               </Link>
               <sup>*</sup>

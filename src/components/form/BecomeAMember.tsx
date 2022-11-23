@@ -171,23 +171,17 @@ const BecomeAMember: React.FC<IProps> = () => {
           handleReset();
         },
         (error) => {
-          toast.error("Oops, er is iets misgeslopen!");
+          toast.error("Oops, er is iets misgeslopen.");
         }
       );
   };
 
   return (
     <div className="overflow-hidden py-4">
-      <form
-        onSubmit={handleSubmit}
-        className="grid gap-5"
-      >
+      <form onSubmit={handleSubmit} className="grid gap-5">
         <div className="grid grid-cols-2 gap-2">
           <div>
-            <label
-              htmlFor="firstName"
-              className="font-semibold"
-            >
+            <label htmlFor="firstName" className="font-semibold">
               Voornaam<sup>*</sup>
             </label>
             <input
@@ -201,10 +195,7 @@ const BecomeAMember: React.FC<IProps> = () => {
             />
           </div>
           <div>
-            <label
-              htmlFor="lastName"
-              className="font-semibold"
-            >
+            <label htmlFor="lastName" className="font-semibold">
               Achternaam<sup>*</sup>
             </label>
             <input
@@ -220,10 +211,7 @@ const BecomeAMember: React.FC<IProps> = () => {
         </div>
 
         <div>
-          <label
-            htmlFor="email"
-            className="font-semibold"
-          >
+          <label htmlFor="email" className="font-semibold">
             E-mailadres<sup>*</sup>
           </label>
           <input
@@ -238,10 +226,7 @@ const BecomeAMember: React.FC<IProps> = () => {
         </div>
 
         <div>
-          <label
-            htmlFor="telephone"
-            className="font-semibold"
-          >
+          <label htmlFor="telephone" className="font-semibold">
             Telefoonnummer<sup>*</sup>
           </label>
           <input
@@ -256,17 +241,11 @@ const BecomeAMember: React.FC<IProps> = () => {
         </div>
 
         <div className="w-full ">
-          <label
-            htmlFor="interestedIn"
-            className="font-semibold"
-          >
+          <label htmlFor="interestedIn" className="font-semibold">
             Ik ben geïnteresseerd in
           </label>
           {state.interestedIn.map((item, index) => (
-            <div
-              key={index}
-              className="flex items-center justify-start gap-2"
-            >
+            <div key={index} className="flex items-center justify-start gap-2">
               <input
                 type="checkbox"
                 name="interestedIn"
@@ -282,10 +261,7 @@ const BecomeAMember: React.FC<IProps> = () => {
         </div>
 
         <div>
-          <label
-            htmlFor="address"
-            className="font-semibold"
-          >
+          <label htmlFor="address" className="font-semibold">
             Uw adres<sup>*</sup>
           </label>
           <div className="mt-2">
@@ -353,10 +329,7 @@ const BecomeAMember: React.FC<IProps> = () => {
               onChange={handleAgree}
               className="block rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-1 px-4 "
             />
-            <label
-              htmlFor={"agree"}
-              className="agree"
-            >
+            <label htmlFor={"agree"} className="agree">
               Ik ga akkoord met de{" "}
               <Link
                 href="/terms-and-conditions"
@@ -366,11 +339,7 @@ const BecomeAMember: React.FC<IProps> = () => {
                 algemene voorwaarden
               </Link>{" "}
               en{" "}
-              <Link
-                href="#"
-                target="_blank"
-                className="underline"
-              >
+              <Link href="#" target="_blank" className="underline">
                 privacy policy
               </Link>
               <sup>*</sup>
@@ -379,10 +348,7 @@ const BecomeAMember: React.FC<IProps> = () => {
         </div>
 
         <div className="w-full ">
-          <Button
-            variant="primary"
-            type="submit"
-          >
+          <Button variant="primary" type="submit">
             Registeren
           </Button>
         </div>

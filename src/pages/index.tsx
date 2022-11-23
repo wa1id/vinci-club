@@ -80,7 +80,6 @@ const Home = () => {
             <Link href="/terms-and-conditions">algemene voorwaarden</Link>
           </p>
         </div>
-
         <SideTextStroke />
       </div>
 

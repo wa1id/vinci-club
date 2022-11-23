@@ -60,7 +60,7 @@ const Home = () => {
             </div>
 
             <div className="relative w-4/5">
-              <div className="flex lg:-translate-x-16 2xl:-translate-x-24">
+              <div className="flex justify-end lg:-translate-x-16 2xl:-translate-x-24">
                 <div className="columns-1 m-2">
                   <Image priority src={hero3} alt="bodybuilder" />
                 </div>

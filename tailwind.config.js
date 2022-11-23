@@ -11,10 +11,11 @@ module.exports = {
     extend: {
       backgroundImage: {
         noise: "url('/noise.png')",
+        lines: "url('/line art.png')",
       },
       fontFamily: {
         drukwide: ["DrukWide"],
-        sans: ["DrukWide", "sans-serif"],
+        sans: ["Outfit"],
       },
     },
     colors: {

@@ -68,10 +68,10 @@
   "resolved" "https://registry.npmjs.org/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz"
   "version" "1.2.1"
 
-"@next/env@13.0.3":
-  "integrity" "sha512-/4WzeG61Ot/PxsghXkSqQJ6UohFfwXoZ3dtsypmR9EBP+OIax9JRq0trq8Z/LCT9Aq4JbihVkaazRWguORjTAw=="
-  "resolved" "https://registry.npmjs.org/@next/env/-/env-13.0.3.tgz"
-  "version" "13.0.3"
+"@next/env@13.0.4":
+  "integrity" "sha512-N5Z3bdxBzoxrC5bwykDFITzdWuwDteOdZ+7nxixY+I1XpRX8/iQYbw2wuXMdqdfBGm2NNUpAqg8YF2e4oAC2UQ=="
+  "resolved" "https://registry.npmjs.org/@next/env/-/env-13.0.4.tgz"
+  "version" "13.0.4"
 
 "@next/eslint-plugin-next@13.0.3":
   "integrity" "sha512-slmTAHNKDyc7jhx4VF8lFbmOPWJ3PShtUUWpb6x9+ga59CyOxgP6AdcDhxfapnWYACKe/TwYiaveufu7LqXgZg=="
@@ -85,10 +85,10 @@
   "resolved" "https://registry.npmjs.org/@next/font/-/font-13.0.4.tgz"
   "version" "13.0.4"
 
-"@next/swc-darwin-arm64@13.0.3":
-  "integrity" "sha512-wV6j6SZ1bc/YHOLCLk9JVqaZTCCey6HBV7inl2DriHsHqIcO6F3+QiYf0KXwRP9BE0GSZZrYd5mZQm2JPTHdJA=="
-  "resolved" "https://registry.npmjs.org/@next/swc-darwin-arm64/-/swc-darwin-arm64-13.0.3.tgz"
-  "version" "13.0.3"
+"@next/swc-darwin-arm64@13.0.4":
+  "integrity" "sha512-/lajev+9GSie+rRTl5z8skW9RJwZ+TwMKLzzM24TbDk8lUjqPTyJZ/cU0NDj8J7VQAZ6EehACSh9rcJeBRtLuA=="
+  "resolved" "https://registry.npmjs.org/@next/swc-darwin-arm64/-/swc-darwin-arm64-13.0.4.tgz"
+  "version" "13.0.4"
 
 "@nodelib/fs.scandir@2.1.5":
   "integrity" "sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g=="
@@ -865,6 +865,11 @@
   dependencies:
     "reusify" "^1.0.4"
 
+"feather-icons-react@^0.6.2":
+  "integrity" "sha512-G677Y5nc3HzP1f5NNb5LJuZwKrI58BK4+/9O8Bl4naF9JixC+YL4trVom1F2ajnilq/EbU8JETPTNqvCzwH1qA=="
+  "resolved" "https://registry.npmjs.org/feather-icons-react/-/feather-icons-react-0.6.2.tgz"
+  "version" "0.6.2"
+
 "file-entry-cache@^6.0.1":
   "integrity" "sha512-7Gps/XWymbLk2QLYK4NzpMOrYjMhdIxXuIvy2QBsLE6ljuodKvdkWs/cpyJJ3CVIVpH0Oi1Hvg1ovbMzLdFBBg=="
   "resolved" "https://registry.npmjs.org/file-entry-cache/-/file-entry-cache-6.0.1.tgz"
@@ -1356,31 +1361,31 @@
   "resolved" "https://registry.npmjs.org/next-seo/-/next-seo-5.14.1.tgz"
   "version" "5.14.1"
 
-"next@^8.1.1-canary.54 || >=9.0.0", "next@13.0.3":
-  "integrity" "sha512-rFQeepcenRxKzeKlh1CsmEnxsJwhIERtbUjmYnKZyDInZsU06lvaGw5DT44rlNp1Rv2MT/e9vffZ8vK+ytwXHA=="
-  "resolved" "https://registry.npmjs.org/next/-/next-13.0.3.tgz"
-  "version" "13.0.3"
+"next@^8.1.1-canary.54 || >=9.0.0", "next@13.0.4":
+  "integrity" "sha512-4P0MvbjPCI1E/UPL1GrTXtYlgFnbBbY3JQ+AMY8jYE2SwyvCWctEJySoRjveznAHjrl6TIjuAJeB8u1c2StYUQ=="
+  "resolved" "https://registry.npmjs.org/next/-/next-13.0.4.tgz"
+  "version" "13.0.4"
   dependencies:
-    "@next/env" "13.0.3"
+    "@next/env" "13.0.4"
     "@swc/helpers" "0.4.11"
     "caniuse-lite" "^1.0.30001406"
     "postcss" "8.4.14"
     "styled-jsx" "5.1.0"
     "use-sync-external-store" "1.2.0"
   optionalDependencies:
-    "@next/swc-android-arm-eabi" "13.0.3"
-    "@next/swc-android-arm64" "13.0.3"
-    "@next/swc-darwin-arm64" "13.0.3"
-    "@next/swc-darwin-x64" "13.0.3"
-    "@next/swc-freebsd-x64" "13.0.3"
-    "@next/swc-linux-arm-gnueabihf" "13.0.3"
-    "@next/swc-linux-arm64-gnu" "13.0.3"
-    "@next/swc-linux-arm64-musl" "13.0.3"
-    "@next/swc-linux-x64-gnu" "13.0.3"
-    "@next/swc-linux-x64-musl" "13.0.3"
-    "@next/swc-win32-arm64-msvc" "13.0.3"
-    "@next/swc-win32-ia32-msvc" "13.0.3"
-    "@next/swc-win32-x64-msvc" "13.0.3"
+    "@next/swc-android-arm-eabi" "13.0.4"
+    "@next/swc-android-arm64" "13.0.4"
+    "@next/swc-darwin-arm64" "13.0.4"
+    "@next/swc-darwin-x64" "13.0.4"
+    "@next/swc-freebsd-x64" "13.0.4"
+    "@next/swc-linux-arm-gnueabihf" "13.0.4"
+    "@next/swc-linux-arm64-gnu" "13.0.4"
+    "@next/swc-linux-arm64-musl" "13.0.4"
+    "@next/swc-linux-x64-gnu" "13.0.4"
+    "@next/swc-linux-x64-musl" "13.0.4"
+    "@next/swc-win32-arm64-msvc" "13.0.4"
+    "@next/swc-win32-ia32-msvc" "13.0.4"
+    "@next/swc-win32-x64-msvc" "13.0.4"
 
 "node-releases@^2.0.6":
   "integrity" "sha512-PiVXnNuFm5+iYkLBNeq5211hvO38y63T0i2KKh2KnUs3RpzJ+JtODFjkD8yjLwnDkTYF1eKXheUwdssR+NRZdg=="

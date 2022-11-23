@@ -31,6 +31,7 @@ interface IState {
 
 const BecomeAMember: React.FC<IProps> = () => {
   const [checkedError, setCheckedError] = React.useState(false);
+  const [success, setSuccess] = React.useState(false);
   const [state, dispatch] = useReducer<React.Reducer<IState, any>>(
     (state, action) => ({
       ...state,
@@ -140,6 +141,7 @@ const BecomeAMember: React.FC<IProps> = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setCheckedError(false);
+    setSuccess(false);
 
     if (!state.agree) {
       setCheckedError(true);
@@ -170,6 +172,7 @@ const BecomeAMember: React.FC<IProps> = () => {
       .then(
         (result) => {
           toast.success("Wij hebben uw aanvraag ontvangen!");
+          setSuccess(true);
           handleReset();
         },
         (error) => {
@@ -341,7 +344,7 @@ const BecomeAMember: React.FC<IProps> = () => {
                 algemene voorwaarden
               </Link>{" "}
               en{" "}
-              <Link href="#" target="_blank" className="underline">
+              <Link href="/privacy" target="_blank" className="underline">
                 privacybeleid
               </Link>
               <sup>*</sup>
@@ -351,6 +354,12 @@ const BecomeAMember: React.FC<IProps> = () => {
             <div className="text-red-500">
               Geef aan dat u de voorwaarden en het privacybeleid hebt gelezen en
               ermee akkoord gaat.
+            </div>
+          )}
+
+          {success && (
+            <div className="text-emerald-500">
+              Je inschrijving is succesvol verzonden!
             </div>
           )}
         </div>

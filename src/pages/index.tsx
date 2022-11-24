@@ -58,7 +58,7 @@ const Home = () => {
         <p className="text-white text-center mt-8 sm:mt-16 underline">
           <Link href="/terms-and-conditions">algemene voorwaarden</Link>
         </p>
-      </div>
+      </div> 
     </>
   );
 };

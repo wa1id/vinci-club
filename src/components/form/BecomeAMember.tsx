@@ -59,6 +59,14 @@ const BecomeAMember: React.FC<IProps> = () => {
           name: "Personal Training",
           checked: false,
         },
+        {
+          name: "Ladies only fitness",
+          checked: false,
+        },
+        {
+          name: "Ladies only kickboks",
+          checked: false,
+        },
       ],
       address: {
         street: "",
@@ -125,6 +133,14 @@ const BecomeAMember: React.FC<IProps> = () => {
         },
         {
           name: "Personal Training",
+          checked: false,
+        },
+        {
+          name: "Ladies only fitness",
+          checked: false,
+        },
+        {
+          name: "Ladies only kickboks",
           checked: false,
         },
       ],

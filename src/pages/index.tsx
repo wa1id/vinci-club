@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
@@ -114,5 +115,13 @@ const Home = () => {
     </>
   );
 };
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+}
 
 export default Home;

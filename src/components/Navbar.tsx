@@ -5,23 +5,26 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { Button } from "./Button/Button";
 import logo from "public/logo.svg";
-
-const navigationData = [
-  { id: 1, name: "De Club", href: "#", disabled: true },
-  {
-    id: 2,
-    name: "Personal Training",
-    href: "#",
-    disabled: true,
-  },
-  { id: 3, name: "Groepslessen", href: "#", disabled: true },
-  // { id: 4, name: "Abonnementen", href: "#", disabled: true },
-  // { id: 5, name: "Gezondheid", href: "#", disabled: true },
-  // { id: 6, name: "Ladies only", href: "#", disabled: true },
-  { id: 7, name: "Contact", href: "#", disabled: true },
-];
+import { useTranslation } from "next-i18next";
 
 export default function Navbar() {
+  const { t } = useTranslation("common");
+
+  const navigationData = [
+    { id: 1, name: t("The Club"), href: "#", disabled: true },
+    {
+      id: 2,
+      name: t("Personal Training"),
+      href: "#",
+      disabled: true,
+    },
+    { id: 3, name: t("Group lessons"), href: "#", disabled: true },
+    // { id: 4, name: "Abonnementen", href: "#", disabled: true },
+    // { id: 5, name: "Gezondheid", href: "#", disabled: true },
+    // { id: 6, name: "Ladies only", href: "#", disabled: true },
+    { id: 7, name: t("Contact"), href: "#", disabled: true },
+  ];
+
   return (
     <Popover className="relative bg-white z-50">
       <div className="px-4 sm:px-6">
@@ -51,7 +54,7 @@ export default function Navbar() {
           </Popover.Group>
           <div className="hidden items-center justify-end lg:flex lg:flex-1 lg:w-0">
             <Link href="/signup">
-              <Button variant="primary">Lid worden</Button>
+              <Button variant="primary">{t("Become member")}</Button>
             </Link>
           </div>
         </div>
@@ -78,7 +81,7 @@ export default function Navbar() {
                 </div>
                 <div className="-mr-2">
                   <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-light">
-                    <span className="sr-only">Close menu</span>
+                    <span className="sr-only">{t("Close menu")}</span>
                     <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                   </Popover.Button>
                 </div>
@@ -99,7 +102,7 @@ export default function Navbar() {
               <div>
                 <Link href="/signup">
                   <Button className="w-full text-center" variant="primary">
-                    Lid worden
+                    {t("Become member")}
                   </Button>
                 </Link>
               </div>

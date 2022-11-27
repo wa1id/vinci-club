@@ -1,7 +1,12 @@
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import {
+  ArrowUpRightIcon,
+  Bars3Icon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
 import Link from "next/link";
+import { Button } from "./Button/Button";
 
 const navigationData = [
   { id: 1, name: "De Club", href: "#", disabled: true },
@@ -12,9 +17,9 @@ const navigationData = [
     disabled: true,
   },
   { id: 3, name: "Groepslessen", href: "#", disabled: true },
-  { id: 4, name: "Abonnementen", href: "#", disabled: true },
-  { id: 5, name: "Gezondheid", href: "#", disabled: true },
-  { id: 6, name: "Ladies only", href: "#", disabled: true },
+  // { id: 4, name: "Abonnementen", href: "#", disabled: true },
+  // { id: 5, name: "Gezondheid", href: "#", disabled: true },
+  // { id: 6, name: "Ladies only", href: "#", disabled: true },
   { id: 7, name: "Contact", href: "#", disabled: true },
 ];
 
@@ -51,12 +56,13 @@ export default function Navbar() {
             ))}
           </Popover.Group>
           <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
-            <a
+            <Button variant="primary">Lid worden</Button>
+            {/* <a
               href="#"
               className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700"
             >
               Lid worden
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

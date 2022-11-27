@@ -52,7 +52,7 @@ const Home = () => {
                 een jaarabonnement.
               </p>
 
-              <Button variant="secondary" onClick={() => setIsOpen(true)}>
+              <Button variant="tertiary" onClick={() => setIsOpen(true)}>
                 Lid worden <ArrowUpRightIcon className="ml-3" width={20} />
               </Button>
 

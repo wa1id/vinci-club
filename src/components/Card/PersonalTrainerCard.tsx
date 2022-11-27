@@ -18,7 +18,7 @@ const PersonalTrainerCard = (props: Props) => {
   const [readMore, setReadMore] = useState(false);
 
   return (
-    <div className='w-80 h-full bg-white'>
+    <div className='w-full md:w-80 lg:w-96 h-full bg-white'>
       <div className='w-full h-80 overflow-hidden'>
         <Image
           src={image}
@@ -62,7 +62,7 @@ const PersonalTrainerCard = (props: Props) => {
             className='bg-primary-lighter text-black py-2 px-4 rounded-full flex items-center gap-2'
             onClick={() => setReadMore((prev) => !prev)}
           >
-            Read more
+            {readMore ? 'Read less' : 'Read more'}
             <BsChevronDown
               className={readMore ? 'transform rotate-180 ' : 'mt-1 '}
             />

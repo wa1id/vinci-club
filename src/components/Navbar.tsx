@@ -1,12 +1,10 @@
 import { Fragment } from "react";
+import Image from "next/image";
 import { Popover, Transition } from "@headlessui/react";
-import {
-  ArrowUpRightIcon,
-  Bars3Icon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { Button } from "./Button/Button";
+import logo from "public/logo.svg";
 
 const navigationData = [
   { id: 1, name: "De Club", href: "#", disabled: true },
@@ -26,43 +24,35 @@ const navigationData = [
 export default function Navbar() {
   return (
     <Popover className="relative bg-white z-50">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="flex items-center justify-between border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+      <div className="px-4 sm:px-6">
+        <div className="flex items-center justify-between border-b-2 border-gray-100 py-4 lg:justify-start lg:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            <a href="#">
-              <span className="sr-only">Your Company</span>
-              <img
-                className="h-8 w-auto sm:h-10"
-                src="https://tailwindui.com/img/logos/mark.svg?color=red&shade=600"
-                alt=""
-              />
-            </a>
+            <Link href="/">
+              <span className="sr-only">Vinci Club</span>
+              <Image style={{ maxWidth: "250px" }} src={logo} alt="logo" />
+            </Link>
           </div>
-          <div className="-my-2 -mr-2 md:hidden">
-            <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-500">
+          <div className="-my-2 -mr-2 lg:hidden">
+            <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-light">
               <span className="sr-only">Open menu</span>
               <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </Popover.Button>
           </div>
-          <Popover.Group as="nav" className="hidden space-x-10 md:flex">
+          <Popover.Group as="nav" className="hidden space-x-10 lg:flex">
             {navigationData.map((item) => (
               <Link
                 key={item.id}
                 href={item.href}
-                className="text-base font-medium text-gray-500 hover:text-gray-900"
+                className="text-primary hover:text-gray-400 transition-colors duration-200 ease-in-out"
               >
                 {item.name}
               </Link>
             ))}
           </Popover.Group>
-          <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
-            <Button variant="primary">Lid worden</Button>
-            {/* <a
-              href="#"
-              className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700"
-            >
-              Lid worden
-            </a> */}
+          <div className="hidden items-center justify-end lg:flex lg:flex-1 lg:w-0">
+            <Link href="/signup">
+              <Button variant="primary">Lid worden</Button>
+            </Link>
           </div>
         </div>
       </div>
@@ -78,20 +68,16 @@ export default function Navbar() {
       >
         <Popover.Panel
           focus
-          className="absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden"
+          className="absolute inset-x-0 top-0 origin-top-right transform p-2 transition lg:hidden"
         >
           <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
             <div className="px-5 pt-5 pb-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <img
-                    className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=red&shade=600"
-                    alt="Your Company"
-                  />
+                  <Image style={{ maxWidth: "150px" }} src={logo} alt="logo" />
                 </div>
                 <div className="-mr-2">
-                  <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-500">
+                  <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-light">
                     <span className="sr-only">Close menu</span>
                     <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                   </Popover.Button>
@@ -111,12 +97,11 @@ export default function Navbar() {
                 ))}
               </div>
               <div>
-                <a
-                  href="#"
-                  className="flex w-full items-center justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700"
-                >
-                  Lid worden
-                </a>
+                <Link href="/signup">
+                  <Button className="w-full text-center" variant="primary">
+                    Lid worden
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

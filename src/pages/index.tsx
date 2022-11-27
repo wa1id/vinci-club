@@ -9,9 +9,7 @@ import { Countdown } from "src/components/Countdown/Countdown";
 import hero3 from "public/hero-3.png";
 import hero2 from "public/hero-2.png";
 import hero1 from "public/hero-1.png";
-import logowhite from "public/logo-white.png";
 import { Button } from "src/components/Button/Button";
-import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
 import { SocialFollows } from "src/components/SocialFollows/SocialFollows";
 import { SideTextStroke } from "src/components/SideTextStroke";
 
@@ -26,13 +24,6 @@ const Home = () => {
       <div className="bg-primary bg-noise h-full text-white">
         <div className="bg-lines p-4">
           <div className="flex flex-col p-8 2xl:p-16">
-            <div className="flex items-center justify-center mb-16">
-              <Image
-                className="max-w-xs lg:max-w-lg 2xl:max-w-3xl"
-                src={logowhite}
-                alt="logo vinci club"
-              />
-            </div>
             <Countdown />
           </div>
 
@@ -53,7 +44,7 @@ const Home = () => {
               </p>
 
               <Button variant="tertiary" onClick={() => setIsOpen(true)}>
-                Lid worden <ArrowUpRightIcon className="ml-3" width={20} />
+                Lid worden
               </Button>
 
               <SocialFollows label="Follow us" />

@@ -1,0 +1,33 @@
+import React from 'react';
+
+interface Props {
+  aboveHeading: string;
+  belowHeading: string;
+  headingClassName?: string;
+  lineClassName?: string;
+}
+
+const Heading: React.FC<Props> = (props) => {
+  const { aboveHeading, belowHeading, headingClassName, lineClassName } = props;
+
+  return (
+    <div>
+      <h2
+        className={`uppercase text-4xl md:text-6xl lg:text-7xl font-drukwide ${headingClassName}`}
+      >
+        {aboveHeading} <br />
+        <span className='relative z-10'>
+          <span className=' [text-shadow:_0px_3px_0px_rgb(0_0_0_/_19%)]'>
+            {belowHeading}
+          </span>
+          <span
+            className={`${lineClassName} h-4 md:h-8 w-full absolute bottom-2 -right-2 bg-opacity-90
+                z-[-1]`}
+          />
+        </span>
+      </h2>
+    </div>
+  );
+};
+
+export default Heading;

@@ -2,11 +2,12 @@ import React from 'react';
 import BarBellImg from 'public/barbell-1.png';
 import Image from 'next/image';
 import Heading from '../Heading/Heading';
-
+import data from 'src/data/plans';
+import ChooseYourPlanCard from '../Card/ChooseYourPlanCard';
 
 const ChooseYourPlan = () => {
   return (
-    <div className='bg-plan p-16 w-full '>
+    <div className='bg-plan py-16 p-4 md:p-16 w-full '>
       <div className=' w-full flex justify-center flex-col md:flex-row lg:px-24'>
         <div className='h-full '>
           <Image
@@ -28,6 +29,11 @@ const ChooseYourPlan = () => {
             bodybuilding or yoga.
           </p>
         </div>
+      </div>
+      <div className='flex flex-wrap gap-5 justify-center items-center p-6'>
+        {data.map((item) => (
+          <ChooseYourPlanCard key={item.id} {...item}/>
+        ))}
       </div>
     </div>
   );

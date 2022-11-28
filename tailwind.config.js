@@ -38,6 +38,6 @@ module.exports = {
         DEFAULT: "#BDD3E3",
       },
     },
-    plugins: [],
   },
+  plugins: [require("@tailwindcss/forms")],
 };

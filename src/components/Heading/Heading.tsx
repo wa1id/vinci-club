@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 
 interface Props {
   aboveHeading: string;
@@ -7,13 +8,19 @@ interface Props {
   lineClassName?: string;
 }
 
-const Heading: React.FC<Props> = (props) => {
-  const { aboveHeading, belowHeading, headingClassName, lineClassName } = props;
-
+const Heading: React.FC<Props> = ({
+  aboveHeading,
+  belowHeading,
+  headingClassName,
+  lineClassName,
+}) => {
   return (
     <div>
       <h2
-        className={`uppercase text-4xl md:text-6xl lg:text-7xl font-drukwide ${headingClassName}`}
+        className={classNames(
+          'uppercase text-4xl md:text-6xl lg:text-7xl font-drukwide',
+          headingClassName
+        )}
       >
         {aboveHeading} <br />
         <span className='relative z-10'>
@@ -21,8 +28,10 @@ const Heading: React.FC<Props> = (props) => {
             {belowHeading}
           </span>
           <span
-            className={`${lineClassName} h-4 md:h-8 w-full absolute bottom-2 -right-2 bg-opacity-90
-                z-[-1]`}
+            className={classNames(
+              'h-4 md:h-8 w-full absolute bottom-2 -right-2 bg-opacity-90 z-[-1]',
+              lineClassName
+            )}
           />
         </span>
       </h2>

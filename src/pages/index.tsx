@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
@@ -12,6 +13,7 @@ import hero1 from "public/hero-1.png";
 import { Button } from "src/components/Button/Button";
 import { SocialFollows } from "src/components/SocialFollows/SocialFollows";
 import { SideTextStroke } from "src/components/SideTextStroke";
+import Footer from "src/components/Footer/Footer";
 import PersonalTrainers from "src/components/PersonalTrainers/PersonalTrainers";
 
 const Home = () => {
@@ -112,9 +114,19 @@ const Home = () => {
           </div>
         </Dialog>
       </Transition>
+
       <PersonalTrainers />
+      <Footer />
     </>
   );
 };
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+}
 
 export default Home;

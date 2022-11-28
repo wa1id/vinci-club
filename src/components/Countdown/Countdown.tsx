@@ -2,8 +2,10 @@ import { CountdownItem } from "./CountdownItem";
 import { CountdownSeparator } from "./CountdownSeparator";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useTranslation } from "next-i18next";
 
 export const Countdown = () => {
+  const { t } = useTranslation("common");
   const [partyTime, setPartyTime] = useState(false);
   const [days, setDays] = useState(0);
   const [hours, setHours] = useState(0);
@@ -53,15 +55,15 @@ export const Countdown = () => {
       </div>
       <div className="flex justify-center font-drukwide text-primary-light">
         <div className="grid grid-cols-2 gap-6 sm:gap-0 sm:flex text-3xl">
-          <CountdownItem number={days} label="DAY" />
+          <CountdownItem number={days} label={t("Day")} />
           <CountdownSeparator />
-          <CountdownItem number={hours} label="HRS" />
+          <CountdownItem number={hours} label={t("Hrs")} />
 
           <CountdownSeparator />
 
-          <CountdownItem number={minutes} label="MIN" />
+          <CountdownItem number={minutes} label={t("Min")} />
           <CountdownSeparator />
-          <CountdownItem number={seconds} label="SEC" />
+          <CountdownItem number={seconds} label={t("Sec")} />
         </div>
       </div>
 

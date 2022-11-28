@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
+import { appWithTranslation } from "next-i18next";
 import { Layout } from "src/components/Layout";
 import { Outfit } from "@next/font/google";
 import { ToastContainer } from "react-toastify";
@@ -13,7 +14,7 @@ import { useEffect } from "react";
 
 const outfit = Outfit({ subsets: ["latin"] });
 
-export default function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   const handleAcceptCookie = () => {
     initGA("G-1P286E2MXV");
   };
@@ -79,3 +80,5 @@ export default function App({ Component, pageProps }: AppProps) {
     </>
   );
 }
+
+export default appWithTranslation(App);

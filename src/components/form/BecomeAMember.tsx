@@ -1,11 +1,6 @@
 import React, { useReducer } from "react";
 import Link from "next/link";
 import emailjs from "@emailjs/browser";
-import {
-  USER_EMAILJS_PUBLIC_KEY,
-  USER_EMAILJS_SERVICE_ID,
-  USER_EMAILJS_TEMPLATE_ID,
-} from "src/constants";
 import { toast } from "react-toastify";
 import { Button } from "../Button/Button";
 
@@ -182,10 +177,10 @@ const BecomeAMember: React.FC<IProps> = () => {
     // send mail to user
     emailjs
       .send(
-        USER_EMAILJS_SERVICE_ID as string,
-        USER_EMAILJS_TEMPLATE_ID as string,
+        process.env.USER_EMAILJS_SERVICE_ID as string,
+        process.env.USER_EMAILJS_TEMPLATE_ID as string,
         templateParams,
-        USER_EMAILJS_PUBLIC_KEY as string
+        process.env.USER_EMAILJS_PUBLIC_KEY as string
       )
       .then(
         (result) => {

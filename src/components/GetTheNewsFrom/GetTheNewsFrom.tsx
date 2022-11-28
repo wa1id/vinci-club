@@ -25,7 +25,7 @@ const GetTheNewsFrom = () => {
           <h3
             className=' [text-shadow:_0px_13px_1px_rgb(0_0_0_/_0.4%)] uppercase text-4xl md:text-5xl lg:text-6xl font-drukwide'
             style={{
-              WebkitTextStroke: '1px ##1D1D1D',
+              WebkitTextStroke: '1px #1D1D1D',
               WebkitTextFillColor: 'transparent',
             }}
           >
@@ -39,7 +39,7 @@ const GetTheNewsFrom = () => {
             <input
               type='text'
               placeholder='Enter your email'
-              className='border-2 p-4 rounded-md w-full md:max-w-[528px] border-primary bg-transparent text-primary focus:outline-none placeholder:text-primary'
+              className={'get-the-news-from-email-input'}
             />
             <button className='bg-primary text-white p-4 rounded-full ml-4 flex items-center justify-center gap-2 uppercase max-w-[300px]'>
               Subscribe <FiArrowUpRight className='mt-1' />

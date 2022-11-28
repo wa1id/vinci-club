@@ -2,6 +2,7 @@ import PersonalTrainer1Img from 'public/pt-1.png';
 import PersonalTrainer2Img from 'public/pt-2.png';
 import PersonalTrainer3Img from 'public/pt-3.png';
 
+{/* TODO: i18 */ }
 const data = [
   {
     id: 1,

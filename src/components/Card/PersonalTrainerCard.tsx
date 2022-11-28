@@ -67,6 +67,7 @@ const PersonalTrainerCard: React.FC<Props> = ({
               href='/personal-trainer'
               className='bg-primary-lighter text-black py-2 px-4 rounded-full flex items-center gap-2 '
             >
+              {/* TODO: i18 */}
               Read more
               <BsChevronDown />
             </Link>

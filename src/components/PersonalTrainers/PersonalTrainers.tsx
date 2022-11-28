@@ -8,6 +8,7 @@ const PersonalTrainers = () => {
     <div className='bg-black w-full flex flex-col items-center py-16 p-4 md:p-20 '>
       <div className='max-w-7xl'>
         <div className='w-full gap-5 flex items-center justify-center  lg:justify-between flex-wrap lg:flex-nowrap'>
+          {/* TODO: i18 */}
           <Heading
             aboveHeading='Personal '
             belowHeading='Trainers'
@@ -16,6 +17,7 @@ const PersonalTrainers = () => {
           />
           <div className='flex items-center justify-center lg:justify-end w-full'>
             <p className='text-white text-center w-full md:w-96'>
+              {/* TODO: i18 */}
               Its ultimate aim is to help individuals and businesses in the
               coaching industry promote their speeches, services, and
               consultancies to the world easier.

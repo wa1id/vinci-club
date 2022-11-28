@@ -2,6 +2,7 @@ import React from "react";
 import { TiTick } from "react-icons/ti";
 import InfoWithIcon from "../Info/InfoWithIcon";
 import { FiArrowUpRight } from "react-icons/fi";
+import { Button } from "../Button/Button";
 
 export interface IChooseYourPlanCardProps {
   id?: number;
@@ -50,7 +51,7 @@ const ChooseYourPlanCard: React.FC<IChooseYourPlanCardProps> = ({
         ))}
       </div>
 
-      <button className="border-primary border-2 hover:bg-[#BDD3E3] text-primary flex items-center justify-center gap-2 px-12 py-4 rounded-full my-6 mx-auto text-[22px] uppercase transition-colors ease-in-out duration-200">
+      <button className="border-primary border-2 hover:bg-secondary text-primary flex items-center justify-center gap-2 px-12 py-4 rounded-full my-6 mx-auto text-[22px] uppercase transition-colors ease-in-out duration-200">
         {/* TODO: i18 */}
         Choose <FiArrowUpRight />
       </button>

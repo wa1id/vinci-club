@@ -18,7 +18,7 @@ const Heading: React.FC<Props> = ({
     <div>
       <h2
         className={classNames(
-          'uppercase text-4xl md:text-6xl lg:text-7xl font-drukwide',
+          'uppercase text-4xl md:text-5xl lg:text-6xl font-drukwide',
           headingClassName
         )}
       >

@@ -14,6 +14,7 @@ import { Button } from "src/components/Button/Button";
 import { SocialFollows } from "src/components/SocialFollows/SocialFollows";
 import { SideTextStroke } from "src/components/SideTextStroke";
 import ChooseYourPlan from "src/components/ChooseYourPlan/ChooseYourPlan";
+import GetTheNewsFrom from "src/components/GetTheNewsFrom/GetTheNewsFrom";
 
 const Home = () => {
   let [isOpen, setIsOpen] = useState(false);
@@ -114,6 +115,7 @@ const Home = () => {
         </Dialog>
       </Transition>
       <ChooseYourPlan />
+      <GetTheNewsFrom />
     </>
   );
 };

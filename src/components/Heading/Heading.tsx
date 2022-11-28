@@ -29,7 +29,7 @@ const Heading: React.FC<Props> = ({
           </span>
           <span
             className={classNames(
-              'h-4 md:h-8 w-full absolute bottom-2 -right-2 bg-opacity-90 z-[-1]',
+              'h-4 md:h-8 w-full absolute bottom-2 -right-1 bg-opacity-90 z-[-1]',
               lineClassName
             )}
           />

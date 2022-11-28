@@ -3,7 +3,6 @@ import { TiTick } from 'react-icons/ti';
 import InfoWithIcon from '../Info/InfoWithIcon';
 import { FiArrowUpRight } from 'react-icons/fi';
 
-
 interface Props {
   name: string;
   price: number;

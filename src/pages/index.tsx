@@ -14,6 +14,7 @@ import { Button } from "src/components/Button/Button";
 import { SocialFollows } from "src/components/SocialFollows/SocialFollows";
 import { SideTextStroke } from "src/components/SideTextStroke";
 import Footer from "src/components/Footer/Footer";
+import ChooseYourPlan from "src/components/ChooseYourPlan/ChooseYourPlan";
 
 const Home = () => {
   let [isOpen, setIsOpen] = useState(false);
@@ -113,7 +114,7 @@ const Home = () => {
           </div>
         </Dialog>
       </Transition>
-
+      <ChooseYourPlan />
       <Footer />
     </>
   );

@@ -12,6 +12,7 @@ module.exports = {
       backgroundImage: {
         noise: "url('/noise.png')",
         lines: "url('/line art.png')",
+        plan: "url('/bg-plan.png')",
       },
       fontFamily: {
         drukwide: ["DrukWide"],

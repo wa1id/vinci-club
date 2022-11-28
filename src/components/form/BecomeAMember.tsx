@@ -29,6 +29,8 @@ interface IState {
   agree: boolean;
 }
 
+// TODO: i18
+
 const BecomeAMember: React.FC<IProps> = () => {
   const [checkedError, setCheckedError] = React.useState(false);
   const [success, setSuccess] = React.useState(false);
@@ -198,7 +200,7 @@ const BecomeAMember: React.FC<IProps> = () => {
   };
 
   return (
-    <div className="overflow-hidden py-4">
+    <div className="overflow-hidden p-5">
       <form onSubmit={handleSubmit} className="grid gap-5">
         <div className="grid grid-cols-2 gap-2">
           <div>
@@ -211,7 +213,6 @@ const BecomeAMember: React.FC<IProps> = () => {
               id="firstName"
               value={state.firstName}
               onChange={handleChange}
-              className="block w-full flex-1 rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-1 px-4"
               required
             />
           </div>
@@ -225,7 +226,6 @@ const BecomeAMember: React.FC<IProps> = () => {
               id="lastName"
               value={state.lastName}
               onChange={handleChange}
-              className="block w-full flex-1 rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-1 px-4"
               required
             />
           </div>
@@ -241,7 +241,6 @@ const BecomeAMember: React.FC<IProps> = () => {
             id="email"
             value={state.email}
             onChange={handleChange}
-            className="block w-full flex-1 rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-1 px-4"
             required
           />
         </div>
@@ -256,7 +255,6 @@ const BecomeAMember: React.FC<IProps> = () => {
             id="telephone"
             value={state.telephone}
             onChange={handleChange}
-            className="block w-full flex-1 rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-1 px-4"
             required
           />
         </div>
@@ -274,7 +272,6 @@ const BecomeAMember: React.FC<IProps> = () => {
                 value={item.name}
                 checked={item.checked}
                 onChange={(e) => handleInterestedIn(e, index)}
-                className="block rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-1 px-4 "
               />
               <label htmlFor={item.name}>{item.name}</label>
             </div>
@@ -292,7 +289,6 @@ const BecomeAMember: React.FC<IProps> = () => {
               id="street"
               value={state.address.street}
               onChange={handleAddress}
-              className="block w-full flex-1 rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-1 px-4"
               placeholder="Straat + huisnummer"
               required
             />
@@ -306,7 +302,6 @@ const BecomeAMember: React.FC<IProps> = () => {
                 id="city"
                 value={state.address.city}
                 onChange={handleAddress}
-                className="block w-full flex-1 rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-1 px-4"
                 placeholder="Gemeente"
                 required
               />
@@ -318,7 +313,6 @@ const BecomeAMember: React.FC<IProps> = () => {
                 id="zip"
                 value={state.address.zip}
                 onChange={handleAddress}
-                className="block w-full flex-1 rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-1 px-4"
                 placeholder="Postcode"
                 required
               />
@@ -336,7 +330,6 @@ const BecomeAMember: React.FC<IProps> = () => {
             id="referenceClub"
             value={state.referenceClub}
             onChange={handleChange}
-            className="block w-full flex-1 rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-1 px-4 mt-2"
           />
         </div>
 
@@ -348,7 +341,6 @@ const BecomeAMember: React.FC<IProps> = () => {
               id="agree"
               checked={state.agree}
               onChange={handleAgree}
-              className="block rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-1 px-4 "
             />
             <label htmlFor={"agree"} className="agree">
               Ik ga akkoord met de{" "}

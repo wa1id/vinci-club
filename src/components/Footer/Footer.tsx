@@ -1,9 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { AiOutlineTwitter, AiOutlineInstagram } from 'react-icons/ai';
-import { FaFacebookF } from 'react-icons/fa';
 import logo from 'public/light-logo.svg';
+import { SocialFollows } from '../SocialFollows/SocialFollows';
 
 const Footer = () => {
   return (
@@ -12,33 +11,17 @@ const Footer = () => {
         <div className='flex flex-col gap-5 text-center md:text-left w-full'>
           <h3 className='text-xl font-bold'>CONTACT</h3>
           <div className='flex flex-col gap-3 my-4'>
-            <p className='text-base'>Fax: 07 3193 7738</p>
-            <p className='text-base'>Phone: 07 31937739</p>
-            <p className='text-base'>Email: admin@vinciclub.com</p>
+            <p className='text-base flex items-center gap-2'>
+              <span>Phone:</span>
+              <a href='tel:07 31937739 '>07 31937739</a>
+            </p>
+            <p className='text-base flex items-center gap-2'>
+              <span>Email:</span>
+              <a href='mailto:admin@vinciclub.com'>admin@vinciclub.com</a>
+            </p>
           </div>
           <div className='flex items-center justify-center md:justify-start gap-5'>
-            <a
-              href='#'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <AiOutlineTwitter size={24} />
-            </a>
-            <a
-              href='#'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <AiOutlineInstagram size={24} />
-            </a>
-
-            <a
-              href='#'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <FaFacebookF size={20} />
-            </a>
+            <SocialFollows />
           </div>
         </div>
 
@@ -82,10 +65,10 @@ const Footer = () => {
               href='#'
               className='text-sm'
             >
-              &copy; vinciclub
+              &copy; Vinci Club
             </Link>
             <Link
-              href='#'
+              href='/privacy'
               className='text-sm'
             >
               Privacy Policy

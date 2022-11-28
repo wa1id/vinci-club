@@ -1,7 +1,5 @@
 import { FC } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import chevron from "public/chevron.png";
 
 interface Props {
   label?: string;

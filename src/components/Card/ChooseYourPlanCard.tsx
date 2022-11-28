@@ -2,7 +2,6 @@ import React from "react";
 import { TiTick } from "react-icons/ti";
 import InfoWithIcon from "../Info/InfoWithIcon";
 import { FiArrowUpRight } from "react-icons/fi";
-import { Button } from "../Button/Button";
 
 export interface IChooseYourPlanCardProps {
   id?: number;

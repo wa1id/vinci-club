@@ -23,12 +23,14 @@ const ChooseYourPlanCard: React.FC<Props> = (props) => {
         <span>
           €{price}{' '}
           <span className='font-normal text-xl'>
+            {/* TODO: i18 */}
             /per month
             <sup>*</sup>
           </span>
         </span>
         {isSuitable && (
           <small className='text-[15px]'>
+            {/* TODO: i18 */}
             This plan is suitable for newbies
           </small>
         )}
@@ -44,6 +46,7 @@ const ChooseYourPlanCard: React.FC<Props> = (props) => {
       </div>
 
       <button className='border-primary border-2 hover:bg-[#BDD3E3] text-primary flex items-center justify-center gap-2 px-12 py-4 rounded-full my-6 mx-auto text-[22px] uppercase'>
+        {/* TODO: i18 */}
         Choose <FiArrowUpRight />
       </button>
     </div>

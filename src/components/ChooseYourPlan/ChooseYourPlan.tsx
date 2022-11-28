@@ -18,6 +18,7 @@ const ChooseYourPlan = () => {
           />
         </div>
         <div className='flex-1 text-center w-full '>
+          {/* TODO: i18 */}
           <Heading
             aboveHeading='Choose '
             belowHeading='your plan'
@@ -25,6 +26,7 @@ const ChooseYourPlan = () => {
             lineClassName='bg-secondary'
           />
           <p className='text-lg max-w-3xl m-auto font-normal mt-6'>
+            {/* TODO: i18 */}
             Gym fitness dedicated, for a training center or personal trainer,
             suitable to work with sport related websites such as crossfit,
             bodybuilding or yoga.

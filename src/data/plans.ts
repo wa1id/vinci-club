@@ -1,3 +1,5 @@
+{/* TODO: i18 */ }
+
 const data = [
   {
     id: 1,

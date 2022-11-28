@@ -6,11 +6,11 @@ import { SocialFollows } from '../SocialFollows/SocialFollows';
 
 const Footer = () => {
   return (
-    <footer className='bg-black text-white text-center text-xs p-4 py-8 w-full md:p-24'>
+    <footer className='bg-primary bg-noise text-white text-center text-xs p-4 py-8 w-full md:p-24'>
       <section className='p-4 w-full text-white gap-6 grid md:grid-cols-2 lg:grid-cols-3'>
         <div className='flex flex-col gap-5 text-center md:text-left w-full'>
           <h3 className='text-xl font-bold'>CONTACT</h3>
-          <div className='flex flex-col gap-3 my-4'>
+          <div className='flex flex-col items-center md:items-start gap-3 my-4'>
             <p className='text-base flex items-center gap-2'>
               <span>Phone:</span>
               <a href='tel:07 31937739 '>07 31937739</a>
@@ -27,19 +27,12 @@ const Footer = () => {
 
         <div className='text-center w-full my-6 md:m-0'>
           <h3 className='text-xl font-bold'>WORKING HOURS</h3>
-          <div className='flex items-center justify-center gap-5 my-4 bg-[#232323BF] p-4 rounded-full'>
-            <p className='text-left text-lg flex flex-col gap-2'>
-              <span>Monday - Friday : </span>
-              <span>07:00 - 21:00</span>
-            </p>
-            <p className='text-left text-lg flex flex-col gap-2'>
-              <span>Saturday : </span>
-              <span>07:00 - 16:00</span>
+          <div className='flex flex-col items-center gap-5 my-4 py-4 lg:p-4 rounded-full'>
+            <p className='text-left text-lg'>Monday - Friday : 07:00 - 21:00</p>
+            <p className='text-left text-lg'>
+              Saturday - Sunday: 07:00 - 15:00
             </p>
           </div>
-          <p className='text-lg flex flex-col gap-2'>
-            <span>Sunday Closed</span>
-          </p>
         </div>
 
         <div className='flex flex-col gap-5 w-full md:text-left lg:text-right'>

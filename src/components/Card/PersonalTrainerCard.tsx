@@ -19,7 +19,7 @@ const PersonalTrainerCard: React.FC<Props> = ({
   description,
 }) => {
   return (
-    <div className='w-full md:w-80 lg:w-96 h-full bg-white'>
+    <div className='w-full max-w-sm lg:w-96 h-full bg-white'>
       <div className='w-full h-80 overflow-hidden'>
         <Image
           src={image}

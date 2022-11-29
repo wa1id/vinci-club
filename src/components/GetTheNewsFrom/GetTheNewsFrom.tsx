@@ -16,6 +16,7 @@ const GetTheNewsFrom = () => {
             alt='dumbell'
             className='max-w-[156px] hidden lg:block absolute top-0 left-0  -translate-x-16 -translate-y-24 xl:-translate-x-20 md:-translate-y-28'
           />
+          {/* TODO: i18 */}
           <Heading
             aboveHeading='Get the'
             belowHeading='news from'
@@ -29,9 +30,11 @@ const GetTheNewsFrom = () => {
               WebkitTextFillColor: 'transparent',
             }}
           >
+            {/* TODO: i18 */}
             VINCI CLUB
           </h3>
           <p className='text-primary font-normal m-auto text-xl mt-4 md:max-w-[308px]'>
+            {/* TODO: i18 */}
             Stay up to date with recent news, advice and weekly offers
           </p>
 
@@ -42,6 +45,7 @@ const GetTheNewsFrom = () => {
               className={'get-the-news-from-email-input'}
             />
             <button className='bg-primary text-white p-4 rounded-full ml-4 flex items-center justify-center gap-2 uppercase max-w-[300px]'>
+              {/* TODO: i18 */}
               Subscribe <FiArrowUpRight className='mt-1' />
             </button>
           </div>

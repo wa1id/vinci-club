@@ -95,17 +95,19 @@ const Home = () => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="mx-auto w-full max-w-xl bg-white p-5 transform">
-                  <Dialog.Title className="text-3xl font-bold text-gray-900 uppercase my-4">
-                    Lid worden
-                  </Dialog.Title>
-                  <Dialog.Description>
-                    Als je het Inschrijvingsformulier invult doorheen de maand
-                    december en tijdens onze opendeurweek jouw inschrijving komt
-                    vervolledigen dan kan jij genieten van de eerste maand
-                    gratis sporten. Geldig op alle abonnementen mits er wordt
-                    gekozen voor een jaarabonnement.
-                  </Dialog.Description>
+                <Dialog.Panel className="mx-auto w-full max-w-xl bg-white transform">
+                  <div className="px-5">
+                    <Dialog.Title className="text-3xl font-bold text-gray-900 uppercase my-4">
+                      Lid worden
+                    </Dialog.Title>
+                    <Dialog.Description>
+                      Als je het Inschrijvingsformulier invult doorheen de maand
+                      december en tijdens onze opendeurweek jouw inschrijving
+                      komt vervolledigen dan kan jij genieten van de eerste
+                      maand gratis sporten. Geldig op alle abonnementen mits er
+                      wordt gekozen voor een jaarabonnement.
+                    </Dialog.Description>
+                  </div>
 
                   <BecomeAMember />
                 </Dialog.Panel>

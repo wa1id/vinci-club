@@ -23,6 +23,7 @@ const GetTheNewsFrom = () => {
     axios
       .post('/api/subscribe', { email })
       .then((res) => {
+        // TODO: i18
         toast.success(`You have successfully subscribed to our newsletter`);
         setEmail('');
       })

@@ -15,7 +15,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       status: 'subscribed',
   }, {
     headers: {
-      Authorization: 'auth ca41313ee7983f687c4c6b2e2f1995ca-us14',
+      Authorization: `auth ${process.env.MAILCHIMP_API_KEY}`,
     }
   });
 

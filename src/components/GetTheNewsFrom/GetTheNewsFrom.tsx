@@ -9,7 +9,7 @@ import { FiArrowUpRight } from 'react-icons/fi';
 const GetTheNewsFrom = () => {
   return (
     <div className='py-16 p-4 md:p-20 lg:p-28 w-full bg-secondary'>
-      <div className='w-full flex justify-center flex-col-reverse md:flex-row  gap-5  items-center text-center'>
+      <div className='w-full flex justify-center flex-col-reverse lg:flex-row items-center text-center'>
         <div className='w-full h-full relative'>
           <Image
             src={GetTheNewsFromDumbell}
@@ -23,7 +23,7 @@ const GetTheNewsFrom = () => {
             headingClassName='text-primary '
             lineClassName='bg-white'
           />
-          <h3
+          <div
             className=' [text-shadow:_0px_13px_1px_rgb(0_0_0_/_0.4%)] uppercase text-4xl md:text-5xl lg:text-6xl font-drukwide'
             style={{
               WebkitTextStroke: '1px #1D1D1D',
@@ -32,7 +32,7 @@ const GetTheNewsFrom = () => {
           >
             {/* TODO: i18 */}
             VINCI CLUB
-          </h3>
+          </div>
           <p className='text-primary font-normal m-auto text-xl mt-4 md:max-w-[308px]'>
             {/* TODO: i18 */}
             Stay up to date with recent news, advice and weekly offers

@@ -1,12 +1,14 @@
 import React from 'react'
+import Address from 'src/components/Address/Address';
 import ContactForm from 'src/components/form/ContactForm';
 
 const Contact = () => {
   return (
-   <>
-    <ContactForm />
-   </>
+    <>
+      <Address />
+      <ContactForm />
+    </>
   );
 }
 
-export default Contact;
+export default Contact

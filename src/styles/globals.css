@@ -48,3 +48,10 @@ input[type="password"] {
   @apply border-2 p-4 rounded-md w-full md:max-w-[528px] border-primary bg-transparent text-primary focus:outline-none placeholder:text-primary !important;
 }
 
+.contact-form-input {
+  @apply border-2 p-4 rounded-md w-full md:max-w-[528px] border-primary bg-transparent text-primary focus:outline-none placeholder:text-primary focus:border-primary focus:ring-primary !important;
+}
+
+.contact-form-message-input {
+  @apply border-2 p-4 rounded-md w-full border-primary bg-transparent text-primary focus:outline-none placeholder:text-primary focus:border-primary focus:ring-primary !important;
+}

@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { NextApiRequest, NextApiResponse } from 'next';
 
-export default async (req, res) => {
+export default async (req: NextApiRequest, res: NextApiResponse) => {
   const { email } = req.body;
 
   if (!email) {
@@ -25,8 +26,7 @@ export default async (req, res) => {
     }
 
     return res.status(201).json({ error: '' });
-  } catch (error) {
-    console.log(error);
+  } catch (error:any) {
     return res.status(500).json({ error: error.message || error.toString() });
   }
 }

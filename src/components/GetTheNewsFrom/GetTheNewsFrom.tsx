@@ -20,27 +20,14 @@ const GetTheNewsFrom = () => {
       return;
     }
 
-    const options = {
-      method: 'POST',
-      url: `https://us14.api.mailchimp.com/3.0/lists/72aafb93a7/members`,
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: 'auth ca41313ee7983f687c4c6b2e2f1995ca-us14',
-      },
-      data: {
-        email_address: email,
-        status: 'subscribed',
-      },
-    };
-
     axios
-      .request(options)
-      .then(function (response) {
-        toast.success('You have successfully subscribed to our newsletter');
+      .post('/api/subscribe', { email })
+      .then((res) => {
+        toast.success(`You have successfully subscribed to our newsletter`);
+        setEmail('');
       })
-      .catch(function (error) {
-        console.error(error);
-        toast.error('Something went wrong, please try again');
+      .catch((err) => {
+        toast.error(err.response.data.error);
       });
   };
 

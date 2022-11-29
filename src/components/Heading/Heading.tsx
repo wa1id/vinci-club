@@ -17,7 +17,7 @@ const Heading: React.FC<Props> = ({
   return (
       <h2
         className={classNames(
-          'uppercase text-4xl md:text-6xl lg:text-7xl font-drukwide',
+          'uppercase text-4xl md:text-5xl lg:text-6xl font-drukwide',
           headingClassName
         )}
       >
@@ -28,7 +28,7 @@ const Heading: React.FC<Props> = ({
           </span>
           <span
             className={classNames(
-              'h-4 md:h-8 w-full absolute bottom-2 -right-2 bg-opacity-90 z-[-1]',
+              'h-4 md:h-8 w-full absolute bottom-2 -right-1 bg-opacity-90 z-[-1]',
               lineClassName
             )}
           />

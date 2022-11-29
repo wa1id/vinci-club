@@ -20,23 +20,17 @@ const GetTheNewsFrom = () => {
       return;
     }
 
-    const data = {
-      members: [
-        {
-          email_address: email,
-          status: 'subscribed',
-        },
-      ],
-    };
-
     const options = {
       method: 'POST',
-      url: `https://us1.api.mailchimp.com/3.0/lists/72aafb93a7`,
+      url: `https://us14.api.mailchimp.com/3.0/lists/72aafb93a7/members`,
       headers: {
         'Content-Type': 'application/json',
         Authorization: 'auth ca41313ee7983f687c4c6b2e2f1995ca-us14',
       },
-      data,
+      data: {
+        email_address: email,
+        status: 'subscribed',
+      },
     };
 
     axios

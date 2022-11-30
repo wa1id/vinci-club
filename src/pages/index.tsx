@@ -13,6 +13,9 @@ import hero1 from "public/hero-1.png";
 import { Button } from "src/components/Button/Button";
 import { SocialFollows } from "src/components/SocialFollows/SocialFollows";
 import { SideTextStroke } from "src/components/SideTextStroke";
+import ChooseYourPlan from "src/components/ChooseYourPlan/ChooseYourPlan";
+import PersonalTrainers from "src/components/PersonalTrainers/PersonalTrainers";
+import GetTheNewsFrom from "src/components/GetTheNewsFrom/GetTheNewsFrom";
 
 const Home = () => {
   let [isOpen, setIsOpen] = useState(false);
@@ -93,17 +96,19 @@ const Home = () => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="mx-auto w-full max-w-xl bg-white p-5 transform">
-                  <Dialog.Title className="text-3xl font-bold text-gray-900 uppercase my-4">
-                    Lid worden
-                  </Dialog.Title>
-                  <Dialog.Description>
-                    Als je het Inschrijvingsformulier invult doorheen de maand
-                    december en tijdens onze opendeurweek jouw inschrijving komt
-                    vervolledigen dan kan jij genieten van de eerste maand
-                    gratis sporten. Geldig op alle abonnementen mits er wordt
-                    gekozen voor een jaarabonnement.
-                  </Dialog.Description>
+                <Dialog.Panel className="mx-auto w-full max-w-xl bg-white transform">
+                  <div className="px-5">
+                    <Dialog.Title className="text-3xl font-bold text-gray-900 uppercase my-4">
+                      Lid worden
+                    </Dialog.Title>
+                    <Dialog.Description>
+                      Als je het Inschrijvingsformulier invult doorheen de maand
+                      december en tijdens onze opendeurweek jouw inschrijving
+                      komt vervolledigen dan kan jij genieten van de eerste
+                      maand gratis sporten. Geldig op alle abonnementen mits er
+                      wordt gekozen voor een jaarabonnement.
+                    </Dialog.Description>
+                  </div>
 
                   <BecomeAMember />
                 </Dialog.Panel>
@@ -112,6 +117,9 @@ const Home = () => {
           </div>
         </Dialog>
       </Transition>
+      <ChooseYourPlan />
+      <PersonalTrainers />
+      <GetTheNewsFrom />
     </>
   );
 };

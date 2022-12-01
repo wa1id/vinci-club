@@ -1,8 +1,8 @@
 // components/layout.js
 
 import { FC } from "react";
-import Footer from "./Footer/Footer";
-import Navbar from "./Navbar";
+// import Footer from "./Footer/Footer";
+// import Navbar from "./Navbar";
 
 interface Props {
   children: React.ReactNode;

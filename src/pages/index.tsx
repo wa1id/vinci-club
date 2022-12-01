@@ -16,8 +16,10 @@ import { SideTextStroke } from "src/components/SideTextStroke";
 import ChooseYourPlan from "src/components/ChooseYourPlan/ChooseYourPlan";
 import PersonalTrainers from "src/components/PersonalTrainers/PersonalTrainers";
 import GetTheNewsFrom from "src/components/GetTheNewsFrom/GetTheNewsFrom";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
+  const { t } = useTranslation("common");
   let [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -48,10 +50,10 @@ const Home = () => {
               </p>
 
               <Button variant="tertiary" onClick={() => setIsOpen(true)}>
-                Lid worden
+                {t("Become member")}
               </Button>
 
-              <SocialFollows label="Follow us" />
+              <SocialFollows label={t("Follow us")} />
             </div>
 
             <div className="relative w-4/5">

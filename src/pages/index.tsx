@@ -15,7 +15,6 @@ import { SocialFollows } from "src/components/SocialFollows/SocialFollows";
 import { SideTextStroke } from "src/components/SideTextStroke";
 import ChooseYourPlan from "src/components/ChooseYourPlan/ChooseYourPlan";
 import PersonalTrainers from "src/components/PersonalTrainers/PersonalTrainers";
-import GetTheNewsFrom from "src/components/GetTheNewsFrom/GetTheNewsFrom";
 import { useTranslation } from "react-i18next";
 
 const Home = () => {
@@ -72,10 +71,6 @@ const Home = () => {
               </div>
             </div>
           </div>
-
-          <p className="text-white text-center mt-8 sm:mt-16 underline">
-            <Link href="/terms-and-conditions">algemene voorwaarden</Link>
-          </p>
         </div>
         <SideTextStroke />
       </div>
@@ -119,9 +114,9 @@ const Home = () => {
           </div>
         </Dialog>
       </Transition>
-      <ChooseYourPlan />
-      <PersonalTrainers />
-      <GetTheNewsFrom />
+      {/* <ChooseYourPlan /> */}
+      {/* <PersonalTrainers /> */}
+      {/* <GetTheNewsFrom /> */}
     </>
   );
 };

@@ -338,15 +338,7 @@ const BecomeAMember: React.FC<IProps> = () => {
               onChange={handleAgree}
             />
             <label htmlFor={"agree"} className="agree">
-              Ik ga akkoord met de{" "}
-              <Link
-                href="/terms-and-conditions"
-                target="_blank"
-                className="underline"
-              >
-                algemene voorwaarden
-              </Link>{" "}
-              en{" "}
+              Ik ga akkoord met het{" "}
               <Link href="/privacy" target="_blank" className="underline">
                 privacybeleid
               </Link>
@@ -355,8 +347,8 @@ const BecomeAMember: React.FC<IProps> = () => {
           </div>
           {checkedError && (
             <div className="text-red-500">
-              Geef aan dat u de voorwaarden en het privacybeleid hebt gelezen en
-              ermee akkoord gaat.
+              Geef aan dat u het privacybeleid hebt gelezen en ermee akkoord
+              gaat.
             </div>
           )}
 

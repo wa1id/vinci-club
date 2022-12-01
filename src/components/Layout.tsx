@@ -11,9 +11,9 @@ interface Props {
 export const Layout: FC<Props> = ({ children }) => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <main>{children}</main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

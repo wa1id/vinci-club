@@ -2,13 +2,13 @@ import React from "react";
 import { TiTick } from "react-icons/ti";
 import InfoWithIcon from "../Info/InfoWithIcon";
 import { FiArrowUpRight } from "react-icons/fi";
+import { useTranslation } from "react-i18next";
 
 export interface IChooseYourPlanCardProps {
   id?: number;
   name: string;
   price: number;
   info: string[];
-  isSubtitle?: boolean;
   subtitle?: string;
 }
 
@@ -16,9 +16,10 @@ const ChooseYourPlanCard: React.FC<IChooseYourPlanCardProps> = ({
   name,
   price,
   info,
-  isSubtitle,
   subtitle,
 }) => {
+  const { t } = useTranslation("common");
+
   return (
     <div className="bg-plan rounded-lg border-primary border-2 max-w-sm w-full">
       <h3 className="font-bold text-3xl uppercase px-4 py-6 text-center">
@@ -28,14 +29,12 @@ const ChooseYourPlanCard: React.FC<IChooseYourPlanCardProps> = ({
         <>
           €{price}{" "}
           <span className="font-normal text-xl">
-            {/* TODO: i18 */}
-            /per month
+            {t("/per month")}
             <sup>*</sup>
           </span>
         </>
-        {isSubtitle && (
+        {subtitle && (
           <small className="text-[15px] font-normal flex items-center justify-center w-full absolute bottom-2">
-            {/* TODO: i18 */}
             {subtitle}
           </small>
         )}
@@ -51,8 +50,7 @@ const ChooseYourPlanCard: React.FC<IChooseYourPlanCardProps> = ({
       </div>
 
       <button className="border-primary border-2 hover:bg-secondary text-primary flex items-center justify-center gap-2 px-12 py-4 rounded-full my-6 mx-auto text-[22px] uppercase transition-colors ease-in-out duration-200">
-        {/* TODO: i18 */}
-        Choose <FiArrowUpRight />
+        {t("Sign up")} <FiArrowUpRight />
       </button>
     </div>
   );

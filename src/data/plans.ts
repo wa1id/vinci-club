@@ -1,4 +1,4 @@
-import { IChooseYourPlanCardProps } from 'src/components/Card/ChooseYourPlanCard';
+import { IChooseYourPlanCardProps } from "src/components/Card/ChooseYourPlanCard";
 
 {
   /* TODO: i18 */
@@ -7,46 +7,41 @@ import { IChooseYourPlanCardProps } from 'src/components/Card/ChooseYourPlanCard
 const data: IChooseYourPlanCardProps[] = [
   {
     id: 1,
-    name: 'bronze',
-    price: 19.9,
+    name: "bronze",
+    price: 19.95,
     info: [
-      '24/7 training in all studios',
-      'Courses live and with licensed trainers',
-      'Personal introductory training',
-      'Access to all training areas',
-      'FIT STAR audio guide',
-      'Weight training and fitness equipment',
-      'Free WiFi',
+      "Fitness",
+      "Optie...",
+      "Optie...",
+      "Optie...",
+      "Optie...",
+      "Optie...",
     ],
   },
   {
     id: 2,
-    name: 'silver',
-    price: 21.9,
+    name: "silver",
+    price: 19.95,
     info: [
-      '24/7 training in all studios',
-      'Courses live and with licensed trainers',
-      'Personal introductory training',
-      'Access to all training areas',
-      'FIT STAR audio guide',
-      'Weight training and fitness equipment',
-      'Free WiFi',
+      "Kickboks",
+      "Lessen...",
+      "Optie...",
+      "Optie...",
+      "Optie...",
+      "Optie...",
     ],
-    subtitle: 'This plan is suitable for newbies',
-    isSubtitle: true,
   },
   {
     id: 3,
-    name: 'gold',
-    price: 29.9,
+    name: "gold",
+    price: 29.95,
     info: [
-      '24/7 training in all studios',
-      'Courses live and with licensed trainers',
-      'Personal introductory training',
-      'Access to all training areas',
-      'FIT STAR audio guide',
-      'Weight training and fitness equipment',
-      'Free WiFi',
+      "Fitness",
+      "Kickboks",
+      "Optie...",
+      "Optie...",
+      "Optie...",
+      "Optie...",
     ],
   },
 ];

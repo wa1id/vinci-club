@@ -24,7 +24,7 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Vinci Club Deurne</title>
+        <title>Vinci Club - Fitness & Boxing</title>
       </Head>
       <div className="bg-primary bg-noise h-full text-white">
         <div className="bg-lines p-4">

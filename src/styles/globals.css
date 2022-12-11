@@ -59,3 +59,7 @@ input[type="password"] {
 .contact-form-message-input {
   @apply border-2 p-4 rounded-md w-full border-primary bg-transparent text-primary focus:outline-none placeholder:text-primary focus:border-primary focus:ring-primary !important;
 }
+
+a {
+  @apply text-primary hover:text-gray-400 transition-colors duration-200 ease-in-out;
+}

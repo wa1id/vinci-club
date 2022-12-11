@@ -6,20 +6,20 @@ import data from "src/data/plans";
 import ChooseYourPlanCard from "../Card/ChooseYourPlanCard";
 import BodyImg from "public/body.png";
 import { useTranslation } from "react-i18next";
+import Link from "next/link";
 
 const ChooseYourPlan = () => {
   const { t } = useTranslation("common");
 
   return (
-    <div className="bg-plan py-16 p-4 md:p-20 w-full ">
+    <div className="bg-plan py-16 p-4 relative">
+      <Image
+        src={BarBellImg}
+        alt="barbell"
+        className="hidden md:block absolute top-0 left-0 lg:left-10 scale-50 lg:scale-100"
+      />
+
       <div className=" w-full flex justify-center flex-col md:flex-row relative">
-        <div className="h-full ">
-          <Image
-            src={BarBellImg}
-            alt="barbell"
-            className="max-w-[156px] hidden md:block absolute md:-left-14 lg:-left-5 xl:left-24 -top-20 md:-top-18 lg:-top-16 xl:-top-14"
-          />
-        </div>
         <div className="flex-1 text-center w-full ">
           {/* TODO: i18 */}
           <Heading
@@ -33,14 +33,18 @@ const ChooseYourPlan = () => {
           </p>
         </div>
       </div>
-      <div className="flex flex-wrap gap-5 justify-center items-center p-6">
+      <div className="flex flex-col lg:flex-row lg:space-x-5 space-y-5 lg:space-y-0 items-center lg:items-stretch justify-center p-6">
         {data.map((item) => (
           <ChooseYourPlanCard key={item.id} {...item} />
         ))}
       </div>
-      <div className="text-center">
-        <sup>*</sup>
-        {t("yearplan")}
+      <div className="flex justify-center">
+        <div className="px-8 pt-4 pb-8 text-center">
+          <div className="font-bold uppercase text-xl">
+            Beurtenkaart of dagpas?
+          </div>
+          <Link href="/abonnementen">Bekijk hier alle informatie</Link>
+        </div>
       </div>
 
       <div className="flex justify-end items-center">
@@ -49,6 +53,11 @@ const ChooseYourPlan = () => {
           alt="body"
           className="max-w-[192px] hidden md:block  lg:-translate-x-40"
         />
+      </div>
+
+      <div className="text-center">
+        <sup>*</sup>
+        {t("yearplan")}
       </div>
     </div>
   );

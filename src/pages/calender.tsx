@@ -39,7 +39,9 @@ const Calender = () => {
           href='#'
           className='group absolute inset-1 flex flex-col overflow-y-auto rounded-lg bg-gray-100 p-2 text-xs leading-5 items-center justify-center hover:bg-indigo-700'
         >
-          <p className='order-1 font-semibold text-white'>{title}</p>
+          <p className='order-1 font-semibold text-gray-700 group-hover:text-white'>
+            {title}
+          </p>
           <p className='text-gray-500 group-hover:text-white'>
             <time dateTime={start}>{start}</time> -{' '}
             <time dateTime={end}>{end}</time>

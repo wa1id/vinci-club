@@ -5,6 +5,112 @@ import { Menu, Transition } from '@headlessui/react';
 import classNames from 'classnames';
 
 const Calender = () => {
+  /**
+   * Current schedule for calendar:
+      title: Kickboks
+      monday-friday
+      17:00 - 18:00 // 5 - 6
+      18:15 - 19:15 // 6:15 - 7:15
+        20:30 - 21:30
+   */
+
+  const EventItem = ({
+    title,
+    start,
+    end,
+    className,
+    style = { gridRow: '200 / span 22' },
+  }: {
+    title: string;
+    start: string;
+    end: string;
+    className?: string;
+    style?: React.CSSProperties;
+  }) => {
+    return (
+      <li
+        className={classNames(
+          className,
+          'relative mt-px hidden sm:col-start-1 sm:flex '
+        )}
+        style={style}
+      >
+        <a
+          href='#'
+          className='group absolute inset-1 flex flex-col overflow-y-auto rounded-lg bg-gray-100 p-2 text-xs leading-5 items-center justify-center hover:bg-indigo-700'
+        >
+          <p className='order-1 font-semibold text-white'>{title}</p>
+          <p className='text-gray-500 group-hover:text-white'>
+            <time dateTime={start}>{start}</time> -{' '}
+            <time dateTime={end}>{end}</time>
+          </p>
+        </a>
+      </li>
+    );
+  };
+
+  // render monday to friday 17-18
+  const renderMondayToFriday = () => {
+    const events = [];
+    for (let i = 0; i < 5; i++) {
+      events.push(
+        <EventItem
+          key={`event-${i}-1`}
+          title='Kickboks'
+          start='17:00'
+          end='18:00'
+          style={{
+            gridRow: '205 / span 14',
+            gridColumn: `${i + 1} / span 1`,
+          }}
+        />
+      );
+    }
+    return events;
+  };
+
+  // render monday to friday 18:15 - 19:15
+  const renderMondayToFriday2 = () => {
+    const events = [];
+    for (let i = 0; i < 5; i++) {
+      events.push(
+        <EventItem
+          key={`event-${i}-2`}
+          title='Kickboks'
+          start='18:15'
+          end='19:15'
+          style={{
+            gridRow: '220 / span 14',
+            gridColumn: `${i + 1} / span 1`,
+          }}
+        />
+      );
+    }
+    return events;
+  };
+
+  // render monday to friday 20:30 - 21:30
+  const renderMondayToFriday3 = () => {
+    const events = [];
+    for (let i = 0; i < 5; i++) {
+      events.push(
+        <EventItem
+          key={`event-${i}-3`}
+          title='Kickboks'
+          start='20:30'
+          end='21:30'
+          style={{
+            gridRow: '247 / span 14',
+            gridColumn: `${i + 1} / span 1`,
+          }}
+        />
+      );
+    }
+    return events;
+  };
+
+
+
 
   return (
     <div className='flex h-full flex-col'>
@@ -577,54 +683,15 @@ const Calender = () => {
                   gridTemplateRows: '1.75rem repeat(288, minmax(0, 1fr)) auto',
                 }}
               >
-                <li
-                  className='relative mt-px flex sm:col-start-3'
-                  style={{ gridRow: '74 / span 12' }}
-                >
-                  <a
-                    href='#'
-                    className='group absolute inset-1 flex flex-col overflow-y-auto rounded-lg bg-blue-50 p-2 text-xs leading-5 hover:bg-blue-100'
-                  >
-                    <p className='order-1 font-semibold text-blue-700'>
-                      Breakfast
-                    </p>
-                    <p className='text-blue-500 group-hover:text-blue-700'>
-                      <time dateTime='2022-01-12T06:00'>6:00 AM</time>
-                    </p>
-                  </a>
-                </li>
-                <li
-                  className='relative mt-px flex sm:col-start-3'
-                  style={{ gridRow: '92 / span 30' }}
-                >
-                  <a
-                    href='#'
-                    className='group absolute inset-1 flex flex-col overflow-y-auto rounded-lg bg-pink-50 p-2 text-xs leading-5 hover:bg-pink-100'
-                  >
-                    <p className='order-1 font-semibold text-pink-700'>
-                      Flight to Paris
-                    </p>
-                    <p className='text-pink-500 group-hover:text-pink-700'>
-                      <time dateTime='2022-01-12T07:30'>7:30 AM</time>
-                    </p>
-                  </a>
-                </li>
-                <li
-                  className='relative mt-px hidden sm:col-start-6 sm:flex'
-                  style={{ gridRow: '122 / span 24' }}
-                >
-                  <a
-                    href='#'
-                    className='group absolute inset-1 flex flex-col overflow-y-auto rounded-lg bg-gray-100 p-2 text-xs leading-5 hover:bg-gray-200'
-                  >
-                    <p className='order-1 font-semibold text-gray-700'>
-                      Meeting with design team at Disney
-                    </p>
-                    <p className='text-gray-500 group-hover:text-gray-700'>
-                      <time dateTime='2022-01-15T10:00'>10:00 AM</time>
-                    </p>
-                  </a>
-                </li>
+                {/*       title: Kickboks
+      monday-friday
+      17:00 - 18:00
+      18:15 - 19:15
+        20:30 - 21:30 */}
+
+                {renderMondayToFriday()}
+                {renderMondayToFriday2()}
+                {renderMondayToFriday3()}
               </ol>
             </div>
           </div>

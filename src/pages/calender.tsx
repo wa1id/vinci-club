@@ -62,7 +62,7 @@ const Calender = () => {
           start='17:00'
           end='18:00'
           style={{
-            gridRow: '205 / span 14',
+            gridRow: '164 / span 18',
             gridColumn: `${i + 1} / span 1`,
           }}
         />
@@ -82,7 +82,7 @@ const Calender = () => {
           start='18:15'
           end='19:15'
           style={{
-            gridRow: '220 / span 14',
+            gridRow: '187 / span 18',
             gridColumn: `${i + 1} / span 1`,
           }}
         />
@@ -102,7 +102,7 @@ const Calender = () => {
           start='20:30'
           end='21:30'
           style={{
-            gridRow: '247 / span 14',
+            gridRow: '227 / span 18',
             gridColumn: `${i + 1} / span 1`,
           }}
         />
@@ -517,57 +517,9 @@ const Calender = () => {
               {/* Horizontal lines */}
               <div
                 className='col-start-1 col-end-2 row-start-1 grid divide-y divide-gray-100'
-                style={{ gridTemplateRows: 'repeat(48, minmax(3.5rem, 1fr))' }}
+                style={{ gridTemplateRows: 'repeat(32, minmax(3.5rem, 1fr))' }}
               >
                 <div className='row-end-1 h-7'></div>
-                <div>
-                  <div className='sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400'>
-                    12AM
-                  </div>
-                </div>
-                <div />
-                <div>
-                  <div className='sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400'>
-                    1AM
-                  </div>
-                </div>
-                <div />
-                <div>
-                  <div className='sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400'>
-                    2AM
-                  </div>
-                </div>
-                <div />
-                <div>
-                  <div className='sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400'>
-                    3AM
-                  </div>
-                </div>
-                <div />
-                <div>
-                  <div className='sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400'>
-                    4AM
-                  </div>
-                </div>
-                <div />
-                <div>
-                  <div className='sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400'>
-                    5AM
-                  </div>
-                </div>
-                <div />
-                <div>
-                  <div className='sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400'>
-                    6AM
-                  </div>
-                </div>
-                <div />
-                <div>
-                  <div className='sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400'>
-                    7AM
-                  </div>
-                </div>
-                <div />
                 <div>
                   <div className='sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400'>
                     8AM
@@ -685,12 +637,6 @@ const Calender = () => {
                   gridTemplateRows: '1.75rem repeat(288, minmax(0, 1fr)) auto',
                 }}
               >
-                {/*       title: Kickboks
-      monday-friday
-      17:00 - 18:00
-      18:15 - 19:15
-        20:30 - 21:30 */}
-
                 {renderMondayToFriday()}
                 {renderMondayToFriday2()}
                 {renderMondayToFriday3()}

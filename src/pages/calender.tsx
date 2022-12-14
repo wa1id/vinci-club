@@ -37,7 +37,7 @@ const Calender = () => {
       >
         <a
           href='#'
-          className='group absolute inset-1 flex flex-col overflow-y-auto rounded-lg bg-gray-100 p-2 text-xs leading-5 items-center justify-center hover:bg-indigo-700'
+          className='group absolute inset-1 flex flex-col overflow-y-auto rounded-lg bg-gray-100 p-2 text-xs leading-5 items-center justify-center hover:bg-black'
         >
           <p className='order-1 font-semibold text-gray-700 group-hover:text-white'>
             {title}
@@ -127,7 +127,7 @@ const Calender = () => {
             })}
           </time>
         </h1>
-        <div className='flex items-center'>
+        {/* <div className='flex items-center'>
           <div className='flex items-center rounded-md shadow-sm md:items-stretch'>
             <button
               type='button'
@@ -251,7 +251,7 @@ const Calender = () => {
             <div className='ml-6 h-6 w-px bg-gray-300' />
             <button
               type='button'
-              className='focus:outline-none ml-6 rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
+              className='focus:outline-none ml-6 rounded-md border border-transparent bg-black py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
             >
               Add event
             </button>
@@ -377,7 +377,7 @@ const Calender = () => {
               </Menu.Items>
             </Transition>
           </Menu>
-        </div>
+        </div> */}
       </header>
       <div className='flex flex-auto flex-col overflow-auto bg-white'>
         <div
@@ -409,7 +409,7 @@ const Calender = () => {
                 className='flex flex-col items-center pt-2 pb-3'
               >
                 W{' '}
-                <span className='mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-indigo-600 font-semibold text-white'>
+                <span className='mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-black font-semibold text-white'>
                   12
                 </span>
               </button>
@@ -472,7 +472,7 @@ const Calender = () => {
               <div className='flex items-center justify-center py-3'>
                 <span className='flex items-baseline'>
                   Wed{' '}
-                  <span className='ml-1.5 flex h-8 w-8 items-center justify-center rounded-full bg-indigo-600 font-semibold text-white'>
+                  <span className='ml-1.5 flex h-8 w-8 items-center justify-center rounded-full bg-black font-semibold text-white'>
                     12
                   </span>
                 </span>

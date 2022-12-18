@@ -1,11 +1,12 @@
 import classNames from "classnames";
-import { getWeek, nextDay, startOfWeek } from "date-fns";
+import { nextDay } from "date-fns";
 import Heading from "src/components/Heading/Heading";
 import useCalendar from "src/hooks/useCalendar";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 import BecomeAMember from "src/components/form/BecomeAMember";
 import GetTheNewsFrom from "src/components/GetTheNewsFrom/GetTheNewsFrom";
+import Head from "next/head";
 
 const Calendar = () => {
   let [isOpen, setIsOpen] = useState(false);
@@ -104,328 +105,334 @@ const Calendar = () => {
   };
 
   return (
-    <div className="bg-primary">
-      <Transition appear show={isOpen} as={Fragment}>
-        <Dialog
-          open={isOpen}
-          onClose={() => setIsOpen(false)}
-          className="relative z-50"
-        >
-          <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
-          <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4">
-              <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0 scale-95"
-                enterTo="opacity-100 scale-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-95"
-              >
-                <Dialog.Panel className="mx-auto w-full max-w-xl bg-white transform">
-                  <div className="px-5">
-                    <Dialog.Title className="text-3xl font-bold text-gray-900 uppercase my-4">
-                      Lid worden
-                    </Dialog.Title>
-                    <Dialog.Description>
-                      Als je het Inschrijvingsformulier invult doorheen de maand
-                      december en tijdens onze opendeurweek jouw inschrijving
-                      komt vervolledigen dan kan jij genieten van de eerste
-                      maand gratis sporten. Geldig op alle abonnementen mits er
-                      wordt gekozen voor een jaarabonnement.
-                    </Dialog.Description>
-                  </div>
-
-                  <BecomeAMember />
-                </Dialog.Panel>
-              </Transition.Child>
-            </div>
-          </div>
-        </Dialog>
-      </Transition>
-      <div className=" w-full flex justify-center flex-col md:flex-row relative py-6">
-        <div className="flex-1 text-center w-full ">
-          {/* TODO: i18 */}
-          <Heading
-            aboveHeading={""}
-            belowHeading="Groepslessen"
-            headingClassName="text-white"
-            lineClassName="bg-secondary"
-          />
-          <p className="text-md max-w-3xl m-auto font-normal mt-6 text-white">
-            Bekijk alle groepslessen in de kalender hieronder.
-          </p>
-        </div>
-      </div>
-      <div className="flex h-full flex-col">
-        <div className="flex flex-auto flex-col bg-white">
-          <div
-            style={{ width: "165%" }}
-            className="flex max-w-full flex-none flex-col sm:max-w-none md:max-w-full"
+    <>
+      <Head>
+        <title>Groepslessen - Vinci Club Deurne</title>
+      </Head>
+      <div className="bg-primary">
+        <Transition appear show={isOpen} as={Fragment}>
+          <Dialog
+            open={isOpen}
+            onClose={() => setIsOpen(false)}
+            className="relative z-50"
           >
-            <div className="sticky top-0 z-10 flex-none bg-white shadow ring-1 ring-black ring-opacity-5 sm:pr-8">
-              <div className="grid grid-cols-7 text-sm leading-6 text-gray-500 sm:hidden">
-                <button
-                  type="button"
-                  className="flex flex-col items-center pt-2 pb-3"
+            <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4">
+                <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
                 >
-                  M{" "}
-                  <span className="mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900">
-                    {firstDayOfWeek.getDate()}
-                  </span>
-                </button>
-                <button
-                  type="button"
-                  className="flex flex-col items-center pt-2 pb-3"
-                >
-                  D{" "}
-                  <span className="mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900">
-                    {nextDay(firstDayOfWeek, 2).getDate()}
-                  </span>
-                </button>
-                <button
-                  type="button"
-                  className="flex flex-col items-center pt-2 pb-3"
-                >
-                  W{" "}
-                  <span className="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-black font-semibold text-white">
-                    {nextDay(firstDayOfWeek, 3).getDate()}
-                  </span>
-                </button>
-                <button
-                  type="button"
-                  className="flex flex-col items-center pt-2 pb-3"
-                >
-                  D{" "}
-                  <span className="mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900">
-                    {nextDay(firstDayOfWeek, 4).getDate()}
-                  </span>
-                </button>
-                <button
-                  type="button"
-                  className="flex flex-col items-center pt-2 pb-3"
-                >
-                  V{" "}
-                  <span className="mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900">
-                    {nextDay(firstDayOfWeek, 5).getDate()}
-                  </span>
-                </button>
-                <button
-                  type="button"
-                  className="flex flex-col items-center pt-2 pb-3"
-                >
-                  Z{" "}
-                  <span className="mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900">
-                    {nextDay(firstDayOfWeek, 6).getDate()}
-                  </span>
-                </button>
-                <button
-                  type="button"
-                  className="flex flex-col items-center pt-2 pb-3"
-                >
-                  Z{" "}
-                  <span className="mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900">
-                    {nextDay(firstDayOfWeek, 0).getDate()}
-                  </span>
-                </button>
-              </div>
+                  <Dialog.Panel className="mx-auto w-full max-w-xl bg-white transform">
+                    <div className="px-5">
+                      <Dialog.Title className="text-3xl font-bold text-gray-900 uppercase my-4">
+                        Lid worden
+                      </Dialog.Title>
+                      <Dialog.Description>
+                        Als je het Inschrijvingsformulier invult doorheen de
+                        maand december en tijdens onze opendeurweek jouw
+                        inschrijving komt vervolledigen dan kan jij genieten van
+                        de eerste maand gratis sporten. Geldig op alle
+                        abonnementen mits er wordt gekozen voor een
+                        jaarabonnement.
+                      </Dialog.Description>
+                    </div>
 
-              <div className="-mr-px hidden grid-cols-7 divide-x divide-gray-100 border-r border-gray-100 text-sm leading-6 text-gray-500 sm:grid">
-                <div className="col-end-1 w-14" />
-                <div className="flex items-center justify-center py-3">
-                  <span>
-                    Ma{" "}
-                    <span className="items-center justify-center font-semibold text-gray-900">
+                    <BecomeAMember />
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        <div className=" w-full flex justify-center flex-col md:flex-row relative py-6">
+          <div className="flex-1 text-center w-full ">
+            {/* TODO: i18 */}
+            <Heading
+              aboveHeading={""}
+              belowHeading="Groepslessen"
+              headingClassName="text-white"
+              lineClassName="bg-secondary"
+            />
+            <p className="text-md max-w-3xl m-auto font-normal mt-6 text-white">
+              Bekijk alle groepslessen in de kalender hieronder.
+            </p>
+          </div>
+        </div>
+        <div className="flex h-full flex-col">
+          <div className="flex flex-auto flex-col bg-white">
+            <div
+              style={{ width: "165%" }}
+              className="flex max-w-full flex-none flex-col sm:max-w-none md:max-w-full"
+            >
+              <div className="sticky top-0 z-10 flex-none bg-white shadow ring-1 ring-black ring-opacity-5 sm:pr-8">
+                <div className="grid grid-cols-7 text-sm leading-6 text-gray-500 sm:hidden">
+                  <button
+                    type="button"
+                    className="flex flex-col items-center pt-2 pb-3"
+                  >
+                    M{" "}
+                    <span className="mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900">
                       {firstDayOfWeek.getDate()}
                     </span>
-                  </span>
-                </div>
-                <div className="flex items-center justify-center py-3">
-                  <span>
-                    Di{" "}
-                    <span className="items-center justify-center font-semibold text-gray-900">
+                  </button>
+                  <button
+                    type="button"
+                    className="flex flex-col items-center pt-2 pb-3"
+                  >
+                    D{" "}
+                    <span className="mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900">
                       {nextDay(firstDayOfWeek, 2).getDate()}
                     </span>
-                  </span>
-                </div>
-                <div className="flex items-center justify-center py-3">
-                  <span className="flex items-baseline">
-                    Wo{" "}
-                    <span className="ml-1.5 flex h-8 w-8 items-center justify-center rounded-full bg-black font-semibold text-white">
+                  </button>
+                  <button
+                    type="button"
+                    className="flex flex-col items-center pt-2 pb-3"
+                  >
+                    W{" "}
+                    <span className="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-black font-semibold text-white">
                       {nextDay(firstDayOfWeek, 3).getDate()}
                     </span>
-                  </span>
-                </div>
-                <div className="flex items-center justify-center py-3">
-                  <span>
-                    Do{" "}
-                    <span className="items-center justify-center font-semibold text-gray-900">
+                  </button>
+                  <button
+                    type="button"
+                    className="flex flex-col items-center pt-2 pb-3"
+                  >
+                    D{" "}
+                    <span className="mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900">
                       {nextDay(firstDayOfWeek, 4).getDate()}
                     </span>
-                  </span>
-                </div>
-                <div className="flex items-center justify-center py-3">
-                  <span>
-                    Vr{" "}
-                    <span className="items-center justify-center font-semibold text-gray-900">
+                  </button>
+                  <button
+                    type="button"
+                    className="flex flex-col items-center pt-2 pb-3"
+                  >
+                    V{" "}
+                    <span className="mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900">
                       {nextDay(firstDayOfWeek, 5).getDate()}
                     </span>
-                  </span>
-                </div>
-                <div className="flex items-center justify-center py-3">
-                  <span>
-                    Za{" "}
-                    <span className="items-center justify-center font-semibold text-gray-900">
+                  </button>
+                  <button
+                    type="button"
+                    className="flex flex-col items-center pt-2 pb-3"
+                  >
+                    Z{" "}
+                    <span className="mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900">
                       {nextDay(firstDayOfWeek, 6).getDate()}
                     </span>
-                  </span>
-                </div>
-                <div className="flex items-center justify-center py-3">
-                  <span>
-                    Zo{" "}
-                    <span className="items-center justify-center font-semibold text-gray-900">
+                  </button>
+                  <button
+                    type="button"
+                    className="flex flex-col items-center pt-2 pb-3"
+                  >
+                    Z{" "}
+                    <span className="mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900">
                       {nextDay(firstDayOfWeek, 0).getDate()}
                     </span>
-                  </span>
+                  </button>
+                </div>
+
+                <div className="-mr-px hidden grid-cols-7 divide-x divide-gray-100 border-r border-gray-100 text-sm leading-6 text-gray-500 sm:grid">
+                  <div className="col-end-1 w-14" />
+                  <div className="flex items-center justify-center py-3">
+                    <span>
+                      Ma{" "}
+                      <span className="items-center justify-center font-semibold text-gray-900">
+                        {firstDayOfWeek.getDate()}
+                      </span>
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-center py-3">
+                    <span>
+                      Di{" "}
+                      <span className="items-center justify-center font-semibold text-gray-900">
+                        {nextDay(firstDayOfWeek, 2).getDate()}
+                      </span>
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-center py-3">
+                    <span className="flex items-baseline">
+                      Wo{" "}
+                      <span className="ml-1.5 flex h-8 w-8 items-center justify-center rounded-full bg-black font-semibold text-white">
+                        {nextDay(firstDayOfWeek, 3).getDate()}
+                      </span>
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-center py-3">
+                    <span>
+                      Do{" "}
+                      <span className="items-center justify-center font-semibold text-gray-900">
+                        {nextDay(firstDayOfWeek, 4).getDate()}
+                      </span>
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-center py-3">
+                    <span>
+                      Vr{" "}
+                      <span className="items-center justify-center font-semibold text-gray-900">
+                        {nextDay(firstDayOfWeek, 5).getDate()}
+                      </span>
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-center py-3">
+                    <span>
+                      Za{" "}
+                      <span className="items-center justify-center font-semibold text-gray-900">
+                        {nextDay(firstDayOfWeek, 6).getDate()}
+                      </span>
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-center py-3">
+                    <span>
+                      Zo{" "}
+                      <span className="items-center justify-center font-semibold text-gray-900">
+                        {nextDay(firstDayOfWeek, 0).getDate()}
+                      </span>
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="flex flex-auto">
-              <div className="sticky left-0 w-14 flex-none bg-white ring-1 ring-gray-100" />
-              <div className="grid flex-auto grid-cols-1 grid-rows-1">
-                {/* Horizontal lines */}
-                <div
-                  className="col-start-1 col-end-2 row-start-1 grid divide-y divide-gray-100"
-                  style={{
-                    gridTemplateRows: "repeat(32, minmax(3.5rem, 1fr))",
-                  }}
-                >
-                  <div className="row-end-1 h-7"></div>
-                  <div>
-                    <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                      8:00
+              <div className="flex flex-auto">
+                <div className="sticky left-0 w-14 flex-none bg-white ring-1 ring-gray-100" />
+                <div className="grid flex-auto grid-cols-1 grid-rows-1">
+                  {/* Horizontal lines */}
+                  <div
+                    className="col-start-1 col-end-2 row-start-1 grid divide-y divide-gray-100"
+                    style={{
+                      gridTemplateRows: "repeat(32, minmax(3.5rem, 1fr))",
+                    }}
+                  >
+                    <div className="row-end-1 h-7"></div>
+                    <div>
+                      <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
+                        8:00
+                      </div>
                     </div>
-                  </div>
-                  <div />
-                  <div>
-                    <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                      9:00
+                    <div />
+                    <div>
+                      <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
+                        9:00
+                      </div>
                     </div>
-                  </div>
-                  <div />
-                  <div>
-                    <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                      10:00
+                    <div />
+                    <div>
+                      <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
+                        10:00
+                      </div>
                     </div>
-                  </div>
-                  <div />
-                  <div>
-                    <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                      11:00
+                    <div />
+                    <div>
+                      <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
+                        11:00
+                      </div>
                     </div>
-                  </div>
-                  <div />
-                  <div>
-                    <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                      12:00
+                    <div />
+                    <div>
+                      <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
+                        12:00
+                      </div>
                     </div>
-                  </div>
-                  <div />
-                  <div>
-                    <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                      13:00
+                    <div />
+                    <div>
+                      <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
+                        13:00
+                      </div>
                     </div>
-                  </div>
-                  <div />
-                  <div>
-                    <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                      14:00
+                    <div />
+                    <div>
+                      <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
+                        14:00
+                      </div>
                     </div>
-                  </div>
-                  <div />
-                  <div>
-                    <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                      15:00
+                    <div />
+                    <div>
+                      <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
+                        15:00
+                      </div>
                     </div>
-                  </div>
-                  <div />
-                  <div>
-                    <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                      16:00
+                    <div />
+                    <div>
+                      <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
+                        16:00
+                      </div>
                     </div>
-                  </div>
-                  <div />
-                  <div>
-                    <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                      17:00
+                    <div />
+                    <div>
+                      <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
+                        17:00
+                      </div>
                     </div>
-                  </div>
-                  <div />
-                  <div>
-                    <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                      18:00
+                    <div />
+                    <div>
+                      <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
+                        18:00
+                      </div>
                     </div>
-                  </div>
-                  <div />
-                  <div>
-                    <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                      19:00
+                    <div />
+                    <div>
+                      <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
+                        19:00
+                      </div>
                     </div>
-                  </div>
-                  <div />
-                  <div>
-                    <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                      20:00
+                    <div />
+                    <div>
+                      <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
+                        20:00
+                      </div>
                     </div>
-                  </div>
-                  <div />
-                  <div>
-                    <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                      21:00
+                    <div />
+                    <div>
+                      <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
+                        21:00
+                      </div>
                     </div>
-                  </div>
-                  <div />
-                  <div>
-                    <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                      22:00
+                    <div />
+                    <div>
+                      <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
+                        22:00
+                      </div>
                     </div>
+                    <div />
+                    <div />
                   </div>
-                  <div />
-                  <div />
-                </div>
 
-                {/* Vertical lines */}
-                <div className="col-start-1 col-end-2 row-start-1 hidden grid-cols-7 grid-rows-1 divide-x divide-gray-100 sm:grid sm:grid-cols-7">
-                  <div className="col-start-1 row-span-full" />
-                  <div className="col-start-2 row-span-full" />
-                  <div className="col-start-3 row-span-full" />
-                  <div className="col-start-4 row-span-full" />
-                  <div className="col-start-5 row-span-full" />
-                  <div className="col-start-6 row-span-full" />
-                  <div className="col-start-7 row-span-full" />
-                  <div className="col-start-8 row-span-full w-8" />
-                </div>
+                  {/* Vertical lines */}
+                  <div className="col-start-1 col-end-2 row-start-1 hidden grid-cols-7 grid-rows-1 divide-x divide-gray-100 sm:grid sm:grid-cols-7">
+                    <div className="col-start-1 row-span-full" />
+                    <div className="col-start-2 row-span-full" />
+                    <div className="col-start-3 row-span-full" />
+                    <div className="col-start-4 row-span-full" />
+                    <div className="col-start-5 row-span-full" />
+                    <div className="col-start-6 row-span-full" />
+                    <div className="col-start-7 row-span-full" />
+                    <div className="col-start-8 row-span-full w-8" />
+                  </div>
 
-                {/* Events */}
-                <ol
-                  className="col-start-1 col-end-2 row-start-1 grid grid-cols-1 sm:grid-cols-7 sm:pr-8"
-                  style={{
-                    gridTemplateRows:
-                      "1.75rem repeat(288, minmax(0, 1fr)) auto",
-                  }}
-                >
-                  {renderMondayToFriday()}
-                  {renderMondayToFriday2()}
-                  {renderMondayToFriday3()}
-                </ol>
+                  {/* Events */}
+                  <ol
+                    className="col-start-1 col-end-2 row-start-1 grid grid-cols-1 sm:grid-cols-7 sm:pr-8"
+                    style={{
+                      gridTemplateRows:
+                        "1.75rem repeat(288, minmax(0, 1fr)) auto",
+                    }}
+                  >
+                    {renderMondayToFriday()}
+                    {renderMondayToFriday2()}
+                    {renderMondayToFriday3()}
+                  </ol>
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <GetTheNewsFrom />
       </div>
-      <GetTheNewsFrom />
-    </div>
+    </>
   );
 };
 

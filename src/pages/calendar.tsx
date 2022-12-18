@@ -1,8 +1,6 @@
-import { Fragment, useRef, useEffect } from "react";
-import { BsChevronDown, BsChevronRight, BsChevronLeft } from "react-icons/bs";
-import { HiOutlineDotsHorizontal } from "react-icons/hi";
-import { Menu, Transition } from "@headlessui/react";
 import classNames from "classnames";
+import { getWeek, nextDay, startOfWeek } from "date-fns";
+import useCalendar from "src/hooks/useCalendar";
 
 const Calendar = () => {
   /**
@@ -13,6 +11,9 @@ const Calendar = () => {
       18:15 - 19:15 // 6:15 - 7:15
         20:30 - 21:30
    */
+  const { firstDayOfWeek } = useCalendar();
+
+  console.log(nextDay(firstDayOfWeek, 2));
 
   const EventItem = ({
     title,
@@ -113,269 +114,6 @@ const Calendar = () => {
 
   return (
     <div className="flex h-full flex-col">
-      <header className="relative z-20 flex flex-none items-center justify-between border-b border-gray-200 py-4 px-6">
-        <h1 className="text-lg font-semibold text-gray-900">
-          <time dateTime={new Date().toISOString()}>
-            {new Date().toLocaleDateString("en-US", {
-              weekday: "long",
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
-          </time>
-        </h1>
-        {/* <div className='flex items-center'>
-          <div className='flex items-center rounded-md shadow-sm md:items-stretch'>
-            <button
-              type='button'
-              className='flex items-center justify-center rounded-l-md border border-r-0 border-gray-300 bg-white py-2 pl-3 pr-4 text-gray-400 hover:text-gray-500 focus:relative md:w-9 md:px-2 md:hover:bg-gray-50'
-            >
-              <span className='sr-only'>Previous month</span>
-              <BsChevronLeft
-                className='h-5 w-5'
-                aria-hidden='true'
-              />
-            </button>
-            <button
-              type='button'
-              className='hidden border-t border-b border-gray-300 bg-white px-3.5 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900 focus:relative md:block'
-            >
-              Today
-            </button>
-            <span className='relative -mx-px h-5 w-px bg-gray-300 md:hidden' />
-            <button
-              type='button'
-              className='flex items-center justify-center rounded-r-md border border-l-0 border-gray-300 bg-white py-2 pl-4 pr-3 text-gray-400 hover:text-gray-500 focus:relative md:w-9 md:px-2 md:hover:bg-gray-50'
-            >
-              <span className='sr-only'>Next month</span>
-              <BsChevronRight
-                className='h-5 w-5'
-                aria-hidden='true'
-              />
-            </button>
-          </div>
-          <div className='hidden md:ml-4 md:flex md:items-center'>
-            <Menu
-              as='div'
-              className='relative'
-            >
-              <Menu.Button
-                type='button'
-                className='flex items-center rounded-md border border-gray-300 bg-white py-2 pl-3 pr-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50'
-              >
-                Week view
-                <BsChevronDown
-                  className='ml-2 h-5 w-5 text-gray-400'
-                  aria-hidden='true'
-                />
-              </Menu.Button>
-
-              <Transition
-                as={Fragment}
-                enter='transition ease-out duration-100'
-                enterFrom='transform opacity-0 scale-95'
-                enterTo='transform opacity-100 scale-100'
-                leave='transition ease-in duration-75'
-                leaveFrom='transform opacity-100 scale-100'
-                leaveTo='transform opacity-0 scale-95'
-              >
-                <Menu.Items className='focus:outline-none absolute right-0 mt-3 w-36 origin-top-right overflow-hidden rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5'>
-                  <div className='py-1'>
-                    <Menu.Item>
-                      {({ active }) => (
-                        <a
-                          href='#'
-                          className={classNames(
-                            active
-                              ? 'bg-gray-100 text-gray-900'
-                              : 'text-gray-700',
-                            'block px-4 py-2 text-sm'
-                          )}
-                        >
-                          Day view
-                        </a>
-                      )}
-                    </Menu.Item>
-                    <Menu.Item>
-                      {({ active }) => (
-                        <a
-                          href='#'
-                          className={classNames(
-                            active
-                              ? 'bg-gray-100 text-gray-900'
-                              : 'text-gray-700',
-                            'block px-4 py-2 text-sm'
-                          )}
-                        >
-                          Week view
-                        </a>
-                      )}
-                    </Menu.Item>
-                    <Menu.Item>
-                      {({ active }) => (
-                        <a
-                          href='#'
-                          className={classNames(
-                            active
-                              ? 'bg-gray-100 text-gray-900'
-                              : 'text-gray-700',
-                            'block px-4 py-2 text-sm'
-                          )}
-                        >
-                          Month view
-                        </a>
-                      )}
-                    </Menu.Item>
-                    <Menu.Item>
-                      {({ active }) => (
-                        <a
-                          href='#'
-                          className={classNames(
-                            active
-                              ? 'bg-gray-100 text-gray-900'
-                              : 'text-gray-700',
-                            'block px-4 py-2 text-sm'
-                          )}
-                        >
-                          Year view
-                        </a>
-                      )}
-                    </Menu.Item>
-                  </div>
-                </Menu.Items>
-              </Transition>
-            </Menu>
-            <div className='ml-6 h-6 w-px bg-gray-300' />
-            <button
-              type='button'
-              className='focus:outline-none ml-6 rounded-md border border-transparent bg-black py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
-            >
-              Add event
-            </button>
-          </div>
-          <Menu
-            as='div'
-            className='relative ml-6 md:hidden'
-          >
-            <Menu.Button className='-mx-2 flex items-center rounded-full border border-transparent p-2 text-gray-400 hover:text-gray-500'>
-              <span className='sr-only'>Open menu</span>
-              <HiOutlineDotsHorizontal
-                className='h-5 w-5'
-                aria-hidden='true'
-              />
-            </Menu.Button>
-
-            <Transition
-              as={Fragment}
-              enter='transition ease-out duration-100'
-              enterFrom='transform opacity-0 scale-95'
-              enterTo='transform opacity-100 scale-100'
-              leave='transition ease-in duration-75'
-              leaveFrom='transform opacity-100 scale-100'
-              leaveTo='transform opacity-0 scale-95'
-            >
-              <Menu.Items className='focus:outline-none absolute right-0 mt-3 w-36 origin-top-right divide-y divide-gray-100 overflow-hidden rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5'>
-                <div className='py-1'>
-                  <Menu.Item>
-                    {({ active }) => (
-                      <a
-                        href='#'
-                        className={classNames(
-                          active
-                            ? 'bg-gray-100 text-gray-900'
-                            : 'text-gray-700',
-                          'block px-4 py-2 text-sm'
-                        )}
-                      >
-                        Create event
-                      </a>
-                    )}
-                  </Menu.Item>
-                </div>
-                <div className='py-1'>
-                  <Menu.Item>
-                    {({ active }) => (
-                      <a
-                        href='#'
-                        className={classNames(
-                          active
-                            ? 'bg-gray-100 text-gray-900'
-                            : 'text-gray-700',
-                          'block px-4 py-2 text-sm'
-                        )}
-                      >
-                        Go to today
-                      </a>
-                    )}
-                  </Menu.Item>
-                </div>
-                <div className='py-1'>
-                  <Menu.Item>
-                    {({ active }) => (
-                      <a
-                        href='#'
-                        className={classNames(
-                          active
-                            ? 'bg-gray-100 text-gray-900'
-                            : 'text-gray-700',
-                          'block px-4 py-2 text-sm'
-                        )}
-                      >
-                        Day view
-                      </a>
-                    )}
-                  </Menu.Item>
-                  <Menu.Item>
-                    {({ active }) => (
-                      <a
-                        href='#'
-                        className={classNames(
-                          active
-                            ? 'bg-gray-100 text-gray-900'
-                            : 'text-gray-700',
-                          'block px-4 py-2 text-sm'
-                        )}
-                      >
-                        Week view
-                      </a>
-                    )}
-                  </Menu.Item>
-                  <Menu.Item>
-                    {({ active }) => (
-                      <a
-                        href='#'
-                        className={classNames(
-                          active
-                            ? 'bg-gray-100 text-gray-900'
-                            : 'text-gray-700',
-                          'block px-4 py-2 text-sm'
-                        )}
-                      >
-                        Month view
-                      </a>
-                    )}
-                  </Menu.Item>
-                  <Menu.Item>
-                    {({ active }) => (
-                      <a
-                        href='#'
-                        className={classNames(
-                          active
-                            ? 'bg-gray-100 text-gray-900'
-                            : 'text-gray-700',
-                          'block px-4 py-2 text-sm'
-                        )}
-                      >
-                        Year view
-                      </a>
-                    )}
-                  </Menu.Item>
-                </div>
-              </Menu.Items>
-            </Transition>
-          </Menu>
-        </div> */}
-      </header>
       <div className="flex flex-auto flex-col overflow-auto bg-white">
         <div
           style={{ width: "165%" }}
@@ -389,16 +127,16 @@ const Calendar = () => {
               >
                 M{" "}
                 <span className="mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900">
-                  10
+                  {firstDayOfWeek.getDate()}
                 </span>
               </button>
               <button
                 type="button"
                 className="flex flex-col items-center pt-2 pb-3"
               >
-                T{" "}
+                D{" "}
                 <span className="mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900">
-                  11
+                  {nextDay(firstDayOfWeek, 2).getDate()}
                 </span>
               </button>
               <button
@@ -407,43 +145,43 @@ const Calendar = () => {
               >
                 W{" "}
                 <span className="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-black font-semibold text-white">
-                  12
+                  {nextDay(firstDayOfWeek, 3).getDate()}
                 </span>
               </button>
               <button
                 type="button"
                 className="flex flex-col items-center pt-2 pb-3"
               >
-                T{" "}
+                D{" "}
                 <span className="mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900">
-                  13
+                  {nextDay(firstDayOfWeek, 4).getDate()}
                 </span>
               </button>
               <button
                 type="button"
                 className="flex flex-col items-center pt-2 pb-3"
               >
-                F{" "}
+                V{" "}
                 <span className="mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900">
-                  14
+                  {nextDay(firstDayOfWeek, 5).getDate()}
                 </span>
               </button>
               <button
                 type="button"
                 className="flex flex-col items-center pt-2 pb-3"
               >
-                S{" "}
+                Z{" "}
                 <span className="mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900">
-                  15
+                  {nextDay(firstDayOfWeek, 6).getDate()}
                 </span>
               </button>
               <button
                 type="button"
                 className="flex flex-col items-center pt-2 pb-3"
               >
-                S{" "}
+                Z{" "}
                 <span className="mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900">
-                  16
+                  {nextDay(firstDayOfWeek, 0).getDate()}
                 </span>
               </button>
             </div>
@@ -452,57 +190,57 @@ const Calendar = () => {
               <div className="col-end-1 w-14" />
               <div className="flex items-center justify-center py-3">
                 <span>
-                  Mon{" "}
+                  Ma{" "}
                   <span className="items-center justify-center font-semibold text-gray-900">
-                    10
+                    {firstDayOfWeek.getDate()}
                   </span>
                 </span>
               </div>
               <div className="flex items-center justify-center py-3">
                 <span>
-                  Tue{" "}
+                  Di{" "}
                   <span className="items-center justify-center font-semibold text-gray-900">
-                    11
+                    {nextDay(firstDayOfWeek, 2).getDate()}
                   </span>
                 </span>
               </div>
               <div className="flex items-center justify-center py-3">
                 <span className="flex items-baseline">
-                  Wed{" "}
+                  Wo{" "}
                   <span className="ml-1.5 flex h-8 w-8 items-center justify-center rounded-full bg-black font-semibold text-white">
-                    12
+                    {nextDay(firstDayOfWeek, 3).getDate()}
                   </span>
                 </span>
               </div>
               <div className="flex items-center justify-center py-3">
                 <span>
-                  Thu{" "}
+                  Do{" "}
                   <span className="items-center justify-center font-semibold text-gray-900">
-                    13
+                    {nextDay(firstDayOfWeek, 4).getDate()}
                   </span>
                 </span>
               </div>
               <div className="flex items-center justify-center py-3">
                 <span>
-                  Fri{" "}
+                  Vr{" "}
                   <span className="items-center justify-center font-semibold text-gray-900">
-                    14
+                    {nextDay(firstDayOfWeek, 5).getDate()}
                   </span>
                 </span>
               </div>
               <div className="flex items-center justify-center py-3">
                 <span>
-                  Sat{" "}
+                  Za{" "}
                   <span className="items-center justify-center font-semibold text-gray-900">
-                    15
+                    {nextDay(firstDayOfWeek, 6).getDate()}
                   </span>
                 </span>
               </div>
               <div className="flex items-center justify-center py-3">
                 <span>
-                  Sun{" "}
+                  Zo{" "}
                   <span className="items-center justify-center font-semibold text-gray-900">
-                    16
+                    {nextDay(firstDayOfWeek, 0).getDate()}
                   </span>
                 </span>
               </div>
@@ -519,99 +257,94 @@ const Calendar = () => {
                 <div className="row-end-1 h-7"></div>
                 <div>
                   <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                    8AM
+                    8:00
                   </div>
                 </div>
                 <div />
                 <div>
                   <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                    9AM
+                    9:00
                   </div>
                 </div>
                 <div />
                 <div>
                   <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                    10AM
+                    10:00
                   </div>
                 </div>
                 <div />
                 <div>
                   <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                    11AM
+                    11:00
                   </div>
                 </div>
                 <div />
                 <div>
                   <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                    12PM
+                    12:00
                   </div>
                 </div>
                 <div />
                 <div>
                   <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                    1PM
+                    13:00
                   </div>
                 </div>
                 <div />
                 <div>
                   <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                    2PM
+                    14:00
                   </div>
                 </div>
                 <div />
                 <div>
                   <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                    3PM
+                    15:00
                   </div>
                 </div>
                 <div />
                 <div>
                   <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                    4PM
+                    16:00
                   </div>
                 </div>
                 <div />
                 <div>
                   <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                    5PM
+                    17:00
                   </div>
                 </div>
                 <div />
                 <div>
                   <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                    6PM
+                    18:00
                   </div>
                 </div>
                 <div />
                 <div>
                   <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                    7PM
+                    19:00
                   </div>
                 </div>
                 <div />
                 <div>
                   <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                    8PM
+                    20:00
                   </div>
                 </div>
                 <div />
                 <div>
                   <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                    9PM
+                    21:00
                   </div>
                 </div>
                 <div />
                 <div>
                   <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                    10PM
+                    22:00
                   </div>
                 </div>
                 <div />
-                <div>
-                  <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                    11PM
-                  </div>
-                </div>
                 <div />
               </div>
 

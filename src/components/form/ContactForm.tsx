@@ -76,19 +76,23 @@ const ContactForm = () => {
 
 
   return (
-    <div className='bg-plan py-16 p-4 md:p-20 w-full text-center'>
+    <div
+      id="contacform"
+      className="bg-plan py-16 p-4 md:p-20 w-full text-center"
+    >
       {/* TODO: i18 */}
       <Heading
-        aboveHeading='Need quick advice?'
-        belowHeading='consult us'
-        headingClassName='text-primary'
-        lineClassName='bg-secondary'
+        aboveHeading="Een vraag?"
+        belowHeading="contacteer ons"
+        headingClassName="text-primary"
+        lineClassName="bg-secondary"
       />
 
       {/* TODO: i18 */}
-      <p className='text-primary text-lg md:text-xl mt-8 max-w-3xl mx-auto'>
-        We are always happy and available to help, so if you have any queries,
-        feel free to message us and we’ll get back to you as soon as possible
+      <p className="text-primary text-lg md:text-xl mt-8 max-w-3xl mx-auto">
+        We zijn altijd bereid om te helpen, dus als je vragen hebt, aarzel dan
+        niet om ons een bericht te sturen en we nemen zo snel mogelijk contact
+        met u op.
       </p>
 
       <form className='max-w-5xl m-auto'
@@ -113,7 +117,7 @@ const ContactForm = () => {
           />
         </div>
 
-        <div className='flex flex-col md:flex-row justify-center items-center mt-4 gap-4'>
+        <div className="flex flex-col md:flex-row justify-center items-center mt-4 gap-4">
           <input
             type='email'
             placeholder='e-mail'
@@ -132,10 +136,10 @@ const ContactForm = () => {
           />
         </div>
 
-        <div className='mt-4 gap-4 w-full'>
+        <div className="mt-4 gap-4 w-full">
           <textarea
-            placeholder='your message'
-            className='contact-form-message-input capitalize w-full'
+            placeholder="Uw bericht"
+            className="contact-form-message-input w-full"
             rows={5}
             name='message'
             value={state.message}
@@ -147,11 +151,11 @@ const ContactForm = () => {
           type='submit'
         >
           {/* TODO: i18 */}
-          Submit <FiArrowUpRight />
+          Verzenden <FiArrowUpRight />
         </button>
       </form>
     </div>
   );
-}
+};
 
-export default ContactForm
+export default ContactForm;

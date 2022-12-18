@@ -45,7 +45,7 @@ const BecomeAMember: React.FC<IProps> = () => {
           checked: false,
         },
         {
-          name: "Kickboksen",
+          name: "Boxing",
           checked: false,
         },
         {
@@ -61,7 +61,7 @@ const BecomeAMember: React.FC<IProps> = () => {
           checked: false,
         },
         {
-          name: "Ladies only kickboks",
+          name: "Ladies only boxing",
           checked: false,
         },
       ],
@@ -125,7 +125,11 @@ const BecomeAMember: React.FC<IProps> = () => {
           checked: false,
         },
         {
-          name: "Group Sessions",
+          name: "Boxing",
+          checked: false,
+        },
+        {
+          name: "Groepsessies",
           checked: false,
         },
         {
@@ -137,7 +141,7 @@ const BecomeAMember: React.FC<IProps> = () => {
           checked: false,
         },
         {
-          name: "Ladies only kickboks",
+          name: "Ladies only boxing",
           checked: false,
         },
       ],

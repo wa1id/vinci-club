@@ -22,7 +22,7 @@ export default function Navbar() {
     // { id: 4, name: "Abonnementen", href: "#", disabled: true },
     // { id: 5, name: "Gezondheid", href: "#", disabled: true },
     // { id: 6, name: "Ladies only", href: "#", disabled: true },
-    { id: 7, name: t("Contact"), href: "#", disabled: true },
+    { id: 7, name: t("Contact"), href: "/contact", disabled: true },
   ];
 
   return (

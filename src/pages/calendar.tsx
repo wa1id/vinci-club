@@ -122,7 +122,7 @@ const Calendar = () => {
   };
 
   return (
-    <div className='bg-plan'>
+    <div className='bg-primary'>
       <Transition
         appear
         show={isOpen}
@@ -175,10 +175,10 @@ const Calendar = () => {
           <Heading
             aboveHeading={''}
             belowHeading={'Calendar'}
-            headingClassName='text-primary'
+            headingClassName='text-white'
             lineClassName='bg-secondary'
           />
-          <p className='text-lg max-w-3xl m-auto font-normal mt-6'>
+          <p className='text-lg max-w-3xl m-auto font-normal mt-6 text-white'>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis,
             voluptatem!
           </p>

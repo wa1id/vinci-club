@@ -18,7 +18,7 @@ export default function Navbar() {
       href: "#",
       disabled: true,
     },
-    { id: 3, name: t("Group lessons"), href: "#", disabled: true },
+    { id: 3, name: t("Group lessons"), href: "/calendar", disabled: true },
     // { id: 4, name: "Abonnementen", href: "#", disabled: true },
     // { id: 5, name: "Gezondheid", href: "#", disabled: true },
     // { id: 6, name: "Ladies only", href: "#", disabled: true },

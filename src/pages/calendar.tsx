@@ -1,10 +1,10 @@
-import { Fragment, useRef, useEffect } from 'react';
-import { BsChevronDown, BsChevronRight, BsChevronLeft } from 'react-icons/bs';
-import { HiOutlineDotsHorizontal } from 'react-icons/hi';
-import { Menu, Transition } from '@headlessui/react';
-import classNames from 'classnames';
+import { Fragment, useRef, useEffect } from "react";
+import { BsChevronDown, BsChevronRight, BsChevronLeft } from "react-icons/bs";
+import { HiOutlineDotsHorizontal } from "react-icons/hi";
+import { Menu, Transition } from "@headlessui/react";
+import classNames from "classnames";
 
-const Calender = () => {
+const Calendar = () => {
   /**
    * Current schedule for calendar:
       title: Kickboks
@@ -19,7 +19,7 @@ const Calender = () => {
     start,
     end,
     className,
-    style = { gridRow: '200 / span 22' },
+    style = { gridRow: "200 / span 22" },
   }: {
     title: string;
     start: string;
@@ -31,19 +31,19 @@ const Calender = () => {
       <li
         className={classNames(
           className,
-          'relative mt-px hidden sm:col-start-1 sm:flex '
+          "relative mt-px hidden sm:col-start-1 sm:flex "
         )}
         style={style}
       >
         <a
-          href='#'
-          className='group absolute inset-1 flex flex-col overflow-y-auto rounded-lg bg-gray-100 p-2 text-xs leading-5 items-center justify-center hover:bg-black'
+          href="#"
+          className="group absolute inset-1 flex flex-col overflow-y-auto rounded-lg bg-gray-100 p-2 text-xs leading-5 items-center justify-center hover:bg-black"
         >
-          <p className='order-1 font-semibold text-gray-700 group-hover:text-white'>
+          <p className="order-1 font-semibold text-gray-700 group-hover:text-white">
             {title}
           </p>
-          <p className='text-gray-500 group-hover:text-white'>
-            <time dateTime={start}>{start}</time> -{' '}
+          <p className="text-gray-500 group-hover:text-white">
+            <time dateTime={start}>{start}</time> -{" "}
             <time dateTime={end}>{end}</time>
           </p>
         </a>
@@ -58,11 +58,11 @@ const Calender = () => {
       events.push(
         <EventItem
           key={`event-${i}-1`}
-          title='Kickboks'
-          start='17:00'
-          end='18:00'
+          title="Kickboks"
+          start="17:00"
+          end="18:00"
           style={{
-            gridRow: '164 / span 18',
+            gridRow: "164 / span 18",
             gridColumn: `${i + 1} / span 1`,
           }}
         />
@@ -78,11 +78,11 @@ const Calender = () => {
       events.push(
         <EventItem
           key={`event-${i}-2`}
-          title='Kickboks'
-          start='18:15'
-          end='19:15'
+          title="Kickboks"
+          start="18:15"
+          end="19:15"
           style={{
-            gridRow: '187 / span 18',
+            gridRow: "187 / span 18",
             gridColumn: `${i + 1} / span 1`,
           }}
         />
@@ -98,11 +98,11 @@ const Calender = () => {
       events.push(
         <EventItem
           key={`event-${i}-3`}
-          title='Kickboks'
-          start='20:30'
-          end='21:30'
+          title="Kickboks"
+          start="20:30"
+          end="21:30"
           style={{
-            gridRow: '227 / span 18',
+            gridRow: "227 / span 18",
             gridColumn: `${i + 1} / span 1`,
           }}
         />
@@ -111,19 +111,16 @@ const Calender = () => {
     return events;
   };
 
-
-
-
   return (
-    <div className='flex h-full flex-col'>
-      <header className='relative z-20 flex flex-none items-center justify-between border-b border-gray-200 py-4 px-6'>
-        <h1 className='text-lg font-semibold text-gray-900'>
+    <div className="flex h-full flex-col">
+      <header className="relative z-20 flex flex-none items-center justify-between border-b border-gray-200 py-4 px-6">
+        <h1 className="text-lg font-semibold text-gray-900">
           <time dateTime={new Date().toISOString()}>
-            {new Date().toLocaleDateString('en-US', {
-              weekday: 'long',
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
+            {new Date().toLocaleDateString("en-US", {
+              weekday: "long",
+              year: "numeric",
+              month: "long",
+              day: "numeric",
             })}
           </time>
         </h1>
@@ -379,239 +376,239 @@ const Calender = () => {
           </Menu>
         </div> */}
       </header>
-      <div className='flex flex-auto flex-col overflow-auto bg-white'>
+      <div className="flex flex-auto flex-col overflow-auto bg-white">
         <div
-          style={{ width: '165%' }}
-          className='flex max-w-full flex-none flex-col sm:max-w-none md:max-w-full'
+          style={{ width: "165%" }}
+          className="flex max-w-full flex-none flex-col sm:max-w-none md:max-w-full"
         >
-          <div className='sticky top-0 z-10 flex-none bg-white shadow ring-1 ring-black ring-opacity-5 sm:pr-8'>
-            <div className='grid grid-cols-7 text-sm leading-6 text-gray-500 sm:hidden'>
+          <div className="sticky top-0 z-10 flex-none bg-white shadow ring-1 ring-black ring-opacity-5 sm:pr-8">
+            <div className="grid grid-cols-7 text-sm leading-6 text-gray-500 sm:hidden">
               <button
-                type='button'
-                className='flex flex-col items-center pt-2 pb-3'
+                type="button"
+                className="flex flex-col items-center pt-2 pb-3"
               >
-                M{' '}
-                <span className='mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900'>
+                M{" "}
+                <span className="mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900">
                   10
                 </span>
               </button>
               <button
-                type='button'
-                className='flex flex-col items-center pt-2 pb-3'
+                type="button"
+                className="flex flex-col items-center pt-2 pb-3"
               >
-                T{' '}
-                <span className='mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900'>
+                T{" "}
+                <span className="mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900">
                   11
                 </span>
               </button>
               <button
-                type='button'
-                className='flex flex-col items-center pt-2 pb-3'
+                type="button"
+                className="flex flex-col items-center pt-2 pb-3"
               >
-                W{' '}
-                <span className='mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-black font-semibold text-white'>
+                W{" "}
+                <span className="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-black font-semibold text-white">
                   12
                 </span>
               </button>
               <button
-                type='button'
-                className='flex flex-col items-center pt-2 pb-3'
+                type="button"
+                className="flex flex-col items-center pt-2 pb-3"
               >
-                T{' '}
-                <span className='mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900'>
+                T{" "}
+                <span className="mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900">
                   13
                 </span>
               </button>
               <button
-                type='button'
-                className='flex flex-col items-center pt-2 pb-3'
+                type="button"
+                className="flex flex-col items-center pt-2 pb-3"
               >
-                F{' '}
-                <span className='mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900'>
+                F{" "}
+                <span className="mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900">
                   14
                 </span>
               </button>
               <button
-                type='button'
-                className='flex flex-col items-center pt-2 pb-3'
+                type="button"
+                className="flex flex-col items-center pt-2 pb-3"
               >
-                S{' '}
-                <span className='mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900'>
+                S{" "}
+                <span className="mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900">
                   15
                 </span>
               </button>
               <button
-                type='button'
-                className='flex flex-col items-center pt-2 pb-3'
+                type="button"
+                className="flex flex-col items-center pt-2 pb-3"
               >
-                S{' '}
-                <span className='mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900'>
+                S{" "}
+                <span className="mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900">
                   16
                 </span>
               </button>
             </div>
 
-            <div className='-mr-px hidden grid-cols-7 divide-x divide-gray-100 border-r border-gray-100 text-sm leading-6 text-gray-500 sm:grid'>
-              <div className='col-end-1 w-14' />
-              <div className='flex items-center justify-center py-3'>
+            <div className="-mr-px hidden grid-cols-7 divide-x divide-gray-100 border-r border-gray-100 text-sm leading-6 text-gray-500 sm:grid">
+              <div className="col-end-1 w-14" />
+              <div className="flex items-center justify-center py-3">
                 <span>
-                  Mon{' '}
-                  <span className='items-center justify-center font-semibold text-gray-900'>
+                  Mon{" "}
+                  <span className="items-center justify-center font-semibold text-gray-900">
                     10
                   </span>
                 </span>
               </div>
-              <div className='flex items-center justify-center py-3'>
+              <div className="flex items-center justify-center py-3">
                 <span>
-                  Tue{' '}
-                  <span className='items-center justify-center font-semibold text-gray-900'>
+                  Tue{" "}
+                  <span className="items-center justify-center font-semibold text-gray-900">
                     11
                   </span>
                 </span>
               </div>
-              <div className='flex items-center justify-center py-3'>
-                <span className='flex items-baseline'>
-                  Wed{' '}
-                  <span className='ml-1.5 flex h-8 w-8 items-center justify-center rounded-full bg-black font-semibold text-white'>
+              <div className="flex items-center justify-center py-3">
+                <span className="flex items-baseline">
+                  Wed{" "}
+                  <span className="ml-1.5 flex h-8 w-8 items-center justify-center rounded-full bg-black font-semibold text-white">
                     12
                   </span>
                 </span>
               </div>
-              <div className='flex items-center justify-center py-3'>
+              <div className="flex items-center justify-center py-3">
                 <span>
-                  Thu{' '}
-                  <span className='items-center justify-center font-semibold text-gray-900'>
+                  Thu{" "}
+                  <span className="items-center justify-center font-semibold text-gray-900">
                     13
                   </span>
                 </span>
               </div>
-              <div className='flex items-center justify-center py-3'>
+              <div className="flex items-center justify-center py-3">
                 <span>
-                  Fri{' '}
-                  <span className='items-center justify-center font-semibold text-gray-900'>
+                  Fri{" "}
+                  <span className="items-center justify-center font-semibold text-gray-900">
                     14
                   </span>
                 </span>
               </div>
-              <div className='flex items-center justify-center py-3'>
+              <div className="flex items-center justify-center py-3">
                 <span>
-                  Sat{' '}
-                  <span className='items-center justify-center font-semibold text-gray-900'>
+                  Sat{" "}
+                  <span className="items-center justify-center font-semibold text-gray-900">
                     15
                   </span>
                 </span>
               </div>
-              <div className='flex items-center justify-center py-3'>
+              <div className="flex items-center justify-center py-3">
                 <span>
-                  Sun{' '}
-                  <span className='items-center justify-center font-semibold text-gray-900'>
+                  Sun{" "}
+                  <span className="items-center justify-center font-semibold text-gray-900">
                     16
                   </span>
                 </span>
               </div>
             </div>
           </div>
-          <div className='flex flex-auto'>
-            <div className='sticky left-0 w-14 flex-none bg-white ring-1 ring-gray-100' />
-            <div className='grid flex-auto grid-cols-1 grid-rows-1'>
+          <div className="flex flex-auto">
+            <div className="sticky left-0 w-14 flex-none bg-white ring-1 ring-gray-100" />
+            <div className="grid flex-auto grid-cols-1 grid-rows-1">
               {/* Horizontal lines */}
               <div
-                className='col-start-1 col-end-2 row-start-1 grid divide-y divide-gray-100'
-                style={{ gridTemplateRows: 'repeat(32, minmax(3.5rem, 1fr))' }}
+                className="col-start-1 col-end-2 row-start-1 grid divide-y divide-gray-100"
+                style={{ gridTemplateRows: "repeat(32, minmax(3.5rem, 1fr))" }}
               >
-                <div className='row-end-1 h-7'></div>
+                <div className="row-end-1 h-7"></div>
                 <div>
-                  <div className='sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400'>
+                  <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
                     8AM
                   </div>
                 </div>
                 <div />
                 <div>
-                  <div className='sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400'>
+                  <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
                     9AM
                   </div>
                 </div>
                 <div />
                 <div>
-                  <div className='sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400'>
+                  <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
                     10AM
                   </div>
                 </div>
                 <div />
                 <div>
-                  <div className='sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400'>
+                  <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
                     11AM
                   </div>
                 </div>
                 <div />
                 <div>
-                  <div className='sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400'>
+                  <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
                     12PM
                   </div>
                 </div>
                 <div />
                 <div>
-                  <div className='sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400'>
+                  <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
                     1PM
                   </div>
                 </div>
                 <div />
                 <div>
-                  <div className='sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400'>
+                  <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
                     2PM
                   </div>
                 </div>
                 <div />
                 <div>
-                  <div className='sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400'>
+                  <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
                     3PM
                   </div>
                 </div>
                 <div />
                 <div>
-                  <div className='sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400'>
+                  <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
                     4PM
                   </div>
                 </div>
                 <div />
                 <div>
-                  <div className='sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400'>
+                  <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
                     5PM
                   </div>
                 </div>
                 <div />
                 <div>
-                  <div className='sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400'>
+                  <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
                     6PM
                   </div>
                 </div>
                 <div />
                 <div>
-                  <div className='sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400'>
+                  <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
                     7PM
                   </div>
                 </div>
                 <div />
                 <div>
-                  <div className='sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400'>
+                  <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
                     8PM
                   </div>
                 </div>
                 <div />
                 <div>
-                  <div className='sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400'>
+                  <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
                     9PM
                   </div>
                 </div>
                 <div />
                 <div>
-                  <div className='sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400'>
+                  <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
                     10PM
                   </div>
                 </div>
                 <div />
                 <div>
-                  <div className='sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400'>
+                  <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
                     11PM
                   </div>
                 </div>
@@ -619,22 +616,22 @@ const Calender = () => {
               </div>
 
               {/* Vertical lines */}
-              <div className='col-start-1 col-end-2 row-start-1 hidden grid-cols-7 grid-rows-1 divide-x divide-gray-100 sm:grid sm:grid-cols-7'>
-                <div className='col-start-1 row-span-full' />
-                <div className='col-start-2 row-span-full' />
-                <div className='col-start-3 row-span-full' />
-                <div className='col-start-4 row-span-full' />
-                <div className='col-start-5 row-span-full' />
-                <div className='col-start-6 row-span-full' />
-                <div className='col-start-7 row-span-full' />
-                <div className='col-start-8 row-span-full w-8' />
+              <div className="col-start-1 col-end-2 row-start-1 hidden grid-cols-7 grid-rows-1 divide-x divide-gray-100 sm:grid sm:grid-cols-7">
+                <div className="col-start-1 row-span-full" />
+                <div className="col-start-2 row-span-full" />
+                <div className="col-start-3 row-span-full" />
+                <div className="col-start-4 row-span-full" />
+                <div className="col-start-5 row-span-full" />
+                <div className="col-start-6 row-span-full" />
+                <div className="col-start-7 row-span-full" />
+                <div className="col-start-8 row-span-full w-8" />
               </div>
 
               {/* Events */}
               <ol
-                className='col-start-1 col-end-2 row-start-1 grid grid-cols-1 sm:grid-cols-7 sm:pr-8'
+                className="col-start-1 col-end-2 row-start-1 grid grid-cols-1 sm:grid-cols-7 sm:pr-8"
                 style={{
-                  gridTemplateRows: '1.75rem repeat(288, minmax(0, 1fr)) auto',
+                  gridTemplateRows: "1.75rem repeat(288, minmax(0, 1fr)) auto",
                 }}
               >
                 {renderMondayToFriday()}
@@ -649,4 +646,4 @@ const Calender = () => {
   );
 };
 
-export default Calender;
+export default Calendar;

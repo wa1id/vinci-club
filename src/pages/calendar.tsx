@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { nextDay } from "date-fns";
+import { add, Day, getDay, isSunday, nextDay } from "date-fns";
 import Heading from "src/components/Heading/Heading";
 import useCalendar from "src/hooks/useCalendar";
 import { Dialog, Transition } from "@headlessui/react";
@@ -7,9 +7,14 @@ import { Fragment, useState } from "react";
 import BecomeAMember from "src/components/form/BecomeAMember";
 import GetTheNewsFrom from "src/components/GetTheNewsFrom/GetTheNewsFrom";
 import Head from "next/head";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
+const dayLabels = ["Zo", "Ma", "Di", "Wo", "Do", "Vr", "Za"];
+const dayLabelsMobile = ["Z", "M", "D", "W", "D", "V", "Z"];
 
 const Calendar = () => {
-  let [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedDate, setSelectedDate] = useState(new Date());
   const { firstDayOfWeek } = useCalendar();
 
   const EventItem = ({
@@ -27,14 +32,11 @@ const Calendar = () => {
   }) => {
     return (
       <li
-        className={classNames(
-          className,
-          "relative mt-px hidden sm:col-start-1 sm:flex "
-        )}
+        className={classNames(className, "relative mt-px sm:col-start-3")}
         style={style}
       >
         <div className="text-white absolute inset-1 flex flex-col overflow-y-auto rounded-lg bg-black p-2 text-xs leading-5 items-center justify-center">
-          <div className="order-1 font-semibold ">{title}</div>
+          <div className="order-1 font-semibold">{title}</div>
           <div>
             <time dateTime={start}>{start}</time> -{" "}
             <time dateTime={end}>{end}</time>
@@ -54,9 +56,14 @@ const Calendar = () => {
           title="Kickboks"
           start="17:00"
           end="18:00"
+          className={
+            (i + 1) % 7 === selectedDate.getDay() ? "flex" : "hidden sm:flex"
+          }
           style={{
-            gridRow: "164 / span 18",
-            gridColumn: `${i + 1} / span 1`,
+            gridRow: "163 / span 20",
+            gridColumn: `${
+              (i + 1) % 7 === selectedDate.getDay() ? 1 : i + 1
+            } / span 1`,
           }}
         />
       );
@@ -74,9 +81,14 @@ const Calendar = () => {
           title="Kickboks"
           start="18:15"
           end="19:15"
+          className={
+            (i + 1) % 7 === selectedDate.getDay() ? "flex" : "hidden sm:flex"
+          }
           style={{
-            gridRow: "187 / span 18",
-            gridColumn: `${i + 1} / span 1`,
+            gridRow: "185 / span 20",
+            gridColumn: `${
+              (i + 1) % 7 === selectedDate.getDay() ? 1 : i + 1
+            } / span 1`,
           }}
         />
       );
@@ -94,14 +106,72 @@ const Calendar = () => {
           title="Kickboks"
           start="20:30"
           end="21:30"
+          className={
+            (i + 1) % 7 === selectedDate.getDay() ? "flex" : "hidden sm:flex"
+          }
           style={{
-            gridRow: "227 / span 18",
-            gridColumn: `${i + 1} / span 1`,
+            gridRow: "226 / span 20",
+            gridColumn: `${
+              (i + 1) % 7 === selectedDate.getDay() ? 1 : i + 1
+            } / span 1`,
           }}
         />
       );
     }
     return events;
+  };
+
+  const renderMobileDates = () => {
+    const dates = [];
+    for (let i = 0; i < 7; i++) {
+      dates.push(
+        <button
+          key={i}
+          type="button"
+          className="flex flex-col items-center pt-2 pb-3"
+          onClick={() => setSelectedDate(add(firstDayOfWeek, { days: i }))}
+        >
+          {dayLabelsMobile[(new Date().getDay() + 1 + i) % 7]}{" "}
+          <span
+            className={classNames(
+              (i + 1) % 7 === getDay(selectedDate)
+                ? "bg-black text-white rounded-full"
+                : "text-gray-900",
+              "mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900"
+            )}
+          >
+            {firstDayOfWeek.getDate() + i}
+          </span>
+        </button>
+      );
+    }
+
+    return dates;
+  };
+
+  const renderDates = () => {
+    const dates = [];
+    for (let i = 0; i < 7; i++) {
+      dates.push(
+        <div className="flex items-center justify-center py-3">
+          <span className="flex items-baseline">
+            {dayLabels[(new Date().getDay() + 1 + i) % 7]}{" "}
+            <span
+              className={classNames(
+                (i + 1) % 7 === getDay(new Date())
+                  ? "bg-black text-white rounded-full flex h-8 w-8"
+                  : "text-gray-900",
+                "ml-1.5 items-center justify-center font-semibold"
+              )}
+            >
+              {firstDayOfWeek.getDate() + i}
+            </span>
+          </span>
+        </div>
+      );
+    }
+
+    return dates;
   };
 
   return (
@@ -166,135 +236,15 @@ const Calendar = () => {
         </div>
         <div className="flex h-full flex-col">
           <div className="flex flex-auto flex-col bg-white">
-            <div
-              style={{ width: "165%" }}
-              className="flex max-w-full flex-none flex-col sm:max-w-none md:max-w-full"
-            >
+            <div className="flex max-w-full flex-none flex-col sm:max-w-none md:max-w-full">
               <div className="sticky top-0 z-10 flex-none bg-white shadow ring-1 ring-black ring-opacity-5 sm:pr-8">
                 <div className="grid grid-cols-7 text-sm leading-6 text-gray-500 sm:hidden">
-                  <button
-                    type="button"
-                    className="flex flex-col items-center pt-2 pb-3"
-                  >
-                    M{" "}
-                    <span className="mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900">
-                      {firstDayOfWeek.getDate()}
-                    </span>
-                  </button>
-                  <button
-                    type="button"
-                    className="flex flex-col items-center pt-2 pb-3"
-                  >
-                    D{" "}
-                    <span className="mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900">
-                      {nextDay(firstDayOfWeek, 2).getDate()}
-                    </span>
-                  </button>
-                  <button
-                    type="button"
-                    className="flex flex-col items-center pt-2 pb-3"
-                  >
-                    W{" "}
-                    <span className="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-black font-semibold text-white">
-                      {nextDay(firstDayOfWeek, 3).getDate()}
-                    </span>
-                  </button>
-                  <button
-                    type="button"
-                    className="flex flex-col items-center pt-2 pb-3"
-                  >
-                    D{" "}
-                    <span className="mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900">
-                      {nextDay(firstDayOfWeek, 4).getDate()}
-                    </span>
-                  </button>
-                  <button
-                    type="button"
-                    className="flex flex-col items-center pt-2 pb-3"
-                  >
-                    V{" "}
-                    <span className="mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900">
-                      {nextDay(firstDayOfWeek, 5).getDate()}
-                    </span>
-                  </button>
-                  <button
-                    type="button"
-                    className="flex flex-col items-center pt-2 pb-3"
-                  >
-                    Z{" "}
-                    <span className="mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900">
-                      {nextDay(firstDayOfWeek, 6).getDate()}
-                    </span>
-                  </button>
-                  <button
-                    type="button"
-                    className="flex flex-col items-center pt-2 pb-3"
-                  >
-                    Z{" "}
-                    <span className="mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900">
-                      {nextDay(firstDayOfWeek, 0).getDate()}
-                    </span>
-                  </button>
+                  {renderMobileDates()}
                 </div>
 
                 <div className="-mr-px hidden grid-cols-7 divide-x divide-gray-100 border-r border-gray-100 text-sm leading-6 text-gray-500 sm:grid">
                   <div className="col-end-1 w-14" />
-                  <div className="flex items-center justify-center py-3">
-                    <span>
-                      Ma{" "}
-                      <span className="items-center justify-center font-semibold text-gray-900">
-                        {firstDayOfWeek.getDate()}
-                      </span>
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-center py-3">
-                    <span>
-                      Di{" "}
-                      <span className="items-center justify-center font-semibold text-gray-900">
-                        {nextDay(firstDayOfWeek, 2).getDate()}
-                      </span>
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-center py-3">
-                    <span className="flex items-baseline">
-                      Wo{" "}
-                      <span className="ml-1.5 flex h-8 w-8 items-center justify-center rounded-full bg-black font-semibold text-white">
-                        {nextDay(firstDayOfWeek, 3).getDate()}
-                      </span>
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-center py-3">
-                    <span>
-                      Do{" "}
-                      <span className="items-center justify-center font-semibold text-gray-900">
-                        {nextDay(firstDayOfWeek, 4).getDate()}
-                      </span>
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-center py-3">
-                    <span>
-                      Vr{" "}
-                      <span className="items-center justify-center font-semibold text-gray-900">
-                        {nextDay(firstDayOfWeek, 5).getDate()}
-                      </span>
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-center py-3">
-                    <span>
-                      Za{" "}
-                      <span className="items-center justify-center font-semibold text-gray-900">
-                        {nextDay(firstDayOfWeek, 6).getDate()}
-                      </span>
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-center py-3">
-                    <span>
-                      Zo{" "}
-                      <span className="items-center justify-center font-semibold text-gray-900">
-                        {nextDay(firstDayOfWeek, 0).getDate()}
-                      </span>
-                    </span>
-                  </div>
+                  {renderDates()}
                 </div>
               </div>
               <div className="flex flex-auto">
@@ -304,7 +254,7 @@ const Calendar = () => {
                   <div
                     className="col-start-1 col-end-2 row-start-1 grid divide-y divide-gray-100"
                     style={{
-                      gridTemplateRows: "repeat(32, minmax(3.5rem, 1fr))",
+                      gridTemplateRows: "repeat(32, minmax(3rem, 1fr))",
                     }}
                   >
                     <div className="row-end-1 h-7"></div>
@@ -435,5 +385,13 @@ const Calendar = () => {
     </>
   );
 };
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+}
 
 export default Calendar;

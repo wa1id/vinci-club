@@ -12,12 +12,12 @@ const Footer = () => {
           {/* TODO: i18 */}
           <h3 className="text-xl font-bold">CONTACT</h3>
           <div className="flex flex-col items-center md:items-start my-4">
-            <div className="flex items-center">
+            <div className="flex items-center space-x-1">
               {/* TODO: i18 */}
               <span>Tel:</span>
               <a href="tel:+32470702750">+32 470 70 27 50</a>
             </div>
-            <div className="flex items-center">
+            <div className="flex items-center space-x-1">
               {/* TODO: i18 */}
               <span>E-mail:</span>
               <a href="mailto:info@vinci-club.be">info@vinci-club.be</a>
@@ -55,16 +55,16 @@ const Footer = () => {
             <span className="sr-only">Vinci Club</span>
             <Image style={{ maxWidth: "250px" }} src={logo} alt="logo" />
           </Link>
-          <div className="flex items-center flex-col sm:flex-row sm:justify-center md:justify-end gap-5 mt-4 md:m-0 w-full">
-            <Link href="#" className="text-sm">
+          <div className="flex items-center flex-col sm:flex-row sm:justify-center md:justify-end gap-5 mt-4 md:m-0 w-full text-sm">
+            <div className="">
               {/* TODO: i18 */}
               &copy; Vinci Club
-            </Link>
-            <Link href="/privacy" className="text-sm">
+            </div>
+            <Link href="/privacy">
               {/* TODO: i18 */}
               Privacybeleid
             </Link>
-            <Link href="/terms-and-conditions" className="text-sm">
+            <Link href="/terms-and-conditions">
               {/* TODO: i18 */}
               Algemene voorwaarden
             </Link>

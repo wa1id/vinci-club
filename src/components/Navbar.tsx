@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Button } from "./Button/Button";
 import logo from "public/logo.svg";
 import { useTranslation } from "next-i18next";
+import { NextLink } from "./NextLink/NextLink";
 
 export default function Navbar() {
   const { t } = useTranslation("common");
@@ -73,41 +74,48 @@ export default function Navbar() {
           focus
           className="absolute inset-x-0 top-0 origin-top-right transform p-2 transition lg:hidden"
         >
-          <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
-            <div className="px-5 pt-5 pb-6">
-              <div className="flex items-center justify-between">
+          {({ close }) => (
+            <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+              <div className="px-5 pt-5 pb-6">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <Image
+                      style={{ maxWidth: "150px" }}
+                      src={logo}
+                      alt="logo"
+                    />
+                  </div>
+                  <div className="-mr-2">
+                    <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-light">
+                      <span className="sr-only">{t("Close menu")}</span>
+                      <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                    </Popover.Button>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-6 py-6 px-5">
+                <div className="grid grid-cols-1 gap-y-4 gap-x-8">
+                  {navigationData.map((item) => (
+                    <NextLink
+                      key={item.id}
+                      href={item.href}
+                      onClick={() => close()}
+                      className="text-base font-medium text-gray-900 hover:text-gray-700"
+                    >
+                      {item.name}
+                    </NextLink>
+                  ))}
+                </div>
                 <div>
-                  <Image style={{ maxWidth: "150px" }} src={logo} alt="logo" />
-                </div>
-                <div className="-mr-2">
-                  <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-light">
-                    <span className="sr-only">{t("Close menu")}</span>
-                    <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-                  </Popover.Button>
-                </div>
-              </div>
-            </div>
-            <div className="space-y-6 py-6 px-5">
-              <div className="grid grid-cols-1 gap-y-4 gap-x-8">
-                {navigationData.map((item) => (
-                  <Link
-                    key={item.id}
-                    href={item.href}
-                    className="text-base font-medium text-gray-900 hover:text-gray-700"
-                  >
-                    {item.name}
+                  <Link href="/signup">
+                    <Button className="w-full text-center" variant="primary">
+                      {t("Become member")}
+                    </Button>
                   </Link>
-                ))}
-              </div>
-              <div>
-                <Link href="/signup">
-                  <Button className="w-full text-center" variant="primary">
-                    {t("Become member")}
-                  </Button>
-                </Link>
+                </div>
               </div>
             </div>
-          </div>
+          )}
         </Popover.Panel>
       </Transition>
     </Popover>

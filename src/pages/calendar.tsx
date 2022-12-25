@@ -137,7 +137,7 @@ const Calendar = () => {
               (i + 1) % 7 === getDay(selectedDate)
                 ? "bg-black text-white rounded-full"
                 : "text-gray-900",
-              "mt-1 flex h-8 w-8 items-center justify-center font-semibold text-gray-900"
+              "mt-1 flex h-8 w-8 items-center justify-center font-semibold text-white"
             )}
           >
             {firstDayOfWeek.getDate() + i}
@@ -153,7 +153,7 @@ const Calendar = () => {
     const dates = [];
     for (let i = 0; i < 7; i++) {
       dates.push(
-        <div className="flex items-center justify-center py-3">
+        <div key={i} className="flex items-center justify-center py-3">
           <span className="flex items-baseline">
             {dayLabels[(new Date().getDay() + 1 + i) % 7]}{" "}
             <span

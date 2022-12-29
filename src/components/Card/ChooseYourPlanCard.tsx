@@ -10,7 +10,7 @@ export interface IChooseYourPlanCardProps {
   studentPrice?: number;
   info: string[];
   subtitle?: string;
-  trigger: any;
+  click: any;
 }
 
 const ChooseYourPlanCard: React.FC<IChooseYourPlanCardProps> = ({
@@ -20,7 +20,7 @@ const ChooseYourPlanCard: React.FC<IChooseYourPlanCardProps> = ({
   info,
   subtitle,
   id,
-  trigger,
+  click,
 }) => {
   const { t } = useTranslation("common");
 
@@ -74,7 +74,7 @@ const ChooseYourPlanCard: React.FC<IChooseYourPlanCardProps> = ({
         </div>
 
         <button
-          onClick={() => trigger(true)}
+          onClick={() => click(true)}
           className="border-primary border-2 hover:bg-secondary text-primary flex items-center justify-center gap-2 px-12 py-4 rounded-full my-6 mx-auto font-bold text-2xl uppercase transition-colors ease-in-out duration-200"
         >
           {t("Sign up")}

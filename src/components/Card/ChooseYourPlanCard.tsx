@@ -1,7 +1,6 @@
-import React from "react";
+import React, { MouseEventHandler } from "react";
 import { TiTick } from "react-icons/ti";
 import InfoWithIcon from "../Info/InfoWithIcon";
-import { FiArrowUpRight } from "react-icons/fi";
 import { useTranslation } from "react-i18next";
 
 export interface IChooseYourPlanCardProps {
@@ -11,6 +10,7 @@ export interface IChooseYourPlanCardProps {
   studentPrice?: number;
   info: string[];
   subtitle?: string;
+  trigger: any;
 }
 
 const ChooseYourPlanCard: React.FC<IChooseYourPlanCardProps> = ({
@@ -20,6 +20,7 @@ const ChooseYourPlanCard: React.FC<IChooseYourPlanCardProps> = ({
   info,
   subtitle,
   id,
+  trigger,
 }) => {
   const { t } = useTranslation("common");
 
@@ -72,7 +73,10 @@ const ChooseYourPlanCard: React.FC<IChooseYourPlanCardProps> = ({
           ))}
         </div>
 
-        <button className="border-primary border-2 hover:bg-secondary text-primary flex items-center justify-center gap-2 px-12 py-4 rounded-full my-6 mx-auto font-bold text-2xl uppercase transition-colors ease-in-out duration-200">
+        <button
+          onClick={() => trigger(true)}
+          className="border-primary border-2 hover:bg-secondary text-primary flex items-center justify-center gap-2 px-12 py-4 rounded-full my-6 mx-auto font-bold text-2xl uppercase transition-colors ease-in-out duration-200"
+        >
           {t("Sign up")}
         </button>
       </div>

@@ -7,8 +7,9 @@ import ChooseYourPlanCard from "../Card/ChooseYourPlanCard";
 import BodyImg from "public/body.png";
 import { useTranslation } from "react-i18next";
 import Link from "next/link";
+import { FiArrowUpRight } from "react-icons/fi";
 
-const ChooseYourPlan = () => {
+const ChooseYourPlan = ({ click }) => {
   const { t } = useTranslation("common");
 
   return (
@@ -31,11 +32,15 @@ const ChooseYourPlan = () => {
           <p className="text-lg max-w-3xl m-auto font-normal mt-6">
             {t("plan description")}
           </p>
+          <div className="flex items-center justify-center space-x-1">
+            <Link href="/prijzen">Bekijk al onze prijzen hier</Link>
+            <FiArrowUpRight />
+          </div>
         </div>
       </div>
       <div className="flex flex-col lg:flex-row lg:space-x-5 space-y-5 lg:space-y-0 items-center lg:items-stretch justify-center p-6">
         {data.map((item) => (
-          <ChooseYourPlanCard key={item.id} {...item} />
+          <ChooseYourPlanCard trigger={click} key={item.id} {...item} />
         ))}
       </div>
       <div className="flex justify-center">
@@ -43,7 +48,10 @@ const ChooseYourPlan = () => {
           <div className="font-bold uppercase text-xl">
             Beurtenkaart of dagpas?
           </div>
-          <Link href="/abonnementen">Bekijk hier alle informatie</Link>
+          <div className="flex items-center space-x-1 justify-center">
+            <Link href="/prijzen">Bekijk hier alle informatie</Link>
+            <FiArrowUpRight />
+          </div>
         </div>
       </div>
 

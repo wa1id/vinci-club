@@ -10,27 +10,13 @@ const data: IChooseYourPlanCardProps[] = [
     name: "bronze",
     price: 19.95,
     studentPrice: 16.95,
-    info: [
-      "Fitness",
-      "Cardio-apparatuur",
-      "Gewichttraining",
-      "Optie 1",
-      "Optie 2",
-      "Optie 3",
-    ],
+    info: ["Fitness", "Cardio-apparatuur", "Gewichtstraining"],
   },
   {
     id: 2,
     name: "silver",
     price: 19.95,
-    info: [
-      "Kickboks",
-      "Kickboks groepslessen",
-      "Kickboksring",
-      "Optie 1",
-      "Optie 2",
-      "Optie 3",
-    ],
+    info: ["Kickboks", "Kickboks groepslessen", "Kickboksring"],
   },
   {
     id: 3,
@@ -39,12 +25,10 @@ const data: IChooseYourPlanCardProps[] = [
     info: [
       "Fitness",
       "Cardio-apparatuur",
-      "Gewichttraining",
+      "Gewichtstraining",
       "Kickboks",
       "Kickboks groepslessen",
       "Kickboksring",
-      "Optie 1",
-      "Optie 2",
     ],
   },
 ];

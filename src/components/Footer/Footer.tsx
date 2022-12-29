@@ -64,7 +64,7 @@ const Footer = () => {
               {/* TODO: i18 */}
               Privacybeleid
             </Link>
-            <Link href="/terms-and-conditions">
+            <Link href="/algemene-voorwaarden.pdf">
               {/* TODO: i18 */}
               Algemene voorwaarden
             </Link>

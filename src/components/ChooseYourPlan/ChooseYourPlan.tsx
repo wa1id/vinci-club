@@ -40,6 +40,7 @@ const ChooseYourPlan = ({ click }: { click: any }) => {
       </div>
       <div className="flex flex-col lg:flex-row lg:space-x-5 space-y-5 lg:space-y-0 items-center lg:items-stretch justify-center p-6">
         {data.map((item) => (
+          //@ts-ignore
           <ChooseYourPlanCard trigger={click} key={item.id} {...item} />
         ))}
       </div>

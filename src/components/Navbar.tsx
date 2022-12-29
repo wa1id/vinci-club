@@ -138,7 +138,7 @@ export default function Navbar() {
               <div className="space-y-6 py-6 px-5">
                 <div className="grid grid-cols-1 gap-y-4 gap-x-8">
                   <Disclosure>
-                    {({ close }) => (
+                    {({ close: closeDisclosure }) => (
                       <>
                         <Disclosure.Button className="block rounded-md text-primary text-base font-medium w-full text-left">
                           De Club
@@ -151,6 +151,7 @@ export default function Navbar() {
                                 href={item.link}
                                 onClick={() => {
                                   close();
+                                  closeDisclosure();
                                   setIsMenuOpen(false);
                                 }}
                               >

@@ -23,7 +23,7 @@ const Kickboks = () => {
               headingClassName="text-white"
               lineClassName="bg-secondary"
             />
-            <p className="text-white">
+            <p className="text-white mt-8">
               Boksen is meer dan enkel boksen, het is cardio -en krachttraining
               tezamen. Hierbij train je niet enkel jouw kracht en conditie maar
               tegelijk jouw reactievermogen, behendigheid, evenwicht,

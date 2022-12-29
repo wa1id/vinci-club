@@ -10,7 +10,7 @@ export interface IChooseYourPlanCardProps {
   studentPrice?: number;
   info: string[];
   subtitle?: string;
-  click: any;
+  click?: any;
 }
 
 const ChooseYourPlanCard: React.FC<IChooseYourPlanCardProps> = ({

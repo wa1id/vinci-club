@@ -42,7 +42,7 @@ const Kickboks = () => {
             </p>
           </div>
           <div className="w-full h-full flex items-center justify-center relative p-6">
-            <Image src={jamal} alt="Jamal Ben Saddik" />
+            <Image priority src={jamal} alt="Jamal Ben Saddik" />
           </div>
         </div>
       </div>

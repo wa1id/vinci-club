@@ -5,8 +5,6 @@ import React from "react";
 import jamal from "public/jamal.jpeg";
 import Heading from "src/components/Heading/Heading";
 import Link from "next/link";
-import ContactWithVinciDumbellImg from "public/contact-with-vinci-club-dumbell.png";
-import ContactWithVinciExerciseImg from "public/contact-with-vinci-club-exercise-machine.png";
 
 const Kickboks = () => {
   return (
@@ -25,6 +23,23 @@ const Kickboks = () => {
               headingClassName="text-white"
               lineClassName="bg-secondary"
             />
+            <p className="text-white">
+              Boksen is meer dan enkel boksen, het is cardio -en krachttraining
+              tezamen. Hierbij train je niet enkel jouw kracht en conditie maar
+              tegelijk jouw reactievermogen, behendigheid, evenwicht,
+              coördinatie en zelfvertrouwen. Boksen is een uitstekende training
+              voor zowel jouw lichaam als geest. In deze training bestuderen we
+              alle basistechnieken, waarna we hierop verder bouwen.
+            </p>
+            <br />
+            <p className="text-white">
+              Naast Jamal Ben Saddik, worden de cursussen gegeven door experts
+              met jarenlange ervaring op meerdere vlakken dan enkel boks. Ook na
+              de trainingen helpen we je graag verder voor het geval je nog
+              vragen, hulp of advies nodig hebt. Heb jij passie voor deze sport
+              en wil je graag hogerop klimmen met behulp van de beste trainers?
+              Trek je bokshandschoenen aan en klim in de kring!
+            </p>
           </div>
           <div className="w-full h-full flex items-center justify-center relative p-6">
             <Image src={jamal} alt="Jamal Ben Saddik" />

@@ -18,7 +18,8 @@ const signup = async (req: NextApiRequest, res: NextApiResponse) => {
 
   const mailOptions: MailDataRequired = {
     from: {
-      name: 'Vinci Club', email: 'info@vinci-club.be'
+      name: 'Vinci Club',
+      email: 'info@vinci-club.be',
     },
     to: email,
     subject: 'Bedankt voor uw inschrijving bij Vinci Club',
@@ -26,9 +27,9 @@ const signup = async (req: NextApiRequest, res: NextApiResponse) => {
     templateId: process.env.CLIENT_TEMPLATE_ID,
   };
 
-
   try {
     await sgMail.send(mailOptions);
+    return res.status(201).json({ error: '' });
   } catch (error: any) {
     return res.status(500).json({ error: error.message || error.toString() });
   }

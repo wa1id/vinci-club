@@ -181,7 +181,7 @@ const BecomeAMember: React.FC<IProps> = () => {
 
     // send mail to user
     axios
-      .post('/api/signup', { templateParams })
+      .post('/api/signup', { ...templateParams })
       .then((result) => {
         toast.success('Wij hebben uw aanvraag ontvangen!');
         setSuccess(true);

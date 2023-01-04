@@ -5,6 +5,7 @@ import React from "react";
 import Heading from "src/components/Heading/Heading";
 import ladiesonly from "public/ladies-only.jpeg";
 import nora from "public/nora.jpeg";
+import InTakeForm from "src/components/InTakeForm/InTakeForm";
 
 const LadiesOnly = () => {
   return (
@@ -24,6 +25,8 @@ const LadiesOnly = () => {
       </div>
 
       <div className="container mx-auto py-8">
+        <InTakeForm />
+
         <div className="flex flex-col lg:flex-row space-x-2">
           <div className="max-w-2xl mx-2">
             <h1 className="text-2xl font-bold">Discover Women Only</h1>

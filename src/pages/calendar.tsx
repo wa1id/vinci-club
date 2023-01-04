@@ -110,14 +110,6 @@ const events = [
   },
   {
     id: 13,
-    title: "Ladies only kickboks by N'wicha",
-    dayOfWeek: 3,
-    start: "19:30",
-    end: "20:45",
-    gridRow: "208 / span 25",
-  },
-  {
-    id: 14,
     title: "Ladies only booty & belly by gezondmetnora",
     dayOfWeek: 3,
     start: "10:00",
@@ -158,6 +150,81 @@ const Calendar = () => {
         </div>
       </li>
     );
+  };
+
+  // render monday to friday 17-18
+  const renderMondayToFriday = () => {
+    const events = [];
+    for (let i = 0; i < 5; i++) {
+      events.push(
+        <EventItem
+          key={`event-${i}-1`}
+          title="Kickboks"
+          start="17:00"
+          end="18:00"
+          className={
+            (i + 1) % 7 === selectedDate.getDay() ? "flex" : "hidden sm:flex"
+          }
+          style={{
+            gridRow: "163 / span 20",
+            gridColumn: `${
+              (i + 1) % 7 === selectedDate.getDay() ? 1 : i + 1
+            } / span 1`,
+          }}
+        />
+      );
+    }
+    return events;
+  };
+
+  // render monday to friday 18:15 - 19:15
+  const renderMondayToFriday2 = () => {
+    const events = [];
+    for (let i = 0; i < 5; i++) {
+      events.push(
+        <EventItem
+          key={`event-${i}-2`}
+          title="Kickboks"
+          start="18:15"
+          end="19:15"
+          className={
+            (i + 1) % 7 === selectedDate.getDay() ? "flex" : "hidden sm:flex"
+          }
+          style={{
+            gridRow: "185 / span 20",
+            gridColumn: `${
+              (i + 1) % 7 === selectedDate.getDay() ? 1 : i + 1
+            } / span 1`,
+          }}
+        />
+      );
+    }
+    return events;
+  };
+
+  // render monday to friday 20:30 - 21:30
+  const renderMondayToFriday3 = () => {
+    const events = [];
+    for (let i = 0; i < 5; i++) {
+      events.push(
+        <EventItem
+          key={`event-${i}-3`}
+          title="Kickboks"
+          start="20:30"
+          end="21:30"
+          className={
+            (i + 1) % 7 === selectedDate.getDay() ? "flex" : "hidden sm:flex"
+          }
+          style={{
+            gridRow: "226 / span 20",
+            gridColumn: `${
+              (i + 1) % 7 === selectedDate.getDay() ? 1 : i + 1
+            } / span 1`,
+          }}
+        />
+      );
+    }
+    return events;
   };
 
   const renderMobileDates = () => {
@@ -423,7 +490,11 @@ const Calendar = () => {
                         }
                         style={{
                           gridRow: event.gridRow,
-                          gridColumn: event.dayOfWeek + 1,
+                          gridColumn: `${
+                            (event.dayOfWeek + 1) % 7 === selectedDate.getDay()
+                              ? 1
+                              : event.dayOfWeek + 1
+                          } / span 1`,
                         }}
                       />
                     ))}

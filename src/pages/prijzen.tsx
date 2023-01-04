@@ -8,33 +8,22 @@ const Prijzen = () => {
     {
       subscription: "Bronze",
       activities: "Fitness",
-      twelve: "€ 19,95/mnd",
-      six: "€ 24,95/mnd",
-      three: "€ 29,95/mnd",
+      twelve: "€ 24,95/mnd",
+      six: "€ 29,95/mnd",
       one: "€ 39,95/mnd",
     },
     {
-      subscription: "Bronze student",
-      activities: "Fitness",
-      twelve: "€ 16,95/mnd",
-      six: "€ 19,95/mnd",
-      three: "€ 24,95/mnd",
-      one: "€ 39,95/mnd",
-    },
-    {
-      subscription: "Silver",
+      subscription: "Silver (-16j)",
       activities: "Kickboks",
-      twelve: "€ 19,95/mnd",
-      six: "",
-      three: "",
-      one: "",
+      twelve: "€ 24,95/mnd",
+      six: "€ 29,95/mnd",
+      one: "€ 39,95/mnd",
     },
     {
-      subscription: "Gold",
-      activities: "Fitness + Kickboks",
-      twelve: "€ 29,95/mnd",
-      six: "€ 34,95/mnd",
-      three: "€ 39,95/mnd",
+      subscription: "Gold (+16j)",
+      activities: "Kickboks",
+      twelve: "€ 34,95/mnd",
+      six: "€ 39,95/mnd",
       one: "€ 49,95/mnd",
     },
   ];
@@ -42,11 +31,7 @@ const Prijzen = () => {
   const beurtenkaart = [
     {
       subscription: "Fitness + Kickboks",
-      duration: "",
-      six: "€ 140/20 beurten",
-      four: "€ 80/10 beurten ",
-      two: "€ 45/5 beurten",
-      day: "€ 10/beurt",
+      price: "€ 14,95/beurt",
     },
   ];
 
@@ -107,12 +92,6 @@ const Prijzen = () => {
                         scope="col"
                         className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                       >
-                        3 maanden
-                      </th>
-                      <th
-                        scope="col"
-                        className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                      >
                         1 maand
                       </th>
                     </tr>
@@ -131,9 +110,6 @@ const Prijzen = () => {
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                           {item.six}
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                          {item.three}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                           {item.one}
@@ -164,31 +140,7 @@ const Prijzen = () => {
                         scope="col"
                         className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                       >
-                        Geldigheid
-                      </th>
-                      <th
-                        scope="col"
-                        className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                      >
-                        6 maanden
-                      </th>
-                      <th
-                        scope="col"
-                        className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                      >
-                        4 maanden
-                      </th>
-                      <th
-                        scope="col"
-                        className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                      >
-                        2 maanden
-                      </th>
-                      <th
-                        scope="col"
-                        className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                      >
-                        onmiddellijk
+                        Prijs
                       </th>
                     </tr>
                   </thead>
@@ -199,19 +151,7 @@ const Prijzen = () => {
                           {item.subscription}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                          {item.duration}
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                          {item.six}
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                          {item.four}
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                          {item.two}
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                          {item.day}
+                          {item.price}
                         </td>
                       </tr>
                     ))}

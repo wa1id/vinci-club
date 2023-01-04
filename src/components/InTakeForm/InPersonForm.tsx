@@ -37,7 +37,7 @@ const InPersonForm = () => {
   };
 
   return (
-    <div className='my-12'>
+    <div className='my-20'>
       <HeadingWithUnderline
         title='PERSOONLIJK'
         lineClassName='w-32 p-[0.2rem]'

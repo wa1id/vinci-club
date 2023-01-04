@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
 import HeadingWithUnderline from '../Heading/HeadingWithUnderline';
 import Input from './Input';
-import Radio from './Radio';
+
 
 interface IState {
   streetNameAndHouseNumber: string;
@@ -30,7 +30,7 @@ const AddressForm = () => {
 
 
   return (
-    <div className='my-12'>
+    <div className='my-20'>
       <HeadingWithUnderline
         title='ADRES'
         lineClassName='w-32 p-[0.2rem]'

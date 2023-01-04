@@ -1,6 +1,7 @@
 import React from 'react';
 import HeadingWithUnderline from '../Heading/HeadingWithUnderline';
 import AddressForm from './AddressForm';
+import GoalForm from './GoalForm';
 import InPersonForm from './InPersonForm';
 
 const InTakeForm = () => {
@@ -29,6 +30,7 @@ const InTakeForm = () => {
 
       <InPersonForm />
       <AddressForm />
+      <GoalForm />
     </section>
   );
 };

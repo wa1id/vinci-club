@@ -20,7 +20,7 @@ const Input: React.FC<IProps> = ({
     <div className={classNames(className, 'my-6')}>
       <label
         htmlFor={name}
-        className={classNames(labelClassName, 'capitalize font-semibold text-primary')}
+        className={classNames(labelClassName, 'capitalize text-primary')}
       >
         {label} {required && <sup>*</sup>}
       </label>
@@ -29,7 +29,7 @@ const Input: React.FC<IProps> = ({
         name={name}
         className={classNames(
           inputClassName,
-          'border-b-2 border-b-primary block w-full px-2 pt-2 focus:translate-y-2 focus:border-0 transition-all duration-300 mt-3'
+          'border-b-2 border-b-primary block w-full lg:w-3/5 px-2 pt-2 focus:translate-y-2 focus:border-0 transition-all duration-300 mt-3'
         )}
         {...inputProps}
       />

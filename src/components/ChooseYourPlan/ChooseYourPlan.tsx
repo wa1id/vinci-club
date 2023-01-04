@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 
-const ChooseYourPlan = ({ click }: { click: any }) => {
+const ChooseYourPlan = ({ click }: { click?: any }) => {
   const { t } = useTranslation("common");
 
   return (

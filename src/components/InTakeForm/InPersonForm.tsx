@@ -1,4 +1,3 @@
-
 import React, { useReducer } from 'react';
 import HeadingWithUnderline from '../Heading/HeadingWithUnderline';
 import Input from './Input';
@@ -73,12 +72,12 @@ const InPersonForm = () => {
           Man/vrouw <sup>*</sup>
         </label>
 
-        <div className='flex items-center gap-5'>
+        <div className='flex items-center flex-wrap gap-5'>
           <Radio
             label='man'
             name='gender'
             required
-            value={state.gender}
+            value={'male'}
             onChange={handleChange}
             type='radio'
           />
@@ -86,7 +85,7 @@ const InPersonForm = () => {
             label='vrouw'
             name='gender'
             required
-            value={state.gender}
+            value={'female'}
             onChange={handleChange}
             type='radio'
           />
@@ -117,7 +116,6 @@ const InPersonForm = () => {
         value={state.emailAddress}
         onChange={handleChange}
       />
-
     </div>
   );
 };

@@ -55,15 +55,15 @@ export const Countdown = () => {
       </div>
       <div className="flex justify-center font-drukwide text-primary-light">
         <div className="grid grid-cols-2 gap-6 sm:gap-0 sm:flex text-3xl">
-          <CountdownItem number={days} label={t("Day")} />
+          <CountdownItem number={0} label={t("Day")} />
           <CountdownSeparator />
-          <CountdownItem number={hours} label={t("Hrs")} />
+          <CountdownItem number={0} label={t("Hrs")} />
 
           <CountdownSeparator />
 
-          <CountdownItem number={minutes} label={t("Min")} />
+          <CountdownItem number={0} label={t("Min")} />
           <CountdownSeparator />
-          <CountdownItem number={seconds} label={t("Sec")} />
+          <CountdownItem number={0} label={t("Sec")} />
         </div>
       </div>
 

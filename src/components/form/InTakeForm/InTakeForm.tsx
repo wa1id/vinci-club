@@ -5,6 +5,7 @@ import BackgroundForm from './BackgroundForm';
 import GoalForm from './GoalForm';
 import InPersonForm from './InPersonForm';
 import LifeStyleForm from './LifeStyleForm';
+import MedicalBackgroundForm from './MedicalBackgroundForm';
 import NutritionForm from './NutritionForm';
 import TrainingPlanForm from './TrainingPlanForm';
 
@@ -38,7 +39,8 @@ const InTakeForm = () => {
       <BackgroundForm />
       <LifeStyleForm />
       <TrainingPlanForm />
-      <NutritionForm /> 
+      <NutritionForm />
+      <MedicalBackgroundForm /> 
     </section>
   );
 };

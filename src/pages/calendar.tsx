@@ -483,18 +483,28 @@ const Calendar = () => {
                         title={event.title}
                         start={event.start}
                         end={event.end}
+                        className="hidden sm:flex"
+                        style={{
+                          gridRow: event.gridRow,
+                          gridColumn: `${event.dayOfWeek + 1} / span 1`,
+                        }}
+                      />
+                    ))}
+
+                    {events.map((event) => (
+                      <EventItem
+                        key={event.id}
+                        title={event.title}
+                        start={event.start}
+                        end={event.end}
                         className={
                           (event.dayOfWeek + 1) % 7 === selectedDate.getDay()
-                            ? "flex"
-                            : "hidden sm:flex"
+                            ? "flex sm:hidden"
+                            : "hidden"
                         }
                         style={{
                           gridRow: event.gridRow,
-                          gridColumn: `${
-                            (event.dayOfWeek + 1) % 7 === selectedDate.getDay()
-                              ? 1
-                              : event.dayOfWeek + 1
-                          } / span 1`,
+                          gridColumn: `1 / span 1`,
                         }}
                       />
                     ))}

@@ -5,8 +5,12 @@ import React from "react";
 import jamal from "public/jamal.jpeg";
 import Heading from "src/components/Heading/Heading";
 import Link from "next/link";
+import { Button } from "src/components/Button/Button";
+import { useTranslation } from "react-i18next";
 
 const Kickboks = () => {
+  const { t } = useTranslation("common");
+
   return (
     <>
       <Head>
@@ -40,6 +44,12 @@ const Kickboks = () => {
               en wil je graag hogerop klimmen met behulp van de beste trainers?
               Trek je bokshandschoenen aan en klim in de kring!
             </p>
+
+            <Link href="/signup">
+              <Button className="my-4" variant="tertiary">
+                {t("Become member")}
+              </Button>
+            </Link>
           </div>
           <div className="w-full h-full flex items-center justify-center relative p-6">
             <Image priority src={jamal} alt="Jamal Ben Saddik" />

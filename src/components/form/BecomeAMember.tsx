@@ -165,7 +165,7 @@ const BecomeAMember: React.FC<IProps> = () => {
       referenceClub: state.referenceClub,
     };
 
-    await axios.post("/api/notion/members", state);
+    axios.post("/api/notion/members", state);
 
     // send mail to user
     emailjs

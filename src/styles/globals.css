@@ -40,6 +40,10 @@ input[type="checkbox"] {
   @apply h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary-light;
 }
 
+  input[type='radio'] {
+     @apply h-4 w-4 rounded-full border-gray-300 text-primary focus:ring-primary-light;
+}
+
 input[type="text"],
 input[type="email"],
 input[type="tel"],

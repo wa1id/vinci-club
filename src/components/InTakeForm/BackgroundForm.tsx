@@ -44,6 +44,7 @@ const BackgroundForm = () => {
         required
         value={state.backgroundOne}
         onChange={handleChange}
+        hideRequiredIcon={true}
       />
       <Input
         label='2. Hoe lang geleden heb je voor het laatst aan lichaamsbeweging/training gedaan?'
@@ -51,6 +52,7 @@ const BackgroundForm = () => {
         required
         value={state.backgroundTwo}
         onChange={handleChange}
+        hideRequiredIcon={true}
       />
       <Input
         label='3. Indien je niet meer traint, wanneer en waarom ben je gestopt?'
@@ -58,6 +60,7 @@ const BackgroundForm = () => {
         required
         value={state.backgroundThree}
         onChange={handleChange}
+        hideRequiredIcon={true}
       />
       <Input
         label='4. Indien je traint, aan wat voor lichaamsbeweging doe je op dit moment?'
@@ -65,13 +68,14 @@ const BackgroundForm = () => {
         required
         value={state.backgroundFour}
         onChange={handleChange}
+        hideRequiredIcon={true}
       />
       <div>
         <label
           htmlFor={'backgroundFive'}
-          className={'capitalize font-semibold text-primary'}
+          className={'capitalize text-primary'}
         >
-          5. Hoe vaak train je nu per week? <sup>*</sup>
+          5. Hoe vaak train je nu per week? 
         </label>
 
         <div className='flex items-center flex-wrap gap-5'>

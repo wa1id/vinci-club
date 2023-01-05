@@ -5,6 +5,7 @@ interface IProps extends InputHTMLAttributes<HTMLInputElement> {
   labelClassName?: string;
   label: string;
   inputClassName?: string;
+  hideRequiredIcon?: boolean;
 }
 
 const Input: React.FC<IProps> = ({
@@ -14,6 +15,7 @@ const Input: React.FC<IProps> = ({
   inputClassName,
   name,
   required,
+  hideRequiredIcon = false,
   ...inputProps
 }) => {
   return (
@@ -22,14 +24,15 @@ const Input: React.FC<IProps> = ({
         htmlFor={name}
         className={classNames(labelClassName, 'capitalize text-primary')}
       >
-        {label} {required && <sup>*</sup>}
+        {label} {required && !hideRequiredIcon && <sup>*</sup>}
       </label>
       <input
         id={name}
         name={name}
+        required
         className={classNames(
           inputClassName,
-          'border-b-2 border-b-primary block w-full lg:w-3/5 px-2 pt-2 focus:translate-y-2 focus:border-0 transition-all duration-300 mt-3'
+          'appearance-none block w-full lg:w-3/5 px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-primary-light focus:border-primary mt-3'
         )}
         {...inputProps}
       />

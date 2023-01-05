@@ -5,6 +5,7 @@ import BackgroundForm from './BackgroundForm';
 import GoalForm from './GoalForm';
 import InPersonForm from './InPersonForm';
 import LifeStyleForm from './LifeStyleForm';
+import TrainingPlanForm from './TrainingPlanForm';
 
 const InTakeForm = () => {
   return (
@@ -35,6 +36,7 @@ const InTakeForm = () => {
       <GoalForm />
       <BackgroundForm />
       <LifeStyleForm />
+      <TrainingPlanForm />
     </section>
   );
 };

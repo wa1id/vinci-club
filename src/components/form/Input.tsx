@@ -1,11 +1,13 @@
 import classNames from 'classnames';
 import React, { InputHTMLAttributes } from 'react';
+import ErrorText from './ErrorText';
 
 interface IProps extends InputHTMLAttributes<HTMLInputElement> {
   labelClassName?: string;
   label: string;
   inputClassName?: string;
   hideRequiredIcon?: boolean;
+  error?: boolean;
 }
 
 const Input: React.FC<IProps> = ({
@@ -16,10 +18,12 @@ const Input: React.FC<IProps> = ({
   name,
   required,
   hideRequiredIcon = false,
+  error,
   ...inputProps
 }) => {
   return (
     <div className={classNames(className, 'my-6')}>
+      {error && <ErrorText text={`${label} is required`} />}
       <label
         htmlFor={name}
         className={classNames(labelClassName, 'capitalize text-primary')}

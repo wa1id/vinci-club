@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
-import HeadingWithUnderline from '../Heading/HeadingWithUnderline';
-import Input from './Input';
-import Radio from './Radio';
+import HeadingWithUnderline from '../../Heading/HeadingWithUnderline';
+import Input from '../Input';
+import RadioOrCheckBox from '../RadioOrCheckBox';
 
 interface IState {
   firstName: string;
@@ -73,7 +73,7 @@ const InPersonForm = () => {
         </label>
 
         <div className='flex items-center flex-wrap gap-5'>
-          <Radio
+          <RadioOrCheckBox
             label='man'
             name='gender'
             required
@@ -81,7 +81,7 @@ const InPersonForm = () => {
             onChange={handleChange}
             type='radio'
           />
-          <Radio
+          <RadioOrCheckBox
             label='vrouw'
             name='gender'
             required

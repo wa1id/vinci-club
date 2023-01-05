@@ -1,5 +1,5 @@
 import React from 'react';
-import HeadingWithUnderline from '../Heading/HeadingWithUnderline';
+import HeadingWithUnderline from '../../Heading/HeadingWithUnderline';
 import AddressForm from './AddressForm';
 import BackgroundForm from './BackgroundForm';
 import GoalForm from './GoalForm';

@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
-import HeadingWithUnderline from '../Heading/HeadingWithUnderline';
-import Input from './Input';
+import HeadingWithUnderline from '../../Heading/HeadingWithUnderline';
+import Input from '../Input';
 
 
 interface IState {
@@ -17,9 +17,9 @@ const AddressForm = () => {
       ...action,
     }),
     {
-      streetNameAndHouseNumber:'',
-      zipCode:'',
-      placeOfResidence:''
+      streetNameAndHouseNumber: '',
+      zipCode: '',
+      placeOfResidence: ''
     }
   );
 

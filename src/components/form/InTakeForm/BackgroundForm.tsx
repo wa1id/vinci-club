@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
-import HeadingWithUnderline from '../Heading/HeadingWithUnderline';
-import Input from './Input';
-import Radio from './Radio';
+import HeadingWithUnderline from '../../Heading/HeadingWithUnderline';
+import Input from '../Input';
+import RadioOrCheckBox from '../RadioOrCheckBox';
 
 interface IState {
   backgroundOne: string;
@@ -75,11 +75,11 @@ const BackgroundForm = () => {
           htmlFor={'backgroundFive'}
           className={'capitalize text-primary'}
         >
-          5. Hoe vaak train je nu per week? 
+          5. Hoe vaak train je nu per week?
         </label>
 
         <div className='flex items-center flex-wrap gap-5'>
-          <Radio
+          <RadioOrCheckBox
             label='0 keer per week'
             name='backgroundFive'
             required
@@ -87,7 +87,7 @@ const BackgroundForm = () => {
             onChange={handleChange}
             type='radio'
           />
-          <Radio
+          <RadioOrCheckBox
             label='1 tot 2 keer per week'
             name='backgroundFive'
             required
@@ -95,7 +95,7 @@ const BackgroundForm = () => {
             onChange={handleChange}
             type='radio'
           />
-          <Radio
+          <RadioOrCheckBox
             label='3 tot 4 keer per week'
             name='backgroundFive'
             required
@@ -103,7 +103,7 @@ const BackgroundForm = () => {
             onChange={handleChange}
             type='radio'
           />
-          <Radio
+          <RadioOrCheckBox
             label='5 tot 7 keer per week'
             name='backgroundFive'
             required

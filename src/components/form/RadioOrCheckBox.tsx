@@ -7,7 +7,7 @@ interface IProps extends InputHTMLAttributes<HTMLInputElement> {
   inputClassName?: string;
 }
 
-const Radio: React.FC<IProps> = ({
+const RadioOrCheckBox: React.FC<IProps> = ({
   className,
   labelClassName,
   label,
@@ -38,4 +38,4 @@ const Radio: React.FC<IProps> = ({
   );
 };
 
-export default Radio;
+export default RadioOrCheckBox;

@@ -7,6 +7,7 @@ import InPersonForm from './InPersonForm';
 import LifeStyleForm from './LifeStyleForm';
 import MedicalBackgroundForm from './MedicalBackgroundForm';
 import NutritionForm from './NutritionForm';
+import TermsAndConditionsForm from './TermsAndConditionsForm';
 import TrainingPlanForm from './TrainingPlanForm';
 
 const InTakeForm = () => {
@@ -40,7 +41,8 @@ const InTakeForm = () => {
       <LifeStyleForm />
       <TrainingPlanForm />
       <NutritionForm />
-      <MedicalBackgroundForm /> 
+      <MedicalBackgroundForm />
+      <TermsAndConditionsForm /> 
     </section>
   );
 };

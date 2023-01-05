@@ -29,6 +29,7 @@ interface IState {
 const BecomeAMember: React.FC<IProps> = () => {
   const [checkedError, setCheckedError] = React.useState(false);
   const [success, setSuccess] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
   const [state, dispatch] = useReducer<React.Reducer<IState, any>>(
     (state, action) => ({
       ...state,
@@ -165,6 +166,8 @@ const BecomeAMember: React.FC<IProps> = () => {
       return;
     }
 
+    setLoading(true);
+
     const templateParams = {
       firstName: state.firstName,
       lastName: state.lastName,
@@ -190,10 +193,12 @@ const BecomeAMember: React.FC<IProps> = () => {
         (result) => {
           toast.success("Wij hebben uw aanvraag ontvangen!");
           setSuccess(true);
+          setLoading(false);
           handleReset();
         },
         (error) => {
           toast.error("Oops, er is iets misgeslopen.");
+          setLoading(false);
         }
       );
   };
@@ -372,7 +377,7 @@ const BecomeAMember: React.FC<IProps> = () => {
         </div>
 
         <div className="w-full ">
-          <Button variant="primary" type="submit">
+          <Button loading={loading} variant="primary" type="submit">
             Registeren
           </Button>
         </div>

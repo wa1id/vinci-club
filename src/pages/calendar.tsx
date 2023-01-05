@@ -286,46 +286,6 @@ const Calendar = () => {
         <title>Groepslessen - Vinci Club Deurne</title>
       </Head>
       <div className="bg-primary">
-        <Transition appear show={isOpen} as={Fragment}>
-          <Dialog
-            open={isOpen}
-            onClose={() => setIsOpen(false)}
-            className="relative z-50"
-          >
-            <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
-            <div className="fixed inset-0 overflow-y-auto">
-              <div className="flex min-h-full items-center justify-center p-4">
-                <Transition.Child
-                  as={Fragment}
-                  enter="ease-out duration-300"
-                  enterFrom="opacity-0 scale-95"
-                  enterTo="opacity-100 scale-100"
-                  leave="ease-in duration-200"
-                  leaveFrom="opacity-100 scale-100"
-                  leaveTo="opacity-0 scale-95"
-                >
-                  <Dialog.Panel className="mx-auto w-full max-w-xl bg-white transform">
-                    <div className="px-5">
-                      <Dialog.Title className="text-3xl font-bold text-gray-900 uppercase my-4">
-                        Lid worden
-                      </Dialog.Title>
-                      <Dialog.Description>
-                        Als je het Inschrijvingsformulier invult doorheen de
-                        maand december en tijdens onze opendeurweek jouw
-                        inschrijving komt vervolledigen dan kan jij genieten van
-                        de eerste maand gratis sporten. Geldig op alle
-                        abonnementen mits er wordt gekozen voor een
-                        jaarabonnement.
-                      </Dialog.Description>
-                    </div>
-
-                    <BecomeAMember />
-                  </Dialog.Panel>
-                </Transition.Child>
-              </div>
-            </div>
-          </Dialog>
-        </Transition>
         <div className=" w-full flex justify-center flex-col md:flex-row relative py-6">
           <div className="flex-1 text-center w-full ">
             {/* TODO: i18 */}

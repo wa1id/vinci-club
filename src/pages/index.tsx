@@ -115,7 +115,7 @@ const Home = () => {
           </div>
         </Dialog>
       </Transition>
-      <ChooseYourPlan click={setIsOpen} />
+      <ChooseYourPlan />
       {/* <PersonalTrainers /> */}
       <GetTheNewsFrom />
     </>

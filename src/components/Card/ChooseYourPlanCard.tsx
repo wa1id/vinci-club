@@ -2,6 +2,8 @@ import React, { MouseEventHandler } from "react";
 import { TiTick } from "react-icons/ti";
 import InfoWithIcon from "../Info/InfoWithIcon";
 import { useTranslation } from "react-i18next";
+import Link from "next/link";
+import { Button } from "../Button/Button";
 
 export interface IChooseYourPlanCardProps {
   id?: number;
@@ -10,7 +12,6 @@ export interface IChooseYourPlanCardProps {
   studentPrice?: number;
   info: string[];
   subtitle?: string;
-  click?: any;
 }
 
 const ChooseYourPlanCard: React.FC<IChooseYourPlanCardProps> = ({
@@ -20,7 +21,6 @@ const ChooseYourPlanCard: React.FC<IChooseYourPlanCardProps> = ({
   info,
   subtitle,
   id,
-  click,
 }) => {
   const { t } = useTranslation("common");
 
@@ -73,12 +73,11 @@ const ChooseYourPlanCard: React.FC<IChooseYourPlanCardProps> = ({
           ))}
         </div>
 
-        <button
-          onClick={() => click(true)}
-          className="border-primary border-2 hover:bg-secondary text-primary flex items-center justify-center gap-2 px-12 py-4 rounded-full my-6 mx-auto font-bold text-2xl uppercase transition-colors ease-in-out duration-200"
-        >
-          {t("Sign up")}
-        </button>
+        <Link href="/signup">
+          <Button variant="secondary" className="">
+            {t("Sign up")}
+          </Button>
+        </Link>
       </div>
     </div>
   );

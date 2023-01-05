@@ -28,21 +28,22 @@ const Kickboks = () => {
               lineClassName="bg-secondary"
             />
             <p className="text-white mt-8">
-              Boksen is meer dan enkel boksen, het is cardio -en krachttraining
-              tezamen. Hierbij train je niet enkel jouw kracht en conditie maar
-              tegelijk jouw reactievermogen, behendigheid, evenwicht,
-              coördinatie en zelfvertrouwen. Boksen is een uitstekende training
-              voor zowel jouw lichaam als geest. In deze training bestuderen we
-              alle basistechnieken, waarna we hierop verder bouwen.
+              Boksen is meer dan alleen het uitvoeren van bokshandelingen. Het
+              is een combinatie van cardio- en krachttraining. Tijdens het
+              boksen train je niet alleen je kracht en conditie, maar ook je
+              reactievermogen, behendigheid, evenwicht, coördinatie en
+              zelfvertrouwen. Boksen is een uitstekende manier om zowel je
+              lichaam als geest te trainen. In deze training leer je de
+              basisvaardigheden van het boksen en bouw je hierop verder.
             </p>
             <br />
             <p className="text-white">
-              Naast Jamal Ben Saddik, worden de cursussen gegeven door experts
-              met jarenlange ervaring op meerdere vlakken dan enkel boks. Ook na
-              de trainingen helpen we je graag verder voor het geval je nog
-              vragen, hulp of advies nodig hebt. Heb jij passie voor deze sport
-              en wil je graag hogerop klimmen met behulp van de beste trainers?
-              Trek je bokshandschoenen aan en klim in de kring!
+              Naast Jamal Ben Saddik geven experts met jarenlange ervaring in
+              verschillende vakgebieden de cursussen. Ook na de trainingen staan
+              we graag voor je klaar als je vragen, hulp of advies nodig hebt.
+              Ben je geïnteresseerd in deze sport en wil je graag begeleid
+              worden door de beste trainers om hogerop te komen? Trek je
+              bokshandschoenen aan en stap de ring in!
             </p>
 
             <Link href="/signup">

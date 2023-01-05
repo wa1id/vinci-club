@@ -48,7 +48,11 @@ const Home = () => {
                 </span>
               </h1>
 
-              {/* <p className="max-w-md"></p> */}
+              <p className="max-w-md">
+                Verander je leven met fitness en kickboks bij ons! In onze
+                sportschool bieden we fitness- en kickbokslessen aan om je
+                fysiek en mentaal te versterken.
+              </p>
 
               <Link href="/signup">
                 <Button className="my-4" variant="tertiary">

@@ -29,24 +29,24 @@ const LadiesOnly = () => {
             <h1 className="text-2xl font-bold">Discover Women Only</h1>
 
             <p>
-              Eindelijk… na een lange periode volbloeiend met ideeën en hard
-              werken, kan ik meedelen dat de Vinci club ladies only zijn deuren
-              heeft geopend!
+              Eindelijk… a een lange periode vol ideeën en hard werken kan ik
+              eindelijk aankondigen dat Vinci Club ladies only haar deuren heeft
+              geopend!
             </p>
             <br />
             <p>
-              Bij de Vinci ladies only club zijn we meer dan slechts een gym.
-              Als doel motiveren we onze dames gedurende hun weg naar een
-              gezonde levensstijl. We streven naar een plek waar onze dames hun
-              comfort vinden en zich welkom voelen. In onze club vind je
-              verschillende faciliteiten terug zoals fitness, groepslessen,
-              personal training, kickboks onder begeleiding van N’Wicha en nog
-              zoveel meer dat valt te ontdekken!
+              Vinci Club ladies only is meer dan alleen een sportschool. Ons
+              doel is om onze dames te motiveren om een gezonde levensstijl te
+              behouden. We streven naar een plek waar vrouwen zich comfortabel
+              en welkom voelen. Bij ons kun je terecht voor diverse
+              faciliteiten, zoals fitness, groepslessen, personal training,
+              kickboks onder begeleiding van N&apos;Wicha en nog veel meer om te
+              ontdekken!
             </p>
             <br />
             <p>
-              We kijken er alvast naar uit om je te verwelkomen en onze avontuur
-              samen te starten!
+              We kijken ernaar uit om je te verwelkomen en ons avontuur samen te
+              beginnen!
             </p>
             <br />
             <p>Groetjes, Vinci Ladies</p>
@@ -71,31 +71,30 @@ const LadiesOnly = () => {
             <h2 className="text-2xl font-bold">Nora Ledou</h2>
 
             <p>
-              Sinds jonge leeftijd voelde ik me niet goed in mijn vel en onzeker
-              over mijn lichaam. Ik vond niet snel de gepaste kleding noch stijl
-              en wandelde rond met mijn schouders omlaag. Ik stond dagelijks op
-              de weegschaal, waarna ik mezelf bekeek in de spiegel en mezelf
-              vergeleek met andere dames. Hierdoor creëerde ik een laag
-              zelfbeeld. Er zijn dagen geweest dat ik mezelf uithongerde en er
-              zijn ook dagen geweest dat ik alles at wat ik tegenkwam omdat ik
-              me zo slecht in m’n vel voelde. Mensen deden me geloven dat door
-              middel van een koolhydraatarm dieet ik mijn droomfiguur kon
-              behalen. Ik heb me hierop gefocust en op zoveel andere diverse
-              diëten waarvan ik hoorde of online tegenkwam. Niets was minder
-              waar, ik bleef hetzelfde. Op een ochtend stond ik op met een lege
-              maag en had ik de mindset dat dit moet veranderen! Na veel
-              research en studies vond ik mijn draai en begon ik aan een deftige
-              en gezonde voedingsstijl. Het begint allemaal bij jezelf; enkel en
-              alleen wanneer je echt iets wil, bereik je jouw doelen. Elke
-              kleine stap is een stap vooruit en een stap dichter bij jouw doel.
+              Van jonge leeftijd af aan voelde ik me onzeker over mijn lichaam
+              en vond ik moeilijk geschikte kleding of stijl. Ik had mijn
+              schouders hangen en weegde mezelf dagelijks, waarna ik mezelf
+              bekeek in de spiegel en vergelijkte met andere vrouwen. Dit leidde
+              tot een laag zelfbeeld. Er waren dagen dat ik mezelf uithongerde
+              en er waren ook dagen dat ik alles at wat ik tegenkwam omdat ik me
+              zo slecht voelde. Mensen overtuigden me ervan dat ik mijn
+              droomfiguur kon bereiken door een koolhydraatarm dieet. Ik richtte
+              me hierop en op zoveel andere diverse diëten die ik online of van
+              anderen hoorde. Niets hielp, ik bleef hetzelfde. Op een ochtend
+              stond ik op met een lege maag en had ik de mindset dat dit moest
+              veranderen! Na veel onderzoek en studie vond ik mijn manier van
+              eten en begon ik aan een gezonde voedingsstijl. Het begint
+              allemaal bij jezelf; alleen als je echt iets wilt, bereik je je
+              doelen. Elke kleine stap is een stap vooruit en een stap
+              dichterbij je doel.
             </p>
             <br />
             <p>
-              Dit werd mijn dagelijkse motivatie om dames te helpen die
-              dagelijks met zichzelf worstelen. Met mijn kennis en ervaring, kan
-              ik verzekeren dat we met de volle 100% jouw droomlichaam tot
-              werkelijkheid kunnen brengen met behulp van een op maat gemaakt
-              voedingsschema. Eenieder is een uitdaging en ik sta hiervoor open!
+              Dit is wat me dagelijks motiveert om vrouwen te helpen die
+              worstelen met zichzelf. Met mijn kennis en ervaring kan ik
+              garanderen dat we met 100% inzet jouw droomlichaam kunnen
+              realiseren met behulp van een op maat gemaakt voedingsschema. Elke
+              persoon is een uitdaging voor mij en ik sta hiervoor open!
             </p>
             <br />
             <p>De vraag nu is... ga jij de uitdaging aan?</p>

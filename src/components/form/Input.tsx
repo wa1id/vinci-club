@@ -24,7 +24,6 @@ const Input: React.FC<IProps> = ({
 }) => {
   return (
     <div className={classNames(className, 'my-6')}>
-      {error && <ErrorText text={`${label} is required`} />}
       <label
         htmlFor={name}
         className={classNames(labelClassName, 'capitalize text-primary')}
@@ -42,6 +41,7 @@ const Input: React.FC<IProps> = ({
         value={value}
         {...inputProps}
       />
+      {error && <ErrorText text={`${label} is required`} />}
     </div>
   );
 };

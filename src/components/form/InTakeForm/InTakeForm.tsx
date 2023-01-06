@@ -145,6 +145,12 @@ const InTakeForm = () => {
           },
         });
 
+        const a = document.createElement('a')
+
+        a.href=`#${fieldName}`
+
+        a.click()
+
         return;
       }
     }

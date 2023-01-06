@@ -11,7 +11,7 @@ const ErrorText: React.FC<IProps> = ({ text, className }) => {
   return (
     <div
       className={classNames(
-        'p-2 w-full bg-red-500 text-white font-light flex items-center gap-2',
+        'p-2 w-full bg-red-500 text-white font-light flex items-center gap-2 my-4',
         className
       )}
     >

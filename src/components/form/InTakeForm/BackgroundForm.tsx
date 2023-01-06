@@ -26,7 +26,7 @@ const BackgroundForm = ({
       <Input
         label='1. Heb je eerder een personal trainer gehad? Zo ja, wat zijn jouw ervaringen?'
         name='backgroundOne'
-        required
+        required={false}
         {...{ ...state.backgroundOne }}
         onChange={handleChange}
         hideRequiredIcon
@@ -34,7 +34,7 @@ const BackgroundForm = ({
       <Input
         label='2. Hoe lang geleden heb je voor het laatst aan lichaamsbeweging/training gedaan?'
         name='backgroundTwo'
-        required
+        required={false}
         {...{ ...state.backgroundTwo }}
         onChange={handleChange}
         hideRequiredIcon
@@ -42,7 +42,7 @@ const BackgroundForm = ({
       <Input
         label='3. Indien je niet meer traint, wanneer en waarom ben je gestopt?'
         name='backgroundThree'
-        required
+        required={false}
         {...{ ...state.backgroundThree }}
         onChange={handleChange}
         hideRequiredIcon
@@ -50,7 +50,7 @@ const BackgroundForm = ({
       <Input
         label='4. Indien je traint, aan wat voor lichaamsbeweging doe je op dit moment?'
         name='backgroundFour'
-        required
+        required={false}
         {...{ ...state.backgroundFour }}
         onChange={handleChange}
         hideRequiredIcon
@@ -67,7 +67,7 @@ const BackgroundForm = ({
           <RadioOrCheckBox
             label='0 keer per week'
             name='backgroundFive'
-            required
+            required={false}
             value={'0 keer per week'}
             error={state.backgroundFive.error}
             onChange={handleChange}
@@ -76,7 +76,7 @@ const BackgroundForm = ({
           <RadioOrCheckBox
             label='1 tot 2 keer per week'
             name='backgroundFive'
-            required
+            required={false}
             value={'1 tot 2 keer per week'}
             error={state.backgroundFive.error}
             onChange={handleChange}
@@ -85,7 +85,7 @@ const BackgroundForm = ({
           <RadioOrCheckBox
             label='3 tot 4 keer per week'
             name='backgroundFive'
-            required
+            required={false}
             value={'3 tot 4 keer per week'}
             error={state.backgroundFive.error}
             onChange={handleChange}
@@ -94,7 +94,7 @@ const BackgroundForm = ({
           <RadioOrCheckBox
             label='5 tot 7 keer per week'
             name='backgroundFive'
-            required
+            required={false}
             value={'5 tot 7 keer per week'}
             error={state.backgroundFive.error}
             onChange={handleChange}

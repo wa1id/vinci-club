@@ -15,7 +15,7 @@ const ErrorText: React.FC<IProps> = ({ text, className }) => {
         className
       )}
     >
-      <IoClose size={32} />
+      <IoClose />
       <div>{text}</div>
     </div>
   );

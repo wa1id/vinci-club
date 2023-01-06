@@ -25,7 +25,7 @@ const GoalForm = ({
       <Input
         label='1. Noem in volgorde van belang wat jouw doelen zijn de komende periode?'
         name='goalOne'
-        required
+        required={false}
         value={state.goalOne.value}
         error={state.goalOne.error}
         onChange={handleChange}
@@ -34,7 +34,7 @@ const GoalForm = ({
       <Input
         label='2. Hoe denk jij dat ik jou het beste kan helpen om je doelen te bereiken?'
         name='goalTwo'
-        required
+        required={false}
         value={state.goalTwo.value}
         error={state.goalOne.error}
         onChange={handleChange}
@@ -43,7 +43,7 @@ const GoalForm = ({
       <Input
         label='3. Zijn er obstakels die het bereiken van je doelen in de weg kunnen staan?'
         name='goalThree'
-        required
+        required={false}
         value={state.goalThree.value}
         error={state.goalThree.error}
         onChange={handleChange}
@@ -52,7 +52,7 @@ const GoalForm = ({
       <Input
         label='4. Wat heeft je doen besluiten om nu met een Personal Trainer aan de slag te gaan?'
         name='goalFour'
-        required
+        required={false}
         value={state.goalFour.value}
         error={state.goalFour.error}
         onChange={handleChange}

@@ -52,7 +52,7 @@ const TermsAndConditionsForm = ({
         onChange={() =>
           dispatch({
             isAgree: {
-              value: !state.isAgree,
+              value: !state.isAgree.value,
               error: false,
             },
           })

@@ -25,7 +25,7 @@ const LifeStyleForm = ({
       <Input
         label='1. Wat voor werk doe je en is dit een zittend of actief beroep?'
         name='lifeStyleOne'
-        required
+        required={false}
         {...{ ...state.lifeStyleOne }}
         onChange={handleChange}
         hideRequiredIcon
@@ -33,7 +33,7 @@ const LifeStyleForm = ({
       <Input
         label='2. Geef op een schaal van 1 tot 10 aan hoe stressvol je werk naar jouw mening is?'
         name='lifeStyleTwo'
-        required
+        required={false}
         {...{ ...state.lifeStyleTwo }}
         onChange={handleChange}
         hideRequiredIcon
@@ -41,7 +41,7 @@ const LifeStyleForm = ({
       <Input
         label='3. Zijn er nog andere stressfactoren in je dagelijkse leven?'
         name='lifeStyleThree'
-        required
+        required={false}
         {...{ ...state.lifeStyleThree }}
         onChange={handleChange}
         hideRequiredIcon
@@ -49,7 +49,7 @@ const LifeStyleForm = ({
       <Input
         label='4. Zijn er dingen die je graag doet (bijvoorbeeld hobby’s) en hoeveel tijd besteed je hier wekelijks aan?'
         name='lifeStyleFour'
-        required
+        required={false}
         {...{ ...state.lifeStyleFour }}
         onChange={handleChange}
         hideRequiredIcon
@@ -57,7 +57,7 @@ const LifeStyleForm = ({
       <Input
         label='5. Hoeveel uur slaap je per nacht en word je moe of uitgerust wakker?'
         name='lifeStyleFive'
-        required
+        required={false}
         {...{ ...state.lifeStyleFive }}
         onChange={handleChange}
         hideRequiredIcon

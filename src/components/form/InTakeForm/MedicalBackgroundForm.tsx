@@ -28,6 +28,7 @@ const MedicalBackgroundForm = ({
         {...{ ...state.medicalBackgroundOne }}
         onChange={handleChange}
         hideRequiredIcon={true}
+        required={false}
       />
       <Input
         label='2. Heb je in het verleden ooit een ernstige blessure gehad? Zo ja, wat voor blessure(s)?'
@@ -35,6 +36,7 @@ const MedicalBackgroundForm = ({
         {...{ ...state.medicalBackgroundTwo }}
         onChange={handleChange}
         hideRequiredIcon={true}
+        required={false}
       />
       <Input
         label='3. Ben je in het verleden ooit geopereerd? Zo ja, wat voor operatie?'
@@ -42,6 +44,7 @@ const MedicalBackgroundForm = ({
         {...{ ...state.medicalBackgroundThree }}
         onChange={handleChange}
         hideRequiredIcon={true}
+        required={false}
       />
       <Input
         label='4. Heb je last van een hoge bloeddruk?'
@@ -49,6 +52,7 @@ const MedicalBackgroundForm = ({
         {...{ ...state.medicalBackgroundFour }}
         onChange={handleChange}
         hideRequiredIcon={true}
+        required={false}
       />
       <Input
         label='5. Heb je last van astma/bronchitis?'
@@ -56,6 +60,7 @@ const MedicalBackgroundForm = ({
         {...{ ...state.medicalBackgroundFive }}
         onChange={handleChange}
         hideRequiredIcon={true}
+        required={false}
       />
       <Input
         label='6. Heb je in het verleden hartproblemen gehad?'
@@ -63,6 +68,7 @@ const MedicalBackgroundForm = ({
         {...{ ...state.medicalBackgroundSix }}
         onChange={handleChange}
         hideRequiredIcon={true}
+        required={false}
       />
       <Input
         label='7. Heb je andere gezondheidsproblemen? Zo ja, welke?'
@@ -70,6 +76,7 @@ const MedicalBackgroundForm = ({
         {...{ ...state.medicalBackgroundSeven }}
         onChange={handleChange}
         hideRequiredIcon={true}
+        required={false}
       />
       <Input
         label='8. Gebruik je medicijnen? Zo ja, waarvoor?'
@@ -77,6 +84,7 @@ const MedicalBackgroundForm = ({
         {...{ ...state.medicalBackgroundEight }}
         onChange={handleChange}
         hideRequiredIcon={true}
+        required={false}
       />
       <Input
         label='9. Heb je ooit een epileptische aanval gehad? Zo ja, wanneer voor het laatst?'
@@ -84,6 +92,7 @@ const MedicalBackgroundForm = ({
         {...{ ...state.medicalBackgroundNine }}
         onChange={handleChange}
         hideRequiredIcon={true}
+        required={false}
       />
       <Input
         label='10. Heb je ooit een negatief sportadvies gehad van een arts? Zo ja, waarvoor?'
@@ -91,6 +100,7 @@ const MedicalBackgroundForm = ({
         {...{ ...state.medicalBackgroundTen }}
         onChange={handleChange}
         hideRequiredIcon={true}
+        required={false}
       />
       <Input
         label='11. Rook je? Zo ja, hoeveel sigaretten per dag?'
@@ -98,6 +108,7 @@ const MedicalBackgroundForm = ({
         {...{ ...state.medicalBackgroundEleven }}
         onChange={handleChange}
         hideRequiredIcon={true}
+        required={false}
       />
       <Input
         label='12. Drink je alcohol? Zo ja, wat en hoeveel glazen per dag?'
@@ -105,6 +116,7 @@ const MedicalBackgroundForm = ({
         {...{ ...state.medicalBackgroundTwelve }}
         onChange={handleChange}
         hideRequiredIcon={true}
+        required={false}
       />
     </div>
   );

@@ -45,7 +45,7 @@ const TrainingPlanForm = ({
       <Input
         label='1. Hoeveel tijd heb je beschikbaar per training en hoe vaak per week wil je trainen?'
         name='trainingFormOne'
-        required
+        required={false}
         {...{ ...state.trainingFormOne }}
         onChange={handleChange}
         hideRequiredIcon
@@ -53,7 +53,7 @@ const TrainingPlanForm = ({
       <Input
         label='2. Hoeveel keer PT wil je per week inplannen?'
         name='trainingFormTwo'
-        required
+        required={false}
         {...{ ...state.trainingFormTwo }}
         onChange={handleChange}
         hideRequiredIcon
@@ -73,7 +73,7 @@ const TrainingPlanForm = ({
               key={index}
               label={item.name}
               name='trainingFormThree'
-              required
+              required={false}
               id={item.name}
               value={item.name}
               checked={item.checked}
@@ -87,7 +87,7 @@ const TrainingPlanForm = ({
       <Input
         label='4. Heb je voorkeursdagen en tijden om onze afspraken in te plannen?'
         name='trainingFormFour'
-        required
+        required={false}
         {...{ ...state.trainingFormFour }}
         onChange={handleChange}
         hideRequiredIcon

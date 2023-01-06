@@ -25,7 +25,6 @@ const AddressForm = ({
       <Input
         label='Straatnaam en huisnummer'
         name='streetNameAndHouseNumber'
-        required
         value={state.streetNameAndHouseNumber.value}
         error={state.streetNameAndHouseNumber.error}
         onChange={handleChange}
@@ -33,7 +32,6 @@ const AddressForm = ({
       <Input
         label='Postcode'
         name='zipCode'
-        required
         value={state.zipCode.value}
         error={state.zipCode.error}
         onChange={handleChange}
@@ -41,7 +39,6 @@ const AddressForm = ({
       <Input
         label='Woonplaats'
         name='placeOfResidence'
-        required
         value={state.placeOfResidence.value}
         error={state.placeOfResidence.error}
         onChange={handleChange}

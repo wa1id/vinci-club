@@ -189,8 +189,84 @@ const InTakeForm = () => {
 
   const [success, setSuccess] = useState(false);
 
+  const validateFields = [
+    'firstName',
+    'lastName',
+    'dob',
+    'gender',
+    'phoneNumber',
+    'emailAddress',
+    'streetNameAndHouseNumber',
+    'zipCode',
+    'placeOfResidence',
+  ];
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    
+    e.preventDefault();
+
+    const templateParams: Record<string, any> = {};
+
+    // validate fields and set error
+    for (const value of Object.entries(state)) {
+      const [fieldName, data] = value;
+
+      if (
+        validateFields.includes(fieldName) &&
+        data?.value === '' &&
+        !['trainingFormThree', 'isAgree'].includes(fieldName)
+      ) {
+        dispatch({
+          [fieldName]: {
+            ...data,
+            error: true,
+          },
+        });
+
+        return;
+      }
+    }
+
+    for (const value of Object.entries(state)) {
+      const [fieldName, data] = value;
+
+      if (
+        validateFields.includes(fieldName) &&
+        data?.value !== '' &&
+        !['trainingFormThree', 'isAgree'].includes(fieldName)
+      ) {
+        dispatch({
+          [fieldName]: {
+            ...data,
+            error: false,
+          },
+        });
+
+        if (!['trainingFormThree', 'isAgree'].includes(fieldName)) {
+          templateParams[fieldName] = data?.value;
+        }
+      }
+    }
+
+    if (!state.isAgree.value) {
+      dispatch({
+        isAgree: {
+          ...state.isAgree,
+          error: true,
+        },
+      });
+      return;
+    }
+
+    const templateParamsWithTrainingFormThree = {
+      ...templateParams,
+      trainingFormThree: state.trainingFormThree
+        .filter((item) => item.checked)
+        .map((item) => item.name)
+        .join(', '),
+    };
+
+    // filter out fields with undefined or no value
+    console.log(templateParamsWithTrainingFormThree)
   };
 
   return (
@@ -216,7 +292,7 @@ const InTakeForm = () => {
         </p>
       </div>
 
-      <form>
+      <form onSubmit={handleSubmit}>
         <InPersonForm {...{ state, dispatch }} />
         <AddressForm {...{ state, dispatch }} />
         <GoalForm {...{ state, dispatch }} />

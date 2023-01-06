@@ -26,7 +26,6 @@ const InPersonForm = ({
       <Input
         label='voornaam'
         name='firstName'
-        required
         value={state.firstName.value}
         error={state.firstName.error}
         onChange={handleChange}
@@ -34,7 +33,6 @@ const InPersonForm = ({
       <Input
         label='achternaam'
         name='lastName'
-        required
         value={state.lastName.value}
         error={state.lastName.error}
         onChange={handleChange}
@@ -42,7 +40,6 @@ const InPersonForm = ({
       <Input
         label='geboortedatum'
         name='dob'
-        required
         value={state.dob.value}
         error={state.dob.error}
         onChange={handleChange}
@@ -61,7 +58,6 @@ const InPersonForm = ({
           <RadioOrCheckBox
             label='man'
             name='gender'
-            required
             value={'man'}
             onChange={handleChange}
             type='radio'
@@ -70,7 +66,6 @@ const InPersonForm = ({
           <RadioOrCheckBox
             label='vrouw'
             name='gender'
-            required
             value={'vrouw'}
             onChange={handleChange}
             type='radio'
@@ -91,7 +86,6 @@ const InPersonForm = ({
       <Input
         label='Telefoonnummer'
         name='phoneNumber'
-        required
         value={state.phoneNumber.value}
         error={state.phoneNumber.error}
         onChange={handleChange}
@@ -100,7 +94,6 @@ const InPersonForm = ({
       <Input
         label='E-mailadres.'
         name='emailAddress'
-        required
         value={state.emailAddress.value}
         error={state.emailAddress.error}
         onChange={handleChange}

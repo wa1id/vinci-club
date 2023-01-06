@@ -1,27 +1,16 @@
 import React, { useReducer } from 'react';
 import HeadingWithUnderline from '../../Heading/HeadingWithUnderline';
 import Input from '../Input';
+import { IInTakeFormState } from './InTakeForm';
 
 
-interface IState {
-  streetNameAndHouseNumber: string;
-  zipCode: string;
-  placeOfResidence: string;
-}
-
-const AddressForm = () => {
-
-  const [state, dispatch] = useReducer<React.Reducer<IState, any>>(
-    (state, action) => ({
-      ...state,
-      ...action,
-    }),
-    {
-      streetNameAndHouseNumber: '',
-      zipCode: '',
-      placeOfResidence: ''
-    }
-  );
+const AddressForm = ({
+  state,
+  dispatch,
+}: {
+  state: IInTakeFormState;
+  dispatch: React.Dispatch<any>;
+}) => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;

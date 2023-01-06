@@ -2,30 +2,15 @@ import React, { useReducer } from 'react';
 import HeadingWithUnderline from '../../Heading/HeadingWithUnderline';
 import Input from '../Input';
 import RadioOrCheckBox from '../RadioOrCheckBox';
+import { IInTakeFormState } from './InTakeForm';
 
-interface IState {
-  backgroundOne: string;
-  backgroundTwo: string;
-  backgroundThree: string;
-  backgroundFour: string;
-  backgroundFive: string;
-}
-
-const BackgroundForm = () => {
-  const [state, dispatch] = useReducer<React.Reducer<IState, any>>(
-    (state, action) => ({
-      ...state,
-      ...action,
-    }),
-    {
-      backgroundOne: '',
-      backgroundTwo: '',
-      backgroundThree: '',
-      backgroundFour: '',
-      backgroundFive: '',
-    }
-  );
-
+const BackgroundForm = ({
+  state,
+  dispatch,
+}: {
+  state: IInTakeFormState;
+  dispatch: React.Dispatch<any>;
+}) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     dispatch({ [name]: value });

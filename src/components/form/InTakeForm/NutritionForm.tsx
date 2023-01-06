@@ -1,33 +1,16 @@
 import React, { useReducer } from 'react';
 import HeadingWithUnderline from '../../Heading/HeadingWithUnderline';
 import Input from '../Input';
+import { IInTakeFormState } from './InTakeForm';
 
-interface IState {
-  nutritionOne: string;
-  nutritionTwo: string;
-  nutritionThree: string;
-  nutritionFour: string;
-  nutritionFive: string;
-  nutritionSix: string;
-  nutritionSeven: string;
-}
+const NutritionForm = ({
+  state,
+  dispatch,
+}: {
+  state: IInTakeFormState;
+  dispatch: React.Dispatch<any>;
+}) => {
 
-const NutritionForm = () => {
-  const [state, dispatch] = useReducer<React.Reducer<IState, any>>(
-    (state, action) => ({
-      ...state,
-      ...action,
-    }),
-    {
-      nutritionOne: '',
-      nutritionTwo: '',
-      nutritionThree: '',
-      nutritionFour: '',
-      nutritionFive: '',
-      nutritionSix: '',
-      nutritionSeven: '',
-    }
-  );
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;

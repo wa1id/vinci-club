@@ -1,43 +1,15 @@
 import React, { useReducer } from 'react';
 import HeadingWithUnderline from '../../Heading/HeadingWithUnderline';
 import Input from '../Input';
+import { IInTakeFormState } from './InTakeForm';
 
-interface IState {
-  medicalBackgroundOne: string;
-  medicalBackgroundTwo: string;
-  medicalBackgroundThree: string;
-  medicalBackgroundFour: string;
-  medicalBackgroundFive: string;
-  medicalBackgroundSix: string;
-  medicalBackgroundSeven: string;
-  medicalBackgroundEight: string;
-  medicalBackgroundNine: string;
-  medicalBackgroundTen: string;
-  medicalBackgroundEleven: string;
-  medicalBackgroundTwelve: string;
-}
-
-const MedicalBackgroundForm = () => {
-  const [state, dispatch] = useReducer<React.Reducer<IState, any>>(
-    (state, action) => ({
-      ...state,
-      ...action,
-    }),
-    {
-      medicalBackgroundOne: '',
-      medicalBackgroundTwo: '',
-      medicalBackgroundThree: '',
-      medicalBackgroundFour: '',
-      medicalBackgroundFive: '',
-      medicalBackgroundSix: '',
-      medicalBackgroundSeven: '',
-      medicalBackgroundEight: '',
-      medicalBackgroundNine: '',
-      medicalBackgroundTen: '',
-      medicalBackgroundEleven: '',
-      medicalBackgroundTwelve: '',
-    }
-  );
+const MedicalBackgroundForm = ({
+  state,
+  dispatch,
+}: {
+  state: IInTakeFormState;
+  dispatch: React.Dispatch<any>;
+}) => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;

@@ -1,27 +1,16 @@
 import React, { useReducer } from 'react';
 import HeadingWithUnderline from '../../Heading/HeadingWithUnderline';
 import Input from '../Input';
+import { IInTakeFormState } from './InTakeForm';
 
-interface IState {
-  goalOne: string;
-  goalTwo: string;
-  goalThree: string;
-  goalFour: string;
-}
 
-const GoalForm = () => {
-  const [state, dispatch] = useReducer<React.Reducer<IState, any>>(
-    (state, action) => ({
-      ...state,
-      ...action,
-    }),
-    {
-      goalOne: '',
-      goalTwo: '',
-      goalThree: '',
-      goalFour: '',
-    }
-  );
+const GoalForm = ({
+  state,
+  dispatch,
+}: {
+  state: IInTakeFormState;
+  dispatch: React.Dispatch<any>;
+}) => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -40,6 +29,7 @@ const GoalForm = () => {
       required
       value={state.goalOne}
       onChange={handleChange}
+      hideRequiredIcon
     />
     <Input
       label='2. Hoe denk jij dat ik jou het beste kan helpen om je doelen te bereiken?'
@@ -47,6 +37,7 @@ const GoalForm = () => {
       required
       value={state.goalTwo}
       onChange={handleChange}
+      hideRequiredIcon
     />
     <Input
       label='3. Zijn er obstakels die het bereiken van je doelen in de weg kunnen staan?'
@@ -54,6 +45,7 @@ const GoalForm = () => {
       required
       value={state.goalThree}
       onChange={handleChange}
+      hideRequiredIcon
     />
     <Input
       label='4. Wat heeft je doen besluiten om nu met een Personal Trainer aan de slag te gaan?'
@@ -61,6 +53,7 @@ const GoalForm = () => {
       required
       value={state.goalFour}
       onChange={handleChange}
+      hideRequiredIcon
     />
   </div>
 };

@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import HeadingWithUnderline from 'src/components/Heading/HeadingWithUnderline';
 import RadioOrCheckBox from '../RadioOrCheckBox';
+import { IInTakeFormState } from './InTakeForm';
 
-const TermsAndConditionsForm = () => {
-  const [isAgree, setIsAgree] = useState(false);
-
+const TermsAndConditionsForm = ({
+  state,
+  dispatch,
+}: {
+  state: IInTakeFormState;
+  dispatch: React.Dispatch<any>;
+}) => {
   return (
     <div className='my-20'>
       <HeadingWithUnderline
@@ -20,8 +25,8 @@ const TermsAndConditionsForm = () => {
         label='Ik ga akkoord met de algemene voorwaarden.'
         type='checkbox'
         name='agree'
-        checked={isAgree}
-        onChange={(e) => setIsAgree((prev) => !prev)}
+        checked={state.isAgree}
+        onChange={(e) => dispatch({ isAgree: !state.isAgree })}
         required
         className='text-sm'
       />
@@ -30,7 +35,7 @@ const TermsAndConditionsForm = () => {
           verstuur
         </button>
       </div>
-      <p className='text-sm'>
+      <p className='text-sm italic'>
         KLIK HIER voor het doornemen van de algemene voorwaarden (je wordt
         doorverwezen naar een nieuwe pagina, zodat jij je ingevulde gegevens
         niet verliest).

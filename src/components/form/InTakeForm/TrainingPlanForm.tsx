@@ -2,16 +2,7 @@ import React, { useReducer } from 'react';
 import HeadingWithUnderline from '../../Heading/HeadingWithUnderline';
 import Input from '../Input';
 import RadioOrCheckBox from '../RadioOrCheckBox';
-
-interface IState {
-  trainingFormOne: string;
-  trainingFormTwo: string;
-  trainingFormThree: {
-    name: string;
-    checked: boolean;
-  }[];
-  trainingFormFour: string;
-}
+import { IInTakeFormState } from './InTakeForm';
 
 const days: Record<string, string> = {
   monday: 'Maandag',
@@ -23,48 +14,14 @@ const days: Record<string, string> = {
   sunday: 'Zondag',
 };
 
-const TrainingPlanForm = () => {
-  const [state, dispatch] = useReducer<React.Reducer<IState, any>>(
-    (state, action) => ({
-      ...state,
-      ...action,
-    }),
-    {
-      trainingFormOne: '',
-      trainingFormTwo: '',
-      trainingFormFour: '',
-      trainingFormThree: [
-        {
-          name: 'monday',
-          checked: false,
-        },
-        {
-          name: 'tuesday',
-          checked: false,
-        },
-        {
-          name: 'wendesday',
-          checked: false,
-        },
-        {
-          name: 'thursday',
-          checked: false,
-        },
-        {
-          name: 'friday',
-          checked: false,
-        },
-        {
-          name: 'saturday',
-          checked: false,
-        },
-        {
-          name: 'sunday',
-          checked: false,
-        },
-      ],
-    }
-  );
+const TrainingPlanForm = ({
+  state,
+  dispatch,
+}: {
+  state: IInTakeFormState;
+  dispatch: React.Dispatch<any>;
+}) => {
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;

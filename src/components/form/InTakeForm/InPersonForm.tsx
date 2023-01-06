@@ -1,35 +1,16 @@
-import React, { useReducer } from 'react';
+import React from 'react';
 import HeadingWithUnderline from '../../Heading/HeadingWithUnderline';
 import Input from '../Input';
 import RadioOrCheckBox from '../RadioOrCheckBox';
+import { IInTakeFormState } from './InTakeForm';
 
-interface IState {
-  firstName: string;
-  lastName: string;
-  dob: string;
-  gender: 'male' | 'female';
-  instagramAccount: string;
-  phoneNumber: string;
-  emailAddress: string;
-}
-
-const InPersonForm = () => {
-  const [state, dispatch] = useReducer<React.Reducer<IState, any>>(
-    (state, action) => ({
-      ...state,
-      ...action,
-    }),
-    {
-      firstName: '',
-      lastName: '',
-      dob: '',
-      gender: 'male',
-      instagramAccount: '',
-      phoneNumber: '',
-      emailAddress: '',
-    }
-  );
-
+const InPersonForm = ({
+  state,
+  dispatch,
+}: {
+  state: IInTakeFormState;
+  dispatch: React.Dispatch<any>;
+}) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     dispatch({ [name]: value });
@@ -77,7 +58,7 @@ const InPersonForm = () => {
             label='man'
             name='gender'
             required
-            value={'male'}
+            value={'man'}
             onChange={handleChange}
             type='radio'
           />
@@ -85,7 +66,7 @@ const InPersonForm = () => {
             label='vrouw'
             name='gender'
             required
-            value={'female'}
+            value={'vrouw'}
             onChange={handleChange}
             type='radio'
           />

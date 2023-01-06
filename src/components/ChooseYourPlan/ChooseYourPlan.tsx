@@ -8,8 +8,9 @@ import BodyImg from "public/body.png";
 import { useTranslation } from "react-i18next";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
+import { PricingSection } from "../molecules/PricingSection";
 
-const ChooseYourPlan = ({ click }: { click: any }) => {
+const ChooseYourPlan = () => {
   const { t } = useTranslation("common");
 
   return (
@@ -38,23 +39,7 @@ const ChooseYourPlan = ({ click }: { click: any }) => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row lg:space-x-5 space-y-5 lg:space-y-0 items-center lg:items-stretch justify-center p-6">
-        {data.map((item) => (
-          //@ts-ignore
-          <ChooseYourPlanCard click={click} key={item.id} {...item} />
-        ))}
-      </div>
-      <div className="flex justify-center">
-        <div className="px-8 pt-4 pb-8 text-center">
-          <div className="font-bold uppercase text-xl">
-            Beurtenkaart of dagpas?
-          </div>
-          <div className="flex items-center space-x-1 justify-center">
-            <Link href="/prijzen">Bekijk hier alle informatie</Link>
-            <FiArrowUpRight />
-          </div>
-        </div>
-      </div>
+      <PricingSection />
 
       <div className="flex justify-end items-center">
         <Image
@@ -62,11 +47,6 @@ const ChooseYourPlan = ({ click }: { click: any }) => {
           alt="body"
           className="max-w-[192px] hidden md:block  lg:-translate-x-40"
         />
-      </div>
-
-      <div className="text-center">
-        <sup>*</sup>
-        {t("yearplan")}
       </div>
     </div>
   );

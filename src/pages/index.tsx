@@ -25,33 +25,40 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Vinci Club Deurne</title>
+        <title>Vinci Club - Fitness & Boxing</title>
       </Head>
       <div className="bg-primary bg-noise h-full text-white">
-        <div className="bg-lines p-4">
+        <div className="bg-lines p-8">
           <div className="flex flex-col p-8 2xl:p-16">
-            <Countdown />
+            {/* <Countdown /> */}
           </div>
 
           <div className="flex flex-col items-center lg:flex-row lg:items-start">
             <div className="z-10 lg:ml-20 xl:ml-28 space-y-8 text-center sm:text-left">
               <h1 className="flex flex-col uppercase text-6xl sm:text-8xl 2xl:text-9xl font-drukwide [text-shadow:_15px_10px_10px_rgb(0_0_0_/_75%)]">
-                <span>new</span>
-                <span className="text-secondary">year&apos;s</span>
-                <span>deal</span>
+                <span>vinci</span>
+                <span
+                  className=" [text-shadow:_0px_13px_1px_rgb(0_0_0_/_0.4%)] uppercase text-6xl sm:text-8xl 2xl:text-9xlfont-drukwide"
+                  style={{
+                    WebkitTextStroke: "1px #F0EBE8",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >
+                  club
+                </span>
               </h1>
 
               <p className="max-w-md">
-                Als je het inschrijvingsformulier invult doorheen de maand
-                december en tijdens onze opendeurweek jouw inschrijving komt
-                vervolledigen dan kan jij genieten van de eerste maand gratis
-                sporten. Geldig op alle abonnementen mits er wordt gekozen voor
-                een jaarabonnement.
+                Verander je leven met fitness en kickboks bij ons! In onze
+                sportschool bieden we fitness- en kickbokslessen aan om je
+                fysiek en mentaal te versterken.
               </p>
 
-              <Button variant="tertiary" onClick={() => setIsOpen(true)}>
-                {t("Become member")}
-              </Button>
+              <Link href="/signup">
+                <Button className="my-4" variant="tertiary">
+                  {t("Become member")}
+                </Button>
+              </Link>
 
               <SocialFollows label={t("Follow us")} />
             </div>
@@ -76,46 +83,7 @@ const Home = () => {
         <SideTextStroke />
       </div>
 
-      <Transition appear show={isOpen} as={Fragment}>
-        <Dialog
-          open={isOpen}
-          onClose={() => setIsOpen(false)}
-          className="relative z-50"
-        >
-          <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
-          <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4">
-              <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0 scale-95"
-                enterTo="opacity-100 scale-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-95"
-              >
-                <Dialog.Panel className="mx-auto w-full max-w-xl bg-white transform">
-                  <div className="px-5">
-                    <Dialog.Title className="text-3xl font-bold text-gray-900 uppercase my-4">
-                      Lid worden
-                    </Dialog.Title>
-                    <Dialog.Description>
-                      Als je het Inschrijvingsformulier invult doorheen de maand
-                      december en tijdens onze opendeurweek jouw inschrijving
-                      komt vervolledigen dan kan jij genieten van de eerste
-                      maand gratis sporten. Geldig op alle abonnementen mits er
-                      wordt gekozen voor een jaarabonnement.
-                    </Dialog.Description>
-                  </div>
-
-                  <BecomeAMember />
-                </Dialog.Panel>
-              </Transition.Child>
-            </div>
-          </div>
-        </Dialog>
-      </Transition>
-      <ChooseYourPlan click={setIsOpen} />
+      <ChooseYourPlan />
       {/* <PersonalTrainers /> */}
       <GetTheNewsFrom />
     </>

@@ -1,9 +1,17 @@
+import { CheckIcon } from "@heroicons/react/24/outline";
+import classNames from "classnames";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import React from "react";
+import { useTranslation } from "react-i18next";
+import { Button } from "src/components/Button/Button";
+import GetTheNewsFrom from "src/components/GetTheNewsFrom/GetTheNewsFrom";
 import Heading from "src/components/Heading/Heading";
+import { PricingSection } from "src/components/molecules/PricingSection";
 
 const Prijzen = () => {
+  const { t } = useTranslation("common");
+
   const subscriptions = [
     {
       subscription: "Bronze",
@@ -51,10 +59,13 @@ const Prijzen = () => {
             lineClassName="bg-secondary"
           />
           <p className="text-lg text-white max-w-3xl m-auto font-normal mt-6">
-            Bekijk overzicht van al onze lidmaatschappen
+            Overzicht van al onze lidmaatschappen. <br />
+            Kies het lidmaatschap dat het beste bij jou past.
           </p>
         </div>
       </div>
+
+      <PricingSection />
 
       <div className="container mx-auto my-10 space-y-16">
         <div className="flex flex-col">
@@ -162,6 +173,8 @@ const Prijzen = () => {
           </div>
         </div>
       </div>
+
+      <GetTheNewsFrom />
     </>
   );
 };

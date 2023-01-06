@@ -13,7 +13,7 @@ const BackgroundForm = ({
 }) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    dispatch({ [name]: value });
+    dispatch({ ...state, [name]: { value, error: false } });
   };
 
   return (
@@ -27,33 +27,33 @@ const BackgroundForm = ({
         label='1. Heb je eerder een personal trainer gehad? Zo ja, wat zijn jouw ervaringen?'
         name='backgroundOne'
         required
-        value={state.backgroundOne}
+        {...{ ...state.backgroundOne }}
         onChange={handleChange}
-        hideRequiredIcon={true}
+        hideRequiredIcon
       />
       <Input
         label='2. Hoe lang geleden heb je voor het laatst aan lichaamsbeweging/training gedaan?'
         name='backgroundTwo'
         required
-        value={state.backgroundTwo}
+        {...{ ...state.backgroundTwo }}
         onChange={handleChange}
-        hideRequiredIcon={true}
+        hideRequiredIcon
       />
       <Input
         label='3. Indien je niet meer traint, wanneer en waarom ben je gestopt?'
         name='backgroundThree'
         required
-        value={state.backgroundThree}
+        {...{ ...state.backgroundThree }}
         onChange={handleChange}
-        hideRequiredIcon={true}
+        hideRequiredIcon
       />
       <Input
         label='4. Indien je traint, aan wat voor lichaamsbeweging doe je op dit moment?'
         name='backgroundFour'
         required
-        value={state.backgroundFour}
+        {...{ ...state.backgroundFour }}
         onChange={handleChange}
-        hideRequiredIcon={true}
+        hideRequiredIcon
       />
       <div>
         <label
@@ -69,6 +69,7 @@ const BackgroundForm = ({
             name='backgroundFive'
             required
             value={'0 keer per week'}
+            error={state.backgroundFive.error}
             onChange={handleChange}
             type='radio'
           />
@@ -77,6 +78,7 @@ const BackgroundForm = ({
             name='backgroundFive'
             required
             value={'1 tot 2 keer per week'}
+            error={state.backgroundFive.error}
             onChange={handleChange}
             type='radio'
           />
@@ -85,6 +87,7 @@ const BackgroundForm = ({
             name='backgroundFive'
             required
             value={'3 tot 4 keer per week'}
+            error={state.backgroundFive.error}
             onChange={handleChange}
             type='radio'
           />
@@ -93,6 +96,7 @@ const BackgroundForm = ({
             name='backgroundFive'
             required
             value={'5 tot 7 keer per week'}
+            error={state.backgroundFive.error}
             onChange={handleChange}
             type='radio'
           />

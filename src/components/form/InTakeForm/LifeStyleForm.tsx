@@ -12,7 +12,7 @@ const LifeStyleForm = ({
 }) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    dispatch({ [name]: value });
+    dispatch({ ...state, [name]: { value, error: false } });
   };
 
   return (
@@ -26,7 +26,7 @@ const LifeStyleForm = ({
         label='1. Wat voor werk doe je en is dit een zittend of actief beroep?'
         name='lifeStyleOne'
         required
-        value={state.lifeStyleOne}
+        {...{ ...state.lifeStyleOne }}
         onChange={handleChange}
         hideRequiredIcon
       />
@@ -34,7 +34,7 @@ const LifeStyleForm = ({
         label='2. Geef op een schaal van 1 tot 10 aan hoe stressvol je werk naar jouw mening is?'
         name='lifeStyleTwo'
         required
-        value={state.lifeStyleTwo}
+        {...{ ...state.lifeStyleTwo }}
         onChange={handleChange}
         hideRequiredIcon
       />
@@ -42,7 +42,7 @@ const LifeStyleForm = ({
         label='3. Zijn er nog andere stressfactoren in je dagelijkse leven?'
         name='lifeStyleThree'
         required
-        value={state.lifeStyleThree}
+        {...{ ...state.lifeStyleThree }}
         onChange={handleChange}
         hideRequiredIcon
       />
@@ -50,7 +50,7 @@ const LifeStyleForm = ({
         label='4. Zijn er dingen die je graag doet (bijvoorbeeld hobby’s) en hoeveel tijd besteed je hier wekelijks aan?'
         name='lifeStyleFour'
         required
-        value={state.lifeStyleFour}
+        {...{ ...state.lifeStyleFour }}
         onChange={handleChange}
         hideRequiredIcon
       />
@@ -58,7 +58,7 @@ const LifeStyleForm = ({
         label='5. Hoeveel uur slaap je per nacht en word je moe of uitgerust wakker?'
         name='lifeStyleFive'
         required
-        value={state.lifeStyleFive}
+        {...{ ...state.lifeStyleFive }}
         onChange={handleChange}
         hideRequiredIcon
       />

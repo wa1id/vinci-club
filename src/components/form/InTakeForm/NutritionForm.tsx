@@ -12,7 +12,7 @@ const NutritionForm = ({
 }) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    dispatch({ [name]: value });
+    dispatch({ ...state, [name]: { value, error: false } });
   };
 
   return (
@@ -26,7 +26,7 @@ const NutritionForm = ({
         label='1. Hoeveel maaltijden en tussendoortjes eet je per dag?'
         name='nutritionOne'
         required
-        value={state.nutritionOne}
+        {...{ ...state.nutritionOne }}
         onChange={handleChange}
         hideRequiredIcon={true}
       />
@@ -34,7 +34,7 @@ const NutritionForm = ({
         label='2. Hoeveel water drink je per dag?'
         name='nutritionTwo'
         required
-        value={state.nutritionTwo}
+        {...{ ...state.nutritionTwo }}
         onChange={handleChange}
         hideRequiredIcon={true}
       />
@@ -42,7 +42,7 @@ const NutritionForm = ({
         label='3. Ontbijt je iedere ochtend? Zo ja, wat eet je als ontbijt?'
         name='nutritionThree'
         required
-        value={state.nutritionThree}
+        {...{ ...state.nutritionThree }}
         onChange={handleChange}
         hideRequiredIcon={true}
       />
@@ -50,7 +50,7 @@ const NutritionForm = ({
         label='4. Heb je enig idee van de hoeveelheid calorieën die je per dag eet? Zo ja, hoeveel?'
         name='nutritionFour'
         required
-        value={state.nutritionFour}
+        {...{ ...state.nutritionFour }}
         onChange={handleChange}
         hideRequiredIcon={true}
       />
@@ -58,7 +58,7 @@ const NutritionForm = ({
         label='5. Wat zou je zelf “echt” willen veranderen aan jouw voedingspatroon?'
         name='nutritionFive'
         required
-        value={state.nutritionFive}
+        {...{ ...state.nutritionFive }}
         onChange={handleChange}
         hideRequiredIcon={true}
       />
@@ -66,7 +66,7 @@ const NutritionForm = ({
         label='6. Zijn er op het gebied van voeding dingen die je echt niet lust?'
         name='nutritionSix'
         required
-        value={state.nutritionSix}
+        {...{ ...state.nutritionSix }}
         onChange={handleChange}
         hideRequiredIcon={true}
       />
@@ -74,7 +74,7 @@ const NutritionForm = ({
         label='7. Heb je eventuele voedselallergieën? Zo ja, welke?'
         name='nutritionSeven'
         required
-        value={state.nutritionSeven}
+        {...{ ...state.nutritionSeven }}
         onChange={handleChange}
         hideRequiredIcon={true}
       />

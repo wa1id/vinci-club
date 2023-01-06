@@ -13,7 +13,7 @@ const InPersonForm = ({
 }) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    dispatch({ [name]: value });
+    dispatch({ ...state, [name]: { value, error: false } });
   };
 
   return (
@@ -27,21 +27,24 @@ const InPersonForm = ({
         label='voornaam'
         name='firstName'
         required
-        value={state.firstName}
+        value={state.firstName.value}
+        error={state.firstName.error}
         onChange={handleChange}
       />
       <Input
         label='achternaam'
         name='lastName'
         required
-        value={state.lastName}
+        value={state.lastName.value}
+        error={state.lastName.error}
         onChange={handleChange}
       />
       <Input
         label='geboortedatum'
         name='dob'
         required
-        value={state.dob}
+        value={state.dob.value}
+        error={state.dob.error}
         onChange={handleChange}
         type='datetime-local'
       />
@@ -62,6 +65,7 @@ const InPersonForm = ({
             value={'man'}
             onChange={handleChange}
             type='radio'
+            error={state.gender.error}
           />
           <RadioOrCheckBox
             label='vrouw'
@@ -70,6 +74,7 @@ const InPersonForm = ({
             value={'vrouw'}
             onChange={handleChange}
             type='radio'
+            error={state.gender.error}
           />
         </div>
       </div>
@@ -77,8 +82,8 @@ const InPersonForm = ({
       <Input
         label='Instagram account'
         name='instagramAccount'
-        required
-        value={state.instagramAccount}
+        value={state.instagramAccount.value}
+        error={state.instagramAccount.error}
         onChange={handleChange}
         placeholder='Indien je een account hebt, vul dan je gebruikersnaam in. Bijvoorbeeld @daverijkaard'
       />
@@ -87,7 +92,8 @@ const InPersonForm = ({
         label='Telefoonnummer'
         name='phoneNumber'
         required
-        value={state.phoneNumber}
+        value={state.phoneNumber.value}
+        error={state.phoneNumber.error}
         onChange={handleChange}
       />
 
@@ -95,7 +101,8 @@ const InPersonForm = ({
         label='E-mailadres.'
         name='emailAddress'
         required
-        value={state.emailAddress}
+        value={state.emailAddress.value}
+        error={state.emailAddress.error}
         onChange={handleChange}
       />
     </div>

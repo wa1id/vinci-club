@@ -12,7 +12,7 @@ const AddressForm = ({
 }) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    dispatch({ [name]: value });
+    dispatch({ ...state, [name]: { value, error: false } });
   };
 
   return (
@@ -26,21 +26,24 @@ const AddressForm = ({
         label='Straatnaam en huisnummer'
         name='streetNameAndHouseNumber'
         required
-        value={state.streetNameAndHouseNumber}
+        value={state.streetNameAndHouseNumber.value}
+        error={state.streetNameAndHouseNumber.error}
         onChange={handleChange}
       />
       <Input
         label='Postcode'
         name='zipCode'
         required
-        value={state.zipCode}
+        value={state.zipCode.value}
+        error={state.zipCode.error}
         onChange={handleChange}
       />
       <Input
         label='Woonplaats'
         name='placeOfResidence'
         required
-        value={state.placeOfResidence}
+        value={state.placeOfResidence.value}
+        error={state.placeOfResidence.error}
         onChange={handleChange}
       />
     </div>

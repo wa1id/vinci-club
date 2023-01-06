@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useState } from 'react';
 import HeadingWithUnderline from '../../Heading/HeadingWithUnderline';
 import AddressForm from './AddressForm';
 import BackgroundForm from './BackgroundForm';
@@ -10,111 +10,127 @@ import NutritionForm from './NutritionForm';
 import TermsAndConditionsForm from './TermsAndConditionsForm';
 import TrainingPlanForm from './TrainingPlanForm';
 
+interface IFormFieldProps {
+  value: string;
+  error: boolean;
+}
+
 export interface IInTakeFormState {
   // in person form
-  firstName: string;
-  lastName: string;
-  dob: string;
-  gender: 'man' | 'vrouw';
-  instagramAccount: string;
-  phoneNumber: string;
-  emailAddress: string;
+  firstName: IFormFieldProps;
+  lastName: IFormFieldProps;
+  dob: IFormFieldProps;
+  gender: IFormFieldProps;
+  instagramAccount: IFormFieldProps;
+  phoneNumber: IFormFieldProps;
+  emailAddress: IFormFieldProps;
 
   // address form
-  streetNameAndHouseNumber: string;
-  zipCode: string;
-  placeOfResidence: string;
+  streetNameAndHouseNumber: IFormFieldProps;
+  zipCode: IFormFieldProps;
+  placeOfResidence: IFormFieldProps;
 
   // goal form
-  goalOne: string;
-  goalTwo: string;
-  goalThree: string;
-  goalFour: string;
+  goalOne: IFormFieldProps;
+  goalTwo: IFormFieldProps;
+  goalThree: IFormFieldProps;
+  goalFour: IFormFieldProps;
 
   // background form
-  backgroundOne: string;
-  backgroundTwo: string;
-  backgroundThree: string;
-  backgroundFour: string;
-  backgroundFive: string;
+  backgroundOne: IFormFieldProps;
+  backgroundTwo: IFormFieldProps;
+  backgroundThree: IFormFieldProps;
+  backgroundFour: IFormFieldProps;
+  backgroundFive: IFormFieldProps;
 
   // lifestyle form
-  lifeStyleOne: string;
-  lifeStyleTwo: string;
-  lifeStyleThree: string;
-  lifeStyleFour: string;
-  lifeStyleFive: string;
+  lifeStyleOne: IFormFieldProps;
+  lifeStyleTwo: IFormFieldProps;
+  lifeStyleThree: IFormFieldProps;
+  lifeStyleFour: IFormFieldProps;
+  lifeStyleFive: IFormFieldProps;
 
   // training form
-  trainingFormOne: string;
-  trainingFormTwo: string;
+  trainingFormOne: IFormFieldProps;
+  trainingFormTwo: IFormFieldProps;
   trainingFormThree: {
     name: string;
     checked: boolean;
   }[];
-  trainingFormFour: string;
+  trainingFormFour: IFormFieldProps;
 
   // nutrition form
-  nutritionOne: string;
-  nutritionTwo: string;
-  nutritionThree: string;
-  nutritionFour: string;
-  nutritionFive: string;
-  nutritionSix: string;
-  nutritionSeven: string;
+  nutritionOne: IFormFieldProps;
+  nutritionTwo: IFormFieldProps;
+  nutritionThree: IFormFieldProps;
+  nutritionFour: IFormFieldProps;
+  nutritionFive: IFormFieldProps;
+  nutritionSix: IFormFieldProps;
+  nutritionSeven: IFormFieldProps;
 
   // medical background form
-  medicalBackgroundOne: string;
-  medicalBackgroundTwo: string;
-  medicalBackgroundThree: string;
-  medicalBackgroundFour: string;
-  medicalBackgroundFive: string;
-  medicalBackgroundSix: string;
-  medicalBackgroundSeven: string;
-  medicalBackgroundEight: string;
-  medicalBackgroundNine: string;
-  medicalBackgroundTen: string;
-  medicalBackgroundEleven: string;
-  medicalBackgroundTwelve: string;
+  medicalBackgroundOne: IFormFieldProps;
+  medicalBackgroundTwo: IFormFieldProps;
+  medicalBackgroundThree: IFormFieldProps;
+  medicalBackgroundFour: IFormFieldProps;
+  medicalBackgroundFive: IFormFieldProps;
+  medicalBackgroundSix: IFormFieldProps;
+  medicalBackgroundSeven: IFormFieldProps;
+  medicalBackgroundEight: IFormFieldProps;
+  medicalBackgroundNine: IFormFieldProps;
+  medicalBackgroundTen: IFormFieldProps;
+  medicalBackgroundEleven: IFormFieldProps;
+  medicalBackgroundTwelve: IFormFieldProps;
 
   // terms and conditions form
-  isAgree: boolean;
+  isAgree: {
+    value: boolean;
+    error: string;
+  };
 }
 
 const InTakeForm = () => {
+  const fieldValue = {
+    value: '',
+    error: false,
+  };
+
   const [state, dispatch] = useReducer<React.Reducer<IInTakeFormState, any>>(
     (state, action) => ({
       ...state,
       ...action,
     }),
     {
-      firstName: '',
-      lastName: '',
-      dob: '',
-      gender: 'man',
-      instagramAccount: '',
-      phoneNumber: '',
-      emailAddress: '',
-      streetNameAndHouseNumber: '',
-      zipCode: '',
-      placeOfResidence: '',
-      goalOne: '',
-      goalTwo: '',
-      goalThree: '',
-      goalFour: '',
-      backgroundOne: '',
-      backgroundTwo: '',
-      backgroundThree: '',
-      backgroundFour: '',
-      backgroundFive: '',
-      lifeStyleOne: '',
-      lifeStyleTwo: '',
-      lifeStyleThree: '',
-      lifeStyleFour: '',
-      lifeStyleFive: '',
-      trainingFormOne: '',
-      trainingFormTwo: '',
-      trainingFormFour: '',
+      firstName: fieldValue,
+      lastName: fieldValue,
+      dob: fieldValue,
+      gender: {
+        value: 'man',
+        error: false,
+      },
+      instagramAccount: fieldValue,
+      phoneNumber: fieldValue,
+      emailAddress: fieldValue,
+      streetNameAndHouseNumber: fieldValue,
+      zipCode: fieldValue,
+      placeOfResidence: fieldValue,
+      goalOne: fieldValue,
+      goalTwo: fieldValue,
+      goalThree: fieldValue,
+      goalFour: fieldValue,
+      backgroundOne: fieldValue,
+      backgroundTwo: fieldValue,
+      backgroundThree: fieldValue,
+      backgroundFour: fieldValue,
+      backgroundFive: fieldValue,
+      lifeStyleOne: fieldValue,
+      lifeStyleTwo: fieldValue,
+      lifeStyleThree: fieldValue,
+      lifeStyleFour: fieldValue,
+      lifeStyleFive: fieldValue,
+      trainingFormOne: fieldValue,
+      trainingFormTwo: fieldValue,
+      trainingFormFour: fieldValue,
       trainingFormThree: [
         {
           name: 'Maandag',
@@ -145,28 +161,37 @@ const InTakeForm = () => {
           checked: false,
         },
       ],
-      nutritionOne: '',
-      nutritionTwo: '',
-      nutritionThree: '',
-      nutritionFour: '',
-      nutritionFive: '',
-      nutritionSix: '',
-      nutritionSeven: '',
-      medicalBackgroundOne: '',
-      medicalBackgroundTwo: '',
-      medicalBackgroundThree: '',
-      medicalBackgroundFour: '',
-      medicalBackgroundFive: '',
-      medicalBackgroundSix: '',
-      medicalBackgroundSeven: '',
-      medicalBackgroundEight: '',
-      medicalBackgroundNine: '',
-      medicalBackgroundTen: '',
-      medicalBackgroundEleven: '',
-      medicalBackgroundTwelve: '',
-      isAgree: false,
+      nutritionOne: fieldValue,
+      nutritionTwo: fieldValue,
+      nutritionThree: fieldValue,
+      nutritionFour: fieldValue,
+      nutritionFive: fieldValue,
+      nutritionSix: fieldValue,
+      nutritionSeven: fieldValue,
+      medicalBackgroundOne: fieldValue,
+      medicalBackgroundTwo: fieldValue,
+      medicalBackgroundThree: fieldValue,
+      medicalBackgroundFour: fieldValue,
+      medicalBackgroundFive: fieldValue,
+      medicalBackgroundSix: fieldValue,
+      medicalBackgroundSeven: fieldValue,
+      medicalBackgroundEight: fieldValue,
+      medicalBackgroundNine: fieldValue,
+      medicalBackgroundTen: fieldValue,
+      medicalBackgroundEleven: fieldValue,
+      medicalBackgroundTwelve: fieldValue,
+      isAgree: {
+        value: false,
+        error: '',
+      },
     }
   );
+
+  const [success, setSuccess] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    
+  };
 
   return (
     <section className='px-4 my-6'>
@@ -191,15 +216,17 @@ const InTakeForm = () => {
         </p>
       </div>
 
-      <InPersonForm {...{ state, dispatch }} />
-      <AddressForm {...{ state, dispatch }} />
-      <GoalForm {...{ state, dispatch }} />
-      <BackgroundForm {...{ state, dispatch }} />
-      <LifeStyleForm {...{ state, dispatch }} />
-      <TrainingPlanForm {...{ state, dispatch }} />
-      <NutritionForm {...{ state, dispatch }} />
-      <MedicalBackgroundForm {...{ state, dispatch }} />
-      <TermsAndConditionsForm {...{ state, dispatch }} />
+      <form>
+        <InPersonForm {...{ state, dispatch }} />
+        <AddressForm {...{ state, dispatch }} />
+        <GoalForm {...{ state, dispatch }} />
+        <BackgroundForm {...{ state, dispatch }} />
+        <LifeStyleForm {...{ state, dispatch }} />
+        <TrainingPlanForm {...{ state, dispatch }} />
+        <NutritionForm {...{ state, dispatch }} />
+        <MedicalBackgroundForm {...{ state, dispatch }} />
+        <TermsAndConditionsForm {...{ state, dispatch }} />
+      </form>
     </section>
   );
 };

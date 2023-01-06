@@ -12,7 +12,7 @@ const GoalForm = ({
 }) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    dispatch({ [name]: value });
+    dispatch({ ...state, [name]: { value, error: false } });
   };
 
   return (
@@ -26,7 +26,8 @@ const GoalForm = ({
         label='1. Noem in volgorde van belang wat jouw doelen zijn de komende periode?'
         name='goalOne'
         required
-        value={state.goalOne}
+        value={state.goalOne.value}
+        error={state.goalOne.error}
         onChange={handleChange}
         hideRequiredIcon
       />
@@ -34,7 +35,8 @@ const GoalForm = ({
         label='2. Hoe denk jij dat ik jou het beste kan helpen om je doelen te bereiken?'
         name='goalTwo'
         required
-        value={state.goalTwo}
+        value={state.goalTwo.value}
+        error={state.goalOne.error}
         onChange={handleChange}
         hideRequiredIcon
       />
@@ -42,7 +44,8 @@ const GoalForm = ({
         label='3. Zijn er obstakels die het bereiken van je doelen in de weg kunnen staan?'
         name='goalThree'
         required
-        value={state.goalThree}
+        value={state.goalThree.value}
+        error={state.goalThree.error}
         onChange={handleChange}
         hideRequiredIcon
       />
@@ -50,7 +53,8 @@ const GoalForm = ({
         label='4. Wat heeft je doen besluiten om nu met een Personal Trainer aan de slag te gaan?'
         name='goalFour'
         required
-        value={state.goalFour}
+        value={state.goalFour.value}
+        error={state.goalFour.error}
         onChange={handleChange}
         hideRequiredIcon
       />

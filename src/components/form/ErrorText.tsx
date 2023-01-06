@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
+import { IoClose } from 'react-icons/io5';
 
 interface IProps {
   text: string;
@@ -10,11 +11,12 @@ const ErrorText: React.FC<IProps> = ({ text, className }) => {
   return (
     <div
       className={classNames(
-        'p-2 w-full bg-red-600 text-white font-light',
+        'p-2 w-full bg-red-500 text-white font-light flex items-center gap-2',
         className
       )}
     >
-      <span className='font-semibold mr-1'>x</span> {text}
+      <IoClose size={32} />
+      <div>{text}</div>
     </div>
   );
 };

@@ -13,7 +13,7 @@ const TrainingPlanForm = ({
 }) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    dispatch({ [name]: value });
+    dispatch({ ...state, [name]: { value, error: false } });
   };
 
   const handleCheckbox = (
@@ -46,17 +46,17 @@ const TrainingPlanForm = ({
         label='1. Hoeveel tijd heb je beschikbaar per training en hoe vaak per week wil je trainen?'
         name='trainingFormOne'
         required
-        value={state.trainingFormOne}
+        {...{ ...state.trainingFormOne }}
         onChange={handleChange}
-        hideRequiredIcon={true}
+        hideRequiredIcon
       />
       <Input
         label='2. Hoeveel keer PT wil je per week inplannen?'
         name='trainingFormTwo'
         required
-        value={state.trainingFormTwo}
+        {...{ ...state.trainingFormTwo }}
         onChange={handleChange}
-        hideRequiredIcon={true}
+        hideRequiredIcon
       />
 
       <div>
@@ -88,9 +88,9 @@ const TrainingPlanForm = ({
         label='4. Heb je voorkeursdagen en tijden om onze afspraken in te plannen?'
         name='trainingFormFour'
         required
-        value={state.trainingFormFour}
+        {...{ ...state.trainingFormFour }}
         onChange={handleChange}
-        hideRequiredIcon={true}
+        hideRequiredIcon
       />
     </div>
   );

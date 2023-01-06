@@ -4,7 +4,7 @@ import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import { Button } from "../Button/Button";
 
-interface IProps {}
+interface IProps { }
 
 interface IState {
   firstName: string;
@@ -77,7 +77,7 @@ const BecomeAMember: React.FC<IProps> = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    dispatch({ [name]: value });
+    dispatch({ ...state, [name]: { value, error: false } });
   };
 
   const handleInterestedIn = (

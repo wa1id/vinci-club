@@ -25,24 +25,25 @@ const InPersonForm = ({
       />
       <Input
         label='voornaam'
-        name='voornaam'
+        name='firstName'
         required
         value={state.firstName}
         onChange={handleChange}
       />
       <Input
         label='achternaam'
-        name='achternaam'
+        name='lastName'
         required
         value={state.lastName}
         onChange={handleChange}
       />
       <Input
         label='geboortedatum'
-        name='geboortedatum'
+        name='dob'
         required
         value={state.dob}
         onChange={handleChange}
+        type='datetime-local'
       />
 
       <div>

@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React from 'react';
 import HeadingWithUnderline from '../../Heading/HeadingWithUnderline';
 import Input from '../Input';
 import RadioOrCheckBox from '../RadioOrCheckBox';
@@ -49,7 +49,7 @@ const BackgroundForm = ({
       />
       <Input
         label='4. Indien je traint, aan wat voor lichaamsbeweging doe je op dit moment?'
-        name='backgroundThree'
+        name='backgroundFour'
         required
         value={state.backgroundFour}
         onChange={handleChange}

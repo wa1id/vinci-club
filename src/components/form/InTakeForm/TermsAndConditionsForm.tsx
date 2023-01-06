@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import HeadingWithUnderline from 'src/components/Heading/HeadingWithUnderline';
 import RadioOrCheckBox from '../RadioOrCheckBox';
 import { IInTakeFormState } from './InTakeForm';
@@ -26,7 +26,7 @@ const TermsAndConditionsForm = ({
         type='checkbox'
         name='agree'
         checked={state.isAgree}
-        onChange={(e) => dispatch({ isAgree: !state.isAgree })}
+        onChange={() => dispatch({ isAgree: !state.isAgree })}
         required
         className='text-sm'
       />

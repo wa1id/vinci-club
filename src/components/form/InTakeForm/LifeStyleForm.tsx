@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React from 'react';
 import HeadingWithUnderline from '../../Heading/HeadingWithUnderline';
 import Input from '../Input';
 import { IInTakeFormState } from './InTakeForm';
@@ -10,8 +10,6 @@ const LifeStyleForm = ({
   state: IInTakeFormState;
   dispatch: React.Dispatch<any>;
 }) => {
-
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     dispatch({ [name]: value });
@@ -30,7 +28,7 @@ const LifeStyleForm = ({
         required
         value={state.lifeStyleOne}
         onChange={handleChange}
-        hideRequiredIcon={true}
+        hideRequiredIcon
       />
       <Input
         label='2. Geef op een schaal van 1 tot 10 aan hoe stressvol je werk naar jouw mening is?'
@@ -38,7 +36,7 @@ const LifeStyleForm = ({
         required
         value={state.lifeStyleTwo}
         onChange={handleChange}
-        hideRequiredIcon={true}
+        hideRequiredIcon
       />
       <Input
         label='3. Zijn er nog andere stressfactoren in je dagelijkse leven?'
@@ -46,23 +44,23 @@ const LifeStyleForm = ({
         required
         value={state.lifeStyleThree}
         onChange={handleChange}
-        hideRequiredIcon={true}
+        hideRequiredIcon
       />
       <Input
         label='4. Zijn er dingen die je graag doet (bijvoorbeeld hobby’s) en hoeveel tijd besteed je hier wekelijks aan?'
-        name='lifeStyleThree'
+        name='lifeStyleFour'
         required
         value={state.lifeStyleFour}
         onChange={handleChange}
-        hideRequiredIcon={true}
+        hideRequiredIcon
       />
       <Input
         label='5. Hoeveel uur slaap je per nacht en word je moe of uitgerust wakker?'
-        name='lifeStyleThree'
+        name='lifeStyleFive'
         required
-        value={state.lifeStyleFour}
+        value={state.lifeStyleFive}
         onChange={handleChange}
-        hideRequiredIcon={true}
+        hideRequiredIcon
       />
     </div>
   );

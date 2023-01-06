@@ -88,7 +88,7 @@ const InTakeForm = () => {
       ...action,
     }),
     {
-      firstName: 'Sanjeev',
+      firstName: '',
       lastName: '',
       dob: '',
       gender: 'man',
@@ -117,31 +117,31 @@ const InTakeForm = () => {
       trainingFormFour: '',
       trainingFormThree: [
         {
-          name: 'monday',
+          name: 'Maandag',
           checked: false,
         },
         {
-          name: 'tuesday',
+          name: 'Dinsdag',
           checked: false,
         },
         {
-          name: 'wendesday',
+          name: 'Woensdag',
           checked: false,
         },
         {
-          name: 'thursday',
+          name: 'Donderdag',
           checked: false,
         },
         {
-          name: 'friday',
+          name: 'Vrijdag',
           checked: false,
         },
         {
-          name: 'saturday',
+          name: 'Zaterdag',
           checked: false,
         },
         {
-          name: 'sunday',
+          name: 'Zondag',
           checked: false,
         },
       ],

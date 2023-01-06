@@ -1,18 +1,8 @@
-import React, { useReducer } from 'react';
+import React from 'react';
 import HeadingWithUnderline from '../../Heading/HeadingWithUnderline';
 import Input from '../Input';
 import RadioOrCheckBox from '../RadioOrCheckBox';
 import { IInTakeFormState } from './InTakeForm';
-
-const days: Record<string, string> = {
-  monday: 'Maandag',
-  tuesday: 'Dinsdag',
-  wendesday: 'Woensdag',
-  thursday: 'Donderdag',
-  friday: 'Vrijdag',
-  saturday: 'Zaterdag',
-  sunday: 'Zondag',
-};
 
 const TrainingPlanForm = ({
   state,
@@ -21,8 +11,6 @@ const TrainingPlanForm = ({
   state: IInTakeFormState;
   dispatch: React.Dispatch<any>;
 }) => {
-
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     dispatch({ [name]: value });
@@ -32,7 +20,8 @@ const TrainingPlanForm = ({
     e: React.ChangeEvent<HTMLInputElement>,
     index: number
   ) => {
-    const { checked } = e.target;
+    const { checked, name, value } = e.target;
+
     dispatch({
       trainingFormThree: state.trainingFormThree.map((item, i) => {
         if (i === index) {
@@ -82,7 +71,7 @@ const TrainingPlanForm = ({
           {state.trainingFormThree.map((item, index) => (
             <RadioOrCheckBox
               key={index}
-              label={days[item.name]}
+              label={item.name}
               name='trainingFormThree'
               required
               id={item.name}

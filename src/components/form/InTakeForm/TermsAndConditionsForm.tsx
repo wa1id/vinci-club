@@ -3,7 +3,7 @@ import React from 'react';
 import HeadingWithUnderline from 'src/components/Heading/HeadingWithUnderline';
 import ErrorText from '../ErrorText';
 import RadioOrCheckBox from '../RadioOrCheckBox';
-import { IInTakeFormState } from './InTakeForm';
+import { IInTakeFormState } from 'src/typings/intakeform';
 
 const TermsAndConditionsForm = ({
   state,

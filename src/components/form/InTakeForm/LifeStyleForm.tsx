@@ -1,7 +1,7 @@
 import React from 'react';
 import HeadingWithUnderline from '../../Heading/HeadingWithUnderline';
 import Input from '../Input';
-import { IInTakeFormState } from './InTakeForm';
+import { IInTakeFormState } from 'src/typings/intakeform';
 
 const LifeStyleForm = ({
   state,

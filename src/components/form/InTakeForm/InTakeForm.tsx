@@ -145,10 +145,9 @@ const InTakeForm = () => {
           },
         });
 
+        // redirect user to error field
         const a = document.createElement('a')
-
         a.href=`#${fieldName}`
-
         a.click()
 
         return;

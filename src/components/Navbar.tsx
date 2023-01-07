@@ -99,9 +99,15 @@ export default function Navbar() {
               ))}
             </Popover.Group>
             <div className="hidden items-center justify-end xl:flex xl:flex-1 xl:w-0">
-              <Button onClick={() => setIsOpen(true)} variant="primary">
-                {t("Become member")}
-              </Button>
+              <Link href="/signup">
+                <Button
+                  onClick={() => close()}
+                  className="w-full text-center"
+                  variant="primary"
+                >
+                  {t("Become member")}
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

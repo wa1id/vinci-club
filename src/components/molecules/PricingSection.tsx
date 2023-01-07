@@ -94,7 +94,7 @@ export const PricingSection = () => {
                       ))}
                     </ul>
 
-                    <Link href="\signup">
+                    <Link href="/signup">
                       <Button className="w-full text-center" variant="primary">
                         {t("Become member")}
                       </Button>
@@ -121,7 +121,7 @@ export const PricingSection = () => {
                 <div className="mt-4 text-lg text-primary">
                   Wens je Vinci Club uit te proberen of wil je een vriend(in)
                   meenemen? Dan kan je een beurtenkaart/dagpas kopen. Deze geeft
-                  je toegang tot zowel de fitness als kickboks.voor
+                  je toegang tot zowel de fitness als kickboks voor
                   €14,95/beurt.
                 </div>
               </div>

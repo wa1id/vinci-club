@@ -24,7 +24,7 @@ const PersonalTrainerCard: React.FC<PersonalTrainer> = ({
           alt={name}
         />
       </div>
-      <div>
+      <div className="h-80">
         <div className="p-4 ">
           <div className="flex items-center justify-start gap-2 w-full mb-1">
             {socials?.instagram && (

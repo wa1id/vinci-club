@@ -14,8 +14,6 @@ const signup = async (req: NextApiRequest, res: NextApiResponse) => {
     referenceClub,
   } = req.body;
 
-  let message = 'html_template';
-
   const mailOptions: MailDataRequired = {
     from: {
       name: 'Vinci Club',
@@ -23,8 +21,15 @@ const signup = async (req: NextApiRequest, res: NextApiResponse) => {
     },
     to: email,
     subject: 'Bedankt voor uw inschrijving bij Vinci Club',
-    html: message,
-    templateId: process.env.CLIENT_TEMPLATE_ID,
+    templateId: 'd-499d3dc411d94157bb39052aa415fc53',
+    dynamicTemplateData: {
+      firstName,
+      lastName,
+      telephone,
+      interestedIn,
+      address,
+      referenceClub,
+    },
   };
 
   try {

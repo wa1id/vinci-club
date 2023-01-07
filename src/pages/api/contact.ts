@@ -9,10 +9,11 @@ const contact = async (req: NextApiRequest, res: NextApiResponse) => {
   const mailOptions: MailDataRequired = {
     from: {
       name: `${firstName} ${lastName}`,
-      email: email,
+      email: 'info@vinci-club.be',
     },
     to: 'info@vinci-club.be',
     templateId: 'd-a83efccb727c43cca19eee0ebe8d16b0',
+    replyTo: email, 
     dynamicTemplateData: {
       firstName,
       lastName,

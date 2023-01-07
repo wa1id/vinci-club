@@ -34,10 +34,11 @@ const signup = async (req: NextApiRequest, res: NextApiResponse) => {
   const managerMailOptions: MailDataRequired = {
     from: {
       name: `${firstName} ${lastName}`,
-      email: email,
+      email: 'info@vinci-club.be',
     },
     to: 'info@vinci-club.be',
     templateId: 'd-f3f5f195d5324f1ea71d2b4e67bd4a57',
+    replyTo: email, 
     dynamicTemplateData: {
       firstName,
       lastName,

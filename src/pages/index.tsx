@@ -38,7 +38,7 @@ const Home = () => {
               <h1 className="flex flex-col uppercase text-6xl sm:text-8xl 2xl:text-9xl font-drukwide [text-shadow:_15px_10px_10px_rgb(0_0_0_/_75%)]">
                 <span>vinci</span>
                 <span
-                  className=" [text-shadow:_0px_13px_1px_rgb(0_0_0_/_0.4%)] uppercase text-6xl sm:text-8xl 2xl:text-9xlfont-drukwide"
+                  className=" [text-shadow:_0px_13px_1px_rgb(0_0_0_/_0.4%)] uppercase text-6xl sm:text-8xl 2xl:text-9xl font-drukwide"
                   style={{
                     WebkitTextStroke: "1px #F0EBE8",
                     WebkitTextFillColor: "transparent",

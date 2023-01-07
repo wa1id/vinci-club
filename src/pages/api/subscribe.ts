@@ -1,7 +1,7 @@
 import axios from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const subscribe = async (req: NextApiRequest, res: NextApiResponse) => {
   const { email } = req.body;
 
   if (!email) {
@@ -25,7 +25,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     if (response.status >= 400) {
       return res.status(400).json({
         error:
-          "There was an error subscribing to the newsletter, please try again.",
+          "There was an error subscribing to the newsletter, please try again. ",
       });
     }
 
@@ -34,3 +34,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     return res.status(500).json({ error: error.message || error.toString() });
   }
 };
+
+export default subscribe;

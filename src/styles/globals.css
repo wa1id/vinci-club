@@ -61,5 +61,9 @@ input[type="password"] {
 }
 
 a {
-  @apply hover:text-gray-400 transition-colors duration-200 ease-in-out;
+  @apply hover:text-gray-400 transition-colors duration-200 ease-in-out cursor-pointer;
+}
+
+button {
+  cursor: pointer;
 }

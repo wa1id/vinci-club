@@ -20,7 +20,6 @@ const signup = async (req: NextApiRequest, res: NextApiResponse) => {
       email: "info@vinci-club.be",
     },
     to: email,
-    subject: "Bedankt voor uw inschrijving bij Vinci Club",
     templateId: "d-499d3dc411d94157bb39052aa415fc53",
     dynamicTemplateData: {
       firstName,
@@ -29,7 +28,6 @@ const signup = async (req: NextApiRequest, res: NextApiResponse) => {
       interestedIn,
       address,
       referenceClub,
-      subject: "Bedankt voor uw inschrijving bij Vinci Club",
     },
   };
 

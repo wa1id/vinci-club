@@ -25,7 +25,7 @@ const subscribe = async (req: NextApiRequest, res: NextApiResponse) => {
     if (response.status >= 400) {
       return res.status(400).json({
         error:
-          "There was an error subscribing to the newsletter, please try again.",
+          "There was an error subscribing to the newsletter, please try again. ",
       });
     }
 
@@ -33,6 +33,6 @@ const subscribe = async (req: NextApiRequest, res: NextApiResponse) => {
   } catch (error: any) {
     return res.status(500).json({ error: error.message || error.toString() });
   }
-}
+};
 
-export default subscribe
+export default subscribe;

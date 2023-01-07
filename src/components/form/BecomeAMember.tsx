@@ -1,10 +1,9 @@
 import React, { useReducer } from 'react';
 import Link from 'next/link';
-import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
 import { Button } from '../Button/Button';
 import axios from 'axios';
-import { BecomeMember } from "src/typings/members";
+import { BecomeMember } from 'src/typings/members';
 
 interface IProps {}
 
@@ -165,7 +164,7 @@ const BecomeAMember: React.FC<IProps> = () => {
       referenceClub: state.referenceClub,
     };
 
-    axios.post("/api/notion/members", state);
+    axios.post('/api/notion/members', state);
 
     // send mail to user
     axios
@@ -177,8 +176,8 @@ const BecomeAMember: React.FC<IProps> = () => {
         handleReset();
       })
       .catch((err) => {
-          toast.error('Oops, er is iets misgeslopen.');
-            setLoading(false);
+        toast.error('Oops, er is iets misgeslopen.');
+        setLoading(false);
       });
   };
 
@@ -386,8 +385,12 @@ const BecomeAMember: React.FC<IProps> = () => {
           )}
         </div>
 
-        <div className="w-full ">
-          <Button loading={loading} variant="primary" type="submit">
+        <div className='w-full '>
+          <Button
+            loading={loading}
+            variant='primary'
+            type='submit'
+          >
             Registeren
           </Button>
         </div>

@@ -6,6 +6,7 @@ interface Props {
   children: React.ReactNode;
   type?: "button" | "submit" | "reset";
   variant: "primary" | "secondary" | "tertiary" | "outline";
+  size?: "sm" | "md";
   className?: string;
   loading?: boolean;
 }
@@ -15,6 +16,7 @@ export const Button: FC<Props> = ({
   children,
   type,
   variant,
+  size = "md",
   className = "",
   loading = false,
 }) => {
@@ -27,17 +29,23 @@ export const Button: FC<Props> = ({
     variant === "tertiary" && "text-white hover:text-primary hover:bg-white"
   );
 
+  const sizeClasses = classNames(
+    size === "sm" && "px-4 py-2 text-sm",
+    size === "md" && "px-4 py-2 text-lg"
+  );
+
   return (
     <button
       type={type ? type : "button"}
       disabled={loading}
       className={classNames(
         variantClasses,
+        sizeClasses,
         className,
         loading
           ? "bg-white hover:bg-white text-primary cursor-not-allowed flex"
           : "",
-        "items-center px-4 py-2 rounded-full transition-colors duration-200 ease-in-out border-2 text-lg uppercase font-bold"
+        "items-center rounded-full transition-colors duration-200 ease-in-out border-2 uppercase font-bold"
       )}
       onClick={onClick}
     >

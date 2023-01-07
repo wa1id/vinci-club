@@ -84,7 +84,7 @@ const Home = () => {
       </div>
 
       <ChooseYourPlan />
-      {/* <PersonalTrainers /> */}
+      <PersonalTrainers />
       <GetTheNewsFrom />
     </>
   );

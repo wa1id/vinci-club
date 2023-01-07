@@ -51,7 +51,7 @@ const ContactWithVinciClub = () => {
           </div>
         </div>
         <div className="w-full h-full flex items-center justify-center relative p-6">
-          <Image src={ContactWithVinciBoyImg} alt="get the news from" />
+          <Image priority src={ContactWithVinciBoyImg} alt="" />
           <Image
             src={ContactWithVinciExerciseImg}
             alt="exercise-machine-img"

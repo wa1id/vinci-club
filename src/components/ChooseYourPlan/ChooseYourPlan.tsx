@@ -7,6 +7,8 @@ import ChooseYourPlanCard from "../Card/ChooseYourPlanCard";
 import BodyImg from "public/body.png";
 import { useTranslation } from "react-i18next";
 import Link from "next/link";
+import { FiArrowUpRight } from "react-icons/fi";
+import { PricingSection } from "../molecules/PricingSection";
 
 const ChooseYourPlan = () => {
   const { t } = useTranslation("common");
@@ -31,21 +33,13 @@ const ChooseYourPlan = () => {
           <p className="text-lg max-w-3xl m-auto font-normal mt-6">
             {t("plan description")}
           </p>
-        </div>
-      </div>
-      <div className="flex flex-col lg:flex-row lg:space-x-5 space-y-5 lg:space-y-0 items-center lg:items-stretch justify-center p-6">
-        {data.map((item) => (
-          <ChooseYourPlanCard key={item.id} {...item} />
-        ))}
-      </div>
-      <div className="flex justify-center">
-        <div className="px-8 pt-4 pb-8 text-center">
-          <div className="font-bold uppercase text-xl">
-            Beurtenkaart of dagpas?
+          <div className="flex items-center justify-center space-x-1">
+            <Link href="/prijzen">Bekijk al onze prijzen hier</Link>
+            <FiArrowUpRight />
           </div>
-          <Link href="/abonnementen">Bekijk hier alle informatie</Link>
         </div>
       </div>
+      <PricingSection />
 
       <div className="flex justify-end items-center">
         <Image
@@ -53,11 +47,6 @@ const ChooseYourPlan = () => {
           alt="body"
           className="max-w-[192px] hidden md:block  lg:-translate-x-40"
         />
-      </div>
-
-      <div className="text-center">
-        <sup>*</sup>
-        {t("yearplan")}
       </div>
     </div>
   );

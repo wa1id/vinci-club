@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { add, Day, getDay, isSunday, nextDay } from "date-fns";
+import { add, getDay } from "date-fns";
 import Heading from "src/components/Heading/Heading";
 import useCalendar from "src/hooks/useCalendar";
 import { Dialog, Transition } from "@headlessui/react";
@@ -11,6 +11,112 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const dayLabels = ["Zo", "Ma", "Di", "Wo", "Do", "Vr", "Za"];
 const dayLabelsMobile = ["Z", "M", "D", "W", "D", "V", "Z"];
+const events = [
+  {
+    id: 1,
+    title: "Kickboks",
+    dayOfWeek: 0,
+    start: "17:00",
+    end: "18:00",
+    gridRow: "163 / span 20",
+  },
+  {
+    id: 2,
+    title: "Kickboks",
+    dayOfWeek: 0,
+    start: "18:15",
+    end: "19:15",
+    gridRow: "185 / span 20",
+  },
+  {
+    id: 3,
+    title: "Kickboks",
+    dayOfWeek: 0,
+    start: "20:30",
+    end: "21:30",
+    gridRow: "226 / span 20",
+  },
+  {
+    id: 4,
+    title: "Kickboks",
+    dayOfWeek: 2,
+    start: "17:00",
+    end: "18:00",
+    gridRow: "163 / span 20",
+  },
+  {
+    id: 5,
+    title: "Kickboks",
+    dayOfWeek: 2,
+    start: "18:15",
+    end: "19:15",
+    gridRow: "185 / span 20",
+  },
+  {
+    id: 6,
+    title: "Kickboks",
+    dayOfWeek: 2,
+    start: "20:30",
+    end: "21:30",
+    gridRow: "226 / span 20",
+  },
+  {
+    id: 7,
+    title: "Kickboks",
+    dayOfWeek: 4,
+    start: "17:00",
+    end: "18:00",
+    gridRow: "163 / span 20",
+  },
+  {
+    id: 8,
+    title: "Kickboks",
+    dayOfWeek: 4,
+    start: "18:15",
+    end: "19:15",
+    gridRow: "185 / span 20",
+  },
+  {
+    id: 9,
+    title: "Kickboks",
+    dayOfWeek: 4,
+    start: "20:30",
+    end: "21:30",
+    gridRow: "226 / span 20",
+  },
+  {
+    id: 10,
+    title: "Ladies only kickboks by N'wicha",
+    dayOfWeek: 0,
+    start: "10:15",
+    end: "11:30",
+    gridRow: "41 / span 25",
+  },
+  {
+    id: 11,
+    title: "Ladies only kickboks by N'wicha",
+    dayOfWeek: 1,
+    start: "19:30",
+    end: "20:45",
+    gridRow: "208 / span 25",
+  },
+  {
+    id: 12,
+    title: "Ladies only kickboks by N'wicha",
+    dayOfWeek: 3,
+    start: "19:30",
+    end: "20:45",
+    gridRow: "208 / span 25",
+  },
+  {
+    id: 13,
+    title: "Ladies only booty & belly by gezondmetnora",
+    dayOfWeek: 3,
+    start: "10:00",
+    end: "11:00",
+    gridRow: "37 / span 20",
+  },
+];
 
 const Calendar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,7 +142,7 @@ const Calendar = () => {
         style={style}
       >
         <div className="text-white absolute inset-1 flex flex-col overflow-y-auto rounded-lg bg-black p-2 text-xs leading-5 items-center justify-center">
-          <div className="order-1 font-semibold">{title}</div>
+          <div className="order-1 font-semibold text-center">{title}</div>
           <div>
             <time dateTime={start}>{start}</time> -{" "}
             <time dateTime={end}>{end}</time>
@@ -131,7 +237,7 @@ const Calendar = () => {
           className="flex flex-col items-center pt-2 pb-3"
           onClick={() => setSelectedDate(add(firstDayOfWeek, { days: i }))}
         >
-          {dayLabelsMobile[(new Date().getDay() + 1 + i) % 7]}{" "}
+          {dayLabelsMobile[(i + 1) % 7]}{" "}
           <span
             className={classNames(
               (i + 1) % 7 === getDay(selectedDate)
@@ -155,7 +261,7 @@ const Calendar = () => {
       dates.push(
         <div key={i} className="flex items-center justify-center py-3">
           <span className="flex items-baseline">
-            {dayLabels[(new Date().getDay() + 1 + i) % 7]}{" "}
+            {dayLabels[(i + 1) % 7]}{" "}
             <span
               className={classNames(
                 (i + 1) % 7 === getDay(new Date())
@@ -180,46 +286,6 @@ const Calendar = () => {
         <title>Groepslessen - Vinci Club Deurne</title>
       </Head>
       <div className="bg-primary">
-        <Transition appear show={isOpen} as={Fragment}>
-          <Dialog
-            open={isOpen}
-            onClose={() => setIsOpen(false)}
-            className="relative z-50"
-          >
-            <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
-            <div className="fixed inset-0 overflow-y-auto">
-              <div className="flex min-h-full items-center justify-center p-4">
-                <Transition.Child
-                  as={Fragment}
-                  enter="ease-out duration-300"
-                  enterFrom="opacity-0 scale-95"
-                  enterTo="opacity-100 scale-100"
-                  leave="ease-in duration-200"
-                  leaveFrom="opacity-100 scale-100"
-                  leaveTo="opacity-0 scale-95"
-                >
-                  <Dialog.Panel className="mx-auto w-full max-w-xl bg-white transform">
-                    <div className="px-5">
-                      <Dialog.Title className="text-3xl font-bold text-gray-900 uppercase my-4">
-                        Lid worden
-                      </Dialog.Title>
-                      <Dialog.Description>
-                        Als je het Inschrijvingsformulier invult doorheen de
-                        maand december en tijdens onze opendeurweek jouw
-                        inschrijving komt vervolledigen dan kan jij genieten van
-                        de eerste maand gratis sporten. Geldig op alle
-                        abonnementen mits er wordt gekozen voor een
-                        jaarabonnement.
-                      </Dialog.Description>
-                    </div>
-
-                    <BecomeAMember />
-                  </Dialog.Panel>
-                </Transition.Child>
-              </div>
-            </div>
-          </Dialog>
-        </Transition>
         <div className=" w-full flex justify-center flex-col md:flex-row relative py-6">
           <div className="flex-1 text-center w-full ">
             {/* TODO: i18 */}
@@ -371,9 +437,37 @@ const Calendar = () => {
                         "1.75rem repeat(288, minmax(0, 1fr)) auto",
                     }}
                   >
-                    {renderMondayToFriday()}
-                    {renderMondayToFriday2()}
-                    {renderMondayToFriday3()}
+                    {events.map((event) => (
+                      <EventItem
+                        key={event.id}
+                        title={event.title}
+                        start={event.start}
+                        end={event.end}
+                        className="hidden sm:flex"
+                        style={{
+                          gridRow: event.gridRow,
+                          gridColumn: `${event.dayOfWeek + 1} / span 1`,
+                        }}
+                      />
+                    ))}
+
+                    {events.map((event) => (
+                      <EventItem
+                        key={event.id}
+                        title={event.title}
+                        start={event.start}
+                        end={event.end}
+                        className={
+                          (event.dayOfWeek + 1) % 7 === selectedDate.getDay()
+                            ? "flex sm:hidden"
+                            : "hidden"
+                        }
+                        style={{
+                          gridRow: event.gridRow,
+                          gridColumn: `1 / span 1`,
+                        }}
+                      />
+                    ))}
                   </ol>
                 </div>
               </div>

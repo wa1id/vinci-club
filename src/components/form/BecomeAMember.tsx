@@ -4,33 +4,17 @@ import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
 import { Button } from '../Button/Button';
 import axios from 'axios';
+import { BecomeMember } from "src/typings/members";
 
 interface IProps {}
-
-interface IState {
-  firstName: string;
-  lastName: string;
-  email: string;
-  telephone: string;
-  interestedIn: {
-    name: string;
-    checked: boolean;
-  }[];
-  address: {
-    street: string;
-    city: string;
-    zip: string;
-  };
-  referenceClub?: string;
-  agree: boolean;
-}
 
 // TODO: i18
 
 const BecomeAMember: React.FC<IProps> = () => {
   const [checkedError, setCheckedError] = React.useState(false);
   const [success, setSuccess] = React.useState(false);
-  const [state, dispatch] = useReducer<React.Reducer<IState, any>>(
+  const [loading, setLoading] = React.useState(false);
+  const [state, dispatch] = useReducer<React.Reducer<BecomeMember, any>>(
     (state, action) => ({
       ...state,
       ...action,
@@ -156,7 +140,7 @@ const BecomeAMember: React.FC<IProps> = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setCheckedError(false);
     setSuccess(false);
@@ -165,6 +149,8 @@ const BecomeAMember: React.FC<IProps> = () => {
       setCheckedError(true);
       return;
     }
+
+    setLoading(true);
 
     const templateParams = {
       firstName: state.firstName,
@@ -179,15 +165,21 @@ const BecomeAMember: React.FC<IProps> = () => {
       referenceClub: state.referenceClub,
     };
 
+    axios.post("/api/notion/members", state);
+
     // send mail to user
     axios
       .post('/api/signup', { ...templateParams })
       .then((result) => {
         toast.success('Wij hebben uw aanvraag ontvangen!');
         setSuccess(true);
+        setLoading(false);
         handleReset();
       })
-      .catch((err) => toast.error('Oops, er is iets misgeslopen.'));
+      .catch((err) => {
+          toast.error('Oops, er is iets misgeslopen.');
+            setLoading(false);
+      });
   };
 
   return (
@@ -394,11 +386,8 @@ const BecomeAMember: React.FC<IProps> = () => {
           )}
         </div>
 
-        <div className='w-full '>
-          <Button
-            variant='primary'
-            type='submit'
-          >
+        <div className="w-full ">
+          <Button loading={loading} variant="primary" type="submit">
             Registeren
           </Button>
         </div>

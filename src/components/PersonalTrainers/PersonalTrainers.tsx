@@ -1,8 +1,8 @@
 import React from 'react';
 import PersonalTrainerCard from '../Card/PersonalTrainerCard';
 import Heading from '../Heading/Heading';
-import PersonalTrainer1Img from 'public/nora.jpeg';
-import PersonalTrainer2Img from 'public/pt-placeholder.jpeg';
+import PersonalTrainer1Img from 'public/images/nora.jpeg';
+import PersonalTrainer2Img from 'public/images/pt-placeholder.jpeg';
 
 const data = [
   {

@@ -1,10 +1,8 @@
 import React from 'react';
-import BarBellImg from 'public/barbell-1.png';
+import BarBellImg from 'public/images/barbell-1.png';
 import Image from 'next/image';
 import Heading from '../Heading/Heading';
-import data from 'src/data/plans';
-import ChooseYourPlanCard from '../Card/ChooseYourPlanCard';
-import BodyImg from 'public/body.png';
+import BodyImg from 'public/images/body.png';
 import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
 import { FiArrowUpRight } from 'react-icons/fi';

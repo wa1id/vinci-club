@@ -2,7 +2,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
 import Image from 'next/image';
 import React from 'react';
-import jamal from 'public/jamal.jpeg';
+import jamal from 'public/images/jamal.jpeg';
 import Heading from 'src/components/Heading/Heading';
 import Link from 'next/link';
 import { Button } from 'src/components/Button/Button';

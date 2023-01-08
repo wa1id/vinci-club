@@ -4,7 +4,7 @@ import Image from 'next/image';
 import React from 'react';
 import BecomeAMember from 'src/components/form/BecomeAMember';
 import Heading from 'src/components/Heading/Heading';
-import jamal from 'public/jamal.jpeg';
+import jamal from 'public/images/jamal.jpeg';
 import GetTheNewsFrom from 'src/components/GetTheNewsFrom/GetTheNewsFrom';
 
 const Signup = () => {

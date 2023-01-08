@@ -1,8 +1,8 @@
 import React from 'react';
 import Heading from '../Heading/Heading';
 import GoogleMap from 'src/components/GoogleMap/GoogleMap';
-import PhoneImg from 'public/phone.png';
-import EmailImg from 'public/email.png';
+import PhoneImg from 'public/images/phone.png';
+import EmailImg from 'public/images/email.png';
 import Image from 'next/image';
 
 const Address = () => {

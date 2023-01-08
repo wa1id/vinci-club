@@ -4,9 +4,9 @@ import Link from 'next/link';
 import Head from 'next/head';
 import Image from 'next/image';
 
-import hero3 from 'public/hero-3.png';
-import hero2 from 'public/hero-2.png';
-import hero1 from 'public/hero-1.png';
+import hero3 from 'public/images/hero-3.png';
+import hero2 from 'public/images/hero-2.png';
+import hero1 from 'public/images/hero-1.png';
 import { Button } from 'src/components/Button/Button';
 import { SocialFollows } from 'src/components/SocialFollows/SocialFollows';
 import { SideTextStroke } from 'src/components/SideTextStroke';

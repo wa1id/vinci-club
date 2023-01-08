@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Heading from '../Heading/Heading';
-import GetTheNewsFromGirlImg from 'public/get-the-news-from-girl.png';
-import GetTheNewsFromDumbell from 'public/get-the-news-from-dumbell.png';
-import GetTheNewsFromBoxingGloves from 'public/get-the-news-from-boxing-gloves.png';
+import GetTheNewsFromGirlImg from 'public/images/get-the-news-from-girl.png';
+import GetTheNewsFromDumbell from 'public/images/get-the-news-from-dumbell.png';
+import GetTheNewsFromBoxingGloves from 'public/images/get-the-news-from-boxing-gloves.png';
 import Image from 'next/image';
 import { FiArrowUpRight } from 'react-icons/fi';
 import { toast } from 'react-toastify';

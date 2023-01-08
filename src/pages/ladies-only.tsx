@@ -3,8 +3,8 @@ import Head from 'next/head';
 import Image from 'next/image';
 import React from 'react';
 import Heading from 'src/components/Heading/Heading';
-import ladiesonly from 'public/ladies-only.jpeg';
-import nora from 'public/nora.jpeg';
+import ladiesonly from 'public/images/ladies-only.jpeg';
+import nora from 'public/images/nora.jpeg';
 
 const LadiesOnly = () => {
   return (

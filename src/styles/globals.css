@@ -40,15 +40,15 @@ input[type='checkbox'] {
   @apply h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary-light;
 }
 
-  input[type='radio'] {
-     @apply h-4 w-4 rounded-full border-gray-300 text-primary focus:ring-primary-light;
+input[type='radio'] {
+  @apply h-4 w-4 rounded-full border-gray-300 text-primary focus:ring-primary-light;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="number"],
-input[type="password"] {
+input[type='text'],
+input[type='email'],
+input[type='tel'],
+input[type='number'],
+input[type='password'] {
   @apply appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-primary-light focus:border-primary sm:text-sm;
 }
 

@@ -1,8 +1,8 @@
-import React from 'react';
-import HeadingWithUnderline from '../../Heading/HeadingWithUnderline';
-import Input from '../Input';
-import RadioOrCheckBox from '../RadioOrCheckBox';
-import { IInTakeFormState } from 'src/typings/intakeform';
+import React from "react";
+import HeadingWithUnderline from "../../Heading/HeadingWithUnderline";
+import Input from "../Input";
+import RadioOrCheckBox from "../RadioOrCheckBox";
+import { IInTakeFormState } from "src/typings/intakeform";
 
 const InPersonForm = ({
   state,
@@ -17,86 +17,87 @@ const InPersonForm = ({
   };
 
   return (
-    <div className='my-20'>
+    <div className="my-20">
       <HeadingWithUnderline
-        title='PERSOONLIJK'
-        lineClassName='w-32 p-[0.2rem]'
-        size='medium'
+        title="PERSOONLIJK"
+        lineClassName="w-32 p-[0.2rem]"
+        size="medium"
       />
       <Input
-        label='voornaam'
-        name='firstName'
+        label="Voornaam"
+        name="firstName"
         value={state.firstName.value}
         error={state.firstName.error}
         onChange={handleChange}
+        required
       />
       <Input
-        label='achternaam'
-        name='lastName'
+        label="Achternaam"
+        name="lastName"
         value={state.lastName.value}
         error={state.lastName.error}
         onChange={handleChange}
+        required
       />
       <Input
-        label='geboortedatum'
-        name='dob'
+        label="Geboortedatum"
+        name="dob"
         value={state.dob.value}
         error={state.dob.error}
         onChange={handleChange}
-        type='datetime-local'
+        type="date"
+        required
       />
 
       <div>
-        <label
-          htmlFor={'gender'}
-          className={'capitalize font-semibold text-primary'}
-        >
+        <label htmlFor={"gender"} className={"font-semibold text-primary"}>
           Man/vrouw <sup>*</sup>
         </label>
 
-        <div className='flex items-center flex-wrap gap-5'>
+        <div className="flex items-center flex-wrap gap-5">
           <RadioOrCheckBox
-            label='man'
-            name='gender'
-            value={'man'}
+            label="man"
+            name="gender"
+            value={"man"}
             onChange={handleChange}
-            type='radio'
+            type="radio"
             error={state.gender.error}
           />
           <RadioOrCheckBox
-            label='vrouw'
-            name='gender'
-            value={'vrouw'}
+            label="vrouw"
+            name="gender"
+            value={"vrouw"}
             onChange={handleChange}
-            type='radio'
+            type="radio"
             error={state.gender.error}
           />
         </div>
       </div>
 
       <Input
-        label='Instagram account'
-        name='instagramAccount'
+        label="Instagram account"
+        name="instagramAccount"
         value={state.instagramAccount.value}
         error={state.instagramAccount.error}
         onChange={handleChange}
-        placeholder='Indien je een account hebt, vul dan je gebruikersnaam in. Bijvoorbeeld @daverijkaard'
       />
 
       <Input
-        label='Telefoonnummer'
-        name='phoneNumber'
+        label="Telefoonnummer"
+        name="phoneNumber"
         value={state.phoneNumber.value}
         error={state.phoneNumber.error}
         onChange={handleChange}
+        required
       />
 
       <Input
-        label='E-mailadres.'
-        name='emailAddress'
+        label="E-mailadres"
+        name="emailAddress"
         value={state.emailAddress.value}
         error={state.emailAddress.error}
         onChange={handleChange}
+        required
       />
     </div>
   );

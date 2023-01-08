@@ -1,6 +1,6 @@
-import classNames from 'classnames';
-import React, { InputHTMLAttributes } from 'react';
-import ErrorText from './ErrorText';
+import classNames from "classnames";
+import React, { InputHTMLAttributes } from "react";
+import ErrorText from "./ErrorText";
 
 interface IProps extends InputHTMLAttributes<HTMLInputElement> {
   labelClassName?: string;
@@ -23,21 +23,16 @@ const RadioOrCheckBox: React.FC<IProps> = ({
 }) => {
   return (
     <>
-      {error && <ErrorText text={`${label} is required`} />}
-      <div
-        className={classNames(
-          className,
-          'flex items-center gap-3 capitalize mt-3'
-        )}
-      >
+      {error && <ErrorText text={`${label} is verplicht`} />}
+      <div className={classNames(className, "flex items-center gap-3 mt-3")}>
         <input
           id={name}
           name={name}
           value={value}
           onChange={onChange}
-          className={classNames(inputClassName, 'block')}
+          className={classNames(inputClassName, "block")}
           {...inputProps}
-        />{' '}
+        />{" "}
         <span>{label}</span>
       </div>
     </>

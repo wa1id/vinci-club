@@ -1,20 +1,19 @@
-import React, { useReducer, useState } from 'react';
-import { IInTakeFormState } from 'src/typings/intakeform';
-import HeadingWithUnderline from '../../Heading/HeadingWithUnderline';
-import AddressForm from './AddressForm';
-import BackgroundForm from './BackgroundForm';
-import GoalForm from './GoalForm';
-import InPersonForm from './InPersonForm';
-import LifeStyleForm from './LifeStyleForm';
-import MedicalBackgroundForm from './MedicalBackgroundForm';
-import NutritionForm from './NutritionForm';
-import TermsAndConditionsForm from './TermsAndConditionsForm';
-import TrainingPlanForm from './TrainingPlanForm';
-
+import React, { useReducer, useState } from "react";
+import { IInTakeFormState } from "src/typings/intakeform";
+import HeadingWithUnderline from "../../Heading/HeadingWithUnderline";
+import AddressForm from "./AddressForm";
+import BackgroundForm from "./BackgroundForm";
+import GoalForm from "./GoalForm";
+import InPersonForm from "./InPersonForm";
+import LifeStyleForm from "./LifeStyleForm";
+import MedicalBackgroundForm from "./MedicalBackgroundForm";
+import NutritionForm from "./NutritionForm";
+import TermsAndConditionsForm from "./TermsAndConditionsForm";
+import TrainingPlanForm from "./TrainingPlanForm";
 
 const InTakeForm = () => {
   const fieldValue = {
-    value: '',
+    value: "",
     error: false,
   };
 
@@ -28,7 +27,7 @@ const InTakeForm = () => {
       lastName: fieldValue,
       dob: fieldValue,
       gender: {
-        value: 'man',
+        value: "man",
         error: false,
       },
       instagramAccount: fieldValue,
@@ -56,31 +55,31 @@ const InTakeForm = () => {
       trainingFormFour: fieldValue,
       trainingFormThree: [
         {
-          name: 'Maandag',
+          name: "Maandag",
           checked: false,
         },
         {
-          name: 'Dinsdag',
+          name: "Dinsdag",
           checked: false,
         },
         {
-          name: 'Woensdag',
+          name: "Woensdag",
           checked: false,
         },
         {
-          name: 'Donderdag',
+          name: "Donderdag",
           checked: false,
         },
         {
-          name: 'Vrijdag',
+          name: "Vrijdag",
           checked: false,
         },
         {
-          name: 'Zaterdag',
+          name: "Zaterdag",
           checked: false,
         },
         {
-          name: 'Zondag',
+          name: "Zondag",
           checked: false,
         },
       ],
@@ -105,7 +104,7 @@ const InTakeForm = () => {
       medicalBackgroundTwelve: fieldValue,
       isAgree: {
         value: false,
-        error: '',
+        error: "",
       },
     }
   );
@@ -113,15 +112,15 @@ const InTakeForm = () => {
   const [success, setSuccess] = useState(false);
 
   const validateFields = [
-    'firstName',
-    'lastName',
-    'dob',
-    'gender',
-    'phoneNumber',
-    'emailAddress',
-    'streetNameAndHouseNumber',
-    'zipCode',
-    'placeOfResidence',
+    "firstName",
+    "lastName",
+    "dob",
+    "gender",
+    "phoneNumber",
+    "emailAddress",
+    "streetNameAndHouseNumber",
+    "zipCode",
+    "placeOfResidence",
   ];
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -135,8 +134,8 @@ const InTakeForm = () => {
 
       if (
         validateFields.includes(fieldName) &&
-        data?.value === '' &&
-        !['trainingFormThree', 'isAgree'].includes(fieldName)
+        data?.value === "" &&
+        !["trainingFormThree", "isAgree"].includes(fieldName)
       ) {
         dispatch({
           [fieldName]: {
@@ -146,9 +145,9 @@ const InTakeForm = () => {
         });
 
         // redirect user to error field
-        const a = document.createElement('a')
-        a.href=`#${fieldName}`
-        a.click()
+        const a = document.createElement("a");
+        a.href = `#${fieldName}`;
+        a.click();
 
         return;
       }
@@ -159,8 +158,8 @@ const InTakeForm = () => {
 
       if (
         validateFields.includes(fieldName) &&
-        data?.value !== '' &&
-        !['trainingFormThree', 'isAgree'].includes(fieldName)
+        data?.value !== "" &&
+        !["trainingFormThree", "isAgree"].includes(fieldName)
       ) {
         dispatch({
           [fieldName]: {
@@ -169,7 +168,7 @@ const InTakeForm = () => {
           },
         });
 
-        if (!['trainingFormThree', 'isAgree'].includes(fieldName)) {
+        if (!["trainingFormThree", "isAgree"].includes(fieldName)) {
           templateParams[fieldName] = data?.value;
         }
       }
@@ -190,23 +189,20 @@ const InTakeForm = () => {
       trainingFormThree: state.trainingFormThree
         .filter((item) => item.checked)
         .map((item) => item.name)
-        .join(', '),
+        .join(", "),
     };
 
     // filter out fields with undefined or no value
-    console.log(templateParamsWithTrainingFormThree)
+    console.log(templateParamsWithTrainingFormThree);
   };
 
   return (
-    <section className='px-4 my-6'>
-      <div className='mb-16'>
-        <HeadingWithUnderline
-          title='intake formulier'
-          size='large'
-        />
-        <p className='md:text-xl  text-secondary uppercase mt-2'>{`Let's Go!`}</p>
+    <section className="px-4 my-6">
+      <div className="mb-16">
+        <HeadingWithUnderline title="intake formulier" size="large" />
+        <p className="md:text-xl  text-secondary uppercase mt-2">{`Let's Go!`}</p>
 
-        <p className='my-4'>
+        <p className="my-4">
           Ben jij klaar om de meest fitte en zelfverzekerde versie van jezelf te
           worden? Vul onderstaande vragen dan zo eerlijk mogelijk in, zodat ik
           een goed beeld krijg van wie je bent en wat jouw doelen zijn. Het is
@@ -214,7 +210,7 @@ const InTakeForm = () => {
           intake ingevuld naar mij teruggestuurd hebt.
         </p>
 
-        <p className='text-sm my-4'>
+        <p className="text-sm my-4">
           Let op: indien een vraag niet van toepassing is op jouw situatie vul
           dan NVT in.
         </p>

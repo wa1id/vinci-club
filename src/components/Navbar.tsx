@@ -1,13 +1,12 @@
 import { Fragment, useState } from 'react';
 import Image from 'next/image';
-import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
+import { Disclosure, Popover, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { Button } from './Button/Button';
 import logo from 'public/logo.svg';
 import { useTranslation } from 'next-i18next';
 import { NextLink } from './NextLink/NextLink';
-import BecomeAMember from './form/BecomeAMember';
 
 export default function Navbar() {
   const { t } = useTranslation('common');

@@ -28,6 +28,15 @@ const Privacy = () => {
               je gegevens bewaren. Dit privacybeleid is voor het laatst
               gewijzigd op 23 november 2022.
             </p>
+
+            <p>
+              Vinci Club is verplicht om strikt en vertrouwelijk om te gaan met
+              de persoonsgegevens van de klant en worden enkel en alleen voor
+              administratieve werkuitvoerende doeleinden van Vinci Club gebruikt
+              en/of om communicatie tussen partijen mogelijk te maken.
+              Persoonsgegevens worden nooit voor commerciële doeleinden aan
+              derden beschikbaar gesteld.
+            </p>
             <br />
             <h3 className="font-bold text-lg">Cookies</h3>
             <p>

@@ -5,7 +5,7 @@ import { Button } from '../Button/Button';
 import axios from 'axios';
 import { BecomeMember } from 'src/typings/members';
 
-interface IProps {}
+interface IProps { }
 
 // TODO: i18
 
@@ -61,7 +61,7 @@ const BecomeAMember: React.FC<IProps> = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    dispatch({ [name]: value });
+    dispatch({ ...state, [name]: { value, error: false } });
   };
 
   const handleInterestedIn = (

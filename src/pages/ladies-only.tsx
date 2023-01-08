@@ -24,6 +24,8 @@ const LadiesOnly = () => {
       </div>
 
       <div className="container mx-auto py-8">
+        <InTakeForm />
+
         <div className="flex flex-col lg:flex-row space-x-2">
           <div className="max-w-2xl mx-2">
             <h1 className="text-2xl font-bold">Discover Women Only</h1>

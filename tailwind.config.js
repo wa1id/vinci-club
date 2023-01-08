@@ -1,27 +1,27 @@
 /** @type {import('tailwindcss').Config} */
 
-const colors = require("tailwindcss/colors");
+const colors = require('tailwindcss/colors');
 
 module.exports = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx}",
-    "./src/components/**/*.{js,ts,jsx,tsx}",
+    './src/pages/**/*.{js,ts,jsx,tsx}',
+    './src/components/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
     extend: {
       backgroundImage: {
-        noise: "url('/noise.png')",
-        lines: "url('/line art.png')",
-        plan: "url('/bg-plan.png')",
+        noise: "url('/images/noise.png')",
+        lines: "url('/images/line art.png')",
+        plan: "url('/images/bg-plan.png')"
       },
       fontFamily: {
-        drukwide: ["DrukWide"],
-        sans: ["Outfit"],
-      },
+        drukwide: ['DrukWide'],
+        sans: ['Outfit']
+      }
     },
     colors: {
-      transparent: "transparent",
-      current: "currentColor",
+      transparent: 'transparent',
+      current: 'currentColor',
       black: colors.black,
       white: colors.white,
       gray: colors.gray,
@@ -31,14 +31,14 @@ module.exports = {
       yellow: colors.yellow,
       red: colors.red,
       primary: {
-        DEFAULT: "#1D1D1D",
-        light: "#CCCCCC",
-        lighter: "#F0EBE8",
+        DEFAULT: '#1D1D1D',
+        light: '#CCCCCC',
+        lighter: '#F0EBE8'
       },
       secondary: {
-        DEFAULT: "#BDD3E3",
-      },
-    },
+        DEFAULT: '#BDD3E3'
+      }
+    }
   },
-  plugins: [require("@tailwindcss/forms")],
+  plugins: [require('@tailwindcss/forms')]
 };

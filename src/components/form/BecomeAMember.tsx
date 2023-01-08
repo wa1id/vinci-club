@@ -1,10 +1,9 @@
-import React, { useReducer } from "react";
-import Link from "next/link";
-import emailjs from "@emailjs/browser";
-import { toast } from "react-toastify";
-import { Button } from "../Button/Button";
-import axios from "axios";
-import { BecomeMember } from "src/typings/members";
+import React, { useReducer } from 'react';
+import Link from 'next/link';
+import { toast } from 'react-toastify';
+import { Button } from '../Button/Button';
+import axios from 'axios';
+import { BecomeMember } from 'src/typings/members';
 
 interface IProps { }
 
@@ -17,46 +16,46 @@ const BecomeAMember: React.FC<IProps> = () => {
   const [state, dispatch] = useReducer<React.Reducer<BecomeMember, any>>(
     (state, action) => ({
       ...state,
-      ...action,
+      ...action
     }),
     {
-      firstName: "",
-      lastName: "",
-      email: "",
-      telephone: "",
+      firstName: '',
+      lastName: '',
+      email: '',
+      telephone: '',
       interestedIn: [
         {
-          name: "Fitness",
-          checked: false,
+          name: 'Fitness',
+          checked: false
         },
         {
-          name: "Boxing",
-          checked: false,
+          name: 'Boxing',
+          checked: false
         },
         {
-          name: "Groepsessies",
-          checked: false,
+          name: 'Groepsessies',
+          checked: false
         },
         {
-          name: "Personal Training",
-          checked: false,
+          name: 'Personal Training',
+          checked: false
         },
         {
-          name: "Ladies only fitness",
-          checked: false,
+          name: 'Ladies only fitness',
+          checked: false
         },
         {
-          name: "Ladies only boxing",
-          checked: false,
-        },
+          name: 'Ladies only boxing',
+          checked: false
+        }
       ],
       address: {
-        street: "",
-        city: "",
-        zip: "",
+        street: '',
+        city: '',
+        zip: ''
       },
-      referenceClub: "",
-      agree: false,
+      referenceClub: '',
+      agree: false
     }
   );
 
@@ -75,11 +74,11 @@ const BecomeAMember: React.FC<IProps> = () => {
         if (i === index) {
           return {
             ...item,
-            checked,
+            checked
           };
         }
         return item;
-      }),
+      })
     });
   };
 
@@ -88,8 +87,8 @@ const BecomeAMember: React.FC<IProps> = () => {
     dispatch({
       address: {
         ...state.address,
-        [name]: value,
-      },
+        [name]: value
+      }
     });
   };
 
@@ -100,43 +99,43 @@ const BecomeAMember: React.FC<IProps> = () => {
 
   const handleReset = () => {
     dispatch({
-      firstName: "",
-      lastName: "",
-      email: "",
-      telephone: "",
+      firstName: '',
+      lastName: '',
+      email: '',
+      telephone: '',
       interestedIn: [
         {
-          name: "Fitness",
-          checked: false,
+          name: 'Fitness',
+          checked: false
         },
         {
-          name: "Boxing",
-          checked: false,
+          name: 'Boxing',
+          checked: false
         },
         {
-          name: "Groepsessies",
-          checked: false,
+          name: 'Groepsessies',
+          checked: false
         },
         {
-          name: "Personal Training",
-          checked: false,
+          name: 'Personal Training',
+          checked: false
         },
         {
-          name: "Ladies only fitness",
-          checked: false,
+          name: 'Ladies only fitness',
+          checked: false
         },
         {
-          name: "Ladies only boxing",
-          checked: false,
-        },
+          name: 'Ladies only boxing',
+          checked: false
+        }
       ],
       address: {
-        street: "",
-        city: "",
-        zip: "",
+        street: '',
+        city: '',
+        zip: ''
       },
-      referenceClub: "",
-      agree: false,
+      referenceClub: '',
+      agree: false
     });
   };
 
@@ -158,35 +157,28 @@ const BecomeAMember: React.FC<IProps> = () => {
       email: state.email,
       telephone: state.telephone,
       interestedIn: state.interestedIn
-        .filter((item) => item.checked)
-        .map((item) => item.name)
-        .join(", "),
+        .filter(item => item.checked)
+        .map(item => item.name)
+        .join(', '),
       address: `${state.address.street}, ${state.address.city}, ${state.address.zip}`,
-      referenceClub: state.referenceClub,
+      referenceClub: state.referenceClub
     };
 
-    axios.post("/api/notion/members", state);
+    axios.post('/api/notion/members', state);
 
     // send mail to user
-    emailjs
-      .send(
-        process.env.USER_EMAILJS_SERVICE_ID as string,
-        process.env.USER_EMAILJS_TEMPLATE_ID as string,
-        templateParams,
-        process.env.USER_EMAILJS_PUBLIC_KEY as string
-      )
-      .then(
-        (result) => {
-          toast.success("Wij hebben uw aanvraag ontvangen!");
-          setSuccess(true);
-          setLoading(false);
-          handleReset();
-        },
-        (error) => {
-          toast.error("Oops, er is iets misgeslopen.");
-          setLoading(false);
-        }
-      );
+    axios
+      .post('/api/signup', { ...templateParams })
+      .then(result => {
+        toast.success('Wij hebben uw aanvraag ontvangen!');
+        setSuccess(true);
+        setLoading(false);
+        handleReset();
+      })
+      .catch(err => {
+        toast.error('Oops, er is iets misgeslopen.');
+        setLoading(false);
+      });
   };
 
   return (
@@ -261,7 +253,7 @@ const BecomeAMember: React.FC<IProps> = () => {
                 id={item.name}
                 value={item.name}
                 checked={item.checked}
-                onChange={(e) => handleInterestedIn(e, index)}
+                onChange={e => handleInterestedIn(e, index)}
               />
               <label htmlFor={item.name}>{item.name}</label>
             </div>
@@ -332,16 +324,16 @@ const BecomeAMember: React.FC<IProps> = () => {
               checked={state.agree}
               onChange={handleAgree}
             />
-            <label htmlFor={"agree"} className="agree">
-              Ik ga akkoord met de{" "}
+            <label htmlFor={'agree'} className="agree">
+              Ik ga akkoord met de{' '}
               <Link
                 href="/terms-and-conditions"
                 target="_blank"
                 className="underline"
               >
                 algemene voorwaarden
-              </Link>{" "}
-              en{" "}
+              </Link>{' '}
+              en{' '}
               <Link href="/privacy" target="_blank" className="underline">
                 privacybeleid
               </Link>

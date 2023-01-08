@@ -1,11 +1,11 @@
-import { CountdownItem } from "./CountdownItem";
-import { CountdownSeparator } from "./CountdownSeparator";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import { useTranslation } from "next-i18next";
+import { CountdownItem } from './CountdownItem';
+import { CountdownSeparator } from './CountdownSeparator';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import { useTranslation } from 'next-i18next';
 
 export const Countdown = () => {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation('common');
   const [partyTime, setPartyTime] = useState(false);
   const [days, setDays] = useState(0);
   const [hours, setHours] = useState(0);
@@ -13,7 +13,7 @@ export const Countdown = () => {
   const [seconds, setSeconds] = useState(0);
 
   useEffect(() => {
-    const target = new Date("12/31/2022 23:59:59");
+    const target = new Date('12/31/2022 23:59:59');
 
     const interval = setInterval(() => {
       const now = new Date();
@@ -48,22 +48,22 @@ export const Countdown = () => {
           className="scale-x-[-1]"
           width={30}
           height={30}
-          style={{ height: "fit-content", maxWidth: "fit-content" }}
+          style={{ height: 'fit-content', maxWidth: 'fit-content' }}
           src="/chevron.png"
           alt=""
         />
       </div>
       <div className="flex justify-center font-drukwide text-primary-light">
         <div className="grid grid-cols-2 gap-6 sm:gap-0 sm:flex text-3xl">
-          <CountdownItem number={days} label={t("Day")} />
+          <CountdownItem number={days} label={t('Day')} />
           <CountdownSeparator />
-          <CountdownItem number={hours} label={t("Hrs")} />
+          <CountdownItem number={hours} label={t('Hrs')} />
 
           <CountdownSeparator />
 
-          <CountdownItem number={minutes} label={t("Min")} />
+          <CountdownItem number={minutes} label={t('Min')} />
           <CountdownSeparator />
-          <CountdownItem number={seconds} label={t("Sec")} />
+          <CountdownItem number={seconds} label={t('Sec')} />
         </div>
       </div>
 
@@ -71,7 +71,7 @@ export const Countdown = () => {
         <Image
           width={30}
           height={30}
-          style={{ height: "fit-content", maxWidth: "fit-content" }}
+          style={{ height: 'fit-content', maxWidth: 'fit-content' }}
           src="/chevron.png"
           alt=""
         />

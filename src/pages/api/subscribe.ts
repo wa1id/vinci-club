@@ -1,11 +1,11 @@
-import axios from "axios";
-import { NextApiRequest, NextApiResponse } from "next";
+import axios from 'axios';
+import { NextApiRequest, NextApiResponse } from 'next';
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const subscribe = async (req: NextApiRequest, res: NextApiResponse) => {
   const { email } = req.body;
 
   if (!email) {
-    return res.status(400).json({ error: "Eemail is verplicht" });
+    return res.status(400).json({ error: "E-mail is verplicht" });
   }
 
   try {
@@ -13,24 +13,26 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       `https://us14.api.mailchimp.com/3.0/lists/72aafb93a7/members`,
       {
         email_address: email,
-        status: "subscribed",
+        status: 'subscribed'
       },
       {
         headers: {
-          Authorization: `auth ${process.env.MAILCHIMP_API_KEY}`,
-        },
+          Authorization: `auth ${process.env.MAILCHIMP_API_KEY}`
+        }
       }
     );
 
     if (response.status >= 400) {
       return res.status(400).json({
         error:
-          "There was an error subscribing to the newsletter, please try again.",
+          'There was an error subscribing to the newsletter, please try again. '
       });
     }
 
-    return res.status(201).json({ error: "" });
+    return res.status(201).json({ error: '' });
   } catch (error: any) {
     return res.status(500).json({ error: error.message || error.toString() });
   }
 };
+
+export default subscribe;

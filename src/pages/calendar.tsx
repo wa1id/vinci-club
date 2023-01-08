@@ -1,121 +1,119 @@
-import classNames from "classnames";
-import { add, getDay } from "date-fns";
-import Heading from "src/components/Heading/Heading";
-import useCalendar from "src/hooks/useCalendar";
-import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, useState } from "react";
-import BecomeAMember from "src/components/form/BecomeAMember";
-import GetTheNewsFrom from "src/components/GetTheNewsFrom/GetTheNewsFrom";
-import Head from "next/head";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import classNames from 'classnames';
+import { add, getDay } from 'date-fns';
+import Heading from 'src/components/Heading/Heading';
+import useCalendar from 'src/hooks/useCalendar';
+import { useState } from 'react';
+import GetTheNewsFrom from 'src/components/GetTheNewsFrom/GetTheNewsFrom';
+import Head from 'next/head';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-const dayLabels = ["Zo", "Ma", "Di", "Wo", "Do", "Vr", "Za"];
-const dayLabelsMobile = ["Z", "M", "D", "W", "D", "V", "Z"];
+const dayLabels = ['Zo', 'Ma', 'Di', 'Wo', 'Do', 'Vr', 'Za'];
+const dayLabelsMobile = ['Z', 'M', 'D', 'W', 'D', 'V', 'Z'];
 const events = [
   {
     id: 1,
-    title: "Kickboks",
+    title: 'Kickboks',
     dayOfWeek: 0,
-    start: "17:00",
-    end: "18:00",
-    gridRow: "163 / span 20",
+    start: '17:00',
+    end: '18:00',
+    gridRow: '64 / span 20'
   },
   {
     id: 2,
-    title: "Kickboks",
+    title: 'Kickboks',
     dayOfWeek: 0,
-    start: "18:15",
-    end: "19:15",
-    gridRow: "185 / span 20",
+    start: '18:15',
+    end: '19:15',
+    gridRow: '86 / span 20'
   },
   {
     id: 3,
-    title: "Kickboks",
+    title: 'Kickboks',
     dayOfWeek: 0,
-    start: "20:30",
-    end: "21:30",
-    gridRow: "226 / span 20",
+    start: '20:30',
+    end: '21:30',
+    gridRow: '127 / span 20'
   },
   {
     id: 4,
-    title: "Kickboks",
+    title: 'Kickboks',
     dayOfWeek: 2,
-    start: "17:00",
-    end: "18:00",
-    gridRow: "163 / span 20",
+    start: '17:00',
+    end: '18:00',
+    gridRow: '64 / span 20'
   },
   {
     id: 5,
-    title: "Kickboks",
+    title: 'Kickboks',
     dayOfWeek: 2,
-    start: "18:15",
-    end: "19:15",
-    gridRow: "185 / span 20",
+    start: '18:15',
+    end: '19:15',
+    gridRow: '86 / span 20'
   },
   {
     id: 6,
-    title: "Kickboks",
+    title: 'Kickboks',
     dayOfWeek: 2,
-    start: "20:30",
-    end: "21:30",
-    gridRow: "226 / span 20",
+    start: '20:30',
+    end: '21:30',
+    gridRow: '127 / span 20'
   },
   {
     id: 7,
-    title: "Kickboks",
+    title: 'Kickboks',
     dayOfWeek: 4,
-    start: "17:00",
-    end: "18:00",
-    gridRow: "163 / span 20",
+    start: '17:00',
+    end: '18:00',
+    gridRow: '64 / span 20'
   },
   {
     id: 8,
-    title: "Kickboks",
+    title: 'Kickboks',
     dayOfWeek: 4,
-    start: "18:15",
-    end: "19:15",
-    gridRow: "185 / span 20",
+    start: '18:15',
+    end: '19:15',
+    gridRow: '86 / span 20'
   },
   {
     id: 9,
-    title: "Kickboks",
+    title: 'Kickboks',
     dayOfWeek: 4,
-    start: "20:30",
-    end: "21:30",
-    gridRow: "226 / span 20",
+    start: '20:30',
+    end: '21:30',
+    gridRow: '127 / span 20'
   },
   {
     id: 10,
     title: "Ladies only kickboks by N'wicha",
     dayOfWeek: 0,
-    start: "10:15",
-    end: "11:30",
-    gridRow: "41 / span 25",
+    start: '10:15',
+    end: '11:30',
+    gridRow: '32 / span 25'
   },
   {
     id: 11,
     title: "Ladies only kickboks by N'wicha",
     dayOfWeek: 1,
-    start: "19:30",
-    end: "20:45",
-    gridRow: "208 / span 25",
+    start: '19:30',
+    end: '20:45',
+    gridRow: '109 / span 25'
   },
   {
     id: 12,
     title: "Ladies only kickboks by N'wicha",
     dayOfWeek: 3,
-    start: "19:30",
-    end: "20:45",
-    gridRow: "208 / span 25",
+    start: '19:30',
+    end: '20:45',
+    gridRow: '109 / span 25'
   },
   {
     id: 13,
-    title: "Ladies only booty & belly by gezondmetnora",
+    title: 'Ladies only booty & belly by gezondmetnora',
     dayOfWeek: 3,
-    start: "10:00",
-    end: "11:00",
-    gridRow: "37 / span 20",
-  },
+    start: '10:00',
+    end: '11:00',
+    gridRow: '28 / span 20'
+  }
 ];
 
 const Calendar = () => {
@@ -128,7 +126,7 @@ const Calendar = () => {
     start,
     end,
     className,
-    style = { gridRow: "200 / span 22" },
+    style = { gridRow: '200 / span 22' }
   }: {
     title: string;
     start: string;
@@ -138,13 +136,13 @@ const Calendar = () => {
   }) => {
     return (
       <li
-        className={classNames(className, "relative mt-px sm:col-start-3")}
+        className={classNames(className, 'relative mt-px sm:col-start-3')}
         style={style}
       >
         <div className="text-white absolute inset-1 flex flex-col overflow-y-auto rounded-lg bg-black p-2 text-xs leading-5 items-center justify-center">
           <div className="order-1 font-semibold text-center">{title}</div>
           <div>
-            <time dateTime={start}>{start}</time> -{" "}
+            <time dateTime={start}>{start}</time> -{' '}
             <time dateTime={end}>{end}</time>
           </div>
         </div>
@@ -163,13 +161,13 @@ const Calendar = () => {
           start="17:00"
           end="18:00"
           className={
-            (i + 1) % 7 === selectedDate.getDay() ? "flex" : "hidden sm:flex"
+            (i + 1) % 7 === selectedDate.getDay() ? 'flex' : 'hidden sm:flex'
           }
           style={{
-            gridRow: "163 / span 20",
+            gridRow: '163 / span 20',
             gridColumn: `${
               (i + 1) % 7 === selectedDate.getDay() ? 1 : i + 1
-            } / span 1`,
+            } / span 1`
           }}
         />
       );
@@ -188,13 +186,13 @@ const Calendar = () => {
           start="18:15"
           end="19:15"
           className={
-            (i + 1) % 7 === selectedDate.getDay() ? "flex" : "hidden sm:flex"
+            (i + 1) % 7 === selectedDate.getDay() ? 'flex' : 'hidden sm:flex'
           }
           style={{
-            gridRow: "185 / span 20",
+            gridRow: '185 / span 20',
             gridColumn: `${
               (i + 1) % 7 === selectedDate.getDay() ? 1 : i + 1
-            } / span 1`,
+            } / span 1`
           }}
         />
       );
@@ -213,13 +211,13 @@ const Calendar = () => {
           start="20:30"
           end="21:30"
           className={
-            (i + 1) % 7 === selectedDate.getDay() ? "flex" : "hidden sm:flex"
+            (i + 1) % 7 === selectedDate.getDay() ? 'flex' : 'hidden sm:flex'
           }
           style={{
-            gridRow: "226 / span 20",
+            gridRow: '226 / span 20',
             gridColumn: `${
               (i + 1) % 7 === selectedDate.getDay() ? 1 : i + 1
-            } / span 1`,
+            } / span 1`
           }}
         />
       );
@@ -237,13 +235,13 @@ const Calendar = () => {
           className="flex flex-col items-center pt-2 pb-3"
           onClick={() => setSelectedDate(add(firstDayOfWeek, { days: i }))}
         >
-          {dayLabelsMobile[(i + 1) % 7]}{" "}
+          {dayLabelsMobile[(i + 1) % 7]}{' '}
           <span
             className={classNames(
               (i + 1) % 7 === getDay(selectedDate)
-                ? "bg-black text-white rounded-full"
-                : "text-gray-900",
-              "mt-1 flex h-8 w-8 items-center justify-center font-semibold text-white"
+                ? 'bg-black text-white rounded-full'
+                : 'text-gray-900',
+              'mt-1 flex h-8 w-8 items-center justify-center font-semibold text-white'
             )}
           >
             {firstDayOfWeek.getDate() + i}
@@ -261,13 +259,13 @@ const Calendar = () => {
       dates.push(
         <div key={i} className="flex items-center justify-center py-3">
           <span className="flex items-baseline">
-            {dayLabels[(i + 1) % 7]}{" "}
+            {dayLabels[(i + 1) % 7]}{' '}
             <span
               className={classNames(
                 (i + 1) % 7 === getDay(new Date())
-                  ? "bg-black text-white rounded-full flex h-8 w-8"
-                  : "text-gray-900",
-                "ml-1.5 items-center justify-center font-semibold"
+                  ? 'bg-black text-white rounded-full flex h-8 w-8'
+                  : 'text-gray-900',
+                'ml-1.5 items-center justify-center font-semibold'
               )}
             >
               {firstDayOfWeek.getDate() + i}
@@ -290,7 +288,7 @@ const Calendar = () => {
           <div className="flex-1 text-center w-full ">
             {/* TODO: i18 */}
             <Heading
-              aboveHeading={""}
+              aboveHeading={''}
               belowHeading="Groepslessen"
               headingClassName="text-white"
               lineClassName="bg-secondary"
@@ -320,15 +318,10 @@ const Calendar = () => {
                   <div
                     className="col-start-1 col-end-2 row-start-1 grid divide-y divide-gray-100"
                     style={{
-                      gridTemplateRows: "repeat(32, minmax(3rem, 1fr))",
+                      gridTemplateRows: 'repeat(19, minmax(3rem, 1fr))'
                     }}
                   >
                     <div className="row-end-1 h-7"></div>
-                    <div>
-                      <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                        8:00
-                      </div>
-                    </div>
                     <div />
                     <div>
                       <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
@@ -347,37 +340,7 @@ const Calendar = () => {
                         11:00
                       </div>
                     </div>
-                    <div />
-                    <div>
-                      <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                        12:00
-                      </div>
-                    </div>
-                    <div />
-                    <div>
-                      <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                        13:00
-                      </div>
-                    </div>
-                    <div />
-                    <div>
-                      <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                        14:00
-                      </div>
-                    </div>
-                    <div />
-                    <div>
-                      <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                        15:00
-                      </div>
-                    </div>
-                    <div />
-                    <div>
-                      <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                        16:00
-                      </div>
-                    </div>
-                    <div />
+                    <div className="time-divider"></div>
                     <div>
                       <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
                         17:00
@@ -434,10 +397,10 @@ const Calendar = () => {
                     className="col-start-1 col-end-2 row-start-1 grid grid-cols-1 sm:grid-cols-7 sm:pr-8"
                     style={{
                       gridTemplateRows:
-                        "1.75rem repeat(288, minmax(0, 1fr)) auto",
+                        '1.75rem repeat(171, minmax(0, 1fr)) auto'
                     }}
                   >
-                    {events.map((event) => (
+                    {events.map(event => (
                       <EventItem
                         key={event.id}
                         title={event.title}
@@ -446,12 +409,12 @@ const Calendar = () => {
                         className="hidden sm:flex"
                         style={{
                           gridRow: event.gridRow,
-                          gridColumn: `${event.dayOfWeek + 1} / span 1`,
+                          gridColumn: `${event.dayOfWeek + 1} / span 1`
                         }}
                       />
                     ))}
 
-                    {events.map((event) => (
+                    {events.map(event => (
                       <EventItem
                         key={event.id}
                         title={event.title}
@@ -459,12 +422,12 @@ const Calendar = () => {
                         end={event.end}
                         className={
                           (event.dayOfWeek + 1) % 7 === selectedDate.getDay()
-                            ? "flex sm:hidden"
-                            : "hidden"
+                            ? 'flex sm:hidden'
+                            : 'hidden'
                         }
                         style={{
                           gridRow: event.gridRow,
-                          gridColumn: `1 / span 1`,
+                          gridColumn: `1 / span 1`
                         }}
                       />
                     ))}
@@ -483,8 +446,8 @@ const Calendar = () => {
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common"])),
-    },
+      ...(await serverSideTranslations(locale, ['common']))
+    }
   };
 }
 

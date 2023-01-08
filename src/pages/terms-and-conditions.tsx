@@ -1,10 +1,10 @@
-import Head from "next/head";
-import React from "react";
-import RecursiveList from "src/components/lists/RecursiveList";
+import Head from 'next/head';
+import React from 'react';
+import RecursiveList from 'src/components/lists/RecursiveList';
 import {
   termsAndConditionsData1,
-  termsAndConditionsData2,
-} from "src/data/terms-and-conditions";
+  termsAndConditionsData2
+} from 'src/data/terms-and-conditions';
 
 const TermsAndConditions = () => {
   return (

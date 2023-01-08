@@ -7,9 +7,9 @@ html {
 }
 
 @font-face {
-  font-family: "DrukWide";
+  font-family: 'DrukWide';
   font-style: bold;
-  src: local(""), url("/fonts/Druk-Wide-Bold.woff2") format("woff2");
+  src: local(''), url('/fonts/Druk-Wide-Bold.woff2') format('woff2');
 }
 
 .CookieConsent {
@@ -36,7 +36,7 @@ html {
   height: 100%;
 }
 
-input[type="checkbox"] {
+input[type='checkbox'] {
   @apply h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary-light;
 }
 
@@ -65,5 +65,19 @@ input[type="password"] {
 }
 
 a {
-  @apply hover:text-gray-400 transition-colors duration-200 ease-in-out;
+  @apply hover:text-gray-400 transition-colors duration-200 ease-in-out cursor-pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+.time-divider {
+  background: repeating-linear-gradient(
+    45deg,
+    #cccccc,
+    #cccccc 5px,
+    #f0ebe8 0,
+    #f0ebe8 12px
+  );
 }

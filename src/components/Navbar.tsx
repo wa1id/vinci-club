@@ -1,41 +1,40 @@
-import { Fragment, useState } from "react";
-import Image from "next/image";
-import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import Link from "next/link";
-import { Button } from "./Button/Button";
-import logo from "public/logo.svg";
-import { useTranslation } from "next-i18next";
-import { NextLink } from "./NextLink/NextLink";
-import BecomeAMember from "./form/BecomeAMember";
+import { Fragment, useState } from 'react';
+import Image from 'next/image';
+import { Disclosure, Popover, Transition } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
+import { Button } from './Button/Button';
+import logo from 'public/logo.svg';
+import { useTranslation } from 'next-i18next';
+import { NextLink } from './NextLink/NextLink';
 
 export default function Navbar() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation('common');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   let [isOpen, setIsOpen] = useState(false);
 
   const navigationData = [
     // { id: 1, name: t("The Club"), href: "/club", disabled: true },
-    { id: 4, name: "Prijzen", href: "/prijzen", disabled: true },
+    { id: 4, name: 'Prijzen', href: '/prijzen', disabled: true },
     // {
     //   id: 2,
     //   name: t("Personal Training"),
     //   href: "#",
     //   disabled: true,
     // },
-    { id: 3, name: t("Group lessons"), href: "/calendar", disabled: true },
+    { id: 3, name: t('Group lessons'), href: '/calendar', disabled: true },
 
     // { id: 5, name: "Gezondheid", href: "#", disabled: true },
     // { id: 6, name: "Ladies only", href: "#", disabled: true },
-    { id: 7, name: t("Contact"), href: "/contact", disabled: true },
+    { id: 7, name: t('Contact'), href: '/contact', disabled: true }
   ];
 
   const club = [
-    { name: "Kickboks", link: "/kickboks" },
+    { name: 'Kickboks', link: '/kickboks' },
     {
-      name: "Ladies only",
-      link: "/ladies-only",
-    },
+      name: 'Ladies only',
+      link: '/ladies-only'
+    }
   ];
 
   return (
@@ -46,7 +45,7 @@ export default function Navbar() {
             <div className="flex justify-start xl:w-0 xl:flex-1">
               <Link href="/">
                 <span className="sr-only">Vinci Club</span>
-                <Image style={{ maxWidth: "250px" }} src={logo} alt="logo" />
+                <Image style={{ maxWidth: '250px' }} src={logo} alt="logo" />
               </Link>
             </div>
             <div className="-my-2 -mr-2 xl:hidden">
@@ -71,7 +70,7 @@ export default function Navbar() {
                 <Popover.Panel className="absolute z-20 drop-shadow-2xl w-max">
                   {({ close }) => (
                     <div className="flex flex-col text-primary bg-white rounded-md space-y-2 p-4 mt-2">
-                      {club.map((item) => (
+                      {club.map(item => (
                         <NextLink
                           key={item.name}
                           href={item.link}
@@ -88,7 +87,7 @@ export default function Navbar() {
               </Transition>
             </Popover>
             <Popover.Group as="nav" className="hidden space-x-10 xl:flex">
-              {navigationData.map((item) => (
+              {navigationData.map(item => (
                 <Link
                   key={item.id}
                   href={item.href}
@@ -99,9 +98,15 @@ export default function Navbar() {
               ))}
             </Popover.Group>
             <div className="hidden items-center justify-end xl:flex xl:flex-1 xl:w-0">
-              <Button onClick={() => setIsOpen(true)} variant="primary">
-                {t("Become member")}
-              </Button>
+              <Link href="/signup">
+                <Button
+                  onClick={() => close()}
+                  className="w-full text-center"
+                  variant="primary"
+                >
+                  {t('Become member')}
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -125,14 +130,14 @@ export default function Navbar() {
                   <div className="flex items-center justify-between">
                     <div>
                       <Image
-                        style={{ maxWidth: "150px" }}
+                        style={{ maxWidth: '150px' }}
                         src={logo}
                         alt="logo"
                       />
                     </div>
                     <div className="-mr-2">
                       <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-light">
-                        <span className="sr-only">{t("Close menu")}</span>
+                        <span className="sr-only">{t('Close menu')}</span>
                         <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                       </Popover.Button>
                     </div>
@@ -148,7 +153,7 @@ export default function Navbar() {
                           </Disclosure.Button>
                           <Disclosure.Panel>
                             <div className="flex flex-col bg-white rounded-md space-y-2 text-primary">
-                              {club.map((item) => (
+                              {club.map(item => (
                                 <NextLink
                                   key={item.name}
                                   href={item.link}
@@ -169,7 +174,7 @@ export default function Navbar() {
                       )}
                     </Disclosure>
 
-                    {navigationData.map((item) => (
+                    {navigationData.map(item => (
                       <NextLink
                         key={item.id}
                         href={item.href}
@@ -187,7 +192,7 @@ export default function Navbar() {
                         className="w-full text-center"
                         variant="primary"
                       >
-                        {t("Become member")}
+                        {t('Become member')}
                       </Button>
                     </Link>
                   </div>

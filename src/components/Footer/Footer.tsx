@@ -1,8 +1,8 @@
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
-import logo from "public/light-logo.svg";
-import { SocialFollows } from "../SocialFollows/SocialFollows";
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
+import logo from 'public/light-logo.svg';
+import { SocialFollows } from '../SocialFollows/SocialFollows';
 
 const Footer = () => {
   return (
@@ -53,7 +53,7 @@ const Footer = () => {
           <Link href="/">
             {/* TODO: i18 */}
             <span className="sr-only">Vinci Club</span>
-            <Image style={{ maxWidth: "250px" }} src={logo} alt="logo" />
+            <Image style={{ maxWidth: '250px' }} src={logo} alt="logo" />
           </Link>
           <div className="flex items-center flex-col sm:flex-row sm:justify-center md:justify-end gap-5 mt-4 md:m-0 w-full text-sm">
             <div className="">

@@ -1,46 +1,41 @@
-import { CheckIcon } from "@heroicons/react/24/outline";
-import classNames from "classnames";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Head from "next/head";
-import React from "react";
-import { useTranslation } from "react-i18next";
-import { Button } from "src/components/Button/Button";
-import GetTheNewsFrom from "src/components/GetTheNewsFrom/GetTheNewsFrom";
-import Heading from "src/components/Heading/Heading";
-import { PricingSection } from "src/components/molecules/PricingSection";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Head from 'next/head';
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import GetTheNewsFrom from 'src/components/GetTheNewsFrom/GetTheNewsFrom';
+import Heading from 'src/components/Heading/Heading';
+import { PricingSection } from 'src/components/molecules/PricingSection';
 
 const Prijzen = () => {
-  const { t } = useTranslation("common");
-
   const subscriptions = [
     {
-      subscription: "Bronze",
-      activities: "Fitness",
-      twelve: "€ 24,95/mnd",
-      six: "€ 29,95/mnd",
-      one: "€ 39,95/mnd",
+      subscription: 'Bronze',
+      activities: 'Fitness',
+      twelve: '€ 24,95/mnd',
+      six: '€ 29,95/mnd',
+      one: '€ 39,95/mnd'
     },
     {
-      subscription: "Silver (-16j)",
-      activities: "Kickboks",
-      twelve: "€ 24,95/mnd",
-      six: "€ 29,95/mnd",
-      one: "€ 39,95/mnd",
+      subscription: 'Silver (-16j)',
+      activities: 'Kickboks',
+      twelve: '€ 24,95/mnd',
+      six: '€ 29,95/mnd',
+      one: '€ 39,95/mnd'
     },
     {
-      subscription: "Gold (+16j)",
-      activities: "Kickboks",
-      twelve: "€ 34,95/mnd",
-      six: "€ 39,95/mnd",
-      one: "€ 49,95/mnd",
-    },
+      subscription: 'Gold (+16j)',
+      activities: 'Kickboks',
+      twelve: '€ 34,95/mnd',
+      six: '€ 39,95/mnd',
+      one: '€ 49,95/mnd'
+    }
   ];
 
   const beurtenkaart = [
     {
-      subscription: "Fitness + Kickboks",
-      price: "€ 14,95/beurt",
-    },
+      subscription: 'Fitness + Kickboks',
+      price: '€ 14,95/beurt'
+    }
   ];
 
   return (
@@ -108,7 +103,7 @@ const Prijzen = () => {
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
-                    {subscriptions.map((item) => (
+                    {subscriptions.map(item => (
                       <tr key={item.subscription}>
                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                           {item.subscription}
@@ -156,7 +151,7 @@ const Prijzen = () => {
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
-                    {beurtenkaart.map((item) => (
+                    {beurtenkaart.map(item => (
                       <tr key={item.subscription}>
                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                           {item.subscription}
@@ -182,8 +177,8 @@ const Prijzen = () => {
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common"])),
-    },
+      ...(await serverSideTranslations(locale, ['common']))
+    }
   };
 }
 

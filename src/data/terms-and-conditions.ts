@@ -1,5 +1,4 @@
-import { IRecursiveList } from "src/components/lists/RecursiveList";
-
+import { IRecursiveList } from 'src/components/lists/RecursiveList';
 
 export const termsAndConditionsData1: IRecursiveList[] = [
   {
@@ -7,16 +6,16 @@ export const termsAndConditionsData1: IRecursiveList[] = [
     title: 'Algemene',
     info: [
       'Zodra u de lidmaatschapsovereenkomst (verder te noemen Overeenkomst) tekent, wordt u lid (hierna; het “Lid”) van Vinci Club B.V. (Hierna; “Vinci Club”)',
-      'De lidmaatschapsacties hebben alleen betrekking op de 1- en 2 jarige lidmaatschapsvormen van Vinci Club',
-    ],
+      'De lidmaatschapsacties hebben alleen betrekking op de 1- en 2 jarige lidmaatschapsvormen van Vinci Club'
+    ]
   },
   {
     id: 2,
     title: 'Voorwaarden',
     info: [
       'Deze voorwaarden zijn van toepassing op alle diensten van Vinci Club en beheersen daarmee de rechtsverhouding tussen Vinci Club en het Lid.',
-      'Vinci Club is gerechtigd de op het lidmaatschap van toepassing zijnde voorwaarden te wijzigen. Vinci Club zal het lid hiervan tijdig op de hoogte brengen. De wijzigingen treden één kalendermaand na de bekendmaking in werking, tenzij een afwijkende wettelijke termijn is vereist, die alsdan wordt toegepast. Indien een Lid een voor hem nadelige wijziging niet wenst te accepteren, kan hij zijn lidmaatschap beëindigen met ingang van de datum waarop de nieuwe voorwaarden van kracht worden. De schriftelijke opzegging dient voor de ingangsdatum van de wijziging door Vinci Club te zijn ontvangen.',
-    ],
+      'Vinci Club is gerechtigd de op het lidmaatschap van toepassing zijnde voorwaarden te wijzigen. Vinci Club zal het lid hiervan tijdig op de hoogte brengen. De wijzigingen treden één kalendermaand na de bekendmaking in werking, tenzij een afwijkende wettelijke termijn is vereist, die alsdan wordt toegepast. Indien een Lid een voor hem nadelige wijziging niet wenst te accepteren, kan hij zijn lidmaatschap beëindigen met ingang van de datum waarop de nieuwe voorwaarden van kracht worden. De schriftelijke opzegging dient voor de ingangsdatum van de wijziging door Vinci Club te zijn ontvangen.'
+    ]
   },
   {
     id: 3,
@@ -28,8 +27,8 @@ export const termsAndConditionsData1: IRecursiveList[] = [
       'Vinci Club behoudt zich het recht voor nieuwe leden bij inschrijving om identificatie te vragen.',
       'Vinci Club zal gerechtigd zijn om op eender welk tijdstip identificatie van een Lid te vragen teneinde na te gaan of de persoon die met de lidmaatschapstag binnenkomt inderdaad het Lid betreft.',
       'Het Lid mag gedurende de openingstijden trainen in de in de Overeenkomst vermelde club van Vinci Club.',
-      'Bij het Gezinsabonnement moet je kunnen aantonen dat je woonachtig bent op één en hetzelfde woonadres.',
-    ],
+      'Bij het Gezinsabonnement moet je kunnen aantonen dat je woonachtig bent op één en hetzelfde woonadres.'
+    ]
   },
   {
     id: 4,
@@ -46,16 +45,16 @@ export const termsAndConditionsData1: IRecursiveList[] = [
       'De actiemaanden worden altijd voorafgaand aan het abonnement toegepast tenzij anders is aangegeven. Actieperiodes vallen buiten de contractduur.',
       'Er kan in geen enkel geval aanspraak worden gemaakt op restitutie van de contributie of andere bedragen.',
       'Alle prijzen zijn inclusief BTW. Vinci Club is te allen tijde gerechtigd om haar tarieven aan te passen in geval van wijzigingen in de hoogte van de BTW.',
-      'Vinci Club is bevoegd om op 1 januari van elk kalenderjaar de lidmaatschapsprijs te indexeren met maximaal 5%. Indien deze prijsverhoging wordt doorgevoerd gedurende de eerste 3 maanden vanaf de in de Overeenkomst vermelde ‘startdatum van het lidmaatschap’, dan heeft het Lid het recht om zijn lidmaatschap met onmiddellijke ingang te ontbinden.',
-    ],
+      'Vinci Club is bevoegd om op 1 januari van elk kalenderjaar de lidmaatschapsprijs te indexeren met maximaal 5%. Indien deze prijsverhoging wordt doorgevoerd gedurende de eerste 3 maanden vanaf de in de Overeenkomst vermelde ‘startdatum van het lidmaatschap’, dan heeft het Lid het recht om zijn lidmaatschap met onmiddellijke ingang te ontbinden.'
+    ]
   },
   {
     id: 5,
     title: 'Privacy',
     info: [
       'Vinci Club verwerkt persoonsgegevens van het Lid of een andere betrokkene op behoorlijke en zorgvuldige wijze en binnen de kaders van de toepasselijke wet- en regelgeving, waaronder in ieder geval begrepen de wet- en regelgeving op het gebied van gegevensbescherming, zoals de Algemene Verordening Gegevensbescherming (AVG)',
-      'In de Privacyverklaring van Vinci Club wordt op een rijtje gezet welke gegevens door Vinci Club worden verwerkt, voor welke doeleinden Vinci Club dat doet en hoe met de persoonsgegevens wordt omgegaan. Daarnaast wordt uitgelegd op welke wijze betrokkenen hun rechten kunnen uitoefenen op de verwerking van hun persoonsgegevens. De laatste versie van de Privacyverklaring vind je altijd op onze website.',
-    ],
+      'In de Privacyverklaring van Vinci Club wordt op een rijtje gezet welke gegevens door Vinci Club worden verwerkt, voor welke doeleinden Vinci Club dat doet en hoe met de persoonsgegevens wordt omgegaan. Daarnaast wordt uitgelegd op welke wijze betrokkenen hun rechten kunnen uitoefenen op de verwerking van hun persoonsgegevens. De laatste versie van de Privacyverklaring vind je altijd op onze website.'
+    ]
   },
   {
     id: 6,
@@ -64,9 +63,9 @@ export const termsAndConditionsData1: IRecursiveList[] = [
       'Het Lid ontvangt, na ondertekening van de Overeenkomst, een lidmaatschapstag. Deze tag blijft eigendom van Vinci Club en is strikt persoonlijk.',
       'Het is alleen mogelijk om gebruik te maken van de club op vertoon van een geldige lidmaatschapstag.',
       'Vinci Club is bevoegd om bij misbruik van deze tag het Lid de toegang te ontzeggen.',
-      'Verlies of diefstal van de lidmaatschapspas dient direct aan Vinci Club te worden gemeld. Vinci Club zal de kosten van 15,00 euro voor een nieuwe tag in rekening brengen bij het Lid.',
-    ],
-  },
+      'Verlies of diefstal van de lidmaatschapspas dient direct aan Vinci Club te worden gemeld. Vinci Club zal de kosten van 15,00 euro voor een nieuwe tag in rekening brengen bij het Lid.'
+    ]
+  }
 ];
 
 export const termsAndConditionsData2: IRecursiveList[] = [
@@ -76,8 +75,8 @@ export const termsAndConditionsData2: IRecursiveList[] = [
     info: [
       'In geval van een langdurige ziekte, blessure, zwangerschap of letsel kan met schriftelijke toestemming van Vinci Club het lidmaatschap tijdelijk, tot een maximum van 6 periodes van 4 wekelijkse termijnen, worden opgeschort (dit geldt niet bij bijv. studie, stage, werk en vakantie). Opschorting is alleen mogelijk na het overleggen van een medische verklaring of ander – ten genoegen van Vinci Club – deugdelijk bewijs.',
       'Opschorting van het lidmaatschap kan nooit met terugwerkende kracht.',
-      'De betalingsverplichting van het Lid wordt opgeschort voor de daadwerkelijke duur van de opschorting. De einddatum van de lidmaatschapsovereenkomst wordt verlengd met de duur van de daadwerkelijke opschorting.',
-    ],
+      'De betalingsverplichting van het Lid wordt opgeschort voor de daadwerkelijke duur van de opschorting. De einddatum van de lidmaatschapsovereenkomst wordt verlengd met de duur van de daadwerkelijke opschorting.'
+    ]
   },
   {
     id: 9,
@@ -85,8 +84,8 @@ export const termsAndConditionsData2: IRecursiveList[] = [
     info: [
       'Vinci Club is bevoegd om de club geheel of gedeeltelijk te sluiten tijdens algemeen erkende feestdagen en schoolvakanties.',
       'Vinci Club is bevoegd de openingstijden van (of onderdelen van) een club tijdelijk of blijvend te wijzigen.',
-      'Vinci Club is bevoegd de in de Overeenkomst vermelde club voor reparatie en onderhoudswerk te sluiten.',
-    ],
+      'Vinci Club is bevoegd de in de Overeenkomst vermelde club voor reparatie en onderhoudswerk te sluiten.'
+    ]
   },
   {
     id: 10,
@@ -94,31 +93,31 @@ export const termsAndConditionsData2: IRecursiveList[] = [
     info: [
       'Veranderingen in de persoonlijke situatie van het Lid (o.a. adres- of bankgegevens) dienen direct, schriftelijk, aan de in de Overeenkomst vermelde club te worden doorgegeven.',
       'Bij het niet (tijdig) doorgeven van deze wijzigingen en wanneer Vinci Club kosten dient te maken om de nieuwe (persoon)gegevens te achterhalen, zullen deze kosten in rekening worden gebracht aan het Lid.',
-      'In geval van klachten met betrekking tot Vinci Club dient het Lid zich in eerste instantie te wenden tot de servicemedewerker en in tweede instantie tot Vinci Club. Mail naar info@vinci-club.be',
-    ],
+      'In geval van klachten met betrekking tot Vinci Club dient het Lid zich in eerste instantie te wenden tot de servicemedewerker en in tweede instantie tot Vinci Club. Mail naar info@vinci-club.be'
+    ]
   },
   {
     id: 11,
     title: 'Personal Training',
     info: [
-      'Vinci Club, dan wel derden, bieden in onze vestiging personal training aan. Personal training is niet bij het lidmaatschap inbegrepen.',
-    ],
+      'Vinci Club, dan wel derden, bieden in onze vestiging personal training aan. Personal training is niet bij het lidmaatschap inbegrepen.'
+    ]
   },
   {
     id: 12,
     title: 'Aansprakelijkheid',
     info: [
       'Vinci Club is niet aansprakelijk voor enig letsel of ongeval of zoekgeraakte voorwerpen van welke aard en door welke oorzaak dan ook, behoudens in geval van opzet of bewuste roekeloosheid zijdens Vinci Club of haar leidinggevenden.',
-      'Ieder Lid is zelf verantwoordelijke voor persoonlijke ongevallen en zijn persoonlijke bezittingen. Het Lid wordt geadviseerd om zich hiertoe treffend te verzekeren. Noch Vinci Club, noch zijn medewerkers kunnen verantwoordelijk worden gesteld voor het verlies, de beschadiging of diefstal van goederen op het grondgebied van de club.',
-    ],
+      'Ieder Lid is zelf verantwoordelijke voor persoonlijke ongevallen en zijn persoonlijke bezittingen. Het Lid wordt geadviseerd om zich hiertoe treffend te verzekeren. Noch Vinci Club, noch zijn medewerkers kunnen verantwoordelijk worden gesteld voor het verlies, de beschadiging of diefstal van goederen op het grondgebied van de club.'
+    ]
   },
   {
     id: 13,
     title: 'Huisreglement',
     info: [
       'Het Lid is bekend met de door Vinci Club gehanteerde huisregels. Deze huisregels zijn aanwezig in de club en kunnen indien gewenst worden opgevraagd bij de receptie. Het Lid is verplicht deze huisregels na te leven.',
-      'De club kan te allen tijde de toegang weigeren of ontzeggen aan personen wiens gedrag daar aanleiding toe geeft.',
-    ],
+      'De club kan te allen tijde de toegang weigeren of ontzeggen aan personen wiens gedrag daar aanleiding toe geeft.'
+    ]
   },
   {
     id: 14,
@@ -126,10 +125,7 @@ export const termsAndConditionsData2: IRecursiveList[] = [
     info: [
       'Op alle door Vinci Club gesloten lidmaatschapsovereenkomsten is het Nederlandse recht van toepassing.',
       'Overeenkomsten tussen het Lid en Vinci Club kunnen alleen schriftelijk worden aangegaan en kunnen alleen schriftelijk worden gewijzigd.',
-      'Wanneer één van de hierboven staande bepalingen ongeldig of onwettig is, blijven de overige bepalingen gelden.',
-    ],
-  },
-]
-
-
-
+      'Wanneer één van de hierboven staande bepalingen ongeldig of onwettig is, blijven de overige bepalingen gelden.'
+    ]
+  }
+];

@@ -1,26 +1,22 @@
-import React, { Fragment, useState } from "react";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Link from "next/link";
-import Head from "next/head";
-import Image from "next/image";
-import { Dialog, Transition } from "@headlessui/react";
-import BecomeAMember from "src/components/form/BecomeAMember";
-import { Countdown } from "src/components/Countdown/Countdown";
+import React from 'react';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Link from 'next/link';
+import Head from 'next/head';
+import Image from 'next/image';
 
-import hero3 from "public/hero-3.png";
-import hero2 from "public/hero-2.png";
-import hero1 from "public/hero-1.png";
-import { Button } from "src/components/Button/Button";
-import { SocialFollows } from "src/components/SocialFollows/SocialFollows";
-import { SideTextStroke } from "src/components/SideTextStroke";
-import ChooseYourPlan from "src/components/ChooseYourPlan/ChooseYourPlan";
-import PersonalTrainers from "src/components/PersonalTrainers/PersonalTrainers";
-import GetTheNewsFrom from "src/components/GetTheNewsFrom/GetTheNewsFrom";
-import { useTranslation } from "react-i18next";
+import hero3 from 'public/images/hero-3.png';
+import hero2 from 'public/images/hero-2.png';
+import hero1 from 'public/images/hero-1.png';
+import { Button } from 'src/components/Button/Button';
+import { SocialFollows } from 'src/components/SocialFollows/SocialFollows';
+import { SideTextStroke } from 'src/components/SideTextStroke';
+import ChooseYourPlan from 'src/components/ChooseYourPlan/ChooseYourPlan';
+import PersonalTrainers from 'src/components/PersonalTrainers/PersonalTrainers';
+import GetTheNewsFrom from 'src/components/GetTheNewsFrom/GetTheNewsFrom';
+import { useTranslation } from 'react-i18next';
 
 const Home = () => {
-  const { t } = useTranslation("common");
-  let [isOpen, setIsOpen] = useState(false);
+  const { t } = useTranslation('common');
 
   return (
     <>
@@ -38,10 +34,10 @@ const Home = () => {
               <h1 className="flex flex-col uppercase text-6xl sm:text-8xl 2xl:text-9xl font-drukwide [text-shadow:_15px_10px_10px_rgb(0_0_0_/_75%)]">
                 <span>vinci</span>
                 <span
-                  className=" [text-shadow:_0px_13px_1px_rgb(0_0_0_/_0.4%)] uppercase text-6xl sm:text-8xl 2xl:text-9xlfont-drukwide"
+                  className=" [text-shadow:_0px_13px_1px_rgb(0_0_0_/_0.4%)] uppercase text-6xl sm:text-8xl 2xl:text-9xl font-drukwide"
                   style={{
-                    WebkitTextStroke: "1px #F0EBE8",
-                    WebkitTextFillColor: "transparent",
+                    WebkitTextStroke: '1px #F0EBE8',
+                    WebkitTextFillColor: 'transparent'
                   }}
                 >
                   club
@@ -56,11 +52,11 @@ const Home = () => {
 
               <Link href="/signup">
                 <Button className="my-4" variant="tertiary">
-                  {t("Become member")}
+                  {t('Become member')}
                 </Button>
               </Link>
 
-              <SocialFollows label={t("Follow us")} />
+              <SocialFollows label={t('Follow us')} />
             </div>
 
             <div className="relative w-4/5">
@@ -84,7 +80,7 @@ const Home = () => {
       </div>
 
       <ChooseYourPlan />
-      {/* <PersonalTrainers /> */}
+      <PersonalTrainers />
       <GetTheNewsFrom />
     </>
   );
@@ -93,8 +89,8 @@ const Home = () => {
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common"])),
-    },
+      ...(await serverSideTranslations(locale, ['common']))
+    }
   };
 }
 

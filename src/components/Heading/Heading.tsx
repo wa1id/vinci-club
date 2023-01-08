@@ -1,5 +1,5 @@
-import React from "react";
-import classNames from "classnames";
+import React from 'react';
+import classNames from 'classnames';
 
 interface Props {
   aboveHeading: string;
@@ -12,12 +12,12 @@ const Heading: React.FC<Props> = ({
   aboveHeading,
   belowHeading,
   headingClassName,
-  lineClassName,
+  lineClassName
 }) => {
   return (
     <h2
       className={classNames(
-        "uppercase text-xl xs:text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-drukwide",
+        'uppercase text-xl xs:text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-drukwide',
         headingClassName
       )}
     >
@@ -28,7 +28,7 @@ const Heading: React.FC<Props> = ({
         </span>
         <span
           className={classNames(
-            "h-4 md:h-8 w-full absolute bottom-2 -right-1 bg-opacity-90 z-[-1]",
+            'h-4 md:h-8 w-full absolute bottom-2 -right-1 bg-opacity-90 z-[-1]',
             lineClassName
           )}
         />

@@ -10,103 +10,112 @@ import MedicalBackgroundForm from "./MedicalBackgroundForm";
 import NutritionForm from "./NutritionForm";
 import TermsAndConditionsForm from "./TermsAndConditionsForm";
 import TrainingPlanForm from "./TrainingPlanForm";
+import axios from "axios";
+import { toast } from "react-toastify";
 
-const InTakeForm = () => {
+
   const fieldValue = {
     value: "",
     error: false,
   };
+
+
+
+const initialState = {
+  firstName: fieldValue,
+  lastName: fieldValue,
+  dob: fieldValue,
+  gender: {
+    value: "man",
+    error: false,
+  },
+  instagramAccount: fieldValue,
+  phoneNumber: fieldValue,
+  emailAddress: fieldValue,
+  streetNameAndHouseNumber: fieldValue,
+  zipCode: fieldValue,
+  placeOfResidence: fieldValue,
+  goalOne: fieldValue,
+  goalTwo: fieldValue,
+  goalThree: fieldValue,
+  goalFour: fieldValue,
+  backgroundOne: fieldValue,
+  backgroundTwo: fieldValue,
+  backgroundThree: fieldValue,
+  backgroundFour: fieldValue,
+  backgroundFive: fieldValue,
+  lifeStyleOne: fieldValue,
+  lifeStyleTwo: fieldValue,
+  lifeStyleThree: fieldValue,
+  lifeStyleFour: fieldValue,
+  lifeStyleFive: fieldValue,
+  trainingFormOne: fieldValue,
+  trainingFormTwo: fieldValue,
+  trainingFormFour: fieldValue,
+  trainingFormThree: [
+    {
+      name: "Maandag",
+      checked: false,
+    },
+    {
+      name: "Dinsdag",
+      checked: false,
+    },
+    {
+      name: "Woensdag",
+      checked: false,
+    },
+    {
+      name: "Donderdag",
+      checked: false,
+    },
+    {
+      name: "Vrijdag",
+      checked: false,
+    },
+    {
+      name: "Zaterdag",
+      checked: false,
+    },
+    {
+      name: "Zondag",
+      checked: false,
+    },
+  ],
+  nutritionOne: fieldValue,
+  nutritionTwo: fieldValue,
+  nutritionThree: fieldValue,
+  nutritionFour: fieldValue,
+  nutritionFive: fieldValue,
+  nutritionSix: fieldValue,
+  nutritionSeven: fieldValue,
+  medicalBackgroundOne: fieldValue,
+  medicalBackgroundTwo: fieldValue,
+  medicalBackgroundThree: fieldValue,
+  medicalBackgroundFour: fieldValue,
+  medicalBackgroundFive: fieldValue,
+  medicalBackgroundSix: fieldValue,
+  medicalBackgroundSeven: fieldValue,
+  medicalBackgroundEight: fieldValue,
+  medicalBackgroundNine: fieldValue,
+  medicalBackgroundTen: fieldValue,
+  medicalBackgroundEleven: fieldValue,
+  medicalBackgroundTwelve: fieldValue,
+  isAgree: {
+    value: false,
+    error: "",
+  },
+};
+
+const InTakeForm = () => {
+
 
   const [state, dispatch] = useReducer<React.Reducer<IInTakeFormState, any>>(
     (state, action) => ({
       ...state,
       ...action,
     }),
-    {
-      firstName: fieldValue,
-      lastName: fieldValue,
-      dob: fieldValue,
-      gender: {
-        value: "man",
-        error: false,
-      },
-      instagramAccount: fieldValue,
-      phoneNumber: fieldValue,
-      emailAddress: fieldValue,
-      streetNameAndHouseNumber: fieldValue,
-      zipCode: fieldValue,
-      placeOfResidence: fieldValue,
-      goalOne: fieldValue,
-      goalTwo: fieldValue,
-      goalThree: fieldValue,
-      goalFour: fieldValue,
-      backgroundOne: fieldValue,
-      backgroundTwo: fieldValue,
-      backgroundThree: fieldValue,
-      backgroundFour: fieldValue,
-      backgroundFive: fieldValue,
-      lifeStyleOne: fieldValue,
-      lifeStyleTwo: fieldValue,
-      lifeStyleThree: fieldValue,
-      lifeStyleFour: fieldValue,
-      lifeStyleFive: fieldValue,
-      trainingFormOne: fieldValue,
-      trainingFormTwo: fieldValue,
-      trainingFormFour: fieldValue,
-      trainingFormThree: [
-        {
-          name: "Maandag",
-          checked: false,
-        },
-        {
-          name: "Dinsdag",
-          checked: false,
-        },
-        {
-          name: "Woensdag",
-          checked: false,
-        },
-        {
-          name: "Donderdag",
-          checked: false,
-        },
-        {
-          name: "Vrijdag",
-          checked: false,
-        },
-        {
-          name: "Zaterdag",
-          checked: false,
-        },
-        {
-          name: "Zondag",
-          checked: false,
-        },
-      ],
-      nutritionOne: fieldValue,
-      nutritionTwo: fieldValue,
-      nutritionThree: fieldValue,
-      nutritionFour: fieldValue,
-      nutritionFive: fieldValue,
-      nutritionSix: fieldValue,
-      nutritionSeven: fieldValue,
-      medicalBackgroundOne: fieldValue,
-      medicalBackgroundTwo: fieldValue,
-      medicalBackgroundThree: fieldValue,
-      medicalBackgroundFour: fieldValue,
-      medicalBackgroundFive: fieldValue,
-      medicalBackgroundSix: fieldValue,
-      medicalBackgroundSeven: fieldValue,
-      medicalBackgroundEight: fieldValue,
-      medicalBackgroundNine: fieldValue,
-      medicalBackgroundTen: fieldValue,
-      medicalBackgroundEleven: fieldValue,
-      medicalBackgroundTwelve: fieldValue,
-      isAgree: {
-        value: false,
-        error: "",
-      },
-    }
+    initialState
   );
 
   const [success, setSuccess] = useState(false);
@@ -127,6 +136,8 @@ const InTakeForm = () => {
     "goalThree",
     "goalFour",
   ];
+
+  const handleReset = () => dispatch({ ...initialState });
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -197,8 +208,21 @@ const InTakeForm = () => {
         .join(", "),
     };
 
+    setLoading(true);
+
     // filter out fields with undefined or no value
-    console.log(templateParamsWithTrainingFormThree);
+    // send mail to user
+    axios
+      .post("/api/intake", templateParamsWithTrainingFormThree)
+      .then((result) => {
+        toast.success("Wij hebben uw aanvraag ontvangen!");
+        setSuccess(true);
+        handleReset();
+      })
+      .catch((err) => {
+        toast.error("Oops, er is iets misgeslopen.");
+      })
+      .finally(() => setLoading(false));
   };
 
   return (

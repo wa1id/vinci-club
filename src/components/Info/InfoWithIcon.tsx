@@ -9,8 +9,8 @@ interface Props {
 
 const InfoWithIcon: React.FC<Props> = ({ icon, info, infoClassName }) => {
   return (
-    <div className='flex items-center gap-3 w-full'>
-      <span className='bg-primary rounded-full text-xl'>{icon}</span>{' '}
+    <div className="flex items-center gap-3 w-full">
+      <span className="bg-primary rounded-full text-xl">{icon}</span>{' '}
       <p className={classNames(infoClassName)}>{info}</p>
     </div>
   );

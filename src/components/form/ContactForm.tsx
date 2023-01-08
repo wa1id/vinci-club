@@ -1,17 +1,17 @@
-import axios from "axios";
-import React, { useReducer, useState } from "react";
-import { FiArrowUpRight } from "react-icons/fi";
-import { toast } from "react-toastify";
-import { IContact } from "src/typings/contact";
-import { Button } from "../Button/Button";
-import Heading from "../Heading/Heading";
+import axios from 'axios';
+import React, { useReducer, useState } from 'react';
+import { FiArrowUpRight } from 'react-icons/fi';
+import { toast } from 'react-toastify';
+import { IContact } from 'src/typings/contact';
+import { Button } from '../Button/Button';
+import Heading from '../Heading/Heading';
 
 const initialState = {
-  firstName: "",
-  lastName: "",
-  email: "",
-  telephone: "",
-  message: "",
+  firstName: '',
+  lastName: '',
+  email: '',
+  telephone: '',
+  message: ''
 };
 
 const ContactForm = () => {
@@ -20,7 +20,7 @@ const ContactForm = () => {
   const [state, dispatch] = useReducer<React.Reducer<IContact, any>>(
     (state, action) => ({
       ...state,
-      ...action,
+      ...action
     }),
     initialState
   );
@@ -40,14 +40,14 @@ const ContactForm = () => {
 
     // send mail to user
     axios
-      .post("/api/contact", state)
-      .then((result) => {
-        toast.success("Wij hebben uw aanvraag ontvangen!");
+      .post('/api/contact', state)
+      .then(result => {
+        toast.success('Wij hebben uw aanvraag ontvangen!');
         setSuccess(true);
         handleReset();
       })
-      .catch((err) => {
-        toast.error("Oops, er is iets misgeslopen.");
+      .catch(err => {
+        toast.error('Oops, er is iets misgeslopen.');
       })
       .finally(() => setLoading(false));
   };

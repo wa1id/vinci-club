@@ -1,28 +1,28 @@
-import React from "react";
-import PersonalTrainerCard from "../Card/PersonalTrainerCard";
-import Heading from "../Heading/Heading";
-import PersonalTrainer1Img from "public/nora.jpeg";
-import PersonalTrainer2Img from "public/pt-placeholder.jpeg";
+import React from 'react';
+import PersonalTrainerCard from '../Card/PersonalTrainerCard';
+import Heading from '../Heading/Heading';
+import PersonalTrainer1Img from 'public/images/nora.jpeg';
+import PersonalTrainer2Img from 'public/images/pt-placeholder.jpeg';
 
 const data = [
   {
     id: 1,
     image: PersonalTrainer1Img,
-    name: "Nora Ledou",
-    title: "Head of Personal Training",
+    name: 'Nora Ledou',
+    title: 'Head of Personal Training',
     description:
-      "I’m really passionate about sports, especially since I discovered crossfit a few years ago. Being active is a big part of my life and I couldn’t live without it anymore.",
-    socials: { instagram: "https://www.instagram.com/gezondmetnora/" },
+      'I’m really passionate about sports, especially since I discovered crossfit a few years ago. Being active is a big part of my life and I couldn’t live without it anymore.',
+    socials: { instagram: 'https://www.instagram.com/gezondmetnora/' }
   },
   {
     id: 2,
     image: PersonalTrainer2Img,
-    name: "Jij",
-    title: "Personal Trainer",
+    name: 'Jij',
+    title: 'Personal Trainer',
     description:
-      "Ben jij een personal trainer en wil je graag bij ons je diensten aanbieden? Neem dan contact met ons op via het contactformulier.",
-    placeholder: true,
-  },
+      'Ben jij een personal trainer en wil je graag bij ons je diensten aanbieden? Neem dan contact met ons op via het contactformulier.',
+    placeholder: true
+  }
 ];
 
 const PersonalTrainers = () => {
@@ -48,7 +48,7 @@ const PersonalTrainers = () => {
         </div>
 
         <div className="flex flex-wrap gap-5 justify-center items-center p-6 my-12 md:my-24">
-          {data.map((item) => (
+          {data.map(item => (
             <PersonalTrainerCard key={item.id} {...item} />
           ))}
         </div>

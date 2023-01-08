@@ -2,21 +2,19 @@
 
 import { CheckIcon } from "@heroicons/react/24/outline";
 import classNames from "classnames";
-import Head from "next/head";
 import Link from "next/link";
-import { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { Button } from "../Button/Button";
 
 const tiers = [
   {
-    name: "Bronze",
+    name: "Bronze Ladies Only",
     nameBackground: "bg-orange-200",
     href: "#",
     priceMonthly: 24,
     subPriceMonthly: 95,
     description: "Fitness",
-    features: ["Cardioapparatuur", "Gewichtstraining"],
+    features: ["Ladies Only", "Cardioapparatuur", "Gewichtstraining"],
   },
   {
     name: "Silver (-16j)",
@@ -121,8 +119,8 @@ export const PricingSection = () => {
                 <div className="mt-4 text-lg text-primary">
                   Wens je Vinci Club uit te proberen of wil je een vriend(in)
                   meenemen? Dan kan je een beurtenkaart/dagpas kopen. Deze geeft
-                  je toegang tot zowel de fitness als kickboks voor
-                  €14,95/beurt.
+                  je toegang tot zowel de fitness (ladies only) als kickboks
+                  voor €14,95/beurt.
                 </div>
               </div>
             </div>

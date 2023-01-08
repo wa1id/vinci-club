@@ -17,7 +17,7 @@ const intake = async (req: NextApiRequest, res: NextApiResponse) => {
     goalOne,
     goalTwo,
     goalThree,
-    goalFour
+    goalFour, instagramAccount
   } = req.body;
 
   const mailOptions: MailDataRequired = {
@@ -40,7 +40,7 @@ const intake = async (req: NextApiRequest, res: NextApiResponse) => {
       goalOne,
       goalTwo,
       goalThree,
-      goalFour
+      goalFour, emailAddress, instagramAccount
     }
   };
 

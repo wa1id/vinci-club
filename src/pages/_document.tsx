@@ -4,8 +4,8 @@ import Document, {
   Html,
   Head,
   Main,
-  NextScript,
-} from "next/document";
+  NextScript
+} from 'next/document';
 
 export default class MyDocument extends Document {
   static async getInitialProps(

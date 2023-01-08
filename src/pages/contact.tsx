@@ -1,9 +1,9 @@
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Head from "next/head";
-import React from "react";
-import Address from "src/components/Address/Address";
-import ContactWithVinciClub from "src/components/ContactWithVinciClub/ContactWithVinciClub";
-import ContactForm from "src/components/form/ContactForm";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Head from 'next/head';
+import React from 'react';
+import Address from 'src/components/Address/Address';
+import ContactWithVinciClub from 'src/components/ContactWithVinciClub/ContactWithVinciClub';
+import ContactForm from 'src/components/form/ContactForm';
 
 const Contact = () => {
   return (
@@ -21,8 +21,8 @@ const Contact = () => {
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common"])),
-    },
+      ...(await serverSideTranslations(locale, ['common']))
+    }
   };
 }
 

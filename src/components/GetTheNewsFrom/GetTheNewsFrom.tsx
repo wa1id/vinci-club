@@ -1,35 +1,35 @@
-import React, { useState } from "react";
-import Heading from "../Heading/Heading";
-import GetTheNewsFromGirlImg from "public/get-the-news-from-girl.png";
-import GetTheNewsFromDumbell from "public/get-the-news-from-dumbell.png";
-import GetTheNewsFromBoxingGloves from "public/get-the-news-from-boxing-gloves.png";
-import Image from "next/image";
-import { FiArrowUpRight } from "react-icons/fi";
-import { toast } from "react-toastify";
-import axios from "axios";
-import { useTranslation } from "react-i18next";
+import React, { useState } from 'react';
+import Heading from '../Heading/Heading';
+import GetTheNewsFromGirlImg from 'public/get-the-news-from-girl.png';
+import GetTheNewsFromDumbell from 'public/get-the-news-from-dumbell.png';
+import GetTheNewsFromBoxingGloves from 'public/get-the-news-from-boxing-gloves.png';
+import Image from 'next/image';
+import { FiArrowUpRight } from 'react-icons/fi';
+import { toast } from 'react-toastify';
+import axios from 'axios';
+import { useTranslation } from 'react-i18next';
 
 const GetTheNewsFrom = () => {
-  const { t } = useTranslation("common");
-  const [email, setEmail] = useState("");
+  const { t } = useTranslation('common');
+  const [email, setEmail] = useState('');
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     // subscribe to newsletter using mailchimp
     e.preventDefault();
 
     if (!email) {
-      toast.warn("Gelieve uw e-mailadres in te vullen");
+      toast.warn('Gelieve uw e-mailadres in te vullen');
       return;
     }
 
     axios
-      .post("/api/subscribe", { email })
-      .then((res) => {
+      .post('/api/subscribe', { email })
+      .then(res => {
         // TODO: i18
-        toast.success("Je bent ingeschreven voor de nieuwsbrief!");
-        setEmail("");
+        toast.success('Je bent ingeschreven voor de nieuwsbrief!');
+        setEmail('');
       })
-      .catch((err) => {
+      .catch(err => {
         toast.error(err.response.data.error);
       });
   };
@@ -46,15 +46,15 @@ const GetTheNewsFrom = () => {
           {/* TODO: i18 */}
           <Heading
             aboveHeading=""
-            belowHeading={t("Newsletter")}
+            belowHeading={t('Newsletter')}
             headingClassName="text-primary "
             lineClassName="bg-white"
           />
           <div
             className=" [text-shadow:_0px_13px_1px_rgb(0_0_0_/_0.4%)] uppercase text-4xl md:text-5xl lg:text-6xl font-drukwide"
             style={{
-              WebkitTextStroke: "1px #1D1D1D",
-              WebkitTextFillColor: "transparent",
+              WebkitTextStroke: '1px #1D1D1D',
+              WebkitTextFillColor: 'transparent'
             }}
           >
             {/* TODO: i18 */}
@@ -72,9 +72,9 @@ const GetTheNewsFrom = () => {
             <input
               type="email"
               placeholder="E-mailadres"
-              className={"get-the-news-from-email-input"}
+              className={'get-the-news-from-email-input'}
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={e => setEmail(e.target.value)}
             />
             <button
               className="bg-primary text-white p-4 rounded-full ml-4 flex items-center justify-center gap-2 uppercase max-w-[300px]"

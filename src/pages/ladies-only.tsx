@@ -1,10 +1,10 @@
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Head from "next/head";
-import Image from "next/image";
-import React from "react";
-import Heading from "src/components/Heading/Heading";
-import ladiesonly from "public/ladies-only.jpeg";
-import nora from "public/nora.jpeg";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Head from 'next/head';
+import Image from 'next/image';
+import React from 'react';
+import Heading from 'src/components/Heading/Heading';
+import ladiesonly from 'public/ladies-only.jpeg';
+import nora from 'public/nora.jpeg';
 
 const LadiesOnly = () => {
   return (
@@ -54,7 +54,7 @@ const LadiesOnly = () => {
           <div className="flex w-full justify-center my-4">
             <Image
               src={ladiesonly}
-              style={{ maxWidth: "250px" }}
+              style={{ maxWidth: '250px' }}
               alt="Lichaamsanalyse"
             />
           </div>
@@ -64,7 +64,7 @@ const LadiesOnly = () => {
           <Image
             src={nora}
             className="h-full my-6 w-full object-cover"
-            style={{ maxWidth: "400px" }}
+            style={{ maxWidth: '400px' }}
             alt="Nora Ledou"
           />
           <div className="max-w-2xl lg:text-right">
@@ -108,8 +108,8 @@ const LadiesOnly = () => {
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common"])),
-    },
+      ...(await serverSideTranslations(locale, ['common']))
+    }
   };
 }
 

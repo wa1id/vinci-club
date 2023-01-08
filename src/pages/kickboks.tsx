@@ -1,15 +1,15 @@
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Head from "next/head";
-import Image from "next/image";
-import React from "react";
-import jamal from "public/jamal.jpeg";
-import Heading from "src/components/Heading/Heading";
-import Link from "next/link";
-import { Button } from "src/components/Button/Button";
-import { useTranslation } from "react-i18next";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Head from 'next/head';
+import Image from 'next/image';
+import React from 'react';
+import jamal from 'public/jamal.jpeg';
+import Heading from 'src/components/Heading/Heading';
+import Link from 'next/link';
+import { Button } from 'src/components/Button/Button';
+import { useTranslation } from 'react-i18next';
 
 const Kickboks = () => {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation('common');
 
   return (
     <>
@@ -48,7 +48,7 @@ const Kickboks = () => {
 
             <Link href="/signup">
               <Button className="my-4" variant="tertiary">
-                {t("Become member")}
+                {t('Become member')}
               </Button>
             </Link>
           </div>
@@ -64,8 +64,8 @@ const Kickboks = () => {
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common"])),
-    },
+      ...(await serverSideTranslations(locale, ['common']))
+    }
   };
 }
 

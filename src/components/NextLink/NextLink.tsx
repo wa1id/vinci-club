@@ -1,5 +1,5 @@
-import Link, { LinkProps } from "next/link";
-import { forwardRef, HTMLProps } from "react";
+import Link, { LinkProps } from 'next/link';
+import { forwardRef, HTMLProps } from 'react';
 
 export const NextLink = forwardRef<
   HTMLAnchorElement,
@@ -14,4 +14,4 @@ export const NextLink = forwardRef<
   );
 });
 
-NextLink.displayName = "NextLink";
+NextLink.displayName = 'NextLink';

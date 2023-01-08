@@ -1,11 +1,11 @@
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Head from "next/head";
-import Image from "next/image";
-import React from "react";
-import BecomeAMember from "src/components/form/BecomeAMember";
-import Heading from "src/components/Heading/Heading";
-import jamal from "public/jamal.jpeg";
-import GetTheNewsFrom from "src/components/GetTheNewsFrom/GetTheNewsFrom";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Head from 'next/head';
+import Image from 'next/image';
+import React from 'react';
+import BecomeAMember from 'src/components/form/BecomeAMember';
+import Heading from 'src/components/Heading/Heading';
+import jamal from 'public/jamal.jpeg';
+import GetTheNewsFrom from 'src/components/GetTheNewsFrom/GetTheNewsFrom';
 
 const Signup = () => {
   return (
@@ -45,8 +45,8 @@ const Signup = () => {
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common"])),
-    },
+      ...(await serverSideTranslations(locale, ['common']))
+    }
   };
 }
 

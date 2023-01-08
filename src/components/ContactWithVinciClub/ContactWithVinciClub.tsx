@@ -1,11 +1,11 @@
-import React from "react";
-import { FiArrowUpRight } from "react-icons/fi";
-import Heading from "../Heading/Heading";
-import Image from "next/image";
-import ContactWithVinciBoyImg from "public/contact-with-vinci-club-boy.png";
-import ContactWithVinciDumbellImg from "public/contact-with-vinci-club-dumbell.png";
-import ContactWithVinciExerciseImg from "public/contact-with-vinci-club-exercise-machine.png";
-import Link from "next/link";
+import React from 'react';
+import { FiArrowUpRight } from 'react-icons/fi';
+import Heading from '../Heading/Heading';
+import Image from 'next/image';
+import ContactWithVinciBoyImg from 'public/contact-with-vinci-club-boy.png';
+import ContactWithVinciDumbellImg from 'public/contact-with-vinci-club-dumbell.png';
+import ContactWithVinciExerciseImg from 'public/contact-with-vinci-club-exercise-machine.png';
+import Link from 'next/link';
 
 const ContactWithVinciClub = () => {
   return (
@@ -26,8 +26,8 @@ const ContactWithVinciClub = () => {
           <div
             className=" [text-shadow:_0px_13px_1px_rgb(0_0_0_/_0.4%)] uppercase text-4xl md:text-5xl lg:text-6xl font-drukwide"
             style={{
-              WebkitTextStroke: "1px #F0EBE8",
-              WebkitTextFillColor: "transparent",
+              WebkitTextStroke: '1px #F0EBE8',
+              WebkitTextFillColor: 'transparent'
             }}
           >
             {/* TODO: i18 */}

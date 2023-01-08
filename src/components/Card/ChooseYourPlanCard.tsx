@@ -1,9 +1,9 @@
-import React, { MouseEventHandler } from "react";
-import { TiTick } from "react-icons/ti";
-import InfoWithIcon from "../Info/InfoWithIcon";
-import { useTranslation } from "react-i18next";
-import Link from "next/link";
-import { Button } from "../Button/Button";
+import React, { MouseEventHandler } from 'react';
+import { TiTick } from 'react-icons/ti';
+import InfoWithIcon from '../Info/InfoWithIcon';
+import { useTranslation } from 'react-i18next';
+import Link from 'next/link';
+import { Button } from '../Button/Button';
 
 export interface IChooseYourPlanCardProps {
   id?: number;
@@ -20,9 +20,9 @@ const ChooseYourPlanCard: React.FC<IChooseYourPlanCardProps> = ({
   studentPrice,
   info,
   subtitle,
-  id,
+  id
 }) => {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation('common');
 
   return (
     <div className="flex flex-col bg-plan rounded-lg border-primary border-2 max-w-sm w-full">
@@ -34,10 +34,10 @@ const ChooseYourPlanCard: React.FC<IChooseYourPlanCardProps> = ({
           <div className="flex flex-col">
             <div>
               <span className="text-[50px] font-bold">
-                €{price.toLocaleString("nl-BE")}
+                €{price.toLocaleString('nl-BE')}
               </span>
               <span className="text-xl">
-                {t("/per month")}
+                {t('/per month')}
                 <sup>*</sup>
               </span>
             </div>
@@ -54,17 +54,17 @@ const ChooseYourPlanCard: React.FC<IChooseYourPlanCardProps> = ({
             <div className="text-sm">Student?</div>
 
             <span className="text-xl font-bold">
-              €{studentPrice.toLocaleString("nl-BE")}
+              €{studentPrice.toLocaleString('nl-BE')}
             </span>
             <span className="text-xl">
-              {t("/per month")}
+              {t('/per month')}
               <sup>*</sup>
             </span>
           </div>
         )}
 
         <div className="flex flex-col justify-center items-center gap-5 w-full px-8 py-12">
-          {info.map((text) => (
+          {info.map(text => (
             <InfoWithIcon
               key={text}
               icon={<TiTick className="text-white" />}
@@ -75,7 +75,7 @@ const ChooseYourPlanCard: React.FC<IChooseYourPlanCardProps> = ({
 
         <Link href="/signup">
           <Button variant="secondary" className="">
-            {t("Sign up")}
+            {t('Sign up')}
           </Button>
         </Link>
       </div>

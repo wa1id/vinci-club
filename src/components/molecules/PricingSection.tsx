@@ -1,43 +1,43 @@
 // components/layout.js
 
-import { CheckIcon } from "@heroicons/react/24/outline";
-import classNames from "classnames";
-import Link from "next/link";
-import { useTranslation } from "react-i18next";
-import { Button } from "../Button/Button";
+import { CheckIcon } from '@heroicons/react/24/outline';
+import classNames from 'classnames';
+import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
+import { Button } from '../Button/Button';
 
 const tiers = [
   {
-    name: "Bronze Ladies Only",
-    nameBackground: "bg-orange-200",
-    href: "#",
+    name: 'Bronze Ladies Only',
+    nameBackground: 'bg-orange-200',
+    href: '#',
     priceMonthly: 24,
     subPriceMonthly: 95,
-    description: "Fitness",
-    features: ["Ladies Only", "Cardioapparatuur", "Gewichtstraining"],
+    description: 'Fitness',
+    features: ['Ladies Only', 'Cardioapparatuur', 'Gewichtstraining']
   },
   {
-    name: "Silver (-16j)",
-    nameBackground: "bg-gray-100",
-    href: "#",
+    name: 'Silver (-16j)',
+    nameBackground: 'bg-gray-100',
+    href: '#',
     priceMonthly: 24,
     subPriceMonthly: 95,
-    description: "Kickboks",
-    features: ["Jeugd -16 jaar oud", "Kickboksring", "Kickboks groepslessen"],
+    description: 'Kickboks',
+    features: ['Jeugd -16 jaar oud', 'Kickboksring', 'Kickboks groepslessen']
   },
   {
-    name: "Gold (+16j)",
-    nameBackground: "bg-yellow-200",
-    href: "#",
+    name: 'Gold (+16j)',
+    nameBackground: 'bg-yellow-200',
+    href: '#',
     priceMonthly: 34,
     subPriceMonthly: 95,
-    description: "Kickboks",
-    features: ["+16 jaar oud", "Kickboksring", "Kickboks groepslessen"],
-  },
+    description: 'Kickboks',
+    features: ['+16 jaar oud', 'Kickboksring', 'Kickboks groepslessen']
+  }
 ];
 
 export const PricingSection = () => {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation('common');
 
   return (
     <div className="">
@@ -45,7 +45,7 @@ export const PricingSection = () => {
         <div className="relative">
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-md mx-auto space-y-4 lg:max-w-5xl lg:grid lg:grid-cols-3 lg:gap-5 lg:space-y-0">
-              {tiers.map((tier) => (
+              {tiers.map(tier => (
                 <div
                   key={tier.name}
                   className="flex flex-col rounded-lg shadow-lg overflow-hidden"
@@ -54,7 +54,7 @@ export const PricingSection = () => {
                     <div>
                       <h3
                         className={classNames(
-                          "inline-flex px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase text-primary",
+                          'inline-flex px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase text-primary',
                           tier.nameBackground
                         )}
                         id="tier-standard"
@@ -77,7 +77,7 @@ export const PricingSection = () => {
                   </div>
                   <div className="flex-1 flex flex-col justify-between px-6 pt-6 pb-8 bg-gray-100 space-y-6 sm:p-10 sm:pt-6">
                     <ul role="list" className="space-y-4">
-                      {tier.features.map((feature) => (
+                      {tier.features.map(feature => (
                         <li key={feature} className="flex items-start">
                           <div className="flex-shrink-0">
                             <CheckIcon
@@ -94,7 +94,7 @@ export const PricingSection = () => {
 
                     <Link href="/signup">
                       <Button className="w-full text-center" variant="primary">
-                        {t("Become member")}
+                        {t('Become member')}
                       </Button>
                     </Link>
                   </div>

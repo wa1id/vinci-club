@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import Image, { StaticImageData } from "next/image";
-import { AiOutlineTwitter, AiOutlineInstagram } from "react-icons/ai";
-import { FaFacebookF } from "react-icons/fa";
-import { BsChevronDown } from "react-icons/bs";
-import Link from "next/link";
-import { PersonalTrainer } from "src/typings/personalTrainer";
-import { Button } from "../Button/Button";
+import React, { useState } from 'react';
+import Image, { StaticImageData } from 'next/image';
+import { AiOutlineTwitter, AiOutlineInstagram } from 'react-icons/ai';
+import { FaFacebookF } from 'react-icons/fa';
+import { BsChevronDown } from 'react-icons/bs';
+import Link from 'next/link';
+import { PersonalTrainer } from 'src/typings/personalTrainer';
+import { Button } from '../Button/Button';
 
 const PersonalTrainerCard: React.FC<PersonalTrainer> = ({
   image,
@@ -13,7 +13,7 @@ const PersonalTrainerCard: React.FC<PersonalTrainer> = ({
   title,
   description,
   socials,
-  placeholder,
+  placeholder
 }) => {
   return (
     <div className="w-full max-w-sm lg:w-72 h-full bg-white">

@@ -6,7 +6,7 @@ const Club = () => {
   return (
     <>
       <Head>
-        <title>Clubinformatie - Vinci Club </title>
+        <title>Clubinformatie - Vinci Club</title>
       </Head>
     </>
   );

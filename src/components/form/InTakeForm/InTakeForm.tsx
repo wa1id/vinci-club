@@ -178,10 +178,13 @@ const InTakeForm = () => {
             error: false
           }
         });
+      }
 
-        if (!['trainingFormThree', 'isAgree'].includes(fieldName)) {
-          templateParams[fieldName] = data?.value;
-        }
+      if (
+        data?.value !== '' &&
+        !['trainingFormThree', 'isAgree'].includes(fieldName)
+      ) {
+        templateParams[fieldName] = data?.value;
       }
     }
 

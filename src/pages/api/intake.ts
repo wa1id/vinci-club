@@ -9,15 +9,63 @@ const intake = async (req: NextApiRequest, res: NextApiResponse) => {
     lastName,
     dob,
     gender,
+    instagramAccount,
     phoneNumber,
     emailAddress,
+
+    // address form
     streetNameAndHouseNumber,
     zipCode,
     placeOfResidence,
+
+    // goal form
     goalOne,
     goalTwo,
     goalThree,
-    goalFour, instagramAccount
+    goalFour,
+
+    // background form
+    backgroundOne,
+    backgroundTwo,
+    backgroundThree,
+    backgroundFour,
+    backgroundFive,
+
+    // lifestyle form
+    lifeStyleOne,
+    lifeStyleTwo,
+    lifeStyleThree,
+    lifeStyleFour,
+    lifeStyleFive,
+
+    // training form
+    trainingFormOne,
+    trainingFormTwo,
+    trainingFormThree,
+    trainingFormFour,
+
+    // nutrition form
+    nutritionOne,
+    nutritionTwo,
+    nutritionThree,
+    nutritionFour,
+    nutritionFive,
+    nutritionSix,
+    nutritionSeven,
+
+    // medical background form
+    medicalBackgroundOne,
+    medicalBackgroundTwo,
+    medicalBackgroundThree,
+    medicalBackgroundFour,
+    medicalBackgroundFive,
+    medicalBackgroundSix,
+    medicalBackgroundSeven,
+    medicalBackgroundEight,
+    medicalBackgroundNine,
+    medicalBackgroundTen,
+    medicalBackgroundEleven,
+    medicalBackgroundTwelve
   } = req.body;
 
   const mailOptions: MailDataRequired = {
@@ -33,14 +81,63 @@ const intake = async (req: NextApiRequest, res: NextApiResponse) => {
       lastName,
       dob,
       gender,
+      instagramAccount,
       phoneNumber,
+      emailAddress,
+
+      // address form
       streetNameAndHouseNumber,
       zipCode,
       placeOfResidence,
+
+      // goal form
       goalOne,
       goalTwo,
       goalThree,
-      goalFour, emailAddress, instagramAccount
+      goalFour,
+
+      // background form
+      backgroundOne,
+      backgroundTwo,
+      backgroundThree,
+      backgroundFour,
+      backgroundFive,
+
+      // lifestyle form
+      lifeStyleOne,
+      lifeStyleTwo,
+      lifeStyleThree,
+      lifeStyleFour,
+      lifeStyleFive,
+
+      // training form
+      trainingFormOne,
+      trainingFormTwo,
+      trainingFormThree,
+      trainingFormFour,
+
+      // nutrition form
+      nutritionOne,
+      nutritionTwo,
+      nutritionThree,
+      nutritionFour,
+      nutritionFive,
+      nutritionSix,
+      nutritionSeven,
+
+      // medical background form
+      medicalBackgroundOne,
+      medicalBackgroundTwo,
+      medicalBackgroundThree,
+      medicalBackgroundFour,
+      medicalBackgroundFive,
+      medicalBackgroundSix,
+      medicalBackgroundSeven,
+      medicalBackgroundEight,
+      medicalBackgroundNine,
+      medicalBackgroundTen,
+      medicalBackgroundEleven,
+      medicalBackgroundTwelve
     }
   };
 

@@ -1,10 +1,10 @@
-import Link from "next/link";
-import React from "react";
-import HeadingWithUnderline from "src/components/Heading/HeadingWithUnderline";
-import ErrorText from "../ErrorText";
-import RadioOrCheckBox from "../RadioOrCheckBox";
-import { IInTakeFormState } from "src/typings/intakeform";
-import { Button } from "src/components/Button/Button";
+import Link from 'next/link';
+import React from 'react';
+import HeadingWithUnderline from 'src/components/Heading/HeadingWithUnderline';
+import ErrorText from '../ErrorText';
+import RadioOrCheckBox from '../RadioOrCheckBox';
+import { IInTakeFormState } from 'src/typings/intakeform';
+import { Button } from 'src/components/Button/Button';
 
 const TermsAndConditionsForm = ({
   state,
@@ -13,7 +13,7 @@ const TermsAndConditionsForm = ({
 }: {
   state: IInTakeFormState;
   dispatch: React.Dispatch<any>;
-  loading: boolean
+  loading: boolean;
 }) => {
   return (
     <div className="my-20">
@@ -24,20 +24,16 @@ const TermsAndConditionsForm = ({
       />
       <p className="my-6">
         Ik heb dit formulier naar alle eerlijkheid ingevuld en ik ga akkoord met
-        de{" "}
+        de{' '}
         <Link
           href="/terms-and-conditions"
           target="_blank"
           className="underline"
         >
           algemene voorwaarden
-        </Link>{" "}
-        en{" "}
-        <Link
-          href="/privacy"
-          target="_blank"
-          className="underline"
-        >
+        </Link>{' '}
+        en{' '}
+        <Link href="/privacy" target="_blank" className="underline">
           privacybeleid
         </Link>
         <sup>*</sup>
@@ -56,19 +52,15 @@ const TermsAndConditionsForm = ({
           dispatch({
             isAgree: {
               value: !state.isAgree.value,
-              error: false,
-            },
+              error: false
+            }
           })
         }
         required
         className="text-sm"
       />
       <div className="my-6">
-        <Button
-          loading={loading}
-          variant="primary"
-          type="submit"
-        >
+        <Button loading={loading} variant="primary" type="submit">
           verstuur
         </Button>
       </div>

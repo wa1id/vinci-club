@@ -5,7 +5,7 @@ import { Button } from '../Button/Button';
 import axios from 'axios';
 import { BecomeMember } from 'src/typings/members';
 
-interface IProps { }
+interface IProps {}
 
 // TODO: i18
 

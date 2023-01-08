@@ -5,6 +5,7 @@ import React from 'react';
 import Heading from 'src/components/Heading/Heading';
 import ladiesonly from 'public/images/ladies-only.jpeg';
 import nora from 'public/images/nora.jpeg';
+import InTakeForm from 'src/components/form/InTakeForm/InTakeForm';
 
 const LadiesOnly = () => {
   return (

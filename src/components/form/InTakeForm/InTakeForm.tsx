@@ -1,33 +1,30 @@
-import React, { useReducer, useState } from "react";
-import { IInTakeFormState } from "src/typings/intakeform";
-import HeadingWithUnderline from "../../Heading/HeadingWithUnderline";
-import AddressForm from "./AddressForm";
-import BackgroundForm from "./BackgroundForm";
-import GoalForm from "./GoalForm";
-import InPersonForm from "./InPersonForm";
-import LifeStyleForm from "./LifeStyleForm";
-import MedicalBackgroundForm from "./MedicalBackgroundForm";
-import NutritionForm from "./NutritionForm";
-import TermsAndConditionsForm from "./TermsAndConditionsForm";
-import TrainingPlanForm from "./TrainingPlanForm";
-import axios from "axios";
-import { toast } from "react-toastify";
+import React, { useReducer, useState } from 'react';
+import { IInTakeFormState } from 'src/typings/intakeform';
+import HeadingWithUnderline from '../../Heading/HeadingWithUnderline';
+import AddressForm from './AddressForm';
+import BackgroundForm from './BackgroundForm';
+import GoalForm from './GoalForm';
+import InPersonForm from './InPersonForm';
+import LifeStyleForm from './LifeStyleForm';
+import MedicalBackgroundForm from './MedicalBackgroundForm';
+import NutritionForm from './NutritionForm';
+import TermsAndConditionsForm from './TermsAndConditionsForm';
+import TrainingPlanForm from './TrainingPlanForm';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
-
-  const fieldValue = {
-    value: "",
-    error: false,
-  };
-
-
+const fieldValue = {
+  value: '',
+  error: false
+};
 
 const initialState = {
   firstName: fieldValue,
   lastName: fieldValue,
   dob: fieldValue,
   gender: {
-    value: "man",
-    error: false,
+    value: 'man',
+    error: false
   },
   instagramAccount: fieldValue,
   phoneNumber: fieldValue,
@@ -54,33 +51,33 @@ const initialState = {
   trainingFormFour: fieldValue,
   trainingFormThree: [
     {
-      name: "Maandag",
-      checked: false,
+      name: 'Maandag',
+      checked: false
     },
     {
-      name: "Dinsdag",
-      checked: false,
+      name: 'Dinsdag',
+      checked: false
     },
     {
-      name: "Woensdag",
-      checked: false,
+      name: 'Woensdag',
+      checked: false
     },
     {
-      name: "Donderdag",
-      checked: false,
+      name: 'Donderdag',
+      checked: false
     },
     {
-      name: "Vrijdag",
-      checked: false,
+      name: 'Vrijdag',
+      checked: false
     },
     {
-      name: "Zaterdag",
-      checked: false,
+      name: 'Zaterdag',
+      checked: false
     },
     {
-      name: "Zondag",
-      checked: false,
-    },
+      name: 'Zondag',
+      checked: false
+    }
   ],
   nutritionOne: fieldValue,
   nutritionTwo: fieldValue,
@@ -103,17 +100,15 @@ const initialState = {
   medicalBackgroundTwelve: fieldValue,
   isAgree: {
     value: false,
-    error: "",
-  },
+    error: ''
+  }
 };
 
 const InTakeForm = () => {
-
-
   const [state, dispatch] = useReducer<React.Reducer<IInTakeFormState, any>>(
     (state, action) => ({
       ...state,
-      ...action,
+      ...action
     }),
     initialState
   );
@@ -122,19 +117,19 @@ const InTakeForm = () => {
   const [loading, setLoading] = useState(false);
 
   const validateFields = [
-    "firstName",
-    "lastName",
-    "dob",
-    "gender",
-    "phoneNumber",
-    "emailAddress",
-    "streetNameAndHouseNumber",
-    "zipCode",
-    "placeOfResidence",
-    "goalOne",
-    "goalTwo",
-    "goalThree",
-    "goalFour",
+    'firstName',
+    'lastName',
+    'dob',
+    'gender',
+    'phoneNumber',
+    'emailAddress',
+    'streetNameAndHouseNumber',
+    'zipCode',
+    'placeOfResidence',
+    'goalOne',
+    'goalTwo',
+    'goalThree',
+    'goalFour'
   ];
 
   const handleReset = () => dispatch({ ...initialState });
@@ -150,18 +145,18 @@ const InTakeForm = () => {
 
       if (
         validateFields.includes(fieldName) &&
-        data?.value === "" &&
-        !["trainingFormThree", "isAgree"].includes(fieldName)
+        data?.value === '' &&
+        !['trainingFormThree', 'isAgree'].includes(fieldName)
       ) {
         dispatch({
           [fieldName]: {
             ...data,
-            error: true,
-          },
+            error: true
+          }
         });
 
         // redirect user to error field
-        const a = document.createElement("a");
+        const a = document.createElement('a');
         a.href = `#${fieldName}`;
         a.click();
 
@@ -174,17 +169,17 @@ const InTakeForm = () => {
 
       if (
         validateFields.includes(fieldName) &&
-        data?.value !== "" &&
-        !["trainingFormThree", "isAgree"].includes(fieldName)
+        data?.value !== '' &&
+        !['trainingFormThree', 'isAgree'].includes(fieldName)
       ) {
         dispatch({
           [fieldName]: {
             ...data,
-            error: false,
-          },
+            error: false
+          }
         });
 
-        if (!["trainingFormThree", "isAgree"].includes(fieldName)) {
+        if (!['trainingFormThree', 'isAgree'].includes(fieldName)) {
           templateParams[fieldName] = data?.value;
         }
       }
@@ -194,8 +189,8 @@ const InTakeForm = () => {
       dispatch({
         isAgree: {
           ...state.isAgree,
-          error: true,
-        },
+          error: true
+        }
       });
       return;
     }
@@ -203,9 +198,9 @@ const InTakeForm = () => {
     const templateParamsWithTrainingFormThree = {
       ...templateParams,
       trainingFormThree: state.trainingFormThree
-        .filter((item) => item.checked)
-        .map((item) => item.name)
-        .join(", "),
+        .filter(item => item.checked)
+        .map(item => item.name)
+        .join(', ')
     };
 
     setLoading(true);
@@ -213,14 +208,14 @@ const InTakeForm = () => {
     // filter out fields with undefined or no value
     // send mail to user
     axios
-      .post("/api/intake", templateParamsWithTrainingFormThree)
-      .then((result) => {
-        toast.success("Wij hebben uw aanvraag ontvangen!");
+      .post('/api/intake', templateParamsWithTrainingFormThree)
+      .then(result => {
+        toast.success('Wij hebben uw aanvraag ontvangen!');
         setSuccess(true);
         handleReset();
       })
-      .catch((err) => {
-        toast.error("Oops, er is iets misgeslopen.");
+      .catch(err => {
+        toast.error('Oops, er is iets misgeslopen.');
       })
       .finally(() => setLoading(false));
   };
@@ -228,10 +223,7 @@ const InTakeForm = () => {
   return (
     <section className="px-4 my-6">
       <div className="mb-16">
-        <HeadingWithUnderline
-          title="intake formulier"
-          size="large"
-        />
+        <HeadingWithUnderline title="intake formulier" size="large" />
         <p className="md:text-xl  text-secondary uppercase mt-2">{`Let's Go!`}</p>
 
         <p className="my-4">
@@ -257,10 +249,7 @@ const InTakeForm = () => {
         <TrainingPlanForm {...{ state, dispatch }} />
         <NutritionForm {...{ state, dispatch }} />
         <MedicalBackgroundForm {...{ state, dispatch }} />
-        <TermsAndConditionsForm
-          {...{ state, dispatch }}
-          loading={loading}
-        />
+        <TermsAndConditionsForm {...{ state, dispatch }} loading={loading} />
       </form>
     </section>
   );

@@ -1,12 +1,12 @@
-import React from "react";
-import HeadingWithUnderline from "../../Heading/HeadingWithUnderline";
-import Input from "../Input";
-import RadioOrCheckBox from "../RadioOrCheckBox";
-import { IInTakeFormState } from "src/typings/intakeform";
+import React from 'react';
+import HeadingWithUnderline from '../../Heading/HeadingWithUnderline';
+import Input from '../Input';
+import RadioOrCheckBox from '../RadioOrCheckBox';
+import { IInTakeFormState } from 'src/typings/intakeform';
 
 const TrainingPlanForm = ({
   state,
-  dispatch,
+  dispatch
 }: {
   state: IInTakeFormState;
   dispatch: React.Dispatch<any>;
@@ -27,11 +27,11 @@ const TrainingPlanForm = ({
         if (i === index) {
           return {
             ...item,
-            checked,
+            checked
           };
         }
         return item;
-      }),
+      })
     });
   };
 
@@ -74,7 +74,7 @@ const TrainingPlanForm = ({
               id={item.name}
               value={item.name}
               checked={item.checked}
-              onChange={(e) => handleCheckbox(e, index)}
+              onChange={e => handleCheckbox(e, index)}
               type="checkbox"
             />
           ))}

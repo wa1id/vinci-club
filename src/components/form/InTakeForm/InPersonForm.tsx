@@ -1,12 +1,12 @@
-import React from "react";
-import HeadingWithUnderline from "../../Heading/HeadingWithUnderline";
-import Input from "../Input";
-import RadioOrCheckBox from "../RadioOrCheckBox";
-import { IInTakeFormState } from "src/typings/intakeform";
+import React from 'react';
+import HeadingWithUnderline from '../../Heading/HeadingWithUnderline';
+import Input from '../Input';
+import RadioOrCheckBox from '../RadioOrCheckBox';
+import { IInTakeFormState } from 'src/typings/intakeform';
 
 const InPersonForm = ({
   state,
-  dispatch,
+  dispatch
 }: {
   state: IInTakeFormState;
   dispatch: React.Dispatch<any>;
@@ -50,10 +50,7 @@ const InPersonForm = ({
       />
 
       <div>
-        <label
-          htmlFor={"gender"}
-          className={"font-semibold text-primary"}
-        >
+        <label htmlFor={'gender'} className={'font-semibold text-primary'}>
           Man/vrouw <sup>*</sup>
         </label>
 
@@ -61,20 +58,20 @@ const InPersonForm = ({
           <RadioOrCheckBox
             label="man"
             name="gender"
-            value={"man"}
+            value={'man'}
             onChange={handleChange}
             type="radio"
             error={state.gender.error}
-            checked={state.gender.value === "man"}
+            checked={state.gender.value === 'man'}
           />
           <RadioOrCheckBox
             label="vrouw"
             name="gender"
-            value={"vrouw"}
+            value={'vrouw'}
             onChange={handleChange}
             type="radio"
             error={state.gender.error}
-            checked={state.gender.value === "vrouw"}
+            checked={state.gender.value === 'vrouw'}
           />
         </div>
       </div>

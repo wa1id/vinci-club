@@ -12,7 +12,7 @@ const HeadingWithUnderline: React.FC<Props> = ({
   size = 'small',
   title,
   className,
-  lineClassName,
+  lineClassName
 }) => {
   const sizeClasses = classNames(
     size === 'small' && 'text-lg md:text-xl lg:text-2xl',
@@ -22,11 +22,7 @@ const HeadingWithUnderline: React.FC<Props> = ({
 
   return (
     <h3
-      className={classNames(
-        sizeClasses,
-        className,
-        'uppercase font-extrabold'
-      )}
+      className={classNames(sizeClasses, className, 'uppercase font-extrabold')}
     >
       {title}
       <p className={classNames(lineClassName, 'w-24 p-1 bg-secondary')} />

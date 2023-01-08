@@ -5,7 +5,7 @@ import { IInTakeFormState } from 'src/typings/intakeform';
 
 const MedicalBackgroundForm = ({
   state,
-  dispatch,
+  dispatch
 }: {
   state: IInTakeFormState;
   dispatch: React.Dispatch<any>;
@@ -16,103 +16,103 @@ const MedicalBackgroundForm = ({
   };
 
   return (
-    <div className='my-20'>
+    <div className="my-20">
       <HeadingWithUnderline
-        title='MEDISCHE ACHTERGROND'
-        lineClassName='w-32 p-[0.2rem]'
-        size='medium'
+        title="MEDISCHE ACHTERGROND"
+        lineClassName="w-32 p-[0.2rem]"
+        size="medium"
       />
       <Input
-        label='1. Heb je op dit moment last van blessures? Zo ja, waar heb je last van?'
-        name='medicalBackgroundOne'
+        label="1. Heb je op dit moment last van blessures? Zo ja, waar heb je last van?"
+        name="medicalBackgroundOne"
         {...{ ...state.medicalBackgroundOne }}
         onChange={handleChange}
         hideRequiredIcon={true}
         required={false}
       />
       <Input
-        label='2. Heb je in het verleden ooit een ernstige blessure gehad? Zo ja, wat voor blessure(s)?'
-        name='medicalBackgroundTwo'
+        label="2. Heb je in het verleden ooit een ernstige blessure gehad? Zo ja, wat voor blessure(s)?"
+        name="medicalBackgroundTwo"
         {...{ ...state.medicalBackgroundTwo }}
         onChange={handleChange}
         hideRequiredIcon={true}
         required={false}
       />
       <Input
-        label='3. Ben je in het verleden ooit geopereerd? Zo ja, wat voor operatie?'
-        name='medicalBackgroundThree'
+        label="3. Ben je in het verleden ooit geopereerd? Zo ja, wat voor operatie?"
+        name="medicalBackgroundThree"
         {...{ ...state.medicalBackgroundThree }}
         onChange={handleChange}
         hideRequiredIcon={true}
         required={false}
       />
       <Input
-        label='4. Heb je last van een hoge bloeddruk?'
-        name='medicalBackgroundFour'
+        label="4. Heb je last van een hoge bloeddruk?"
+        name="medicalBackgroundFour"
         {...{ ...state.medicalBackgroundFour }}
         onChange={handleChange}
         hideRequiredIcon={true}
         required={false}
       />
       <Input
-        label='5. Heb je last van astma/bronchitis?'
-        name='medicalBackgroundFive'
+        label="5. Heb je last van astma/bronchitis?"
+        name="medicalBackgroundFive"
         {...{ ...state.medicalBackgroundFive }}
         onChange={handleChange}
         hideRequiredIcon={true}
         required={false}
       />
       <Input
-        label='6. Heb je in het verleden hartproblemen gehad?'
-        name='medicalBackgroundSix'
+        label="6. Heb je in het verleden hartproblemen gehad?"
+        name="medicalBackgroundSix"
         {...{ ...state.medicalBackgroundSix }}
         onChange={handleChange}
         hideRequiredIcon={true}
         required={false}
       />
       <Input
-        label='7. Heb je andere gezondheidsproblemen? Zo ja, welke?'
-        name='medicalBackgroundSeven'
+        label="7. Heb je andere gezondheidsproblemen? Zo ja, welke?"
+        name="medicalBackgroundSeven"
         {...{ ...state.medicalBackgroundSeven }}
         onChange={handleChange}
         hideRequiredIcon={true}
         required={false}
       />
       <Input
-        label='8. Gebruik je medicijnen? Zo ja, waarvoor?'
-        name='medicalBackgroundEight'
+        label="8. Gebruik je medicijnen? Zo ja, waarvoor?"
+        name="medicalBackgroundEight"
         {...{ ...state.medicalBackgroundEight }}
         onChange={handleChange}
         hideRequiredIcon={true}
         required={false}
       />
       <Input
-        label='9. Heb je ooit een epileptische aanval gehad? Zo ja, wanneer voor het laatst?'
-        name='medicalBackgroundNine'
+        label="9. Heb je ooit een epileptische aanval gehad? Zo ja, wanneer voor het laatst?"
+        name="medicalBackgroundNine"
         {...{ ...state.medicalBackgroundNine }}
         onChange={handleChange}
         hideRequiredIcon={true}
         required={false}
       />
       <Input
-        label='10. Heb je ooit een negatief sportadvies gehad van een arts? Zo ja, waarvoor?'
-        name='medicalBackgroundTen'
+        label="10. Heb je ooit een negatief sportadvies gehad van een arts? Zo ja, waarvoor?"
+        name="medicalBackgroundTen"
         {...{ ...state.medicalBackgroundTen }}
         onChange={handleChange}
         hideRequiredIcon={true}
         required={false}
       />
       <Input
-        label='11. Rook je? Zo ja, hoeveel sigaretten per dag?'
-        name='medicalBackgroundEleven'
+        label="11. Rook je? Zo ja, hoeveel sigaretten per dag?"
+        name="medicalBackgroundEleven"
         {...{ ...state.medicalBackgroundEleven }}
         onChange={handleChange}
         hideRequiredIcon={true}
         required={false}
       />
       <Input
-        label='12. Drink je alcohol? Zo ja, wat en hoeveel glazen per dag?'
-        name='medicalBackgroundTwelve'
+        label="12. Drink je alcohol? Zo ja, wat en hoeveel glazen per dag?"
+        name="medicalBackgroundTwelve"
         {...{ ...state.medicalBackgroundTwelve }}
         onChange={handleChange}
         hideRequiredIcon={true}

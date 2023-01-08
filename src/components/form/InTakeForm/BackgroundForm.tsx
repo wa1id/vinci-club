@@ -1,12 +1,12 @@
-import React from "react";
-import HeadingWithUnderline from "../../Heading/HeadingWithUnderline";
-import Input from "../Input";
-import RadioOrCheckBox from "../RadioOrCheckBox";
-import { IInTakeFormState } from "src/typings/intakeform";
+import React from 'react';
+import HeadingWithUnderline from '../../Heading/HeadingWithUnderline';
+import Input from '../Input';
+import RadioOrCheckBox from '../RadioOrCheckBox';
+import { IInTakeFormState } from 'src/typings/intakeform';
 
 const BackgroundForm = ({
   state,
-  dispatch,
+  dispatch
 }: {
   state: IInTakeFormState;
   dispatch: React.Dispatch<any>;
@@ -65,7 +65,7 @@ const BackgroundForm = ({
             label="0 keer per week"
             name="backgroundFive"
             required={false}
-            value={"0 keer per week"}
+            value={'0 keer per week'}
             error={state.backgroundFive.error}
             onChange={handleChange}
             type="radio"
@@ -74,7 +74,7 @@ const BackgroundForm = ({
             label="1 tot 2 keer per week"
             name="backgroundFive"
             required={false}
-            value={"1 tot 2 keer per week"}
+            value={'1 tot 2 keer per week'}
             error={state.backgroundFive.error}
             onChange={handleChange}
             type="radio"
@@ -83,7 +83,7 @@ const BackgroundForm = ({
             label="3 tot 4 keer per week"
             name="backgroundFive"
             required={false}
-            value={"3 tot 4 keer per week"}
+            value={'3 tot 4 keer per week'}
             error={state.backgroundFive.error}
             onChange={handleChange}
             type="radio"
@@ -92,7 +92,7 @@ const BackgroundForm = ({
             label="5 tot 7 keer per week"
             name="backgroundFive"
             required={false}
-            value={"5 tot 7 keer per week"}
+            value={'5 tot 7 keer per week'}
             error={state.backgroundFive.error}
             onChange={handleChange}
             type="radio"

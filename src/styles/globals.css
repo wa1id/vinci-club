@@ -67,3 +67,13 @@ a {
 button {
   cursor: pointer;
 }
+
+.time-divider {
+  background: repeating-linear-gradient(
+    45deg,
+    #aaa,
+    #aaa 5px,
+    #ddd 0,
+    #ddd 12px
+  );
+}

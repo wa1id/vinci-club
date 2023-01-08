@@ -18,7 +18,7 @@ const events = [
     dayOfWeek: 0,
     start: "17:00",
     end: "18:00",
-    gridRow: "163 / span 20",
+    gridRow: "64 / span 20",
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ const events = [
     dayOfWeek: 0,
     start: "18:15",
     end: "19:15",
-    gridRow: "185 / span 20",
+    gridRow: "86 / span 20",
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ const events = [
     dayOfWeek: 0,
     start: "20:30",
     end: "21:30",
-    gridRow: "226 / span 20",
+    gridRow: "127 / span 20",
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ const events = [
     dayOfWeek: 2,
     start: "17:00",
     end: "18:00",
-    gridRow: "163 / span 20",
+    gridRow: "64 / span 20",
   },
   {
     id: 5,
@@ -50,7 +50,7 @@ const events = [
     dayOfWeek: 2,
     start: "18:15",
     end: "19:15",
-    gridRow: "185 / span 20",
+    gridRow: "86 / span 20",
   },
   {
     id: 6,
@@ -58,7 +58,7 @@ const events = [
     dayOfWeek: 2,
     start: "20:30",
     end: "21:30",
-    gridRow: "226 / span 20",
+    gridRow: "127 / span 20",
   },
   {
     id: 7,
@@ -66,7 +66,7 @@ const events = [
     dayOfWeek: 4,
     start: "17:00",
     end: "18:00",
-    gridRow: "163 / span 20",
+    gridRow: "64 / span 20",
   },
   {
     id: 8,
@@ -74,7 +74,7 @@ const events = [
     dayOfWeek: 4,
     start: "18:15",
     end: "19:15",
-    gridRow: "185 / span 20",
+    gridRow: "86 / span 20",
   },
   {
     id: 9,
@@ -82,7 +82,7 @@ const events = [
     dayOfWeek: 4,
     start: "20:30",
     end: "21:30",
-    gridRow: "226 / span 20",
+    gridRow: "127 / span 20",
   },
   {
     id: 10,
@@ -90,7 +90,7 @@ const events = [
     dayOfWeek: 0,
     start: "10:15",
     end: "11:30",
-    gridRow: "41 / span 25",
+    gridRow: "32 / span 25",
   },
   {
     id: 11,
@@ -98,7 +98,7 @@ const events = [
     dayOfWeek: 1,
     start: "19:30",
     end: "20:45",
-    gridRow: "208 / span 25",
+    gridRow: "109 / span 25",
   },
   {
     id: 12,
@@ -106,7 +106,7 @@ const events = [
     dayOfWeek: 3,
     start: "19:30",
     end: "20:45",
-    gridRow: "208 / span 25",
+    gridRow: "109 / span 25",
   },
   {
     id: 13,
@@ -114,7 +114,7 @@ const events = [
     dayOfWeek: 3,
     start: "10:00",
     end: "11:00",
-    gridRow: "37 / span 20",
+    gridRow: "28 / span 20",
   },
 ];
 
@@ -320,15 +320,10 @@ const Calendar = () => {
                   <div
                     className="col-start-1 col-end-2 row-start-1 grid divide-y divide-gray-100"
                     style={{
-                      gridTemplateRows: "repeat(32, minmax(3rem, 1fr))",
+                      gridTemplateRows: "repeat(19, minmax(3rem, 1fr))",
                     }}
                   >
                     <div className="row-end-1 h-7"></div>
-                    <div>
-                      <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                        8:00
-                      </div>
-                    </div>
                     <div />
                     <div>
                       <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
@@ -347,37 +342,7 @@ const Calendar = () => {
                         11:00
                       </div>
                     </div>
-                    <div />
-                    <div>
-                      <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                        12:00
-                      </div>
-                    </div>
-                    <div />
-                    <div>
-                      <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                        13:00
-                      </div>
-                    </div>
-                    <div />
-                    <div>
-                      <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                        14:00
-                      </div>
-                    </div>
-                    <div />
-                    <div>
-                      <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                        15:00
-                      </div>
-                    </div>
-                    <div />
-                    <div>
-                      <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
-                        16:00
-                      </div>
-                    </div>
-                    <div />
+                    <div className="time-divider"></div>
                     <div>
                       <div className="sticky left-0 -mt-2.5 -ml-14 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
                         17:00
@@ -434,7 +399,7 @@ const Calendar = () => {
                     className="col-start-1 col-end-2 row-start-1 grid grid-cols-1 sm:grid-cols-7 sm:pr-8"
                     style={{
                       gridTemplateRows:
-                        "1.75rem repeat(288, minmax(0, 1fr)) auto",
+                        "1.75rem repeat(171, minmax(0, 1fr)) auto",
                     }}
                   >
                     {events.map((event) => (

@@ -10,9 +10,9 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        noise: "url('/noise.png')",
-        lines: "url('/line art.png')",
-        plan: "url('/bg-plan.png')"
+        noise: "url('/images/noise.png')",
+        lines: "url('/images/line art.png')",
+        plan: "url('/images/bg-plan.png')"
       },
       fontFamily: {
         drukwide: ['DrukWide'],

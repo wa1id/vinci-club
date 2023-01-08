@@ -1,11 +1,8 @@
-import React, { Fragment, useState } from "react";
+import React from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
-import { Dialog, Transition } from "@headlessui/react";
-import BecomeAMember from "src/components/form/BecomeAMember";
-import { Countdown } from "src/components/Countdown/Countdown";
 
 import hero3 from "public/hero-3.png";
 import hero2 from "public/hero-2.png";
@@ -20,7 +17,6 @@ import { useTranslation } from "react-i18next";
 
 const Home = () => {
   const { t } = useTranslation("common");
-  let [isOpen, setIsOpen] = useState(false);
 
   return (
     <>

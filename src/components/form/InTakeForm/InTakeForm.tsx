@@ -110,6 +110,7 @@ const InTakeForm = () => {
   );
 
   const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const validateFields = [
     "firstName",
@@ -121,6 +122,10 @@ const InTakeForm = () => {
     "streetNameAndHouseNumber",
     "zipCode",
     "placeOfResidence",
+    "goalOne",
+    "goalTwo",
+    "goalThree",
+    "goalFour",
   ];
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -199,7 +204,10 @@ const InTakeForm = () => {
   return (
     <section className="px-4 my-6">
       <div className="mb-16">
-        <HeadingWithUnderline title="intake formulier" size="large" />
+        <HeadingWithUnderline
+          title="intake formulier"
+          size="large"
+        />
         <p className="md:text-xl  text-secondary uppercase mt-2">{`Let's Go!`}</p>
 
         <p className="my-4">
@@ -225,7 +233,10 @@ const InTakeForm = () => {
         <TrainingPlanForm {...{ state, dispatch }} />
         <NutritionForm {...{ state, dispatch }} />
         <MedicalBackgroundForm {...{ state, dispatch }} />
-        <TermsAndConditionsForm {...{ state, dispatch }} />
+        <TermsAndConditionsForm
+          {...{ state, dispatch }}
+          loading={loading}
+        />
       </form>
     </section>
   );

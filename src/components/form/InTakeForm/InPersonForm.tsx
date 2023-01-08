@@ -50,7 +50,10 @@ const InPersonForm = ({
       />
 
       <div>
-        <label htmlFor={"gender"} className={"font-semibold text-primary"}>
+        <label
+          htmlFor={"gender"}
+          className={"font-semibold text-primary"}
+        >
           Man/vrouw <sup>*</sup>
         </label>
 
@@ -62,6 +65,7 @@ const InPersonForm = ({
             onChange={handleChange}
             type="radio"
             error={state.gender.error}
+            checked={state.gender.value === "man"}
           />
           <RadioOrCheckBox
             label="vrouw"
@@ -70,6 +74,7 @@ const InPersonForm = ({
             onChange={handleChange}
             type="radio"
             error={state.gender.error}
+            checked={state.gender.value === "vrouw"}
           />
         </div>
       </div>

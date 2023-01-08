@@ -94,7 +94,7 @@ export const PricingSection = () => {
                       ))}
                     </ul>
 
-                    <Link href="\signup">
+                    <Link href="/signup">
                       <Button className="w-full text-center" variant="primary">
                         {t("Become member")}
                       </Button>

@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import { Button } from '../Button/Button';
 import axios from 'axios';
 import { BecomeMember } from 'src/typings/members';
+import { useModalContext } from 'src/context/ModalContextProvider';
 
 interface IProps {}
 
@@ -13,6 +14,7 @@ const BecomeAMember: React.FC<IProps> = () => {
   const [checkedError, setCheckedError] = React.useState(false);
   const [success, setSuccess] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
+  const modalContext = useModalContext();
   const [state, dispatch] = useReducer<React.Reducer<BecomeMember, any>>(
     (state, action) => ({
       ...state,
@@ -61,7 +63,7 @@ const BecomeAMember: React.FC<IProps> = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    dispatch({ ...state, [name]: { value, error: false } });
+    dispatch({ ...state, [name]: value });
   };
 
   const handleInterestedIn = (
@@ -170,7 +172,11 @@ const BecomeAMember: React.FC<IProps> = () => {
     axios
       .post('/api/signup', { ...templateParams })
       .then(result => {
-        toast.success('Wij hebben uw aanvraag ontvangen!');
+        // TODO: change message after go live
+        modalContext.showConfirmation(
+          'Succes!',
+          'We hebben uw aanvraag goed ontvangen.'
+        );
         setSuccess(true);
         setLoading(false);
         handleReset();

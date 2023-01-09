@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useReducer, useState } from 'react';
 import { FiArrowUpRight } from 'react-icons/fi';
 import { toast } from 'react-toastify';
+import { useModalContext } from 'src/context/ModalContextProvider';
 import { IContact } from 'src/typings/contact';
 import { Button } from '../Button/Button';
 import Heading from '../Heading/Heading';
@@ -17,6 +18,7 @@ const initialState = {
 const ContactForm = () => {
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
+  const modalContext = useModalContext();
   const [state, dispatch] = useReducer<React.Reducer<IContact, any>>(
     (state, action) => ({
       ...state,
@@ -42,7 +44,10 @@ const ContactForm = () => {
     axios
       .post('/api/contact', state)
       .then(result => {
-        toast.success('Wij hebben uw aanvraag ontvangen!');
+        modalContext.showConfirmation(
+          'Succes!',
+          'We hebben uw aanvraag goed ontvangen. We nemen zo snel mogelijk contact met u op.'
+        );
         setSuccess(true);
         handleReset();
       })

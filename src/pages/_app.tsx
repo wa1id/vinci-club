@@ -11,6 +11,8 @@ import CookieConsent, {
 } from 'react-cookie-consent';
 import { initGA } from 'src/utils/ga-utils';
 import { useEffect } from 'react';
+import ConfirmationModalContextProvider from 'src/context/ModalContextProvider';
+import ModalContextProvider from 'src/context/ModalContextProvider';
 
 const outfit = Outfit({ subsets: ['latin'] });
 
@@ -75,7 +77,9 @@ function App({ Component, pageProps }: AppProps) {
           &quot;Accepteer&quot; te klikken, gaat u akkoord met het gebruik van
           alle cookies.
         </CookieConsent>
-        <Component {...pageProps} />
+        <ModalContextProvider>
+          <Component {...pageProps} />
+        </ModalContextProvider>
       </Layout>
     </>
   );

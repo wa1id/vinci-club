@@ -8,10 +8,12 @@ import { FiArrowUpRight } from 'react-icons/fi';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 import { useTranslation } from 'react-i18next';
+import { useModalContext } from 'src/context/ModalContextProvider';
 
 const GetTheNewsFrom = () => {
   const { t } = useTranslation('common');
   const [email, setEmail] = useState('');
+  const modalContext = useModalContext();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     // subscribe to newsletter using mailchimp
@@ -25,8 +27,10 @@ const GetTheNewsFrom = () => {
     axios
       .post('/api/subscribe', { email })
       .then(res => {
-        // TODO: i18
-        toast.success('Je bent ingeschreven voor de nieuwsbrief!');
+        modalContext.showConfirmation(
+          'Succes!',
+          'Je bent succesvol ingeschreven voor onze nieuwsbrief. We houden je op de hoogte van de laatste nieuwtjes van onze club.'
+        );
         setEmail('');
       })
       .catch(err => {

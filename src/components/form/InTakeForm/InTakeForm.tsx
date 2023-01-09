@@ -12,6 +12,7 @@ import TermsAndConditionsForm from './TermsAndConditionsForm';
 import TrainingPlanForm from './TrainingPlanForm';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { useModalContext } from 'src/context/ModalContextProvider';
 
 const fieldValue = {
   value: '',
@@ -115,6 +116,7 @@ const InTakeForm = () => {
 
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
+  const modalContext = useModalContext();
 
   const validateFields = [
     'firstName',
@@ -213,12 +215,17 @@ const InTakeForm = () => {
     axios
       .post('/api/intake', templateParamsWithTrainingFormThree)
       .then(result => {
-        toast.success('Wij hebben uw aanvraag ontvangen!');
+        modalContext.showConfirmation(
+          'Succes!',
+          'We hebben uw aanvraag goed ontvangen. We nemen zo snel mogelijk contact met u op.'
+        );
         setSuccess(true);
         handleReset();
       })
       .catch(err => {
-        toast.error('Oops, er is iets misgeslopen.');
+        toast.error(
+          'Oops, er is iets misgeslopen. Gelieve opnieuw te proberen.'
+        );
       })
       .finally(() => setLoading(false));
   };

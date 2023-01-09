@@ -66,7 +66,8 @@ const GetTheNewsFrom = () => {
           </div>
           <p className="text-primary font-normal m-auto text-xl mt-4 md:max-w-[308px]">
             {/* TODO: i18 */}
-            Blijf up-to-date met de laatste nieuwtjes van onze club.
+            Op de hoogte blijven van de laatste nieuwtjes? Meld je aan voor onze
+            nieuwsbrief!
           </p>
 
           <form

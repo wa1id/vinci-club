@@ -28,7 +28,7 @@ const ChooseYourPlan = () => {
             headingClassName="text-primary"
             lineClassName="bg-secondary"
           />
-          <p className="text-lg max-w-3xl m-auto font-normal mt-6">
+          <p className="text-lg max-w-3xl m-auto font-normal mt-6 whitespace-pre-line">
             {t('plan description')}
           </p>
           <div className="flex items-center justify-center space-x-1">
@@ -38,14 +38,6 @@ const ChooseYourPlan = () => {
         </div>
       </div>
       <PricingSection />
-
-      <div className="flex justify-end items-center">
-        <Image
-          src={BodyImg}
-          alt="body"
-          className="max-w-[192px] hidden md:block  lg:-translate-x-40"
-        />
-      </div>
     </div>
   );
 };

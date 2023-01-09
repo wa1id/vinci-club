@@ -7,7 +7,7 @@ interface Props {
 
 export const SocialFollows: FC<Props> = ({ label }) => {
   return (
-    <div className="flex items-center pb-12">
+    <div className="hidden lg:flex items-center pb-12">
       {label && (
         <>
           <svg

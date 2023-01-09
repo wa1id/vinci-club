@@ -14,7 +14,7 @@ const tiers = [
     priceMonthly: 24,
     subPriceMonthly: 95,
     description: 'Fitness',
-    features: ['Ladies Only', 'Cardioapparatuur', 'Gewichtstraining']
+    features: ['Ladies only', 'Cardiotraining', 'Gewichtstraining']
   },
   {
     name: 'Silver (-16j)',
@@ -23,7 +23,7 @@ const tiers = [
     priceMonthly: 24,
     subPriceMonthly: 95,
     description: 'Kickboks',
-    features: ['Jeugd -16 jaar oud', 'Kickboksring', 'Kickboks groepslessen']
+    features: ['Jeugd -16 jaar', 'Kickboks in de ring', 'Kickboks groepslessen']
   },
   {
     name: 'Gold (+16j)',
@@ -32,7 +32,7 @@ const tiers = [
     priceMonthly: 34,
     subPriceMonthly: 95,
     description: 'Kickboks',
-    features: ['+16 jaar oud', 'Kickboksring', 'Kickboks groepslessen']
+    features: ['+16 jaar', 'Kickboks in de ring', 'Kickboks groepslessen']
   }
 ];
 
@@ -41,7 +41,7 @@ export const PricingSection = () => {
 
   return (
     <div className="">
-      <div className="py-12 bg-plan sm:py-16 lg:py-24">
+      <div className="py-12 bg-plan">
         <div className="relative">
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-md mx-auto space-y-4 lg:max-w-5xl lg:grid lg:grid-cols-3 lg:gap-5 lg:space-y-0">
@@ -112,15 +112,16 @@ export const PricingSection = () => {
             <div className="rounded-lg bg-gray-100 px-6 py-8 sm:p-10 lg:flex lg:items-center shadow-lg">
               <div className="flex-1">
                 <div>
-                  <h3 className="inline-flex px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase bg-primary text-white">
-                    beurtenkaart
+                  <h3 className="inline-flex font-bold tracking-wide uppercase">
+                    De club uitproberen? Gebruik onze handige beurtenkaart!
                   </h3>
                 </div>
                 <div className="mt-4 text-lg text-primary">
-                  Wens je Vinci Club uit te proberen of wil je een vriend(in)
-                  meenemen? Dan kan je een beurtenkaart/dagpas kopen. Deze geeft
-                  je toegang tot zowel de fitness (ladies only) als kickboks
-                  voor €14,95/beurt.
+                  Zelf ervaren wat Vinci Club voor jou kan betekenen of wil je
+                  een vriend(in) meenemen? We hebben ook beurtenkaarten en
+                  dagpassen. Voor amper € 14,95/beurt ontdek je alle
+                  faciliteiten (fitness ladies only) van onze club. Kom het
+                  gerust eens uitproberen.
                 </div>
               </div>
             </div>

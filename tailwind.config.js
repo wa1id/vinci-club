@@ -12,7 +12,9 @@ module.exports = {
       backgroundImage: {
         noise: "url('/images/noise.png')",
         lines: "url('/images/line art.png')",
-        plan: "url('/images/bg-plan.png')"
+        plan: "url('/images/bg-plan.png')",
+        box: "url('/images/bg-box.jpg')",
+        ladies: "url('/images/bg-ladies.jpg')"
       },
       fontFamily: {
         drukwide: ['DrukWide'],
@@ -41,5 +43,9 @@ module.exports = {
       }
     }
   },
-  plugins: [require('@tailwindcss/forms')]
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/aspect-ratio')
+  ]
 };

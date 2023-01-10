@@ -240,8 +240,8 @@ const Calendar = () => {
             className={classNames(
               (i + 1) % 7 === getDay(selectedDate)
                 ? 'bg-black text-white rounded-full'
-                : 'text-gray-900',
-              'mt-1 flex h-8 w-8 items-center justify-center font-semibold text-white'
+                : 'text-primary',
+              'mt-1 flex h-8 w-8 items-center justify-center font-semibold'
             )}
           >
             {firstDayOfWeek.getDate() + i}
@@ -264,7 +264,7 @@ const Calendar = () => {
               className={classNames(
                 (i + 1) % 7 === getDay(new Date())
                   ? 'bg-black text-white rounded-full flex h-8 w-8'
-                  : 'text-gray-900',
+                  : 'text-primary',
                 'ml-1.5 items-center justify-center font-semibold'
               )}
             >

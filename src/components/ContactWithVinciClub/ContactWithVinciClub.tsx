@@ -35,8 +35,9 @@ const ContactWithVinciClub = () => {
           </div>
           <p className="text-primary-lighter font-normal m-auto text-xl mt-4 md:max-w-[450px]">
             {/* TODO: i18 */}
-            Onze medewerkers en personal trainers staan voor je klaar met al je
-            vragen.
+            Zit je nog met vragen over onze club? Onze personal trainers staan
+            voor je klaar om al je vragen te beantwoorden. Stuur een mailtje,
+            vul het formulier in of geef ons een belletje.
           </p>
 
           <div className="w-full flex justify-center items-center flex-col gap-5 my-4 p-6">

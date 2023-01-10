@@ -236,7 +236,7 @@ const InTakeForm = () => {
           worden? Vul onderstaande vragen dan zo eerlijk mogelijk in, zodat ik
           een goed beeld krijg van wie je bent en wat jouw doelen zijn. Het is
           belangrijk dat je dit formulier minimaal één dag voor aanvang van je
-          intake ingevuld naar mij teruggestuurd hebt.
+          intake ingevuld aan mij hebt bezorgd.
         </p>
 
         <p className="text-sm my-4">

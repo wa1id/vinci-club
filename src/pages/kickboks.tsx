@@ -84,7 +84,12 @@ const Kickboks = () => {
               <div className="relative text-base mx-auto max-w-prose lg:max-w-none">
                 <figure>
                   <div className="aspect-w-12 aspect-h-7 lg:aspect-none">
-                    <Image priority src={jamal} alt="Jamal Ben Saddik" />
+                    <Image
+                      priority
+                      src={jamal}
+                      className="object-cover"
+                      alt="Jamal Ben Saddik"
+                    />
                   </div>
                   <figcaption className="mt-3 flex text-sm text-gray-500">
                     <CameraIcon
@@ -172,18 +177,22 @@ const Kickboks = () => {
               <div className="relative text-base mx-auto max-w-prose lg:max-w-none">
                 <figure>
                   <div className="aspect-w-12 aspect-h-7 lg:aspect-none">
-                    <Image src={lady} alt="Vrouw Kickboks" />
+                    <Image
+                      src={lady}
+                      className="object-cover"
+                      alt="Vrouw Kickboks"
+                    />
                   </div>
                 </figure>
               </div>
             </div>
-            <div className="mt-8 lg:mt-0 text-right">
+            <div className="mt-8 lg:mt-0 lg:text-right">
               <div className="text-lg mx-auto lg:max-w-none lg:row-start-1 lg:col-start-2">
                 <motion.h2
                   initial={{ y: -30, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.75, ease: 'easeOut' }}
-                  className="mb-2 text-3xl font-extrabold textprimary sm:text-4xl"
+                  className="mb-2 text-3xl font-extrabold text-primary sm:text-4xl"
                 >
                   Professionele lesgevers met jarenlange ervaring
                 </motion.h2>

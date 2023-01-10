@@ -34,6 +34,10 @@ export default function Navbar() {
     {
       name: 'Ladies only',
       link: '/ladies-only'
+    },
+    {
+      name: 'Intake formulier',
+      link: '/intake'
     }
   ];
 
@@ -55,7 +59,7 @@ export default function Navbar() {
               </Popover.Button>
             </div>
             <Popover className="relative hidden xl:block">
-              <Popover.Button className="text-primary hover:text-gray-400 transition-colors duration-200 ease-in-out">
+              <Popover.Button className="text-primary hover:text-gray-400 transition-colors duration-200 ease-in-out uppercase font-semibold">
                 De Club
               </Popover.Button>
               <Transition
@@ -91,7 +95,7 @@ export default function Navbar() {
                 <Link
                   key={item.id}
                   href={item.href}
-                  className="text-primary hover:text-gray-400 transition-colors duration-200 ease-in-out"
+                  className="text-primary hover:text-gray-400 transition-colors duration-200 ease-in-out uppercase font-semibold"
                 >
                   {item.name}
                 </Link>

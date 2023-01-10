@@ -11,7 +11,7 @@ const data = [
     name: 'Nora Ledou',
     title: 'Head of Personal Training',
     description:
-      'I’m really passionate about sports, especially since I discovered crossfit a few years ago. Being active is a big part of my life and I couldn’t live without it anymore.',
+      'Samen kunnen we jouw droomlichaam realiseren door een combinatie van training en een op maat gemaakt voedingsschema. ',
     socials: { instagram: 'https://www.instagram.com/gezondmetnora/' }
   },
   {

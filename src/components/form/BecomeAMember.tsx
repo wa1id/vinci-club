@@ -173,10 +173,7 @@ const BecomeAMember: React.FC<IProps> = () => {
       .post('/api/signup', { ...templateParams })
       .then(result => {
         // TODO: change message after go live
-        modalContext.showConfirmation(
-          'Succes!',
-          'We hebben uw aanvraag goed ontvangen.'
-        );
+        toast.success('Wij hebben uw aanvraag ontvangen!');
         setSuccess(true);
         setLoading(false);
         handleReset();

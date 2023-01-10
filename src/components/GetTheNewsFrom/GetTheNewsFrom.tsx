@@ -27,10 +27,7 @@ const GetTheNewsFrom = () => {
     axios
       .post('/api/subscribe', { email })
       .then(res => {
-        modalContext.showConfirmation(
-          'Succes!',
-          'Je bent succesvol ingeschreven voor onze nieuwsbrief. We houden je op de hoogte van de laatste nieuwtjes van onze club.'
-        );
+        toast.success('Wij hebben uw aanvraag ontvangen!');
         setEmail('');
       })
       .catch(err => {

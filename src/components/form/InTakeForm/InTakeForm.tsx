@@ -215,10 +215,7 @@ const InTakeForm = () => {
     axios
       .post('/api/intake', templateParamsWithTrainingFormThree)
       .then(result => {
-        modalContext.showConfirmation(
-          'Succes!',
-          'We hebben uw aanvraag goed ontvangen. We nemen zo snel mogelijk contact met u op.'
-        );
+        toast.success('Wij hebben uw aanvraag ontvangen!');
         setSuccess(true);
         handleReset();
       })

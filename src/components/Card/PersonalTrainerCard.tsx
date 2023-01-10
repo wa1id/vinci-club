@@ -75,7 +75,7 @@ const PersonalTrainerCard: React.FC<PersonalTrainer> = ({
                 </Button>
               </Link>
             ) : (
-              <Link passHref href="/personal-trainers">
+              <Link passHref href="/ladies-only">
                 <Button size="sm" variant="primary">
                   Meer informatie
                 </Button>

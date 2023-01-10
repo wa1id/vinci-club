@@ -6,6 +6,8 @@ import Image from 'next/image';
 
 import hero3 from 'public/images/hero-3.png';
 import hero2 from 'public/images/hero-2.png';
+import box from 'public/images/bg-box.jpg';
+import boxLady from 'public/images/bg-ladies.jpg';
 import { Button } from 'src/components/Button/Button';
 import { SocialFollows } from 'src/components/SocialFollows/SocialFollows';
 import { SideTextStroke } from 'src/components/SideTextStroke';
@@ -21,14 +23,14 @@ const supportLinks = [
     href: '/kickboks',
     description:
       'Je eerste stappen in de ring zetten, kickboks training volgen of een programma op maat? Wij zorgen voor de begeleiding.',
-    image: 'bg-box'
+    image: box
   },
   {
     name: 'Fitness ladies only',
     href: '/ladies-only',
     description:
       'In een ongedwongen sfeer aan je lichaam werken? In onze Ladies only fitness kom je thuis en word je optimaal begeleid.',
-    image: 'bg-ladies'
+    image: boxLady
   }
 ];
 
@@ -115,12 +117,21 @@ const Home = () => {
           {supportLinks.map(link => (
             <div
               key={link.name}
-              className="flex flex-col bg-white rounded-2xl shadow-xl"
+              className="flex flex-col  rounded-2xl shadow-xl"
             >
               <div
-                className={`flex-1 rounded-t-2xl relative px-6 md:px-8 ${link.image} shadow-[inset_0_0_0_9999px_rgba(0,0,0,0.5)] bg-center bg-cover`}
+                // className={`flex-1 rounded-t-2xl relative px-6 md:px-8 ${link.image} shadow-[inset_0_0_0_9999px_rgba(0,0,0,0.5)] bg-center bg-cover`}
+                className="relative px-6 md:px-8"
               >
-                <div className="relative py-6">
+                <div className="bg-black/50 absolute w-full h-full inset-0 z-10" />
+                <Image
+                  fill
+                  className="object-cover object-[50%_70%] rounded-t-2xl"
+                  src={link.image}
+                  alt=""
+                />
+
+                <div className="relative py-6 z-20">
                   <motion.h3
                     initial={{ y: -30, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}

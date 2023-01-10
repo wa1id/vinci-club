@@ -6,6 +6,7 @@ import { BsChevronDown } from 'react-icons/bs';
 import Link from 'next/link';
 import { PersonalTrainer } from 'src/typings/personalTrainer';
 import { Button } from '../Button/Button';
+import { motion } from 'framer-motion';
 
 const PersonalTrainerCard: React.FC<PersonalTrainer> = ({
   image,
@@ -44,12 +45,22 @@ const PersonalTrainerCard: React.FC<PersonalTrainer> = ({
             )}
           </div>
           <div className="py-2 border-primary border-b-[1px] border-opacity-5">
-            <h1 className="uppercase text-2xl font-bold text-primary">
+            <motion.div
+              initial={{ y: -30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.75, ease: 'easeOut' }}
+              className="uppercase text-2xl font-bold text-primary"
+            >
               {name}
-            </h1>
-            <p className="text-primary text-[18px] leading-6 font-normal">
+            </motion.div>
+            <motion.div
+              initial={{ y: -30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.75, delay: 0.2, ease: 'easeOut' }}
+              className="text-primary text-[18px] leading-6 font-normal"
+            >
               {title}
-            </p>
+            </motion.div>
           </div>
 
           <p className="overflow-hidden my-4 font-light h-24 text-primary text-justify">

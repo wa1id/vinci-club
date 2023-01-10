@@ -2,6 +2,7 @@
 
 import { CheckIcon } from '@heroicons/react/24/outline';
 import classNames from 'classnames';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import { Button } from '../Button/Button';
@@ -40,7 +41,7 @@ export const PricingSection = () => {
   const { t } = useTranslation('common');
 
   return (
-    <div className="">
+    <div>
       <div className="py-12 bg-plan">
         <div className="relative">
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -52,7 +53,10 @@ export const PricingSection = () => {
                 >
                   <div className="px-6 py-8 bg-white sm:p-10 sm:pb-6">
                     <div>
-                      <h3
+                      <motion.h3
+                        initial={{ y: -30, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 0.75, ease: 'easeOut' }}
                         className={classNames(
                           'inline-flex px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase text-primary',
                           tier.nameBackground
@@ -60,9 +64,18 @@ export const PricingSection = () => {
                         id="tier-standard"
                       >
                         {tier.name}
-                      </h3>
+                      </motion.h3>
                     </div>
-                    <div className="mt-4 flex text-6xl font-extrabold">
+                    <motion.div
+                      initial={{ y: -30, opacity: 0 }}
+                      whileInView={{ y: 0, opacity: 1 }}
+                      transition={{
+                        duration: 0.75,
+                        delay: 0.2,
+                        ease: 'easeOut'
+                      }}
+                      className="mt-4 flex text-6xl font-extrabold"
+                    >
                       €{tier.priceMonthly}
                       <sup className="text-base">{tier.subPriceMonthly}</sup>
                       <div className="items-baseline">
@@ -70,7 +83,7 @@ export const PricingSection = () => {
                           /mnd <sup>*</sup>
                         </span>
                       </div>
-                    </div>
+                    </motion.div>
                     <p className="mt-5 text-lg text-primary">
                       {tier.description}
                     </p>

@@ -57,9 +57,9 @@ const Home = () => {
                   vinci
                 </motion.span>
                 <motion.span
-                  initial={{ y: 30, opacity: 0 }}
+                  initial={{ y: -30, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.75, ease: 'easeOut' }}
+                  transition={{ duration: 0.75, delay: 0.2, ease: 'easeOut' }}
                   className=" [text-shadow:_0px_13px_1px_rgb(0_0_0_/_0.4%)] uppercase text-6xl sm:text-8xl 2xl:text-9xl font-drukwide"
                   style={{
                     WebkitTextStroke: '1px #F0EBE8',

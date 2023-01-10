@@ -16,7 +16,10 @@ const Heading: React.FC<Props> = ({
   lineClassName
 }) => {
   return (
-    <h2
+    <motion.h2
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
       className={classNames(
         'uppercase text-xl xs:text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-drukwide',
         headingClassName
@@ -24,7 +27,12 @@ const Heading: React.FC<Props> = ({
     >
       {aboveHeading} <br />
       <span className="relative z-10">
-        <motion.span className=" [text-shadow:_0px_3px_0px_rgb(0_0_0_/_19%)]">
+        <motion.span
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+          className=" [text-shadow:_0px_3px_0px_rgb(0_0_0_/_19%)]"
+        >
           {belowHeading}
         </motion.span>
         <span
@@ -34,7 +42,7 @@ const Heading: React.FC<Props> = ({
           )}
         />
       </span>
-    </h2>
+    </motion.h2>
   );
 };
 

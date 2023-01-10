@@ -10,6 +10,7 @@ import { Button } from 'src/components/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { CameraIcon } from '@heroicons/react/24/outline';
 import GetTheNewsFrom from 'src/components/GetTheNewsFrom/GetTheNewsFrom';
+import { motion } from 'framer-motion';
 
 const Kickboks = () => {
   const { t } = useTranslation('common');
@@ -20,7 +21,7 @@ const Kickboks = () => {
         <title>Kickboks - Vinci Club</title>
       </Head>
 
-      <div className="py-16 p-4 md:p-20 lg:p-28 w-full bg-primary bg-noise">
+      <div className="flex justify-center  pb-6 lg:pb-16 bg-primary bg-noise">
         {/* TODO: i18 */}
         <Heading
           aboveHeading=""
@@ -35,9 +36,14 @@ const Kickboks = () => {
           <div className="hidden lg:block bg-gray-50 absolute top-0 bottom-0 left-3/4 w-screen" />
           <div className="mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none">
             <div>
-              <h2 className="mt-2 text-3xl leading-8 font-extrabold textprimary sm:text-4xl">
+              <motion.h2
+                initial={{ y: -30, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.75, ease: 'easeOut' }}
+                className="mt-2 text-3xl leading-8 font-extrabold textprimary sm:text-4xl"
+              >
                 Leef je uit in de ring.
-              </h2>
+              </motion.h2>
             </div>
           </div>
           <div className="mt-8 lg:grid lg:grid-cols-2 lg:gap-8">
@@ -173,9 +179,14 @@ const Kickboks = () => {
             </div>
             <div className="mt-8 lg:mt-0 text-right">
               <div className="text-lg mx-auto lg:max-w-none lg:row-start-1 lg:col-start-2">
-                <h2 className="mb-2 text-3xl font-extrabold textprimary sm:text-4xl">
+                <motion.h2
+                  initial={{ y: -30, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.75, ease: 'easeOut' }}
+                  className="mb-2 text-3xl font-extrabold textprimary sm:text-4xl"
+                >
                   Professionele lesgevers met jarenlange ervaring
-                </h2>
+                </motion.h2>
                 <p>
                   Meervoudig kampioen Jamal Ben Saddik hoeven we je vast niet
                   meer voor te stellen, maar daarnaast geven ook nog heel wat

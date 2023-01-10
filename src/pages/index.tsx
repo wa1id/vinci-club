@@ -20,14 +20,14 @@ const supportLinks = [
     name: 'Kickboks',
     href: '/kickboks',
     description:
-      'Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.',
+      'Je eerste stappen in de ring zetten, kickboks training volgen of een programma op maat? Wij zorgen voor de begeleiding.',
     image: 'bg-box'
   },
   {
     name: 'Fitness ladies only',
     href: '/ladies-only',
     description:
-      'Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.',
+      'In een ongedwongen sfeer aan je lichaam werken? In onze Ladies only fitness kom je thuis en word je optimaal begeleid.',
     image: 'bg-ladies'
   }
 ];
@@ -136,7 +136,7 @@ const Home = () => {
               </div>
               <div className="p-6 bg-white rounded-b-2xl md:px-8">
                 <Link href={link.href}>
-                  <Button variant={'primary'}>Meer info</Button>
+                  <Button variant={'primary'}>Lees meer</Button>
                 </Link>
               </div>
             </div>

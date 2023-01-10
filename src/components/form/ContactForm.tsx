@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { useReducer, useState } from 'react';
-import { FiArrowUpRight } from 'react-icons/fi';
 import { toast } from 'react-toastify';
 import { useModalContext } from 'src/context/ModalContextProvider';
 import { IContact } from 'src/typings/contact';
@@ -18,7 +17,6 @@ const initialState = {
 const ContactForm = () => {
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
-  const modalContext = useModalContext();
   const [state, dispatch] = useReducer<React.Reducer<IContact, any>>(
     (state, action) => ({
       ...state,

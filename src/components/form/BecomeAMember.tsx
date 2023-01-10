@@ -4,7 +4,6 @@ import { toast } from 'react-toastify';
 import { Button } from '../Button/Button';
 import axios from 'axios';
 import { BecomeMember } from 'src/typings/members';
-import { useModalContext } from 'src/context/ModalContextProvider';
 
 interface IProps {}
 
@@ -14,7 +13,6 @@ const BecomeAMember: React.FC<IProps> = () => {
   const [checkedError, setCheckedError] = React.useState(false);
   const [success, setSuccess] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
-  const modalContext = useModalContext();
   const [state, dispatch] = useReducer<React.Reducer<BecomeMember, any>>(
     (state, action) => ({
       ...state,

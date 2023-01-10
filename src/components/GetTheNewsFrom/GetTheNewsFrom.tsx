@@ -8,12 +8,10 @@ import { FiArrowUpRight } from 'react-icons/fi';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 import { useTranslation } from 'react-i18next';
-import { useModalContext } from 'src/context/ModalContextProvider';
 
 const GetTheNewsFrom = () => {
   const { t } = useTranslation('common');
   const [email, setEmail] = useState('');
-  const modalContext = useModalContext();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     // subscribe to newsletter using mailchimp

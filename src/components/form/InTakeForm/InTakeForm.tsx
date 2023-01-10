@@ -12,7 +12,6 @@ import TermsAndConditionsForm from './TermsAndConditionsForm';
 import TrainingPlanForm from './TrainingPlanForm';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import { useModalContext } from 'src/context/ModalContextProvider';
 
 const fieldValue = {
   value: '',
@@ -116,7 +115,6 @@ const InTakeForm = () => {
 
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
-  const modalContext = useModalContext();
 
   const validateFields = [
     'firstName',

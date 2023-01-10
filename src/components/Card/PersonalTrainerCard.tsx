@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import Image, { StaticImageData } from 'next/image';
+import React from 'react';
+import Image from 'next/image';
 import { AiOutlineTwitter, AiOutlineInstagram } from 'react-icons/ai';
 import { FaFacebookF } from 'react-icons/fa';
-import { BsChevronDown } from 'react-icons/bs';
 import Link from 'next/link';
 import { PersonalTrainer } from 'src/typings/personalTrainer';
 import { Button } from '../Button/Button';
